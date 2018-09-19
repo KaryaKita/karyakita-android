@@ -19,7 +19,7 @@ public class RetrofitHelper {
             OkHttpClient okHttpClient = builder.build();
 
             retrofit = new Retrofit.Builder()
-                    .baseUrl("http://178.128.22.48/api/v1/")
+                    .baseUrl("http://api.themoviedb.org/3/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .client(okHttpClient)
