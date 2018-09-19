@@ -2,6 +2,7 @@ package com.karyakita.karyakita_android_new.view;
 
 import com.karyakita.karyakita_android_new.base_class_interface.BaseModel;
 import com.karyakita.karyakita_android_new.base_class_interface.IMainView;
+import com.karyakita.karyakita_android_new.model.MovieResponse;
 
 public class TestView implements IMainView {
     @Override
@@ -10,7 +11,7 @@ public class TestView implements IMainView {
     }
 
     @Override
-    public void display(BaseModel model) {
+    public void display(MovieResponse model) {
 
     }
 
