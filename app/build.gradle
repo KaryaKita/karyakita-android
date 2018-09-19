@@ -56,14 +56,18 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 
     //RxJava2
+    //noinspection GradleDynamicVersion
     implementation "io.reactivex.rxjava2:rxjava:2+"
+    //noinspection GradleDynamicVersion
     implementation 'io.reactivex.rxjava2:rxandroid:2+'
 
     //Retrofit
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    //noinspection GradleDynamicVersion
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2+'
 
     //Glide
+    //noinspection GradleDynamicVersion
     implementation 'com.github.bumptech.glide:glide:3+'
 
     testImplementation 'junit:junit:4.12'
