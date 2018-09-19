@@ -1,4 +1,4 @@
-package com.karyakita.karyakita_android_new;
+package com.karyakita.karyakita_android_new.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
