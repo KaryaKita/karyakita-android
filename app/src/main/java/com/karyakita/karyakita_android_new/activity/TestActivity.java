@@ -1,4 +1,4 @@
-package com.karyakita.karyakita_android_new;
+package com.karyakita.karyakita_android_new.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,17 +7,16 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.karyakita.karyakita_android_new.activity.MainActivity;
+import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.adapter.MovieAdapter;
-import com.karyakita.karyakita_android_new.base_class_interface.BaseModel;
-import com.karyakita.karyakita_android_new.base_class_interface.IMainView;
+import com.karyakita.karyakita_android_new.view.ITestView;
 import com.karyakita.karyakita_android_new.model.MovieResponse;
 import com.karyakita.karyakita_android_new.presenter.TestPresenter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class TestActivity extends AppCompatActivity implements IMainView {
+public class TestActivity extends AppCompatActivity implements ITestView {
     @BindView(R.id.rvMovies)
     RecyclerView rvMovies;
 
@@ -31,8 +30,6 @@ public class TestActivity extends AppCompatActivity implements IMainView {
         setContentView(R.layout.test_activity);
         ButterKnife.bind(this);
 
-        //rvMovies = (RecyclerView) findViewById(R.id.rvMovies);
-
         setupMVP();
         setupViews();
         getMovieList();
@@ -44,6 +41,7 @@ public class TestActivity extends AppCompatActivity implements IMainView {
 
     private void setupViews(){
         rvMovies.setLayoutManager(new LinearLayoutManager(this));
+        rvMovies.setHasFixedSize(true);
     }
 
     private void getMovieList() {
