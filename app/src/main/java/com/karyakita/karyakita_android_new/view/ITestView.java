@@ -1,8 +1,8 @@
-package com.karyakita.karyakita_android_new.base_class_interface;
+package com.karyakita.karyakita_android_new.view;
 
 import com.karyakita.karyakita_android_new.model.MovieResponse;
 
-public interface IMainView {
+public interface ITestView {
     void showToast(String s);
 
     void display(MovieResponse model);

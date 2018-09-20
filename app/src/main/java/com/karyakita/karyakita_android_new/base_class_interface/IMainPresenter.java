@@ -4,4 +4,6 @@ public interface IMainPresenter {
     void get();
 
     void update();
+
+    void insert();
 }
