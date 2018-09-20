@@ -14,7 +14,6 @@
         <activity
             android:name=".activity.SplashActivity"
             android:theme="@style/AppTheme.SplashTheme">
-
         </activity>
         <activity
             android:name=".activity.MainActivity"
@@ -22,6 +21,16 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.TestActivity" />
         <activity android:name=".activity.TesRezaActivity">
+        </activity>
+        <activity android:name=".activity.TestBenyActivity">
+
+        </activity>
+        <activity android:name=".activity.TestAlipActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
