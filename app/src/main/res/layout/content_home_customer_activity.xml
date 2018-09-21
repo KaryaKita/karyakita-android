@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<android.support.v7.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="?attr/actionBarSize"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-</android.support.constraint.ConstraintLayout>
+    <com.synnapps.carouselview.CarouselView
+        android:id="@+id/carouselView_home"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:fillColor="#FFFFFF"
+        app:pageColor="#000000"
+        app:radius="6dp"
+        app:slideInterval="3000"
+        app:strokeColor="#FFFFFF"
+        app:strokeWidth="1dp"
+        >
+    </com.synnapps.carouselview.CarouselView>
+
+
+</android.support.v7.widget.LinearLayoutCompat>

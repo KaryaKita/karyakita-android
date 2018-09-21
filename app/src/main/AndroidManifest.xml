@@ -23,14 +23,14 @@
         <activity android:name=".activity.TestFatinActivity"></activity>
         <activity android:name=".activity.TesRezaActivity"></activity>
         <activity android:name=".activity.TestBenyActivity"></activity>
-        <activity android:name=".activity.TestAlipActivity">
+        <activity android:name=".activity.TestAlipActivity"></activity>
+        <activity android:name=".activity.customer.HomeCustomerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.customer.HomeCustomerActivity"></activity>
     </application>
 
 </manifest>
