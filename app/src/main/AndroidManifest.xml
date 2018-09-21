@@ -14,12 +14,17 @@
         <activity
             android:name=".activity.SplashActivity"
             android:theme="@style/AppTheme.SplashTheme">
+
         </activity>
         <activity
             android:name=".activity.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.TestActivity" />
+        <activity android:name=".activity.TestActivity"></activity>
+        <activity android:name=".activity.TestEfrizaActivity"></activity>
+        <activity android:name=".activity.TestFatinActivity">
+
+        </activity>
         <activity android:name=".activity.TesRezaActivity">
         </activity>
         <activity android:name=".activity.TestBenyActivity">
