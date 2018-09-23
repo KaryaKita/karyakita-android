@@ -8,14 +8,11 @@ ext.isSnapshot = true
 ext.minimumSdkVersion = 22
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
     defaultConfig {
         applicationId "com.karyakita.karyakita_android_new"
-//        minSdkVersion 22
         minSdkVersion project.ext.minimumSdkVersion
-        targetSdkVersion 27
-        versionCode 1
-        versionName "1.0"
+        targetSdkVersion 28
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         versionCode generateVersionCode()
         versionName generateVersionName()
@@ -66,6 +63,9 @@ dependencies {
     //noinspection GradleDynamicVersion
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2+'
 
+    //Caoursel View
+    implementation 'com.synnapps:carouselview:0.1.5'
+
     //Glide
     //noinspection GradleDynamicVersion
     implementation 'com.github.bumptech.glide:glide:3+'
@@ -73,6 +73,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
 }
 
 private Integer generateVersionCode() {
