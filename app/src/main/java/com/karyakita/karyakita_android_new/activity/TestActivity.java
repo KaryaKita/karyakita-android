@@ -40,7 +40,7 @@ public class TestActivity extends AppCompatActivity implements ITestView {
     }
 
     private void setupViews(){
-        rvMovies.setLayoutManager(new LinearLayoutManager(this));
+        rvMovies.setLayoutManager(new LinearLayoutManager(this.getApplicationContext(), LinearLayoutManager.VERTICAL, false));
         rvMovies.setHasFixedSize(true);
     }
 
@@ -56,7 +56,9 @@ public class TestActivity extends AppCompatActivity implements ITestView {
     @Override
     public void display(MovieResponse movieResponse) {
         if(movieResponse!=null) {
-            Log.d(TAG,movieResponse.getResults().get(1).getTitle());
+            Log.d(TAG,movieResponse.getResults().get(0).getTitle());
+            Log.d(TAG,movieResponse.getResults().get(0).getOriginalLanguage());
+            Log.d(TAG,movieResponse.getResults().get(0).getOriginalTitle());
             adapter = new MovieAdapter.MoviesAdapter(movieResponse.getResults(), TestActivity.this);
             rvMovies.setAdapter(adapter);
         }else{

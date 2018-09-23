@@ -28,8 +28,7 @@ public class MovieAdapter {
         @Override
         public MoviesHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View v = LayoutInflater.from(context).inflate(R.layout.test_list_cardwiew,parent,false);
-            MoviesHolder mh = new MoviesHolder(v);
-            return mh;
+            return new MoviesHolder(v);
         }
 
         @Override
@@ -53,6 +52,8 @@ public class MovieAdapter {
 
             public MoviesHolder(View v) {
                 super(v);
+                context = v.getContext();
+
                 tvTitle = (TextView) v.findViewById(R.id.tvTitle);
                 tvOverview = (TextView) v.findViewById(R.id.tvOverView);
                 tvReleaseDate = (TextView) v.findViewById(R.id.tvReleaseDate);
