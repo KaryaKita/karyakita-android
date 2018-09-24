@@ -19,6 +19,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.customer.HomeCustomerActivity" />
-
     </application>
+
 </manifest>
