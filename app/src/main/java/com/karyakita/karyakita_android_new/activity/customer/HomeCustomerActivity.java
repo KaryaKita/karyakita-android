@@ -24,32 +24,43 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.karyakita.karyakita_android_new.R;
+import com.karyakita.karyakita_android_new.adapter.HomeCustomerAdapter;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class HomeCustomerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    CarouselView carouselView;
-    int[] sampleImages = {
-            R.drawable.image_1,
-            R.drawable.image_2,
-            R.drawable.image_3
-    };
+    @BindView(R.id.tab_home_customer) TabLayout tabHomeCustomer;
+    @BindView(R.id.view_pager_home_customer) ViewPager viewPagerHomeCustomer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_customer_activity);
-
-        carouselView = findViewById(R.id.carouselView_beranda);
-        carouselView.setPageCount(sampleImages.length);
-
-        carouselView.setImageListener(imageListener);
+        ButterKnife.bind(this);
 
         Toolbar toolbar = findViewById(R.id.toolbar_navigation);
         setSupportActionBar(toolbar);
 
+        setNavigationView(toolbar);
+        setFloatingActionButton();
+        setViewPager();
+    }
+
+    private void setViewPager() {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        HomeCustomerAdapter homeCustomerAdapter = new HomeCustomerAdapter(fragmentManager);
+        viewPagerHomeCustomer.setAdapter(homeCustomerAdapter);
+        viewPagerHomeCustomer.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabHomeCustomer));
+        tabHomeCustomer.setupWithViewPager(viewPagerHomeCustomer);
+        tabHomeCustomer.setTabsFromPagerAdapter(homeCustomerAdapter);
+    }
+
+    public void setNavigationView(Toolbar toolbar){
         DrawerLayout drawer = findViewById(R.id.drawer_layout_navigation);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -58,7 +69,9 @@ public class HomeCustomerActivity extends AppCompatActivity
 
         NavigationView navigationView = findViewById(R.id.nav_view_application);
         navigationView.setNavigationItemSelectedListener(this);
+    }
 
+    public void setFloatingActionButton(){
         FloatingActionButton fab = findViewById(R.id.fab_application);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,13 +81,6 @@ public class HomeCustomerActivity extends AppCompatActivity
             }
         });
     }
-
-    ImageListener imageListener = new ImageListener() {
-        @Override
-        public void setImageForPosition(int position, ImageView imageView) {
-            imageView.setImageResource(sampleImages[position]);
-        }
-    };
 
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
