@@ -6,4 +6,6 @@
     <string name="nav_header_subtitle">username@karyakita.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_cari">Cari</string>
+    <string name="username">Username</string>
+    <string name="title_activity_login">Sign in</string>
 </resources>
