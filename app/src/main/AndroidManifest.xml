@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.karyakita.karyakita_android_new">
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -13,16 +13,17 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".activity.SplashActivity"
-            android:theme="@style/AppTheme.SplashTheme">
-        </activity>
+            android:theme="@style/AppTheme.SplashTheme"></activity>
         <activity android:name=".activity.customer.HomeCustomerActivity" />
         <activity android:name=".activity.TestActivity">
+        </activity>
+        <activity android:name=".activity.MovieActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
+
 </manifest>
