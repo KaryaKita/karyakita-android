@@ -12,13 +12,16 @@
         <activity
             android:name=".activity.SplashActivity"
             android:theme="@style/AppTheme.SplashTheme">
+        </activity>
+        <activity android:name=".activity.customer.HomeCustomerActivity" />
+        <activity android:name=".activity.customer.DetailKaryaActivity" />
+        <activity android:name=".activity.MovieActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.customer.HomeCustomerActivity" />
-
     </application>
+
 </manifest>
