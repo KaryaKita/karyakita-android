@@ -9,7 +9,7 @@
             android:icon="@drawable/ic_beranda"
             android:title="@string/beranda_string" />
         <item
-            android:id="@+id/nav_kategori_customer"
+            android:id="@+id/nav_kategori_desain_customer"
             android:icon="@drawable/ic_kategori"
             android:title="@string/kategori_string"/>
         <item
