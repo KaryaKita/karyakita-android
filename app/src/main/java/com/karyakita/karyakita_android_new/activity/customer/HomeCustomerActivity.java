@@ -36,6 +36,10 @@ public class HomeCustomerActivity extends AppCompatActivity
 
     @BindView(R.id.tab_home_customer) TabLayout tabHomeCustomer;
     @BindView(R.id.view_pager_home_customer) ViewPager viewPagerHomeCustomer;
+    @BindView(R.id.drawer_layout_navigation) DrawerLayout drawerLayoutNavigation;
+    @BindView(R.id.nav_view_application) NavigationView navViewApplication;
+    @BindView(R.id.toolbar_navigation) Toolbar toolbarNavigation;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,10 +47,10 @@ public class HomeCustomerActivity extends AppCompatActivity
         setContentView(R.layout.home_customer_activity);
         ButterKnife.bind(this);
 
-        Toolbar toolbar = findViewById(R.id.toolbar_navigation);
-        setSupportActionBar(toolbar);
+//        Toolbar toolbar = findViewById(R.id.toolbar_navigation);
+        setSupportActionBar(toolbarNavigation);
 
-        setNavigationView(toolbar);
+        setNavigationView(toolbarNavigation);
         setFloatingActionButton();
         setViewPager();
     }
@@ -61,14 +65,13 @@ public class HomeCustomerActivity extends AppCompatActivity
     }
 
     public void setNavigationView(Toolbar toolbar){
-        DrawerLayout drawer = findViewById(R.id.drawer_layout_navigation);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
+//        DrawerLayout drawer = findViewById(R.id.drawer_layout_navigation);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayoutNavigation, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawerLayoutNavigation.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = findViewById(R.id.nav_view_application);
-        navigationView.setNavigationItemSelectedListener(this);
+//        NavigationView navigationView = findViewById(R.id.nav_view_application);
+        navViewApplication.setNavigationItemSelectedListener(this);
     }
 
     public void setFloatingActionButton(){
@@ -126,17 +129,17 @@ public class HomeCustomerActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_beranda_customer) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_kategori_customer) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_desainer_customer) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_pesanan_saya_customer) {
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_notifikasi_customer) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_keluar) {
 
         }
 

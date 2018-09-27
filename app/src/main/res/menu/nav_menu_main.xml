@@ -5,33 +5,37 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_home_black_24dp"
-            android:title="Beranda" />
+            android:id="@+id/nav_beranda_customer"
+            android:icon="@drawable/ic_beranda"
+            android:title="@string/beranda_string" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_format_list_bulleted_black_24dp"
-            android:title="Kategori" />
+            android:id="@+id/nav_kategori_customer"
+            android:icon="@drawable/ic_kategori"
+            android:title="@string/kategori_string"/>
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:id="@+id/nav_desainer_customer"
+            android:icon="@drawable/ic_designer"
+            android:title="@string/desainer_string" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/nav_pesanan_saya_customer"
+            android:icon="@drawable/ic_pesanan_saya"
+            android:title="@string/pesanan_saya_string" />
+        <item
+            android:id="@+id/nav_notifikasi_customer"
+            android:icon="@drawable/ic_notifikasi"
+            android:title="@string/notifikasi_string" />
     </group>
 
     <item android:title="Communicate">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:id="@+id/nav_akun_customer"
+                android:icon="@drawable/ic_akun"
+                android:title="@string/akun_string" />
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:id="@+id/nav_keluar"
+                android:icon="@drawable/ic_logout"
+                android:title="@string/keluar_string" />
         </menu>
     </item>
 
