@@ -21,7 +21,6 @@
             android:theme="@style/AppTheme.SplashTheme" />
         <activity android:name=".activity.customer.HomeCustomerActivity">
         </activity>
-        <activity android:name=".activity.TestActivity" />
         <activity android:name=".activity.MovieActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
