@@ -65,7 +65,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="20dp"
-                android:background="@color/white"/>
+                android:background="@drawable/button_radius"/>
 
             <TextView
                 android:id="@+id/email"
@@ -87,7 +87,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="20dp"
-                android:background="@color/white"/>
+                android:background="@drawable/button_radius"/>
 
             <TextView
                 android:id="@+id/password"
@@ -110,7 +110,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="20dp"
                 android:inputType="textPassword"
-                android:background="@color/white" />
+                android:background="@drawable/button_radius" />
 
             <TextView
                 android:id="@+id/konfirPassword"
@@ -132,7 +132,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="5dp"
-                android:background="@color/white"
+                android:background="@drawable/button_radius"
                 android:inputType="textPassword" />
 
             <TextView
@@ -155,7 +155,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="20dp"
-                android:background="@color/white"/>
+                android:background="@drawable/button_radius"/>
 
             <TextView
                 android:id="@+id/alamat"
@@ -177,7 +177,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="20dp"
-                android:background="@color/white"/>
+                android:background="@drawable/button_radius"/>
 
             <CheckBox
                 android:id="@+id/cekbox"
@@ -197,7 +197,9 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_below="@id/cekbox"
-                android:text="Masuk" />
+                style="@style/button_style"
+                android:text="Masuk"
+                android:textColor="@color/white"/>
         </LinearLayout>
 
     </ScrollView>
