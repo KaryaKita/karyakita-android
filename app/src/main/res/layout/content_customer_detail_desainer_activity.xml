@@ -72,7 +72,7 @@
                             android:id="@+id/textView3"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
-                            android:text="300 Subscriber" />
+                            android:text="30 Karya" />
 
                     </LinearLayout>
 
@@ -88,6 +88,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textColor="@color/white"
                     android:background="@color/ic_launcher_background"
                     android:text="Subscribe" />
 
@@ -105,8 +106,9 @@
             android:layout_width="206dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@color/secondColor"
-            android:text="Subscribe" />
+            android:background="@color/ic_launcher_background"
+            android:text="Pesan Sesuai Selera"
+            android:textColor="@color/white" />
 
     </LinearLayout>
 
@@ -201,6 +203,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
+        android:background="@color/mainColor"
+        android:textColor="@color/white"
         android:text="KEMBALI KE BERANDA" />
 
 </LinearLayout>
