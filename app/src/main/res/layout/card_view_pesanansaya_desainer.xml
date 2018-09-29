@@ -17,47 +17,57 @@
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="3dp"
+                android:layout_marginTop="5dp"
                 android:layout_weight="1"
                 android:text="Vecor art Arini"
+                android:textColor="@color/black"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginTop="3dp"
-                android:text="28 Desember 2018"/>
+                android:layout_marginTop="10dp"
+                android:text="28 Desember 2018"
+                android:textColor="@color/black"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
+                android:layout_marginTop="10dp"
                 android:text="A4 tanpa pigora"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:textColor="@color/black"/>
             
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:layout_marginTop="38dp">
+                android:layout_marginTop="30dp">
                 
                 <Button
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
                     android:layout_weight="1"
-                    android:text="Proses"/>
+                    android:layout_marginRight="5dp"
+                    android:text="Proses"
+                    android:drawableLeft="@drawable/ceklist_putih"
+                    style="@style/button_hijau"/>
 
                 <Button
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
                     android:layout_weight="1"
-                    android:text="Tolak"/>
+                    android:layout_marginLeft="5dp"
+                    android:text="Tolak"
+                    android:drawableLeft="@drawable/no_putih"
+                    style="@style/button_merah"/>
             </LinearLayout>
         </LinearLayout>
         
