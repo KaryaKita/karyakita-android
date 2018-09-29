@@ -6,4 +6,24 @@
     <string name="nav_header_subtitle">username@karyakita.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_cari">Cari</string>
+
+    <string-array name="kategori_desain">
+        <item>Pilih Kategori</item>
+        <item>Sketch</item>
+        <item>Vector</item>
+        <item>Mozaik</item>
+        <item>WPAP</item>
+    </string-array>
+
+    <string-array name="ukuran_desain">
+        <item>Pilih Ukuran</item>
+        <item>4R</item>
+        <item>10R</item>
+    </string-array>
+
+    <string-array name="opsi_desain">
+        <item>Pilih Opsi</item>
+        <item>Bingkai</item>
+        <item>Tanpa Bingkai</item>
+    </string-array>
 </resources>
