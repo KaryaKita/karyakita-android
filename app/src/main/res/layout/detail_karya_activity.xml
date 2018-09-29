@@ -93,79 +93,77 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
+                        android:layout_weight="3"
                         android:orientation="horizontal">
 
-                        <TableRow
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_weight="1">
 
-                            <LinearLayout
-                                android:layout_width="127dp"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical">
+                            <RatingBar
+                                android:id="@+id/rating"
+                                android:layout_marginTop="30dp"
+                                android:layout_marginLeft="25dp"
+                                android:layout_width="80dp"
+                                android:layout_height="wrap_content"
+                                style="?android:attr/ratingBarStyleSmall"
+                                android:numStars="5"
+                                android:stepSize="0.5"
+                                android:isIndicator="true"
+                                android:rating="3.5"/>
 
-                                <RatingBar
-                                    android:id="@+id/rating"
-                                    android:layout_marginTop="30dp"
-                                    android:layout_marginLeft="25dp"
-                                    android:layout_width="80dp"
-                                    android:layout_height="wrap_content"
-                                    style="?android:attr/ratingBarStyleSmall"
-                                    android:numStars="5"
-                                    android:stepSize="0.5"
-                                    android:isIndicator="true"
-                                    android:rating="3.5"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_gravity="center"
+                                android:text="100 Ulasan"/>
+                        </LinearLayout>
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="10dp"
-                                    android:layout_gravity="center"
-                                    android:text="100 Ulasan"/>
-                            </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_weight="1">
 
-                            <LinearLayout
-                                android:layout_width="127dp"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="27dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_forum_black_24dp"/>
 
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="27dp"
-                                    android:layout_gravity="center"
-                                    android:src="@drawable/ic_forum_black_24dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_gravity="center"
+                                android:text="124 Diskusi"/>
+                        </LinearLayout>
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="5dp"
-                                    android:layout_gravity="center"
-                                    android:text="124 Diskusi"/>
-                            </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_weight="1">
 
-                            <LinearLayout
-                                android:layout_width="127dp"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="27dp"
+                                android:src="@drawable/ic_mode_edit_black_24dp"/>
 
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:layout_marginTop="27dp"
-                                    android:src="@drawable/ic_mode_edit_black_24dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:text="3 Hari"/>
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:layout_marginTop="5dp"
-                                    android:text="3 Hari"/>
-
-                            </LinearLayout>
-
-                        </TableRow>
+                        </LinearLayout>
 
                     </LinearLayout>
 
@@ -217,14 +215,16 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_weight="2"
                     android:orientation="horizontal"
                     android:layout_marginTop="5dp">
 
                     <Button
-                        android:layout_width="157dp"
+                        android:layout_width="match_parent"
                         android:layout_height="35dp"
+                        android:layout_weight="1"
                         android:background="@drawable/button_rounded_green"
-                        android:layout_marginRight="4dp"
+                        android:layout_marginRight="10dp"
                         android:layout_marginLeft="20dp"
                         android:text="Kirim Pesan"
                         android:textColor="#FFFFF0"
@@ -233,6 +233,7 @@
                     <Button
                         android:layout_width="match_parent"
                         android:layout_height="35dp"
+                        android:layout_weight="1"
                         android:background="@drawable/button_rounded_red"
                         android:layout_marginRight="20dp"
                         android:layout_marginLeft="10dp"
