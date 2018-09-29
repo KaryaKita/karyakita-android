@@ -22,7 +22,7 @@ public class DetailKaryaActivity extends AppCompatActivity implements ITestView{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.content_detail_karya);
+        setContentView(R.layout.detail_karya_activity);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
     }
