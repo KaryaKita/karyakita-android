@@ -10,4 +10,7 @@
     <color name="mainColor">#113F4C</color>
     <color name="secondColor">#114b4c</color>
 
+    <color name="Putih">#ffffff</color>
+
+    <color name="grey">#c6c6c6</color>
 </resources>
