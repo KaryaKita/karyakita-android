@@ -6,4 +6,13 @@
     <string name="nav_header_subtitle">username@karyakita.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_cari">Cari</string>
+    <string name="username">Username</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="beranda_string">Beranda</string>
+    <string name="kategori_string">Kategori</string>
+    <string name="desainer_string">Desainer</string>
+    <string name="pesanan_saya_string">Pesanan Saya</string>
+    <string name="notifikasi_string">Notifikasi</string>
+    <string name="akun_string">Akun</string>
+    <string name="keluar_string">Keluar</string>
 </resources>
