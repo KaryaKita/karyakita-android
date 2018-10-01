@@ -3,9 +3,9 @@
 
     <item>
         <shape android:shape="rectangle">
-            <stroke android:color="#181818" android:width="0.8dp" />
+            <stroke android:color="#A9A9A9" android:width="0.8dp" />
             <!--corners allow us to make the rounded corners button-->
-            <corners android:radius="5dp" />
+
         </shape>
     </item>
 

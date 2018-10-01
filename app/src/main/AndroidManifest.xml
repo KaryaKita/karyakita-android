@@ -22,7 +22,8 @@
         </activity>
         <activity android:name=".activity.MovieActivity" />
         <activity android:name=".activity.customer.PesanCustomActivity" />
-        <activity android:name=".activity.customer.KonfirmasiDesainActivity"></activity>
+        <activity android:name=".activity.customer.KonfirmasiDesainActivity" />
+        <activity android:name=".activity.customer.TolakPesananActivity"></activity>
     </application>
 
 </manifest>
