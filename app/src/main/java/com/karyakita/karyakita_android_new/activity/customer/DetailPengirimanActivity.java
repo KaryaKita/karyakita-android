@@ -1,9 +1,11 @@
-package com.karyakita.karyakita_android_new;
+package com.karyakita.karyakita_android_new.activity.customer;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class activity_detail_pengiriman extends AppCompatActivity {
+import com.karyakita.karyakita_android_new.R;
+
+public class DetailPengirimanActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

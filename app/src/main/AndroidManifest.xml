@@ -29,13 +29,14 @@
             android:label="@string/title_activity_pesanan_saya_desainer" />
         <activity android:name=".activity.Register2Activity"></activity>
         <activity android:name=".activity.customer.DataPengirimanCustomerActivity">
+        </activity>
+        <activity android:name=".activity.customer.DetailPengirimanActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity_detail_pengiriman"></activity>
     </application>
 
 </manifest>
