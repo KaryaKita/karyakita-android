@@ -34,10 +34,11 @@
 
                 <Button
                     android:layout_width="200dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:layout_weight="1"
                     android:layout_marginRight="40dp"
-                    android:text="Cari"/>
+                    android:text="Cari"
+                    android:background="@drawable/spinner_rounded_border"/>
             </LinearLayout>
 
             <LinearLayout
@@ -131,7 +132,7 @@
                         android:layout_marginLeft="30dp"
                         android:text="Opsi"
                         android:textColor="#181818"
-                        android:textSize="20dp"
+                        android:textSize="16dp"
                         android:textStyle="bold"/>
 
                     <Spinner
@@ -159,7 +160,7 @@
                         android:layout_marginLeft="30dp"
                         android:text="Tanggal Deadline"
                         android:textColor="#181818"
-                        android:textSize="20dp"
+                        android:textSize="16dp"
                         android:textStyle="bold"/>
 
                     <Spinner
@@ -186,7 +187,7 @@
                         android:layout_marginLeft="30dp"
                         android:text="Catatan"
                         android:textColor="#181818"
-                        android:textSize="20dp"
+                        android:textSize="16dp"
                         android:textStyle="bold"/>
 
                     <EditText
