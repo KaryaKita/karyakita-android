@@ -26,4 +26,10 @@
         <item>Bingkai</item>
         <item>Tanpa Bingkai</item>
     </string-array>
+
+    <string-array name="kurir">
+        <item>JNE</item>
+        <item>J&T</item>
+        <item>Tiki</item>
+    </string-array>
 </resources>
