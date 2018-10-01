@@ -27,7 +27,7 @@ public class MovieAdapter {
 
         @Override
         public MoviesHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View v = LayoutInflater.from(context).inflate(R.layout.test_list_cardwiew,parent,false);
+            View v = LayoutInflater.from(context).inflate(R.layout.cardview_test_list,parent,false);
             return new MoviesHolder(v);
         }
 

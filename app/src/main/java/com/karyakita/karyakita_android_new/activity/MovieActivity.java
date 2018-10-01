@@ -1,6 +1,5 @@
 package com.karyakita.karyakita_android_new.activity;
 
-import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -23,7 +22,7 @@ public class MovieActivity extends AppCompatActivity implements ITestView, Navig
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.movie_activity);
+        setContentView(R.layout.activity_movie);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

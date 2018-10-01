@@ -31,7 +31,7 @@ public class HomeCustomerActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home_customer_activity);
+        setContentView(R.layout.activity_home_customer);
 
         carouselView = findViewById(R.id.carouselView_beranda);
         carouselView.setPageCount(sampleImages.length);

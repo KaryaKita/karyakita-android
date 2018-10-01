@@ -15,14 +15,15 @@
         <activity android:name=".activity.customer.HomeCustomerActivity" />
         <activity android:name=".activity.customer.DetailKaryaActivity">
 
-        </activity>
-        <activity android:name=".activity.MovieActivity" />
-        <activity android:name=".activity.customer.PesanCustomActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".activity.MovieActivity" />
+        <activity android:name=".activity.customer.PesanCustomActivity">
+
         </activity>
     </application>
 
