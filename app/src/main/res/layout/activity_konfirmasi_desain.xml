@@ -35,15 +35,24 @@
 
             </LinearLayout>
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="250dp"
-                android:background="@drawable/mesut_ozil"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="300dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/mesut_ozil"/>
+
+            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="5dp"
                 android:text="Catatan apabila ada revisi (Optional)"/>
 
             <EditText
