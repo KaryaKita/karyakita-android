@@ -36,7 +36,7 @@ public class PesananSayaDesainerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.pesanan_saya_desainer_activity);
+        setContentView(R.layout.activity_pesanan_saya_desainer);
 
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
