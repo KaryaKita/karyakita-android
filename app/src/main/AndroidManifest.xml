@@ -27,7 +27,6 @@
         <activity
             android:name=".activity.desainer.PesananSayaDesainerActivity"
             android:label="@string/title_activity_pesanan_saya_desainer" />
-        <activity android:name=".activity.Register2Activity"></activity>
         <activity android:name=".activity.customer.DataPengirimanCustomerActivity">
         </activity>
         <activity android:name=".activity.customer.DetailPengirimanActivity">

@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.karyakita.karyakita_android_new.R;
 
-public class Register2Activity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
