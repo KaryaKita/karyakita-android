@@ -23,13 +23,13 @@
         <!-- android:name=".activity.MainActivity" -->
         <!-- android:label="@string/app_name" -->
         <!-- android:theme="@style/AppTheme.NoActionBar" /> -->
-        <activity android:name=".activity.customer.HomeCustomerActivity" />
+        <activity android:name=".activity.customer.HomeCustomerActivity">
+
+        </activity>
         <activity
             android:name=".activity.desainer.PesananSayaDesainerActivity"
             android:label="@string/title_activity_pesanan_saya_desainer" />
-        <activity android:name=".activity.customer.DataPengirimanCustomerActivity">
-        </activity>
-        <activity android:name=".activity.customer.DetailPengirimanActivity">
+        <activity android:name=".activity.Register2Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
