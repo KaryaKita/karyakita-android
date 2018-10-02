@@ -5,11 +5,11 @@ import android.os.Bundle;
 
 import com.karyakita.karyakita_android_new.R;
 
-public class MovieActivity extends AppCompatActivity {
+public class Register2Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_movie);
+        setContentView(R.layout.register_activity);
     }
 }
