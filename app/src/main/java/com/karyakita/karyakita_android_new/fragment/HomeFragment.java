@@ -12,12 +12,6 @@ import android.widget.GridView;
 import com.karyakita.karyakita_android_new.R;
 
 public class HomeFragment extends Fragment {
-    int kategoris[] = {
-            R.drawable.doodle_art,
-            R.drawable.kaligrafi,
-            R.drawable.karikatur,
-            R.drawable.lettering
-    };
 
     GridView homeGrid;
 
