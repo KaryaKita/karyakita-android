@@ -10,8 +10,10 @@ import android.view.ViewGroup;
 import android.widget.GridView;
 
 import com.karyakita.karyakita_android_new.R;
+import com.karyakita.karyakita_android_new.model.MovieResponse;
+import com.karyakita.karyakita_android_new.view.ITestView;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements ITestView {
 
     GridView homeGrid;
 
@@ -20,9 +22,24 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home_customer, null);
         return view;
+    }
 
 
+    @Override
+    public void showToast(String s) {
 
     }
 
+    @Override
+    public void display(MovieResponse model) {
+
+    }
+
+    @Override
+    public void displayError(String s) {
+
+    }
+    private void setUpPresenter() {
+
+    }
 }
