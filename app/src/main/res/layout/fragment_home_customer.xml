@@ -10,14 +10,12 @@
         <android.support.v7.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
             <android.support.v7.widget.AppCompatImageView
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:src="@drawable/image_1"
-                />
+                android:src="@drawable/image_1"/>
 
             <TextView
                 android:id="@+id/textView3"
@@ -26,8 +24,19 @@
                 android:text="@string/kategori_string" />
 
             <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_kategori_home"
+                android:orientation="vertical"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="200dp"
+                android:layout_marginBottom="20dp">
+
+            </android.support.v7.widget.RecyclerView>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_image_home"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_marginTop="20dp">
 
             </android.support.v7.widget.RecyclerView>
 
