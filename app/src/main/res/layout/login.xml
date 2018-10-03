@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -17,28 +16,30 @@
         android:layout_marginTop="70dp"/>
 
     <EditText
+        android:id="@+id/tv1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:padding="15dp"
         android:background="@drawable/shapeemail"
         android:drawablePadding="10dp"
         android:hint="Username"
+        android:padding="15dp"
         android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textColorHighlight="@color/white"/>
+        android:textColorHighlight="@color/white"
+        android:textColorHint="@color/white" />
 
     <EditText
+        android:id="@+id/tv2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:padding="15dp"
         android:background="@drawable/shapeemail"
         android:drawablePadding="10dp"
         android:hint="Password"
+        android:padding="15dp"
         android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textColorHighlight="@color/white"/>
+        android:textColorHighlight="@color/white"
+        android:textColorHint="@color/white" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -66,15 +67,16 @@
 
     <Button
         android:layout_width="match_parent"
+        android:id="@+id/button1"
         android:layout_height="wrap_content"
-        android:text="Log In"
-        android:shadowColor="@android:color/transparent"
-        android:padding="15dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
         android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_marginTop="0dp"
-        android:background="@color/white" />
+        android:background="@color/white"
+        android:padding="15dp"
+        android:shadowColor="@android:color/transparent"
+        android:text="Log In" />
 
     <TextView
         android:layout_width="200dp"
