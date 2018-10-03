@@ -5,11 +5,11 @@ import android.os.Bundle;
 
 import com.karyakita.karyakita_android_new.R;
 
-public class KonfirmasiBayarActivity extends AppCompatActivity {
+public class CustomerKonfirmasiBayarActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.konfirmasi_bayar_activity);
+        setContentView(R.layout.customer_konfirmasi_bayar_activity);
     }
 }
