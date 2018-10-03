@@ -26,10 +26,9 @@
                 <android.support.v7.widget.Toolbar
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
+                    android:layout_height="?attr/actionBarSize   "
                     android:background="@color/mainColor"
                     app:popupTheme="@style/AppTheme.PopupOverlay" />
-
             </android.support.design.widget.AppBarLayout>
 
             <ImageView
@@ -232,8 +231,6 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-<<<<<<< HEAD
-=======
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -241,7 +238,6 @@
                 android:weightSum="2"
                 android:orientation="vertical"
                 android:layout_alignParentBottom="true"/>
->>>>>>> 8018fd0aead0c24e8abcd8925b900fad4d4aef36
 
                 <LinearLayout
                     android:layout_width="match_parent"

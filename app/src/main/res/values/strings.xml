@@ -43,19 +43,11 @@
         <item>Semolowaru</item>
     </array>
 
-    <array name="opsi_desain">
-        <item>Pilih Opsi Desain</item>
-        <item>Dengan Figura</item>
-        <item>Semolowaru</item>
-    </array>
-
     <array name="opsi_pengiriman">
         <item>Pilih Pengiriman</item>
         <item>JNE</item>
         <item>JNT</item>
     </array>
-
-<<<<<<< HEAD
     <array name="kategori_desain">
         <item>Pilih Kategori</item>
         <item>Doodle Art</item>
@@ -72,29 +64,18 @@
         <item>WPAP</item>
     </array>
 
-=======
     <array name="kurir">
         <item>Pilih Pengiriman</item>
         <item>JNE</item>
         <item>JNT</item>
     </array>
 
-    <array name="kategori_desain">
-        <item>Sketch</item>
-        <item>Mozaik</item>
-        <item>WPAP</item>
-    </array>
->>>>>>> 8018fd0aead0c24e8abcd8925b900fad4d4aef36
     <array name="ukuran_desain">
         <item>4R</item>
         <item>10R</item>
     </array>
-<<<<<<< HEAD
-=======
     <array name="opsi_desain">
         <item>Bingkai</item>
         <item>Tanpa Bingkai</item>
     </array>
-
->>>>>>> 8018fd0aead0c24e8abcd8925b900fad4d4aef36
 </resources>
