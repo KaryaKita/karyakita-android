@@ -25,12 +25,18 @@ import butterknife.ButterKnife;
 public class HomeCustomerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    @BindView(R.id.tab_home_customer) TabLayout tabHomeCustomer;
-    @BindView(R.id.view_pager_home_customer) ViewPager viewPagerHomeCustomer;
-    @BindView(R.id.drawer_layout_navigation) DrawerLayout drawerLayoutNavigation;
-    @BindView(R.id.nav_view_application) NavigationView navViewApplication;
-    @BindView(R.id.toolbar_navigation) Toolbar toolbarNavigation;
-    @BindView(R.id.fab_application) FloatingActionButton fabApplication;
+    @BindView(R.id.tab_home_customer)
+    TabLayout tabHomeCustomer;
+    @BindView(R.id.view_pager_home_customer)
+    ViewPager viewPagerHomeCustomer;
+    @BindView(R.id.drawer_layout_navigation)
+    DrawerLayout drawerLayoutNavigation;
+    @BindView(R.id.nav_view_application)
+    NavigationView navViewApplication;
+    @BindView(R.id.toolbar_navigation)
+    Toolbar toolbarNavigation;
+    @BindView(R.id.fab_application)
+    FloatingActionButton fabApplication;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +61,7 @@ public class HomeCustomerActivity extends AppCompatActivity
         tabHomeCustomer.setTabsFromPagerAdapter(homeCustomerAdapter);
     }
 
-    public void setNavigationView(Toolbar toolbar){
+    public void setNavigationView(Toolbar toolbar) {
 //        DrawerLayout drawer = findViewById(R.id.drawer_layout_navigation);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayoutNavigation, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayoutNavigation.addDrawerListener(toggle);
@@ -65,7 +71,7 @@ public class HomeCustomerActivity extends AppCompatActivity
         navViewApplication.setNavigationItemSelectedListener(this);
     }
 
-    public void setFloatingActionButton(){
+    public void setFloatingActionButton() {
 //        FloatingActionButton fab = findViewById(R.id.fab_application);
         fabApplication.setOnClickListener(new View.OnClickListener() {
             @Override
