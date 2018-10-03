@@ -19,4 +19,30 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+
+    <array name="opsi_provinsi">
+        <item>Pilih Provinsi</item>
+        <item>Jawa Timur</item>
+        <item>Jawa Barat</item>
+        <item>Jawa Tengah</item>
+    </array>
+
+    <array name="opsi_kabupaten">
+        <item>Pilih Kabupaten</item>
+        <item>Surabaya</item>
+        <item>Sidoarjo</item>
+        <item>Gresik</item>
+    </array>
+
+    <array name="opsi_kecamatan">
+        <item>Pilih Kecamatan</item>
+        <item>Sukolilo</item>
+        <item>Semolowaru</item>
+    </array>
+
+    <array name="opsi_pengiriman">
+        <item>Pilih Pengiriman</item>
+        <item>JNE</item>
+        <item>JNT</item>
+    </array>
 </resources>
