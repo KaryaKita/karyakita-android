@@ -9,31 +9,29 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.karyakita.karyakita_android_new.R;
+import com.karyakita.karyakita_android_new.model.MovieResponse;
+import com.karyakita.karyakita_android_new.view.ITestView;
 
-public class LoginActivity extends Activity  {
-    Button b1;
-    EditText ed1,ed2;
+public class LoginActivity extends Activity  implements ITestView{
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public void showToast(String s) {
 
-        b1 = (Button)findViewById(R.id.button1);
-        ed1 = (EditText)findViewById(R.id.tv1);
-        ed2 = (EditText)findViewById(R.id.tv2);
+    }
 
-        b1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(ed1.getText().toString().equals("customer") &&
-                        ed2.getText().toString().equals("customer")) {
-                    Toast.makeText(getApplicationContext(),
-                            "Redirecting...",Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(getApplicationContext(), "Wrong Credentials", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+    @Override
+    public void display(MovieResponse model) {
+
+    }
+
+    @Override
+    public void displayError(String s) {
+
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
     }
 }
