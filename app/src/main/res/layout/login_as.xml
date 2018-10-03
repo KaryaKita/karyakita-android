@@ -21,17 +21,20 @@
         android:layout_width="100dp"
         android:gravity="center"
         android:layout_height="50dp"
-        android:text="Login as :"
+        android:text="Login sebagai"
         android:textColor="@color/white"/>
 
     <android.support.v7.widget.AppCompatButton
-        android:layout_width="800dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
         android:text="Customer" />
 
     <android.support.v7.widget.AppCompatButton
-        android:layout_width="800dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Designer" />
+        android:text="Designer"
+        android:backgroundTint="@color/white"/>
+
 
 </android.support.v7.widget.LinearLayoutCompat>

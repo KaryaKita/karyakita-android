@@ -19,9 +19,9 @@ public class LoginActivity extends Activity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        b1 = (Button)findViewById(R.id.button);
-//        ed1 = (EditText)findViewById(R.id.editText);
-//        ed2 = (EditText)findViewById(R.id.editText2);
+        b1 = (Button)findViewById(R.id.button1);
+        ed1 = (EditText)findViewById(R.id.tv1);
+        ed2 = (EditText)findViewById(R.id.tv2);
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override

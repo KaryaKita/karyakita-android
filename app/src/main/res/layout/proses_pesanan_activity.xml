@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/mainColor"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="Detail Pesanan"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:fontFamily="@string/title_activity_login"
+                android:textSize="10pt"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/vecor1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="250dp"
+                    android:layout_height="match_parent"
+                    android:text="Nama Karya"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/dimens_16dp"
+                    android:fontFamily="@string/title_activity_login"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="WPAP"
+                    android:textColor="@color/mainColor"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/dimens_16dp"
+                    android:fontFamily="@string/title_activity_login"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="match_parent"
+                android:text="Deadline date"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimens_16dp"
+                android:fontFamily="@string/title_activity_login"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin" />
+
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="match_parent"
+                android:text="Alamat"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimens_16dp"
+                android:fontFamily="@string/title_activity_login"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

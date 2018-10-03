@@ -1,15 +1,15 @@
-package com.karyakita.karyakita_android_new.activity;
+package com.karyakita.karyakita_android_new.activity.customer;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.karyakita.karyakita_android_new.R;
 
-public class Register2Activity extends AppCompatActivity {
+public class DataPengirimanCustomerActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.register_activity);
+        setContentView(R.layout.activity_data_pengiriman_customer);
     }
 }
