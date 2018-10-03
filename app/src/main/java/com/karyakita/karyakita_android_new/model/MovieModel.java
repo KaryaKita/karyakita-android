@@ -14,7 +14,7 @@ public class MovieModel {
     @Expose
     private int total_results;
 
-    @SerializedName("pages")
+    @SerializedName("total_pages")
     @Expose
     private int total_pages;
 
@@ -23,6 +23,16 @@ public class MovieModel {
     private List<ResultModel> results;
 
     public MovieModel() {
+    }
+
+    public MovieModel(int page, int total_results, int total_pages) {
+        this.page = page;
+        this.total_results = total_results;
+        this.total_pages = total_pages;
+    }
+
+    public List<ResultModel> getResults() {
+        return results;
     }
 
     public void setPage(int page) {
@@ -51,17 +61,6 @@ public class MovieModel {
 
     public int getTotal_pages() {
         return total_pages;
-    }
-
-    public List<ResultModel> getResults() {
-        return results;
-    }
-
-    public MovieModel(int page, int total_results, int total_pages) {
-        this.page = page;
-        this.total_results = total_results;
-        this.total_pages = total_pages;
-        this.results = results;
     }
 
 }
