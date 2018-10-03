@@ -94,10 +94,7 @@
                                 android:textSize="20sp"
                                 android:text="Mesut Ozil"/>
 
-
                         </LinearLayout>
-
-
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -235,6 +232,16 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+<<<<<<< HEAD
+=======
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:orientation="vertical"
+                android:layout_alignParentBottom="true"/>
+>>>>>>> 8018fd0aead0c24e8abcd8925b900fad4d4aef36
 
                 <LinearLayout
                     android:layout_width="match_parent"

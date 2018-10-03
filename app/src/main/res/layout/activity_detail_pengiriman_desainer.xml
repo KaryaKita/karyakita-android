@@ -164,7 +164,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="32dp"
                     android:background="@drawable/rounded_border"
+<<<<<<< HEAD
                     android:entries="@array/opsi_pengiriman"></Spinner>
+=======
+                    android:entries="@array/kurir" />
+>>>>>>> 8018fd0aead0c24e8abcd8925b900fad4d4aef36
 
                 <LinearLayout
                     android:layout_width="match_parent"
