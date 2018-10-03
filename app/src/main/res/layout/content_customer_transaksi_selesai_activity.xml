@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="vertical">
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:text="Transaksi Anda Telah Selesai" />
+
+    <View
+        android:layout_gravity="center"
+        android:layout_width="250dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="45dp"
+        android:background="@android:color/darker_gray" />
+
+    <View
+        android:layout_gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="30dp"
+        android:background="@android:color/darker_gray" />
+
+    <View
+        android:layout_gravity="center"
+        android:layout_width="250dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="30dp"
+        android:background="@android:color/darker_gray" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
+        android:background="@color/colorAccent"
+        android:textColor="@color/white"
+        android:text="Berikan Rating" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="200dp"
+        android:background="@color/mainColor"
+        android:textColor="@color/white"
+        android:text="KEMBALI KE BERANDA" />
+
+</android.support.v7.widget.LinearLayoutCompat>
