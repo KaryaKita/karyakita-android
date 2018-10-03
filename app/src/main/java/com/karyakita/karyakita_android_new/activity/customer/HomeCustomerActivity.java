@@ -35,7 +35,7 @@ public class HomeCustomerActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home_customer_activity);
+        setContentView(R.layout.activity_home_customer);
         ButterKnife.bind(this);
 
 //        Toolbar toolbar = findViewById(R.id.toolbar_navigation);
