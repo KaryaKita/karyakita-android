@@ -199,7 +199,7 @@
                 android:layout_weight="1" />
 
             <ImageView
-                android:id="@+id/imageView6"
+                android:id="@+id/imageView8"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
@@ -219,14 +219,14 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/imageView6"
+                android:id="@+id/imageView9"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
                 android:layout_weight="1" />
 
             <ImageView
-                android:id="@+id/imageView6"
+                android:id="@+id/imageView10"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
