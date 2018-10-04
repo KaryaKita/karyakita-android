@@ -19,6 +19,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.customer.HomeCustomerActivity" />
-
+        <activity android:name=".activity.customer.CustomerPesanSelesaiActivity">
+        </activity>
+        <activity android:name=".activity.customer.CustomerTransaksiSelesaiActivity">
+        </activity>
+        <activity android:name=".activity.DesainerStatusOrderActivity">
+        </activity>
+        <activity android:name=".activity.customer.CustomerListKarya">
+        </activity>
     </application>
+
 </manifest>
