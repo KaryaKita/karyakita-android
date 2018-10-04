@@ -1,11 +1,10 @@
 package com.karyakita.karyakita_android_new.service;
 
-import com.karyakita.karyakita_android_new.model.LoginResultModel;
-import com.karyakita.karyakita_android_new.model.MovieResponse;
-import com.karyakita.karyakita_android_new.model.TestModel;
+import com.karyakita.karyakita_android_new.login.LoginResultModel;
+import com.karyakita.karyakita_android_new.example.MovieResponse;
+import com.karyakita.karyakita_android_new.example.TestModel;
 
 import java.util.List;
-import java.util.Observable;
 
 import retrofit2.Call;
 import retrofit2.http.Field;

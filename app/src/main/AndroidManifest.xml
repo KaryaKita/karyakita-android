@@ -17,11 +17,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activity.SplashActivity"
+            android:name=".customer.SplashActivity"
             android:theme="@style/AppTheme.SplashTheme" />
-        <activity android:name=".activity.customer.HomeCustomerActivity">
+        <activity android:name=".customer.home.HomeCustomerActivity">
         </activity>
-        <activity android:name=".activity.MovieActivity">
+        <activity android:name=".example.MovieActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
