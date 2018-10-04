@@ -4,207 +4,209 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.customer.DetailPengirimanDesainerActivity">
+    tools:context=".desainer.transaksi.DetailPengirimanDesainerActivity">
 
     <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".activity.MainActivity">
+        tools:context=".example.MainActivity">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-        <android.support.design.widget.AppBarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:theme="@style/AppTheme.AppBarOverlay">
-
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="@color/mainColor"
-                app:popupTheme="@style/AppTheme.PopupOverlay" />
-
-        </android.support.design.widget.AppBarLayout>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_arrow_back_black_24dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="15dp"/>
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <LinearLayout
+            <android.support.design.widget.AppBarLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="56dp"
-                android:orientation="vertical">
+                android:theme="@style/AppTheme.AppBarOverlay">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
-                    android:layout_marginBottom="5dp"
-                    android:text="Detail Pengiriman"
-                    android:textStyle="bold"
-                    android:textSize="20dp"/>
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@color/mainColor"
+                    app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+            </android.support.design.widget.AppBarLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/ic_arrow_back_black_24dp" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="56dp"
+                    android:orientation="vertical">
 
-                    <ImageView
+                    <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="150dp"
-                        android:layout_weight="1"
-                        android:src="@drawable/mesut_ozil"/>
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="25dp"
+                        android:text="Detail Pengiriman"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
 
                     <LinearLayout
-                        android:layout_width="150dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginLeft="30dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginTop="10dp"
-                        android:orientation="vertical"
-                        android:layout_gravity="center_vertical">
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="150dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/mesut_ozil" />
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
+                            android:layout_width="150dp"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Mozaik" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=" - " />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Wanita" />
+
+                            </LinearLayout>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Mozaik"/>
+                                android:layout_marginTop="5dp"
+                                android:text="Efriza Luluk Savira" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text=" - "/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Wanita"/>
-
+                                android:layout_marginTop="5dp"
+                                android:text="efriza8@gmail.com" />
                         </LinearLayout>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:text="Efriza Luluk Savira"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:text="efriza8@gmail.com"/>
                     </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_location_on_black_24dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Alamat Pengiriman" />
+
+                    </LinearLayout>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:background="@drawable/rounded_border" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_flight_black_24dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Jasa Pengiriman" />
+
+                    </LinearLayout>
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:background="@drawable/rounded_border"
+                        android:entries="@array/opsi_pengiriman">
+
+                    </Spinner>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_pin_drop_black_24dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="No. Resi" />
+
+                    </LinearLayout>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:background="@drawable/rounded_border" />
+
                 </LinearLayout>
+            </ScrollView>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_location_on_black_24dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Alamat Pengiriman"/>
-
-                </LinearLayout>
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:background="@drawable/rounded_border"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_flight_black_24dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Jasa Pengiriman"/>
-
-                </LinearLayout>
-
-                <Spinner
-                    android:layout_width="match_parent"
-                    android:layout_height="32dp"
-                    android:background="@drawable/rounded_border"
-                    android:entries="@array/kurir"></Spinner>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_pin_drop_black_24dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="No. Resi"/>
-
-                </LinearLayout>
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:background="@drawable/rounded_border"/>
-
-            </LinearLayout>
-        </ScrollView>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <Button
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:background="@color/mainColor"
-                android:textColor="#fff"
-                android:text="Konfirmassi Pengiriman Barang"/>
-        </RelativeLayout>
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/mainColor"
+                    android:text="Konfirmassi Pengiriman Barang"
+                    android:textColor="#fff" />
+            </RelativeLayout>
         </RelativeLayout>
     </android.support.design.widget.CoordinatorLayout>
 </android.support.constraint.ConstraintLayout>
