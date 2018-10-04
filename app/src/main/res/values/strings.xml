@@ -48,6 +48,21 @@
         <item>JNE</item>
         <item>JNT</item>
     </array>
+    <array name="kategori_desain">
+        <item>Pilih Kategori</item>
+        <item>Doodle Art</item>
+        <item>Kaligrafi</item>
+        <item>Karikatur</item>
+        <item>Lettering</item>
+        <item>Line Art</item>
+        <item>Mozaik Art</item>
+        <item>Original Character</item>
+        <item>Papercut</item>
+        <item>Siluet</item>
+        <item>Sketsa</item>
+        <item>Vector Art</item>
+        <item>WPAP</item>
+    </array>
 
     <array name="kurir">
         <item>Pilih Pengiriman</item>
@@ -55,11 +70,6 @@
         <item>JNT</item>
     </array>
 
-    <array name="kategori_desain">
-        <item>Sketch</item>
-        <item>Mozaik</item>
-        <item>WPAP</item>
-    </array>
     <array name="ukuran_desain">
         <item>4R</item>
         <item>10R</item>
@@ -68,5 +78,4 @@
         <item>Bingkai</item>
         <item>Tanpa Bingkai</item>
     </array>
-
 </resources>

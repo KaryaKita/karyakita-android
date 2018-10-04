@@ -1,11 +1,11 @@
 package com.karyakita.karyakita_android_new.service;
 
-import com.karyakita.karyakita_android_new.model.MovieResponse;
-import com.karyakita.karyakita_android_new.model.RegisterResultModel;
-import com.karyakita.karyakita_android_new.model.TestModel;
+import com.karyakita.karyakita_android_new.register.RegisterResultModel;
+import com.karyakita.karyakita_android_new.login.LoginResultModel;
+import com.karyakita.karyakita_android_new.example.MovieResponse;
+import com.karyakita.karyakita_android_new.example.TestModel;
 
 import java.util.List;
-import java.util.Observable;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -29,5 +29,9 @@ public interface IRestServices {
             @Field("confirmation") String confirmation,
             @Field("role_id") Integer role_id,
             @Field("nama") String nama);
+
+    @POST("user/login")
+    io.reactivex.Observable<LoginResultModel> login(@Field("email") String email,
+                                                    @Field("password") String password);
 
 }
