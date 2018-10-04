@@ -1,16 +1,16 @@
-package com.karyakita.karyakita_android_new.presenter;
+package com.karyakita.karyakita_android_new.customer.home;
 
 import android.util.Log;
 
+import com.karyakita.karyakita_android_new.base_class_interface.BaseModel;
 import com.karyakita.karyakita_android_new.base_class_interface.IMainPresenter;
+import com.karyakita.karyakita_android_new.example.ITestView;
 import com.karyakita.karyakita_android_new.model.KategoriKaryaResultModel;
 import com.karyakita.karyakita_android_new.service.IRestServices;
 import com.karyakita.karyakita_android_new.service.RetrofitHelper;
-import com.karyakita.karyakita_android_new.view.ITestView;
 
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
 import io.reactivex.observers.DisposableObserver;
 import io.reactivex.schedulers.Schedulers;
 
@@ -32,7 +32,7 @@ public class HomePresenter implements IMainPresenter {
         return new DisposableObserver<KategoriKaryaResultModel>() {
             @Override
             public void onNext(KategoriKaryaResultModel kategoriKaryaResultModel) {
-                Log.d(TAG,"OnNext"+kategoriKaryaResultModel.getMessage());
+                Log.d(TAG, "OnNext" + kategoriKaryaResultModel.getMessage());
 //                iTestView.display(kategoriKaryaResultModel.getMessage());
             }
 
@@ -54,11 +54,11 @@ public class HomePresenter implements IMainPresenter {
     }
 
     @Override
-    public void insert() {
+    public void insert(BaseModel model) {
 
     }
 
-    public Observable<KategoriKaryaResultModel> getObserver(){
+    public Observable<KategoriKaryaResultModel> getObserver() {
         return RetrofitHelper.getRetrofit().create(IRestServices.class)
                 .getKategoriKarya()
                 .subscribeOn(Schedulers.io())
