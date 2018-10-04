@@ -5,10 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.karyakita.karyakita_android_new.customer.home.DesainerFragment;
-import com.karyakita.karyakita_android_new.customer.home.HomeFragment;
-
-public class HomeCustomerAdapter extends FragmentStatePagerAdapter{
+public class HomeCustomerAdapter extends FragmentStatePagerAdapter {
 
 
     public HomeCustomerAdapter(FragmentManager fm) {

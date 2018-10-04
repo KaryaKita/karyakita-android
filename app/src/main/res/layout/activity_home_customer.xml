@@ -18,8 +18,8 @@
         <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:elevation="0dp"
-            android:theme="@style/AppTheme.AppBarOverlay">
+            android:theme="@style/AppTheme.AppBarOverlay"
+            app:elevation="0dp">
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar_navigation"
@@ -47,10 +47,10 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:fitsSystemWindows="true"
         android:background="@color/white"
-        app:itemTextColor="@color/black"
+        android:fitsSystemWindows="true"
         app:headerLayout="@layout/app_bar_nav_header"
+        app:itemTextColor="@color/black"
         app:menu="@menu/nav_menu_main" />
 
 </android.support.v4.widget.DrawerLayout>

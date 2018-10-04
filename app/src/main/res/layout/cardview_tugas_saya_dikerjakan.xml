@@ -1,46 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <android.support.v7.widget.LinearLayoutCompat
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="0dp">
+        android:layout_margin="0dp"
+        android:orientation="horizontal">
 
         <android.support.v7.widget.AppCompatImageView
             android:id="@+id/iv_tugas_saya_dikerjakan"
             android:layout_width="90dp"
             android:layout_height="90dp"
             android:layout_margin="5dp"
-            android:src="@drawable/mesut_ozil"
-            />
+            android:src="@drawable/mesut_ozil" />
+
         <android.support.v7.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:orientation="horizontal"
             android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:layout_weight="1">
+            android:paddingBottom="5dp">
+
             <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/tv_pesanan_dari"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
                 android:layout_weight="0.7"
-                android:text="Pesanan dari : Muhammad Alif"/>
+                android:text="Pesanan dari : Muhammad Alif"
+                android:textStyle="bold" />
 
             <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/tv_nama_kategori_tugas_saya"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="WPAP"
-                android:layout_weight="0.3"
                 android:layout_gravity="start|end"
-                />
+                android:layout_weight="0.3"
+                android:text="WPAP" />
 
         </android.support.v7.widget.LinearLayoutCompat>
 

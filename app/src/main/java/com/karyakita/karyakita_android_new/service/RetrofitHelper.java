@@ -8,13 +8,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitHelper {
     public static Retrofit retrofit;
 
-    public void NetworkClient(){
+    public void NetworkClient() {
 
     }
 
-    public static Retrofit getRetrofit(){
+    public static Retrofit getRetrofit() {
 
-        if(retrofit==null){
+        if (retrofit == null) {
             OkHttpClient.Builder builder = new OkHttpClient.Builder();
             OkHttpClient okHttpClient = builder.build();
 
