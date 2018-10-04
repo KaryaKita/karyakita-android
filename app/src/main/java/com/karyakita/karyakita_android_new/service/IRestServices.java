@@ -4,10 +4,7 @@ import com.karyakita.karyakita_android_new.register.RegisterResultModel;
 import com.karyakita.karyakita_android_new.login.LoginResultModel;
 import com.karyakita.karyakita_android_new.example.MovieResponse;
 import com.karyakita.karyakita_android_new.example.TestModel;
-import com.karyakita.karyakita_android_new.model.KategoriKaryaModel;
 import com.karyakita.karyakita_android_new.model.KategoriKaryaResultModel;
-import com.karyakita.karyakita_android_new.model.MovieResponse;
-import com.karyakita.karyakita_android_new.model.TestModel;
 
 import java.util.List;
 
