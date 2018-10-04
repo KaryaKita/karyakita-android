@@ -5,5 +5,5 @@ public interface IMainPresenter {
 
     void update();
 
-    void insert();
+    void insert(BaseModel model);
 }

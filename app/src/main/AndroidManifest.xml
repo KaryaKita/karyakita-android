@@ -19,8 +19,7 @@
         <activity
             android:name=".activity.SplashActivity"
             android:theme="@style/AppTheme.SplashTheme" />
-        <activity android:name=".activity.customer.HomeCustomerActivity">
-        </activity>
+        <activity android:name=".activity.customer.HomeCustomerActivity"></activity>
         <activity android:name=".activity.TestActivity" />
         <activity android:name=".activity.MovieActivity">
             <intent-filter>
@@ -29,6 +28,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.desainer.RegisterAsActivity"></activity>
     </application>
 
 </manifest>
