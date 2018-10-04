@@ -25,7 +25,7 @@ public class HomePresenter implements IMainPresenter {
 
     @Override
     public void get() {
-        getObservable().subscribeWith(getObserver());
+//        getObservable().subscribeWith(getObserver());
     }
 
     private DisposableObserver<KategoriKaryaResultModel> getObservable() {
@@ -33,7 +33,7 @@ public class HomePresenter implements IMainPresenter {
             @Override
             public void onNext(KategoriKaryaResultModel kategoriKaryaResultModel) {
                 Log.d(TAG,"OnNext"+kategoriKaryaResultModel.getMessage());
-                iTestView.display(kategoriKaryaResultModel);
+//                iTestView.display(kategoriKaryaResultModel.getMessage());
             }
 
             @Override
