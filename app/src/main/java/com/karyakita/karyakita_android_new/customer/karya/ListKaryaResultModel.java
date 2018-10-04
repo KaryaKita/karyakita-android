@@ -1,48 +1,45 @@
-package com.karyakita.karyakita_android_new.model;
+package com.karyakita.karyakita_android_new.customer.karya;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-import com.karyakita.karyakita_android_new.base_class_interface.BaseModel;
-import com.karyakita.karyakita_android_new.model.KategoriKaryaModel;
 
 import java.util.List;
 
-public class KategoriKaryaResultModel extends BaseModel {
+public class ListKaryaResultModel {
     @SerializedName("success")
     @Expose
-    private Integer success;
-
+    private Boolean success;
 
     @SerializedName("data")
     @Expose
-    private List<KategoriKaryaModel> data;
+    private List<ListKaryaModel> data;
 
     @SerializedName("message")
     @Expose
     private String message;
 
-    public KategoriKaryaResultModel(Integer success, List<KategoriKaryaModel> data, String message) {
+    public ListKaryaResultModel(Boolean success, List<ListKaryaModel> data, String message) {
         this.success = success;
         this.data = data;
         this.message = message;
     }
 
-    public KategoriKaryaResultModel() {
+    public ListKaryaResultModel() {
     }
 
-    public Integer getSuccess() {
+    public Boolean getSuccess() {
         return success;
     }
 
-    public void setSuccess(Integer success) {
+    public void setSuccess(Boolean success) {
         this.success = success;
     }
 
-    public List<KategoriKaryaModel> getData() {
+    public List<ListKaryaModel> getData() {
         return data;
     }
 
-    public void setData(List<KategoriKaryaModel> data) {
+    public void setData(List<ListKaryaModel> data) {
         this.data = data;
     }
 
