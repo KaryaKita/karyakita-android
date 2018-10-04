@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,11 +8,12 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
             android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
             android:layout_marginRight="30dp"
             android:orientation="vertical">
 
@@ -25,13 +25,13 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/ic_image_black_24dp"/>
+                    android:background="@drawable/ic_image_black_24dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:text="Hasil Desain"/>
+                    android:text="Hasil Desain" />
 
             </LinearLayout>
 
@@ -45,7 +45,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="300dp"
                     android:layout_weight="1"
-                    android:src="@drawable/mesut_ozil"/>
+                    android:src="@drawable/mesut_ozil" />
 
             </LinearLayout>
 
@@ -53,13 +53,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="Catatan apabila ada revisi (Optional)"/>
+                android:text="Catatan apabila ada revisi (Optional)" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="190dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/spinner_rounded_border"/>
+                android:background="@drawable/spinner_rounded_border" />
 
         </LinearLayout>
     </ScrollView>
@@ -71,29 +71,29 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:weightSum="2"
+            android:layout_alignParentBottom="true"
             android:orientation="horizontal"
-            android:layout_alignParentBottom="true">
-            
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Revisi"
-                android:layout_weight="1"
-                android:background="@color/mainColor"
-                android:textColor="#fff"/>
-            
-            <View
-                android:layout_width="1.5dp"
-                android:layout_height="match_parent"/>
+            android:weightSum="2">
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Konfirmasi"
                 android:layout_weight="1"
                 android:background="@color/mainColor"
-                android:textColor="#fff"/>
+                android:text="Revisi"
+                android:textColor="#fff" />
+
+            <View
+                android:layout_width="1.5dp"
+                android:layout_height="match_parent" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/mainColor"
+                android:text="Konfirmasi"
+                android:textColor="#fff" />
         </LinearLayout>
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

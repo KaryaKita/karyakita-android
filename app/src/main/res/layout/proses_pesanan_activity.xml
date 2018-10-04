@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <ScrollView
@@ -15,18 +15,18 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="@color/mainColor"/>
+                android:background="@color/mainColor" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:fontFamily="@string/title_activity_login"
                 android:text="Detail Pesanan"
                 android:textColor="@color/black"
-                android:textStyle="bold"
-                android:fontFamily="@string/title_activity_login"
                 android:textSize="10pt"
-                android:layout_marginTop="@dimen/activity_horizontal_margin"
-                android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
+                android:textStyle="bold" />
 
             <ImageView
                 android:layout_width="match_parent"
@@ -41,45 +41,45 @@
                 <TextView
                     android:layout_width="250dp"
                     android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                    android:fontFamily="@string/title_activity_login"
                     android:text="Nama Karya"
                     android:textColor="@color/black"
-                    android:textStyle="bold"
                     android:textSize="@dimen/dimens_16dp"
-                    android:fontFamily="@string/title_activity_login"
-                    android:layout_marginTop="@dimen/activity_horizontal_margin"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                    android:fontFamily="@string/title_activity_login"
                     android:text="WPAP"
                     android:textColor="@color/mainColor"
-                    android:textStyle="bold"
                     android:textSize="@dimen/dimens_16dp"
-                    android:fontFamily="@string/title_activity_login"
-                    android:layout_marginTop="@dimen/activity_horizontal_margin"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin" />
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <TextView
                 android:layout_width="250dp"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:fontFamily="@string/title_activity_login"
                 android:text="Deadline date"
                 android:textColor="@color/black"
-                android:textSize="@dimen/dimens_16dp"
-                android:fontFamily="@string/title_activity_login"
-                android:layout_marginTop="@dimen/activity_horizontal_margin"
-                android:layout_marginLeft="@dimen/activity_horizontal_margin" />
+                android:textSize="@dimen/dimens_16dp" />
 
             <TextView
                 android:layout_width="250dp"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:fontFamily="@string/title_activity_login"
                 android:text="Alamat"
                 android:textColor="@color/black"
-                android:textSize="@dimen/dimens_16dp"
-                android:fontFamily="@string/title_activity_login"
-                android:layout_marginTop="@dimen/activity_horizontal_margin"
-                android:layout_marginLeft="@dimen/activity_horizontal_margin" />
+                android:textSize="@dimen/dimens_16dp" />
 
         </LinearLayout>
     </ScrollView>

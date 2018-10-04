@@ -4,6 +4,7 @@ import com.karyakita.karyakita_android_new.register.RegisterResultModel;
 import com.karyakita.karyakita_android_new.login.LoginResultModel;
 import com.karyakita.karyakita_android_new.example.MovieResponse;
 import com.karyakita.karyakita_android_new.example.TestModel;
+import com.karyakita.karyakita_android_new.model.KategoriKaryaResultModel;
 
 import java.util.List;
 
@@ -34,4 +35,6 @@ public interface IRestServices {
     io.reactivex.Observable<LoginResultModel> login(@Field("email") String email,
                                                     @Field("password") String password);
 
+    @GET("kategori_karya/get-all")
+    io.reactivex.Observable<KategoriKaryaResultModel> getKategoriKarya();
 }
