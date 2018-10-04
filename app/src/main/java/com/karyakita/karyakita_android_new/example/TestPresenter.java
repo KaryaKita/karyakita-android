@@ -8,6 +8,8 @@ import com.karyakita.karyakita_android_new.base_class_interface.IMainPresenter;
 import com.karyakita.karyakita_android_new.service.IRestServices;
 import com.karyakita.karyakita_android_new.service.RetrofitHelper;
 
+import java.util.Map;
+
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
@@ -33,7 +35,7 @@ public class TestPresenter implements IMainPresenter {
     }
 
     @Override
-    public void insert(BaseModel model) {
+    public void insert(Map<String, String> dataInput) {
 
     }
 
