@@ -10,10 +10,13 @@ import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.example.MovieResponse;
 import com.karyakita.karyakita_android_new.example.ITestView;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class LoginActivity extends AppCompatActivity implements ITestView{
+public class LoginActivity extends AppCompatActivity implements ILoginView{
     LoginPresenter loginPresenter = null;
     LoginModel loginModel = null;
 
@@ -35,7 +38,7 @@ public class LoginActivity extends AppCompatActivity implements ITestView{
     }
 
     @Override
-    public void display(MovieResponse model) {
+    public void display(LoginResultModel model) {
 
     }
 
@@ -50,6 +53,10 @@ public class LoginActivity extends AppCompatActivity implements ITestView{
     }
 
     private void setUpPresenter(){
+        Map<String, String> inputan = new HashMap<String, String>();
+        inputan.put("email", et_Username_login.getText().toString());
+        inputan.put("password", et_Password_login.getText().toString());
         loginPresenter = new LoginPresenter(this);
+        loginPresenter.insert(inputan);
     }
 }
