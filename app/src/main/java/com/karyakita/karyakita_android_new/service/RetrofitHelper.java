@@ -8,18 +8,18 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitHelper {
     public static Retrofit retrofit;
 
-    public void NetworkClient(){
+    public void NetworkClient() {
 
     }
 
-    public static Retrofit getRetrofit(){
+    public static Retrofit getRetrofit() {
 
-        if(retrofit==null){
+        if (retrofit == null) {
             OkHttpClient.Builder builder = new OkHttpClient.Builder();
             OkHttpClient okHttpClient = builder.build();
 
             retrofit = new Retrofit.Builder()
-                    .baseUrl("http://192.168.43.80:1773/api/v1/")
+                    .baseUrl("http://192.168.43.80:1337/api/v1/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .client(okHttpClient)

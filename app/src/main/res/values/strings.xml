@@ -6,7 +6,6 @@
     <string name="nav_header_subtitle">username@karyakita.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_cari">Cari</string>
-    <string name="username">Username</string>
     <string name="title_activity_login">Sign in</string>
     <string name="beranda_string">Beranda</string>
     <string name="kategori_string">Kategori</string>
@@ -15,4 +14,68 @@
     <string name="notifikasi_string">Notifikasi</string>
     <string name="akun_string">Akun</string>
     <string name="keluar_string">Keluar</string>
+    <string name="title_activity_pesanan_saya_desainer">PesananSayaDesainerActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="log_in">Log In</string>
+    <string name="don_t_have_account_sign_up">Don\'t have account? Sign Up</string>
+
+    <array name="opsi_provinsi">
+        <item>Pilih Provinsi</item>
+        <item>Jawa Timur</item>
+        <item>Jawa Barat</item>
+        <item>Jawa Tengah</item>
+    </array>
+
+    <array name="opsi_kabupaten">
+        <item>Pilih Kabupaten</item>
+        <item>Surabaya</item>
+        <item>Sidoarjo</item>
+        <item>Gresik</item>
+    </array>
+
+    <array name="opsi_kecamatan">
+        <item>Pilih Kecamatan</item>
+        <item>Sukolilo</item>
+        <item>Semolowaru</item>
+    </array>
+
+    <array name="opsi_pengiriman">
+        <item>Pilih Pengiriman</item>
+        <item>JNE</item>
+        <item>JNT</item>
+    </array>
+    <array name="kategori_desain">
+        <item>Pilih Kategori</item>
+        <item>Doodle Art</item>
+        <item>Kaligrafi</item>
+        <item>Karikatur</item>
+        <item>Lettering</item>
+        <item>Line Art</item>
+        <item>Mozaik Art</item>
+        <item>Original Character</item>
+        <item>Papercut</item>
+        <item>Siluet</item>
+        <item>Sketsa</item>
+        <item>Vector Art</item>
+        <item>WPAP</item>
+    </array>
+
+    <array name="kurir">
+        <item>Pilih Pengiriman</item>
+        <item>JNE</item>
+        <item>JNT</item>
+    </array>
+
+    <array name="ukuran_desain">
+        <item>4R</item>
+        <item>10R</item>
+    </array>
+    <array name="opsi_desain">
+        <item>Bingkai</item>
+        <item>Tanpa Bingkai</item>
+    </array>
 </resources>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/vecor1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="3"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:text="Vecor art Arini"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="28 Desember 2018"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="A4 tanpa pigora"
+                android:textColor="@color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_weight="2">
+
+                <Button
+                    style="@style/button_hijau"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/ceklist_putih"
+                    android:text="Proses" />
+
+                <Button
+                    style="@style/button_merah"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/no_putih"
+                    android:text="Tolak" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>
