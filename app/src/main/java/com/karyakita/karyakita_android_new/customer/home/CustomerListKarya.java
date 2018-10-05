@@ -4,10 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.karyakita.karyakita_android_new.R;
-import com.karyakita.karyakita_android_new.base_class_interface.BaseModel;
 import com.karyakita.karyakita_android_new.example.ITestView;
 import com.karyakita.karyakita_android_new.example.MovieResponse;
-import com.karyakita.karyakita_android_new.presenter.ListKaryaPresenter;
+import com.karyakita.karyakita_android_new.customer.karya.ListKaryaPresenter;
 
 import butterknife.ButterKnife;
 
