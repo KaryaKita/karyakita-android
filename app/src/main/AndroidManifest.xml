@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.karyakita.karyakita_android_new">
 
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <!-- To auto-complete the email text field in the activity_login form with the user's emails -->
@@ -18,19 +19,24 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".customer.SplashActivity"
-            android:theme="@style/AppTheme.SplashTheme" />
+            android:theme="@style/AppTheme.SplashTheme"/>
 
         <activity android:name=".customer.home.HomeCustomerActivity">
         </activity>
         <activity android:name=".example.MovieActivity">
 
+
+        </activity>
+        <activity android:name=".register_as.RegisterAsActivity">
+
+        </activity>
+
+        <activity android:name=".register.RegisterActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".register_as.RegisterAsActivity"></activity>
     </application>
-
 </manifest>

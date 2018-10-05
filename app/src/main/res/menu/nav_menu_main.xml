@@ -11,7 +11,7 @@
         <item
             android:id="@+id/nav_kategori_desain_customer"
             android:icon="@drawable/ic_kategori"
-            android:title="@string/kategori_string"/>
+            android:title="@string/kategori_string" />
         <item
             android:id="@+id/nav_desainer_customer"
             android:icon="@drawable/ic_designer"

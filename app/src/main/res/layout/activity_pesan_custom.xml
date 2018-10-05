@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".customer.transaksi.PesanCustomActivity">
 
-
     <ScrollView
+        android:id="@+id/pesan_custom"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/pesan_custom">
-
-
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -22,25 +18,25 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:orientation="horizontal"
                 android:layout_marginTop="30dp"
-                android:layout_weight="2">
+                android:layout_weight="2"
+                android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_marginRight="40dp"
                     android:layout_marginLeft="40dp"
-                    android:src="@drawable/mesut_ozil"/>
+                    android:layout_marginRight="40dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/mesut_ozil" />
 
                 <Button
                     android:layout_width="200dp"
                     android:layout_height="50dp"
-                    android:layout_weight="1"
                     android:layout_marginRight="40dp"
-                    android:text="Cari"
-                    android:background="@drawable/spinner_rounded_border"/>
+                    android:layout_weight="1"
+                    android:background="@drawable/spinner_rounded_border"
+                    android:text="Cari" />
             </LinearLayout>
 
             <LinearLayout
@@ -58,35 +54,34 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginLeft="30dp"
+                        android:layout_weight="1"
                         android:text="Kategori Desain"
                         android:textColor="#181818"
                         android:textSize="16dp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginRight="30dp"
+                        android:layout_weight="1"
                         android:orientation="vertical">
 
                         <Spinner
                             android:layout_width="180dp"
                             android:layout_height="40dp"
-                            android:entries="@array/kategori_desain"
                             android:layout_gravity="center"
-                            android:background="@drawable/spinner_rounded_border">
-                        </Spinner>
+                            android:background="@drawable/spinner_rounded_border"
+                            android:entries="@array/kategori_desain"></Spinner>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="Lama pengerjaan 5 hari"
-                            android:textSize="11dp"
-                            android:textColor="#FF0000"/>
+                            android:textColor="#FF0000"
+                            android:textSize="11dp" />
 
                     </LinearLayout>
 
@@ -95,109 +90,107 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="2"
                     android:layout_marginTop="30dp"
+                    android:layout_weight="2"
                     android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginLeft="30dp"
+                        android:layout_weight="1"
                         android:text="Ukuran"
                         android:textColor="#181818"
                         android:textSize="16dp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                     <Spinner
                         android:layout_width="180dp"
                         android:layout_height="40dp"
-                        android:layout_marginRight="30dp"
-                        android:entries="@array/ukuran_desain"
                         android:layout_gravity="center"
-                        android:background="@drawable/spinner_rounded_border">
-                    </Spinner>
+                        android:layout_marginRight="30dp"
+                        android:background="@drawable/spinner_rounded_border"
+                        android:entries="@array/ukuran_desain"></Spinner>
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="2"
                     android:layout_marginTop="30dp"
+                    android:layout_weight="2"
                     android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginLeft="30dp"
+                        android:layout_weight="1"
                         android:text="Opsi"
                         android:textColor="#181818"
                         android:textSize="16dp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                     <Spinner
                         android:layout_width="180dp"
                         android:layout_height="40dp"
-                        android:layout_marginRight="30dp"
-                        android:entries="@array/opsi_desain"
                         android:layout_gravity="center"
-                        android:background="@drawable/spinner_rounded_border">
-                    </Spinner>
+                        android:layout_marginRight="30dp"
+                        android:background="@drawable/spinner_rounded_border"
+                        android:entries="@array/opsi_desain"></Spinner>
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginTop="30dp"
                     android:layout_weight="2"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="30dp">
+                    android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginLeft="30dp"
+                        android:layout_weight="1"
                         android:text="Tanggal Deadline"
                         android:textColor="#181818"
                         android:textSize="16dp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                     <Spinner
                         android:id="@+id/Calendar"
                         android:layout_width="180dp"
                         android:layout_height="40dp"
-                        android:layout_marginRight="30dp"
                         android:layout_gravity="center"
-                        android:background="@drawable/spinner_rounded_border"/>
+                        android:layout_marginRight="30dp"
+                        android:background="@drawable/spinner_rounded_border" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginTop="30dp"
                     android:layout_weight="2"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="30dp">
+                    android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginLeft="30dp"
+                        android:layout_weight="1"
                         android:text="Catatan"
                         android:textColor="#181818"
                         android:textSize="16dp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                     <EditText
                         android:layout_width="180dp"
                         android:layout_height="120dp"
-                        android:layout_marginRight="30dp"
                         android:layout_gravity="center"
-                        android:background="@drawable/spinner_rounded_border"/>
+                        android:layout_marginRight="30dp"
+                        android:background="@drawable/spinner_rounded_border" />
 
                 </LinearLayout>
 
@@ -213,12 +206,11 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/mainColor"
             android:layout_alignParentBottom="true"
+            android:background="@color/mainColor"
             android:text="Lanjut"
-            android:textColor="#fff"/>
+            android:textColor="#fff" />
     </RelativeLayout>
-
 
 
 </android.support.constraint.ConstraintLayout>
