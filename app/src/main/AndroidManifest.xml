@@ -22,16 +22,20 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".customer.SplashActivity"
-            android:theme="@style/AppTheme.SplashTheme"/>
+            android:theme="@style/AppTheme.SplashTheme" />
 
-        <activity android:name=".customer.home.HomeCustomerActivity">
-        </activity>
+        <activity android:name=".customer.home.HomeCustomerActivity"></activity>
         <activity android:name=".example.MovieActivity">
 
 
         </activity>
         <activity android:name=".register_as.RegisterAsActivity"></activity>
+
         <activity android:name=".login.LoginActivity">
+
+        </activity>
+
+        <activity android:name=".register.RegisterActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

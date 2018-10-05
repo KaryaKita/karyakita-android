@@ -23,6 +23,7 @@ public interface IRestServices {
     @GET("discover/movie")
     io.reactivex.Observable<MovieResponse> getMovies(@Query("api_key") String api_key);
 
+    @FormUrlEncoded
     @POST("user/signup")
     io.reactivex.Observable<RegisterResultModel> register(
             @Field("username") String username,
