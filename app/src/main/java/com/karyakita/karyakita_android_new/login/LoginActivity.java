@@ -23,6 +23,7 @@ import butterknife.ButterKnife;
 public class LoginActivity extends AppCompatActivity implements ILoginView{
     LoginPresenter loginPresenter = null;
     LoginModel loginModel = null;
+    Integer role_id;
 
     @BindView(R.id.et_Username_login) EditText et_Username_login;
     @BindView(R.id.et_Password_login) EditText et_Password_login;
@@ -33,7 +34,8 @@ public class LoginActivity extends AppCompatActivity implements ILoginView{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
-
+        Bundle bundle = getIntent().getExtras();
+        role_id = bundle.getInt("role_id");
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -1,5 +1,7 @@
 package com.karyakita.karyakita_android_new.login;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -8,51 +10,36 @@ import android.widget.Button;
 
 import com.karyakita.karyakita_android_new.R;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
-public class LoginAsActivity extends AppCompatActivity implements ILoginView {
-    @BindView(R.id.btLoginCustomer) Button btLoginCustomer;
-    @BindView(R.id.btLoginDesigner) Button btLoginDesigner;
+public class LoginAsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        ButterKnife.bind(this);
+        setContentView(R.layout.activity_login_as);
 
-        btLoginCustomer.setOnClickListener(new View.OnClickListener() {
+        Button bLoginCustomer = (Button) findViewById(R.id.bt_login_customer);
+        Button bLoginDesigner = (Button) findViewById(R.id.bt_login_designer);
+
+        bLoginCustomer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //setUpPresenter();
+                Bundle bundle = new Bundle();
+                bundle.putInt("role_id", 3);
+                Intent intent =  new Intent(LoginAsActivity.this, LoginActivity.class);
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
 
-        btLoginDesigner.setOnClickListener(new View.OnClickListener() {
+        bLoginDesigner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //setUpPresenter();
+                Bundle bundle = new Bundle();
+                bundle.putInt("role_id", 2);
+                Intent intent =  new Intent(LoginAsActivity.this, LoginActivity.class);
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
-    }
-
-    @Override
-    public void showToast(String s) {
-
-    }
-
-    @Override
-    public void display(LoginResultModel model) {
-
-    }
-
-    @Override
-    public void displayError(String s) {
-
-    }
-
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
-
     }
 }
