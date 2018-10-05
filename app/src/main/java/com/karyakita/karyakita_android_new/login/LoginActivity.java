@@ -1,9 +1,13 @@
 package com.karyakita.karyakita_android_new.login;
 
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.karyakita.karyakita_android_new.R;
@@ -22,14 +26,20 @@ public class LoginActivity extends AppCompatActivity implements ILoginView{
 
     @BindView(R.id.et_Username_login) EditText et_Username_login;
     @BindView(R.id.et_Password_login) EditText et_Password_login;
+    @BindView(R.id.button1) Button button1;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_as);
+        setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
 
-        setUpPresenter();
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setUpPresenter();
+            }
+        });
     }
 
     @Override
@@ -39,7 +49,7 @@ public class LoginActivity extends AppCompatActivity implements ILoginView{
 
     @Override
     public void display(LoginResultModel model) {
-
+        Log.d("Result", model.getToken() + model.getData().getNama());
     }
 
     @Override

@@ -33,6 +33,7 @@ public interface IRestServices {
             @Field("role_id") Integer role_id,
             @Field("nama") String nama);
 
+    @FormUrlEncoded
     @POST("user/login")
     io.reactivex.Observable<LoginResultModel> login(@Field("email") String email,
                                                       @Field("password") String password);
