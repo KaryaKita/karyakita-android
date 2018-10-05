@@ -36,7 +36,8 @@ public interface IRestServices {
     @FormUrlEncoded
     @POST("user/login")
     io.reactivex.Observable<LoginResultModel> login(@Field("email") String email,
-                                                      @Field("password") String password);
+                                                      @Field("password") String password,
+                                                    @Field("role_id") Integer role_id);
 
     @GET("kategori_karya/get-all")
     io.reactivex.Observable<KategoriKaryaResultModel> getKategoriKarya();

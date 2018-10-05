@@ -35,7 +35,7 @@ public class RegisterActivity extends AppCompatActivity implements IRegisterView
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         ButterKnife.bind(this);
-        Bundle bundle = getIntent().getExtras();
+        final Bundle bundle = getIntent().getExtras();
         role_id = bundle.getInt("role_id");
         buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,6 +44,7 @@ public class RegisterActivity extends AppCompatActivity implements IRegisterView
                 Toast.makeText(getApplicationContext(), "Daftar Sukses", Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                intent.putExtras(bundle);
                 startActivity(intent);
             }
         });
