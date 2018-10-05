@@ -32,7 +32,13 @@
 
 
         </activity>
-        <activity android:name=".register_as.RegisterAsActivity"></activity>
+        <activity android:name=".register_as.RegisterAsActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <activity android:name=".login.LoginActivity">
 
@@ -40,11 +46,7 @@
 
         <activity android:name=".register.RegisterActivity">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
     </application>
