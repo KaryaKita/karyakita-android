@@ -38,10 +38,10 @@ public class ListKaryaPresenter implements IMainPresenter {
 
     }
 
-    @Override
-    public Observable<ListKaryaResultModel> getObservable() {
-        return RetrofitHelper.getRetrofit().create(IRestServices.class).getListKaryaByKategori().subscribeOn(Schedulers.io());
-    }
+//    @Override
+//    public Observable<ListKaryaResultModel> getObservable() {
+//        return RetrofitHelper.getRetrofit().create(IRestServices.class).getListKaryaByKategori().subscribeOn(Schedulers.io());
+//    }
 
 
 }

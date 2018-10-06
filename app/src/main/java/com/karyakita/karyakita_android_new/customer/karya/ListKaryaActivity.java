@@ -1,4 +1,4 @@
-package com.karyakita.karyakita_android_new.activity.customer;
+package com.karyakita.karyakita_android_new.customer.karya;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,7 +10,7 @@ import com.karyakita.karyakita_android_new.customer.karya.ListKaryaPresenter;
 
 import butterknife.ButterKnife;
 
-public class CustomerListKarya extends AppCompatActivity implements ITestView {
+public class ListKaryaActivity extends AppCompatActivity implements ITestView {
     ListKaryaPresenter listKaryaPresenter = null;
 
     @Override
