@@ -1,51 +1,35 @@
 package com.karyakita.karyakita_android_new.customer.home;
 
+import android.annotation.SuppressLint;
 import android.util.Log;
 
-import com.karyakita.karyakita_android_new.base_class_interface.BaseModel;
+import com.karyakita.karyakita_android_new.base_class_interface.GlobalVariable;
 import com.karyakita.karyakita_android_new.base_class_interface.IMainPresenter;
-import com.karyakita.karyakita_android_new.example.ITestView;
-import com.karyakita.karyakita_android_new.model.KategoriKaryaResultModel;
+import com.karyakita.karyakita_android_new.customer.karya.KategoriKaryaModel;
+import com.karyakita.karyakita_android_new.customer.karya.KategoriKaryaResultModel;
 import com.karyakita.karyakita_android_new.service.IRestServices;
 import com.karyakita.karyakita_android_new.service.RetrofitHelper;
+
+import java.util.Map;
 
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.observers.DisposableObserver;
 import io.reactivex.schedulers.Schedulers;
 
-import static android.support.constraint.Constraints.TAG;
-
 public class HomePresenter implements IMainPresenter {
-    ITestView iTestView;
+    IHomeView iHomeView;
+    KategoriKaryaModel kategoriKaryaModel;
 
-    public HomePresenter(ITestView iTestView) {
-        this.iTestView = iTestView;
+
+    public HomePresenter(IHomeView iHomeView) {
+        this.iHomeView = iHomeView;
     }
 
+    @SuppressLint("CheckResult")
     @Override
     public void get() {
-//        getObservable().subscribeWith(getObserver());
-    }
-
-    private DisposableObserver<KategoriKaryaResultModel> getObservable() {
-        return new DisposableObserver<KategoriKaryaResultModel>() {
-            @Override
-            public void onNext(KategoriKaryaResultModel kategoriKaryaResultModel) {
-                Log.d(TAG, "OnNext" + kategoriKaryaResultModel.getMessage());
-//                iTestView.display(kategoriKaryaResultModel.getMessage());
-            }
-
-            @Override
-            public void onError(Throwable e) {
-
-            }
-
-            @Override
-            public void onComplete() {
-
-            }
-        };
+        getObservable().subscribeWith(getObserver());
     }
 
     @Override
@@ -54,14 +38,35 @@ public class HomePresenter implements IMainPresenter {
     }
 
     @Override
-    public void insert(BaseModel model) {
+    public void insert(Map<String, String> dataInput) {
 
     }
 
-    public Observable<KategoriKaryaResultModel> getObserver() {
+    public Observable<KategoriKaryaResultModel> getObservable() {
         return RetrofitHelper.getRetrofit().create(IRestServices.class)
-                .getKategoriKarya()
+                .getKategoriKarya("Bearer " + GlobalVariable.TOKEN)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
+    }
+
+    private DisposableObserver<KategoriKaryaResultModel> getObserver() {
+        return new DisposableObserver<KategoriKaryaResultModel>() {
+            @Override
+            public void onNext(KategoriKaryaResultModel kategoriKaryaResultModel) {
+                Log.d("Log ", "OnNext" + kategoriKaryaResultModel.getData().get(0).getLocal_url());
+                iHomeView.display(kategoriKaryaResultModel);
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                e.printStackTrace();
+                iHomeView.displayError("error fetching kategori data");
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        };
     }
 }
