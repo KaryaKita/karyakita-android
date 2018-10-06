@@ -11,7 +11,6 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.karyakita.karyakita_android_new.R;
-import com.karyakita.karyakita_android_new.example.Result;
 
 import java.util.List;
 
@@ -23,9 +22,6 @@ public class KategoriKaryaAdapter extends RecyclerView.Adapter<KategoriKaryaAdap
     public KategoriKaryaAdapter(List<KategoriKaryaModel> kategoriKaryaModelList, Context context) {
         this.kategoriKaryaModelList = kategoriKaryaModelList;
         this.context = context;
-    }
-
-    public KategoriKaryaAdapter() {
     }
 
     @NonNull
@@ -52,6 +48,7 @@ public class KategoriKaryaAdapter extends RecyclerView.Adapter<KategoriKaryaAdap
 
     public class Holder extends RecyclerView.ViewHolder {
         ImageView iv_image_kategori_home;
+
         public Holder(View itemView) {
             super(itemView);
             context = itemView.getContext();
