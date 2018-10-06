@@ -1,4 +1,4 @@
-package com.karyakita.karyakita_android_new.activity.customer;
+package com.karyakita.karyakita_android_new.customer.home;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
