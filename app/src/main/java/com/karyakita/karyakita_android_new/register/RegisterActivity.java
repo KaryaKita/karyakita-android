@@ -28,12 +28,15 @@ public class RegisterActivity extends AppCompatActivity implements IRegisterView
     @BindView(R.id.textViewKonfirPassword) EditText textViewKonfirPassword;
     @BindView(R.id.textViewUsername) EditText textViewUsername;
     @BindView(R.id.buttonRegister) Button buttonRegister;
+    Integer role_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         ButterKnife.bind(this);
+        final Bundle bundle = getIntent().getExtras();
+        role_id = bundle.getInt("role_id");
         buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,6 +45,7 @@ public class RegisterActivity extends AppCompatActivity implements IRegisterView
 
                 finish();
                 Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                intent.putExtras(bundle);
                 startActivity(intent);
             }
         });
@@ -69,6 +73,7 @@ public class RegisterActivity extends AppCompatActivity implements IRegisterView
         inputan.put("password", textViewPassword.getText().toString());
         inputan.put("konfirpassword", textViewKonfirPassword.getText().toString());
         inputan.put("username", textViewUsername.getText().toString());
+        inputan.put("role_id", role_id.toString());
 
         registerPresenter = new RegisterPresenter(this);
         registerPresenter.insert(inputan);
