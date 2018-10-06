@@ -42,7 +42,7 @@ public class HomeFragment extends Fragment implements IHomeView {
 
     @Override
     public void showToast(String str) {
-        Toast.makeText(getContext().getApplicationContext(), str, Toast.LENGTH_LONG).show();
+//        Toast.makeText(getContext().getApplicationContext(), str, Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -69,7 +69,7 @@ public class HomeFragment extends Fragment implements IHomeView {
 
     @Override
     public void displayError(String s) {
-        showToast(s);
+//        showToast(s);
     }
 
     private void setUpPresenter() {
