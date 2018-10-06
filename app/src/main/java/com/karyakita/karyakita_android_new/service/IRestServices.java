@@ -1,17 +1,17 @@
 package com.karyakita.karyakita_android_new.service;
 
-import com.karyakita.karyakita_android_new.customer.karya.KategoriKaryaResultModel;
 import com.karyakita.karyakita_android_new.example.MovieResponse;
 import com.karyakita.karyakita_android_new.example.TestModel;
 import com.karyakita.karyakita_android_new.login.LoginResultModel;
+import com.karyakita.karyakita_android_new.customer.karya.KategoriKaryaResultModel;
 import com.karyakita.karyakita_android_new.register.RegisterResultModel;
 
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
-import retrofit2.http.Header;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
@@ -23,7 +23,8 @@ public interface IRestServices {
     @GET("discover/movie")
     io.reactivex.Observable<MovieResponse> getMovies(@Query("api_key") String api_key);
 
-    @POST("user/signup")
+    @FormUrlEncoded
+    @POST("signup")
     io.reactivex.Observable<RegisterResultModel> register(
             @Field("username") String username,
             @Field("email") String email,
@@ -32,11 +33,17 @@ public interface IRestServices {
             @Field("role_id") Integer role_id,
             @Field("nama") String nama);
 
+    @FormUrlEncoded
     @POST("user/login")
     io.reactivex.Observable<LoginResultModel> login(@Field("email") String email,
-                                                    @Field("password") String password,
+                                                      @Field("password") String password,
                                                     @Field("role_id") Integer role_id);
 
     @GET("kategori_karya/get-all")
-    io.reactivex.Observable<KategoriKaryaResultModel> getKategoriKarya(@Header("Authorization") String bearer);
+    io.reactivex.Observable<KategoriKaryaResultModel> getKategoriKarya();
+
+    @GET("karya/get-by-kategori/kategori_id")
+    io.reactivex.Observable<ListKaryaResultModel>getListKaryaByKategori(@Path("kategori_id")Integer kategori_id);
+
+
 }
