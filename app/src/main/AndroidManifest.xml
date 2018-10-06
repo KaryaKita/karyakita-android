@@ -40,6 +40,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".example.MovieActivity" />
+        <activity android:name=".customer.karya.ListKaryaActivity"/>
+        <activity android:name=".customer.karya.DetailKaryaActivity"/>
     </application>
 
 </manifest>
