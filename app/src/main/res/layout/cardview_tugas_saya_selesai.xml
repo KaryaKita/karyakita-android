@@ -13,7 +13,7 @@
             android:layout_width="90dp"
             android:layout_height="90dp"
             android:layout_margin="5dp"
-            android:src="@drawable/mesut_ozil" />
+            android:src="@drawable/image_asset_4" />
 
         <android.support.v7.widget.LinearLayoutCompat
             android:layout_width="match_parent"
