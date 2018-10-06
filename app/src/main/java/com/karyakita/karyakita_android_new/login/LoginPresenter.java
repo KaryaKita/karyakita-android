@@ -48,8 +48,11 @@ public class LoginPresenter implements IMainPresenter{
     }
 
     public Observable<LoginResultModel> getObservable() {
+        Log.d(TAG   , "Berhasil joss");
         return RetrofitHelper.getRetrofit().create(IRestServices.class)
-                .login(this.input.get("email"), this.input.get("password"))
+                .login(this.input.get("email"),
+                        this.input.get("password"),
+                        Integer.parseInt(this.input.get("role_id")))
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }
@@ -60,6 +63,7 @@ public class LoginPresenter implements IMainPresenter{
             @Override
             public void onNext(@NonNull LoginResultModel loginResultModel) {
                 iLoginView.display(loginResultModel);
+                iLoginView.showToast(loginResultModel.getMessage());
                 Log.d(TAG, "Success");
             }
 

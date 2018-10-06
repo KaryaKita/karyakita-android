@@ -24,7 +24,7 @@ public interface IRestServices {
     io.reactivex.Observable<MovieResponse> getMovies(@Query("api_key") String api_key);
 
     @FormUrlEncoded
-    @POST("user/signup")
+    @POST("signup")
     io.reactivex.Observable<RegisterResultModel> register(
             @Field("username") String username,
             @Field("email") String email,
@@ -33,9 +33,11 @@ public interface IRestServices {
             @Field("role_id") Integer role_id,
             @Field("nama") String nama);
 
+    @FormUrlEncoded
     @POST("user/login")
     io.reactivex.Observable<LoginResultModel> login(@Field("email") String email,
-                                                      @Field("password") String password);
+                                                      @Field("password") String password,
+                                                    @Field("role_id") Integer role_id);
 
     @GET("kategori_karya/get-all")
     io.reactivex.Observable<KategoriKaryaResultModel> getKategoriKarya();

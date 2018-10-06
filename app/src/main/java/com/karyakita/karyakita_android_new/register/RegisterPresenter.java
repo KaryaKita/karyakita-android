@@ -46,12 +46,20 @@ public class RegisterPresenter implements IMainPresenter {
     @Override
     public void insert(Map<String, String> dataInput) {
         this.input = dataInput;
+        Log.d(TAG,"Melbu");
         getObservable().subscribeWith(getObserver());
+
     }
 
     public Observable<RegisterResultModel> getObservable(){
+        Log.d(TAG,"Melbu Obsarvabel");
         return RetrofitHelper.getRetrofit().create(IRestServices.class)
-                .register(this.input.get("username"),this.input.get("email"), this.input.get("password"),  this.input.get("konfirpassword"), 2,  this.input.get("nama"))
+                .register(this.input.get("username"),
+                        this.input.get("email"),
+                        this.input.get("password"),
+                        this.input.get("konfirpassword"),
+                        Integer.parseInt(this.input.get("role_id")),
+                        this.input.get("nama"))
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }

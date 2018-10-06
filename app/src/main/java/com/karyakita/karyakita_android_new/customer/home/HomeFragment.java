@@ -21,16 +21,16 @@ public class HomeFragment extends Fragment implements ITestView {
 
     HomePresenter homePresenter = null;
 
-    @BindView(R.id.rv_kategori_home)
     RecyclerView rv_kategori_home;
 
-    @BindView(R.id.rv_image_home)
     RecyclerView rv_image_home;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home_customer, null);
+
+        rv_kategori_home = (RecyclerView) view.findViewById(R.id.rv_kategori_home);
         setUpPresenter();
         setUpView();
         return view;
