@@ -40,6 +40,7 @@ public class RegisterActivity extends AppCompatActivity implements IRegisterView
                 setupPresenter();
                 Toast.makeText(getApplicationContext(), "Daftar Sukses", Toast.LENGTH_SHORT).show();
 
+                finish();
                 Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
