@@ -1,16 +1,17 @@
 package com.karyakita.karyakita_android_new.service;
 
-import com.karyakita.karyakita_android_new.register.RegisterResultModel;
-import com.karyakita.karyakita_android_new.login.LoginResultModel;
+import com.karyakita.karyakita_android_new.customer.karya.KategoriKaryaResultModel;
 import com.karyakita.karyakita_android_new.example.MovieResponse;
 import com.karyakita.karyakita_android_new.example.TestModel;
-import com.karyakita.karyakita_android_new.model.KategoriKaryaResultModel;
+import com.karyakita.karyakita_android_new.login.LoginResultModel;
+import com.karyakita.karyakita_android_new.register.RegisterResultModel;
 
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
@@ -36,5 +37,5 @@ public interface IRestServices {
                                                     @Field("password") String password);
 
     @GET("kategori_karya/get-all")
-    io.reactivex.Observable<KategoriKaryaResultModel> getKategoriKarya();
+    io.reactivex.Observable<KategoriKaryaResultModel> getKategoriKarya(@Header("Authorization") String bearer);
 }
