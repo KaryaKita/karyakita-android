@@ -22,18 +22,40 @@
         android:textColor="@color/white" />
 
     <android.support.v7.widget.AppCompatButton
-        android:id="@+id/register_as_customer"
+        android:id="@+id/bt_regis_customer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
         android:text="Customer" />
 
     <android.support.v7.widget.AppCompatButton
-        android:id="@+id/register_as_desainer"
+        android:id="@+id/bt_regis_desainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
         android:text="Designer" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sudah Punya Akun?"
+            android:textColor="#fff"/>
+
+        <TextView
+            android:id="@+id/masukAkun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Masuk"
+            android:textColor="#fff"
+            android:textStyle="italic"/>
+
+    </LinearLayout>
 
 
 </android.support.v7.widget.LinearLayoutCompat>

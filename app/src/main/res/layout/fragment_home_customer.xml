@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingTop="?attr/actionBarSize">
+    android:layout_height="match_parent">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -15,33 +14,206 @@
 
             <android.support.v7.widget.AppCompatImageView
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:src="@drawable/image_1" />
+                android:layout_height="150dp"
+                android:src="@drawable/image_carousel_1" />
 
-            <TextView
+            <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:text="@string/kategori_string" />
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/rv_kategori_home"
+            <!--<android.support.v7.widget.RecyclerView-->
+            <!--android:id="@+id/rv_kategori_home"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="20dp"-->
+            <!--android:orientation="vertical">-->
+
+            <!--</android.support.v7.widget.RecyclerView>-->
+
+            <!--<android.support.v7.widget.RecyclerView-->
+            <!--android:id="@+id/rv_image_home"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="20dp">-->
+
+            <!--</android.support.v7.widget.RecyclerView>-->
+
+            <android.support.v7.widget.LinearLayoutCompat
                 android:layout_width="wrap_content"
-                android:layout_height="200dp"
-                android:layout_marginBottom="20dp"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="10dp">
 
-            </android.support.v7.widget.RecyclerView>
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="15">
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/rv_image_home"
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/kategori_doodle_art"
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_weight="5"
+                        android:src="@drawable/doodle_art" />
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/kategori_kaligrafi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_weight="5"
+                        android:src="@drawable/kaligrafi" />
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/kategori_karikatur"
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_weight="5"
+                        android:src="@drawable/karikatur" />
+
+                </android.support.v7.widget.LinearLayoutCompat>
+
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="15">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/kategori_lettering"
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_weight="5"
+                        android:src="@drawable/lettering" />
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/kategori_papercut"
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_weight="5"
+                        android:src="@drawable/papercut" />
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/kategori_wpap"
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_weight="5"
+                        android:src="@drawable/wpap" />
+                </android.support.v7.widget.LinearLayoutCompat>
+
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="20">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/kategori_line_art"
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_weight="5"
+                        android:src="@drawable/line_art" />
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/kategori_mozaik"
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_weight="5"
+                        android:src="@drawable/mozaik" />
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/kategori_origin_karakter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_weight="5"
+                        android:src="@drawable/origin_karakter" />
+
+                </android.support.v7.widget.LinearLayoutCompat>
+
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="20">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/kategori_siluet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_weight="5"
+                        android:src="@drawable/siluet" />
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/kategori_sketsa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_weight="5"
+                        android:src="@drawable/sketsa" />
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/kategori_vector_art"
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp"
+                        android:layout_weight="5"
+                        android:src="@drawable/vector_art" />
+
+
+                </android.support.v7.widget.LinearLayoutCompat>
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <android.support.v7.widget.LinearLayoutCompat
                 android:layout_width="wrap_content"
-                android:layout_height="200dp"
-                android:layout_marginTop="20dp">
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="10dp">
 
-            </android.support.v7.widget.RecyclerView>
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:orientation="horizontal"
+                    android:weightSum="10">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="135dp"
+                        android:layout_weight="5"
+                        android:src="@drawable/image_asset_1" />
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="135dp"
+                        android:layout_weight="5"
+                        android:src="@drawable/image_asset_2" />
+
+                </android.support.v7.widget.LinearLayoutCompat>
+
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:orientation="horizontal"
+                    android:weightSum="10">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="135dp"
+                        android:layout_weight="5"
+                        android:src="@drawable/image_asset_1" />
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="135dp"
+                        android:layout_weight="5"
+                        android:src="@drawable/image_asset_2" />
+
+                </android.support.v7.widget.LinearLayoutCompat>
+
+            </android.support.v7.widget.LinearLayoutCompat>
 
         </android.support.v7.widget.LinearLayoutCompat>
+
     </ScrollView>
 
 </android.support.v7.widget.LinearLayoutCompat>

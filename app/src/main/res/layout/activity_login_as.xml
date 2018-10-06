@@ -22,16 +22,42 @@
         android:textColor="@color/white" />
 
     <android.support.v7.widget.AppCompatButton
+        android:id="@+id/bt_login_customer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
         android:text="Customer" />
 
     <android.support.v7.widget.AppCompatButton
+        android:id="@+id/bt_login_designer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
         android:text="Designer" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Belum Punya Akun?"
+            android:textColor="#fff"/>
+
+        <TextView
+            android:id="@+id/addAkun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Daftar"
+            android:textColor="#fff"
+            android:textStyle="italic"/>
+
+    </LinearLayout>
+
+
 
 
 </android.support.v7.widget.LinearLayoutCompat>
