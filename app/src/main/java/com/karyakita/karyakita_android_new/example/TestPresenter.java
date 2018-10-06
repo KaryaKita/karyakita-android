@@ -1,6 +1,4 @@
 package com.karyakita.karyakita_android_new.example;
-
-
 import android.util.Log;
 
 import com.karyakita.karyakita_android_new.base_class_interface.BaseModel;
