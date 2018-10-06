@@ -35,5 +35,27 @@
         android:backgroundTint="@color/white"
         android:text="Designer" />
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sudah Punya Akun?"
+            android:textColor="#fff"/>
+
+        <TextView
+            android:id="@+id/masukAkun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Masuk"
+            android:textColor="#fff"
+            android:textStyle="italic"/>
+
+    </LinearLayout>
+
 
 </android.support.v7.widget.LinearLayoutCompat>

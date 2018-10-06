@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.karyakita.karyakita_android_new.R;
@@ -50,6 +51,8 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
                 setUpPresenter();
             }
         });
+
+
     }
 
     @Override
