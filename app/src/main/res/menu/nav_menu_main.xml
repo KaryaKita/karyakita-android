@@ -26,7 +26,7 @@
             android:title="@string/notifikasi_string" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Lainnya">
         <menu>
             <item
                 android:id="@+id/nav_akun_customer"

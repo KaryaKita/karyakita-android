@@ -1,30 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <android.support.v7.widget.FitWindowsLinearLayout
+    <android.support.v7.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="145dp"
+        android:layout_height="120dp"
         android:orientation="horizontal">
 
         <android.support.v7.widget.AppCompatImageView
             android:id="@+id/iv_gambar_karya"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="25dp"
-            android:background="@drawable/logo" />
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/vecor1" />
 
-
-        <LinearLayout
+        <android.support.v7.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="5dp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/iv_judul_karya"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
                 android:text="PINK VECTOR ART BROWN HAIR"
                 android:textStyle="bold" />
 
@@ -32,39 +35,36 @@
                 android:id="@+id/iv_category_karya"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="2dp"
+                android:layout_weight="1"
                 android:text="#VectorArt" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:orientation="horizontal"
-                android:layout_marginTop="60dp">
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="40dp"
+                android:orientation="horizontal">
 
                 <RatingBar
                     android:id="@+id/iv_rating_karya"
-                    style="?android:attr/ratingBarStyleSmall"
+                    style="@style/Base.Widget.AppCompat.RatingBar.Small"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
                     android:isIndicator="true"
                     android:numStars="5"
-                    android:rating="3.5"
-                    android:stepSize="0.5" />
+                    android:rating="5"
+                    android:stepSize="0.5"/>
 
                 <TextView
                     android:id="@+id/iv_harga"
-                    android:layout_width="26dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="85dp"
-                    android:layout_weight="1"
-                    android:text="Rp120.000"
+                    android:text="Rp.120.000,-"
+                    android:gravity="end"
                     android:textStyle="bold" />
-
             </LinearLayout>
+        </android.support.v7.widget.LinearLayoutCompat>
 
-        </LinearLayout>
-
-    </android.support.v7.widget.FitWindowsLinearLayout>
+    </android.support.v7.widget.LinearLayoutCompat>
 </android.support.v7.widget.CardView>

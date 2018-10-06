@@ -34,7 +34,17 @@ public class KategoriKaryaModel extends BaseModel {
     @Expose
     private Integer filesize;
 
-    public KategoriKaryaModel(String createdAt, String updatedAt, Integer id, String kategori, String path, String filename, Integer filesize) {
+    @SerializedName("local_url")
+    @Expose
+    private Integer local_url;
+
+    @SerializedName("deploy_url")
+    @Expose
+    private Integer deploy_url;
+
+
+    public KategoriKaryaModel(String createdAt, String updatedAt, Integer id, String kategori,
+                              String path, String filename, Integer filesize, Integer local_url, Integer deploy_url) {
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.id = id;
@@ -42,6 +52,8 @@ public class KategoriKaryaModel extends BaseModel {
         this.path = path;
         this.filename = filename;
         this.filesize = filesize;
+        this.local_url = local_url;
+        this.deploy_url = deploy_url;
     }
 
     public KategoriKaryaModel() {
@@ -101,5 +113,21 @@ public class KategoriKaryaModel extends BaseModel {
 
     public void setFilesize(Integer filesize) {
         this.filesize = filesize;
+    }
+
+    public Integer getLocal_url() {
+        return local_url;
+    }
+
+    public void setLocal_url(Integer local_url) {
+        this.local_url = local_url;
+    }
+
+    public Integer getDeploy_url() {
+        return deploy_url;
+    }
+
+    public void setDeploy_url(Integer deploy_url) {
+        this.deploy_url = deploy_url;
     }
 }

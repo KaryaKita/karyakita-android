@@ -110,7 +110,7 @@
                         android:layout_gravity="center"
                         android:layout_marginRight="30dp"
                         android:background="@drawable/spinner_rounded_border"
-                        android:entries="@array/ukuran_desain"></Spinner>
+                        android:entries="@array/ukuran_desain" />
 
                 </LinearLayout>
 
