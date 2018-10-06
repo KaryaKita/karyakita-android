@@ -1,5 +1,6 @@
 package com.karyakita.karyakita_android_new.customer.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -15,6 +16,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.karyakita.karyakita_android_new.R;
 
@@ -37,6 +39,18 @@ public class HomeCustomerActivity extends AppCompatActivity
     @BindView(R.id.fab_application)
     FloatingActionButton fabApplication;
 
+    @BindView(R.id.kategori_doodle_art)
+    ImageView im_kategori_doodle_art;
+    @BindView(R.id.kategori_kaligrafi) ImageView im_kategori_kaligrafi;
+    @BindView(R.id.kategori_karikatur) ImageView im_kategori_karikatur;
+    @BindView(R.id.kategori_lettering) ImageView im_kategori_lettering;
+    @BindView(R.id.kategori_line_art) ImageView im_kategori_line_art;
+    @BindView(R.id.kategori_mozaik) ImageView im_kategori_mozaik;
+    @BindView(R.id.kategori_origin_karakter) ImageView im_kategori_origin_karakter;
+    @BindView(R.id.kategori_papercut) ImageView im_kategori_papercut;
+    @BindView(R.id.kategori_siluet) ImageView im_kategori_siluet;
+    @BindView(R.id.kategori_sketsa) ImageView im_kategori_sketsa;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +59,12 @@ public class HomeCustomerActivity extends AppCompatActivity
 
 //        Toolbar toolbar = findViewById(R.id.toolbar_navigation);
         setSupportActionBar(toolbarNavigation);
-
+//        im_kategori_doodle_art.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(HomeCustomerActivity.this, )
+//            }
+//        });
         setNavigationView(toolbarNavigation);
         setFloatingActionButton();
         setViewPager();
