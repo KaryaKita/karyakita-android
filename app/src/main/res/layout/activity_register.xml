@@ -154,6 +154,7 @@
                 android:textColor="@color/white" />
 
             <Button
+                android:id="@+id/buttonRegister"
                 style="@style/button_style"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

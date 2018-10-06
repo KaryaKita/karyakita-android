@@ -1,4 +1,4 @@
-package com.karyakita.karyakita_android_new.model;
+package com.karyakita.karyakita_android_new.customer.karya;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

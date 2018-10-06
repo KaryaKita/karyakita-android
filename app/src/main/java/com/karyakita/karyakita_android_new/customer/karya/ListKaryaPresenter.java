@@ -1,8 +1,9 @@
-package com.karyakita.karyakita_android_new.presenter;
+package com.karyakita.karyakita_android_new.customer.karya;
 
-import com.karyakita.karyakita_android_new.base_class_interface.BaseModel;
 import com.karyakita.karyakita_android_new.base_class_interface.IMainPresenter;
 import com.karyakita.karyakita_android_new.example.ITestView;
+
+import java.util.Map;
 
 
 public class ListKaryaPresenter implements IMainPresenter {
@@ -23,9 +24,10 @@ public class ListKaryaPresenter implements IMainPresenter {
     }
 
     @Override
-    public void insert(BaseModel model) {
+    public void insert(Map<String, String> dataInput) {
 
     }
+
 
 //    public Observable<ListKaryaResultModel> getObservable() {
 //        return RetrofitHelper.getRetrofit().create(IRestServices.class).getListKaryaByKategori().subscribeOn(Schedulers.io());

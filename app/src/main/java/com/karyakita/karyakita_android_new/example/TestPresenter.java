@@ -1,12 +1,12 @@
 package com.karyakita.karyakita_android_new.example;
-
-
 import android.util.Log;
 
 import com.karyakita.karyakita_android_new.base_class_interface.BaseModel;
 import com.karyakita.karyakita_android_new.base_class_interface.IMainPresenter;
 import com.karyakita.karyakita_android_new.service.IRestServices;
 import com.karyakita.karyakita_android_new.service.RetrofitHelper;
+
+import java.util.Map;
 
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -33,7 +33,7 @@ public class TestPresenter implements IMainPresenter {
     }
 
     @Override
-    public void insert(BaseModel model) {
+    public void insert(Map<String, String> dataInput) {
 
     }
 
