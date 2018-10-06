@@ -17,15 +17,12 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.karyakita.karyakita_android_new.R;
-import com.karyakita.karyakita_android_new.base_class_interface.GlobalVariable;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class HomeCustomerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
-    String token;
 
     @BindView(R.id.tab_home_customer)
     TabLayout tabHomeCustomer;
@@ -45,7 +42,6 @@ public class HomeCustomerActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_customer);
         ButterKnife.bind(this);
-        token = GlobalVariable.TOKEN;
 
 //        Toolbar toolbar = findViewById(R.id.toolbar_navigation);
         setSupportActionBar(toolbarNavigation);

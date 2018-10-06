@@ -19,8 +19,6 @@ import com.karyakita.karyakita_android_new.customer.karya.KategoriKaryaResultMod
 
 import java.util.List;
 
-import butterknife.ButterKnife;
-
 import static android.support.constraint.Constraints.TAG;
 
 public class HomeFragment extends Fragment implements IHomeView {
@@ -32,29 +30,11 @@ public class HomeFragment extends Fragment implements IHomeView {
 
     KategoriKaryaAdapter kategoriKaryaAdapter;
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        kategoriKaryaAdapter = new KategoriKaryaAdapter();
-    }
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home_customer, container, false);
-        ButterKnife.bind(getActivity());
-//        RecyclerView recyclerView = (RecyclerView) inflater.inflate(R.layout.fragment_home_customer, container, false);
-//        KategoriKaryaAdapter kategoriKaryaAdapter = new KategoriKaryaAdapter(getActivity().getApplicationContext());
-//        recyclerView.setAdapter(kategoriKaryaAdapter);
-//        recyclerView.setHasFixedSize(true);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
-//        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-//
-//        rv_kategori_home = view.findViewById(R.id.rv_kategori_home);
-//        rv_kategori_home.setLayoutManager(linearLayoutManager);
-
-        setUpView();
+//        setUpView();
         setUpPresenter();
         getGridViewHome();
         return view;
