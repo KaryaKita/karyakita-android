@@ -18,8 +18,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.karyakita.karyakita_android_new.R;
+import com.karyakita.karyakita_android_new.customer.karya.DetailKaryaActivity;
 import com.karyakita.karyakita_android_new.customer.karya.ListKaryaActivity;
 
 import butterknife.BindView;

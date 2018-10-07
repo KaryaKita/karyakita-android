@@ -36,15 +36,15 @@ public class KategoriKaryaModel extends BaseModel {
 
     @SerializedName("local_url")
     @Expose
-    private Integer local_url;
+    private String local_url;
 
     @SerializedName("deploy_url")
     @Expose
-    private Integer deploy_url;
+    private String deploy_url;
 
 
     public KategoriKaryaModel(String createdAt, String updatedAt, Integer id, String kategori,
-                              String path, String filename, Integer filesize, Integer local_url, Integer deploy_url) {
+                              String path, String filename, Integer filesize, String local_url, String deploy_url) {
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.id = id;
@@ -115,19 +115,19 @@ public class KategoriKaryaModel extends BaseModel {
         this.filesize = filesize;
     }
 
-    public Integer getLocal_url() {
+    public String getLocal_url() {
         return local_url;
     }
 
-    public void setLocal_url(Integer local_url) {
+    public void setLocal_url(String local_url) {
         this.local_url = local_url;
     }
 
-    public Integer getDeploy_url() {
+    public String getDeploy_url() {
         return deploy_url;
     }
 
-    public void setDeploy_url(Integer deploy_url) {
+    public void setDeploy_url(String deploy_url) {
         this.deploy_url = deploy_url;
     }
 }

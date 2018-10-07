@@ -13,7 +13,6 @@ import com.karyakita.karyakita_android_new.customer.transaksi.PesanCustomActivit
 import com.karyakita.karyakita_android_new.example.MovieResponse;
 import com.karyakita.karyakita_android_new.example.ITestView;
 import com.karyakita.karyakita_android_new.login.LoginActivity;
-import com.karyakita.karyakita_android_new.register.RegisterActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -35,7 +34,7 @@ public class DetailKaryaActivity extends AppCompatActivity implements ITestView{
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        btnKirimPesan.setOnClickListener(new View.OnClickListener() {
+        btnPesanSekarang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(DetailKaryaActivity.this, LoginActivity.class);

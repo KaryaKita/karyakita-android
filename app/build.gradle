@@ -76,8 +76,8 @@ dependencies {
     //noinspection GradleCompatible
     implementation 'com.android.support:gridlayout-v7:27.1.1'
 
+    //circle image
     implementation 'de.hdodenhof:circleimageview:2.2.0'
-
 }
 
 private Integer generateVersionCode() {
