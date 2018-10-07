@@ -176,12 +176,14 @@
                     android:weightSum="10">
 
                     <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/list_image1"
                         android:layout_width="wrap_content"
                         android:layout_height="135dp"
                         android:layout_weight="5"
                         android:src="@drawable/image_asset_1" />
 
                     <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/list_image2"
                         android:layout_width="wrap_content"
                         android:layout_height="135dp"
                         android:layout_weight="5"
@@ -197,12 +199,14 @@
                     android:weightSum="10">
 
                     <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/list_image3"
                         android:layout_width="wrap_content"
                         android:layout_height="135dp"
                         android:layout_weight="5"
                         android:src="@drawable/image_asset_1" />
 
                     <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/list_image4"
                         android:layout_width="wrap_content"
                         android:layout_height="135dp"
                         android:layout_weight="5"

@@ -6,208 +6,213 @@
     android:layout_height="match_parent"
     tools:context=".desainer.home.HomeDesainerActivity">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-        <LinearLayout
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:layout_weight="2"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="15dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:src="@drawable/desainer_1"/>
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:layout_weight="1"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginLeft="10dp">
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_weight="2"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="30dp"
+                    android:orientation="horizontal">
 
-                    <TextView
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="15dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/exmpl"
+                        android:layout_weight="1"/>
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Efriza Luluk Savira"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginLeft="25dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Efriza Luluk Savira"
+                            android:textStyle="bold"
+                            android:textSize="18dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Vector Art Designer"
+                            android:textSize="15dp"
+                            android:layout_marginTop="3dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Surabaya, Jawa Timur"
+                            android:textSize="15dp"
+                            android:layout_marginTop="3dp"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="3dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="30"
+                                android:textStyle="bold"
+                                android:textSize="15dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="  Karya"
+                                android:textStyle="bold"
+                                android:textSize="15dp"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:layout_width="1dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        android:text="Edit Profile"
+                        android:textColor="#ffff"
                         android:textStyle="bold"
-                        android:textSize="18dp"/>
+                        android:background="@drawable/button_rounded_skyblue"/>
 
-                    <TextView
+                    <Button
+                        android:layout_width="1dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        android:text="Upload Karya"
+                        android:textColor="#ffff"
+                        android:textStyle="bold"
+                        android:background="@drawable/button_rounded_skyblue"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1.5dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginBottom="25dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="#bbb" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Vector Art Designer"
-                        android:textSize="15dp"
-                        android:layout_marginTop="3dp"/>
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:gravity="center">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Surabaya, Jawa Timur"
-                        android:textSize="15dp"
-                        android:layout_marginTop="3dp"/>
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5dp"
+                            android:src="@drawable/ic_wifi_black_24dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="57"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" Pelanggan"/>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1.5dp"
+                        android:layout_height="match_parent"
+                        android:background="#bbb" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:layout_marginTop="3dp">
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5dp"
+                            android:src="@drawable/ic_wifi_black_24dp"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="30"
-                            android:textStyle="bold"
-                            android:textSize="15dp"/>
+                            android:text="102"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="  Karya"
-                            android:textStyle="bold"
-                            android:textSize="15dp"/>
+                            android:text=" Subscriber"/>
+
                     </LinearLayout>
 
                 </LinearLayout>
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:orientation="horizontal">
-
-                <Button
-                    android:layout_width="1dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginRight="30dp"
-                    android:text="Edit Profile"
-                    android:textColor="#ffff"
-                    android:textStyle="bold"
-                    android:background="@drawable/button_rounded_skyblue"/>
-
-                <Button
-                    android:layout_width="1dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginRight="30dp"
-                    android:text="Upload Karya"
-                    android:textColor="#ffff"
-                    android:textStyle="bold"
-                    android:background="@drawable/button_rounded_skyblue"/>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1.5dp"
-                android:layout_marginTop="25dp"
-                android:layout_marginBottom="25dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginLeft="10dp"
-                android:background="#bbb" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:orientation="horizontal">
-                
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:gravity="center">
-                    
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="5dp"
-                        android:src="@drawable/ic_wifi_black_24dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="57"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=" Pelanggan"/>
-                </LinearLayout>
-
                 <View
-                    android:layout_width="1.5dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="1.5dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginBottom="25dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="10dp"
                     android:background="#bbb" />
-                
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_weight="1"
-                    android:gravity="center">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="5dp"
-                        android:src="@drawable/ic_wifi_black_24dp"/>
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_home_designer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="vertical">
+                </android.support.v7.widget.RecyclerView>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="102"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=" Subscriber"/>
-                    
-                </LinearLayout>
-                
             </LinearLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1.5dp"
-                android:layout_marginTop="25dp"
-                android:layout_marginBottom="25dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginLeft="10dp"
-                android:background="#bbb" />
-            
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"></LinearLayout>
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/rv_home_designer"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scrollbars="vertical">
+        </ScrollView>
 
 
-            </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
 
-        </LinearLayout>
 
-    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
