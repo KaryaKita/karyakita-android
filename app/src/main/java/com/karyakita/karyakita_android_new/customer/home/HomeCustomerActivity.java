@@ -6,7 +6,9 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -19,6 +21,8 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.karyakita.karyakita_android_new.R;
+import com.karyakita.karyakita_android_new.customer.karya.DetailKaryaActivity;
+import com.karyakita.karyakita_android_new.customer.karya.ListKaryaActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -39,18 +43,6 @@ public class HomeCustomerActivity extends AppCompatActivity
     @BindView(R.id.fab_application)
     FloatingActionButton fabApplication;
 
-    @BindView(R.id.kategori_doodle_art)
-    ImageView im_kategori_doodle_art;
-    @BindView(R.id.kategori_kaligrafi) ImageView im_kategori_kaligrafi;
-    @BindView(R.id.kategori_karikatur) ImageView im_kategori_karikatur;
-    @BindView(R.id.kategori_lettering) ImageView im_kategori_lettering;
-    @BindView(R.id.kategori_line_art) ImageView im_kategori_line_art;
-    @BindView(R.id.kategori_mozaik) ImageView im_kategori_mozaik;
-    @BindView(R.id.kategori_origin_karakter) ImageView im_kategori_origin_karakter;
-    @BindView(R.id.kategori_papercut) ImageView im_kategori_papercut;
-    @BindView(R.id.kategori_siluet) ImageView im_kategori_siluet;
-    @BindView(R.id.kategori_sketsa) ImageView im_kategori_sketsa;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,12 +51,7 @@ public class HomeCustomerActivity extends AppCompatActivity
 
 //        Toolbar toolbar = findViewById(R.id.toolbar_navigation);
         setSupportActionBar(toolbarNavigation);
-//        im_kategori_doodle_art.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(HomeCustomerActivity.this, )
-//            }
-//        });
+
         setNavigationView(toolbarNavigation);
         setFloatingActionButton();
         setViewPager();
@@ -144,12 +131,13 @@ public class HomeCustomerActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+        Fragment fragment = null;
         int id = item.getItemId();
 
         if (id == R.id.nav_beranda_customer) {
-
+            fragment = new HomeFragment();
         } else if (id == R.id.nav_kategori_desain_customer) {
-
+            startActivity(new Intent(HomeCustomerActivity.this, ListKaryaActivity.class));
         } else if (id == R.id.nav_desainer_customer) {
 
         } else if (id == R.id.nav_pesanan_saya_customer) {
@@ -158,6 +146,11 @@ public class HomeCustomerActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_keluar) {
 
+        }
+        if (fragment != null){
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.view_pager_home_customer, fragment);
+            fragmentTransaction.commit();
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout_navigation);

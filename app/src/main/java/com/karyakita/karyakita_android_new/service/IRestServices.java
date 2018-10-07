@@ -1,5 +1,6 @@
 package com.karyakita.karyakita_android_new.service;
 
+import com.karyakita.karyakita_android_new.customer.karya.ListKaryaResultModel;
 import com.karyakita.karyakita_android_new.example.MovieResponse;
 import com.karyakita.karyakita_android_new.example.TestModel;
 import com.karyakita.karyakita_android_new.login.LoginResultModel;
@@ -41,10 +42,14 @@ public interface IRestServices {
                                                     @Field("role_id") Integer role_id);
 
     @GET("kategori_karya/get-all")
+
     io.reactivex.Observable<KategoriKaryaResultModel> getKategoriKarya(@Header("Autorized") String bearer);
 
 //    @GET("karya/get-by-kategori/kategori_id")
 //    io.reactivex.Observable<ListKaryaResultModel>getListKaryaByKategori(@Path("kategori_id")Integer kategori_id);
+
+    @GET("karya/get-by-kategori/kategori_id")
+    io.reactivex.Observable<ListKaryaResultModel> getListKaryaByKategori(@Path("kategori_id")Integer kategori_id);
 
 
 }
