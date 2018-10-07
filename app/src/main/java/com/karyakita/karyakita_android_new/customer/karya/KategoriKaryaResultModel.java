@@ -9,7 +9,7 @@ import java.util.List;
 public class KategoriKaryaResultModel extends BaseModel {
     @SerializedName("success")
     @Expose
-    private Integer success;
+    private String success;
 
 
     @SerializedName("data")
@@ -20,7 +20,7 @@ public class KategoriKaryaResultModel extends BaseModel {
     @Expose
     private String message;
 
-    public KategoriKaryaResultModel(Integer success, List<KategoriKaryaModel> data, String message) {
+    public KategoriKaryaResultModel(String success, List<KategoriKaryaModel> data, String message) {
         this.success = success;
         this.data = data;
         this.message = message;
@@ -29,11 +29,11 @@ public class KategoriKaryaResultModel extends BaseModel {
     public KategoriKaryaResultModel() {
     }
 
-    public Integer getSuccess() {
+    public String getSuccess() {
         return success;
     }
 
-    public void setSuccess(Integer success) {
+    public void setSuccess(String success) {
         this.success = success;
     }
 

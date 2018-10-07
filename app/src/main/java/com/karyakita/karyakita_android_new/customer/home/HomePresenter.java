@@ -53,7 +53,7 @@ public class HomePresenter implements IMainPresenter {
         return new DisposableObserver<KategoriKaryaResultModel>() {
             @Override
             public void onNext(KategoriKaryaResultModel kategoriKaryaResultModel) {
-                Log.d("Log ", "OnNext" + kategoriKaryaResultModel.getData().get(0).getLocal_url());
+                Log.d("Log ", "OnNext " + kategoriKaryaResultModel.getData().get(0).getDeploy_url());
                 iHomeView.display(kategoriKaryaResultModel);
             }
 

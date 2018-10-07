@@ -22,6 +22,7 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_main_app_karyakita"
         android:supportsRtl="true"
+        android:largeHeap="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
@@ -43,6 +44,8 @@
         <activity android:name=".customer.transaksi.DataPengirimanCustomerActivity" />
         <activity android:name=".customer.transaksi.PesanCustomActivity" />
         <activity android:name=".customer.PesananSelesai"></activity>
+        <activity android:name=".customer.karya.ListKaryaActivity"/>
+        <activity android:name=".desainer.home.HomeDesainerActivity" />
     </application>
 
 </manifest>

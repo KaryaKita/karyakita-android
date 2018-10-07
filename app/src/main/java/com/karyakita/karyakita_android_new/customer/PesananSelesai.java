@@ -9,8 +9,6 @@ import android.widget.Button;
 
 import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.customer.home.HomeCustomerActivity;
-import com.karyakita.karyakita_android_new.customer.home.HomeFragment;
-import com.karyakita.karyakita_android_new.customer.transaksi.DataPengirimanCustomerActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

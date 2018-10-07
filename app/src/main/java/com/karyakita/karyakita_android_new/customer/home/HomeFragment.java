@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -30,6 +31,7 @@ import static android.support.constraint.Constraints.TAG;
 
 public class HomeFragment extends Fragment implements IHomeView {
     HomePresenter homePresenter = null;
+    KategoriKaryaAdapter kategoriKaryaAdapter;
     RecyclerView rv_kategori_home;
 
     ImageView im_kategori_doodle_art;
@@ -51,8 +53,6 @@ public class HomeFragment extends Fragment implements IHomeView {
 //    @BindView(R.id.rv_image_home)
 //    RecyclerView rv_image_home;
 
-    KategoriKaryaAdapter kategoriKaryaAdapter;
-
     @Nullable
     @Override
 //    public void onCreat(Bundle savedInstanceState){
@@ -62,6 +62,7 @@ public class HomeFragment extends Fragment implements IHomeView {
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home_customer, container, false);
+
         im_kategori_doodle_art = view.findViewById(R.id.kategori_doodle_art);
         im_kategori_kaligrafi= view.findViewById(R.id.kategori_kaligrafi);
         im_kategori_karikatur= view.findViewById(R.id.kategori_karikatur);
@@ -190,8 +191,10 @@ public class HomeFragment extends Fragment implements IHomeView {
         });
 
 //        setUpView();
+        rv_kategori_home = view.findViewById(R.id.rv_kategori_home);
 
         setUpPresenter();
+        setUpView();
         getGridViewHome();
         return view;
     }
@@ -199,21 +202,19 @@ public class HomeFragment extends Fragment implements IHomeView {
 
     @Override
     public void showToast(String str) {
-        Toast.makeText(getContext().getApplicationContext(), str, Toast.LENGTH_LONG).show();
+//        Toast.makeText(getContext().getApplicationContext(), str, Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void display(KategoriKaryaResultModel kategoriKaryaResultModel) {
-        KategoriKaryaAdapter kategoriKaryaAdapter = new KategoriKaryaAdapter(kategoriKaryaResultModel.getData(), getContext().getApplicationContext());
-        if (kategoriKaryaAdapter != null) {
-//            Log.d(TAG,movieResponse.getResults().get(0).getTitle());
-//            Log.d(TAG,movieResponse.getResults().get(0).getOriginalLanguage());
-//            Log.d(TAG,movieResponse.getResults().get(0).getOriginalTitle());
-
+        KategoriKaryaAdapter kategoriKaryaAdapter = new KategoriKaryaAdapter(kategoriKaryaResultModel.getData(), getActivity());
+        if (kategoriKaryaResultModel.getData() != null) {
+            Log.d(TAG, "Respon ada");
             List<KategoriKaryaModel> listResponse = kategoriKaryaResultModel.getData();
             if (listResponse.size() > 0) {
                 for (int i = 0; i < listResponse.size(); i++) {
                     KategoriKaryaModel kategoriKaryaModel = listResponse.get(i);
+                    Log.d(TAG, kategoriKaryaModel.getFilename());
                     kategoriKaryaAdapter.addToList(kategoriKaryaModel);
                 }
             }
@@ -234,7 +235,7 @@ public class HomeFragment extends Fragment implements IHomeView {
     }
 
     private void setUpView() {
-        rv_kategori_home.setLayoutManager(new LinearLayoutManager(this.getActivity().getApplicationContext(), LinearLayoutManager.VERTICAL, false));
+        rv_kategori_home.setLayoutManager(new GridLayoutManager(this.getActivity().getApplicationContext(), 3));
         rv_kategori_home.setHasFixedSize(true);
     }
 
