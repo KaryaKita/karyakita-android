@@ -78,7 +78,6 @@ dependencies {
 
     //circle image
     implementation 'de.hdodenhof:circleimageview:2.2.0'
-    implementation 'de.hdodenhof:circleimageview:2.2.0'
 }
 
 private Integer generateVersionCode() {
