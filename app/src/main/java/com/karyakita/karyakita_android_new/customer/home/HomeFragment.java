@@ -36,20 +36,10 @@ public class HomeFragment extends Fragment implements IHomeView {
     KategoriKaryaAdapter kategoriKaryaAdapter;
     RecyclerView rv_kategori_home;
 
-//    ImageView im_kategori_doodle_art;
-//    ImageView im_kategori_kaligrafi;
-//    ImageView im_kategori_karikatur;
-//    ImageView im_kategori_lettering;
-//    ImageView im_kategori_line_art;
-//    ImageView im_kategori_mozaik;
-//    ImageView im_kategori_origin_karakter;
-//    ImageView im_kategori_papercut;
-//    ImageView im_kategori_siluet;
-//    ImageView im_kategori_sketsa;
-//    ImageView im_list_image1;
-//    ImageView im_list_image2;
-//    ImageView im_list_image3;
-//    ImageView im_list_image4;
+    ImageView im_list_image1;
+    ImageView im_list_image2;
+    ImageView im_list_image3;
+    ImageView im_list_image4;
 
 
 //    @BindView(R.id.rv_image_home)
@@ -59,6 +49,44 @@ public class HomeFragment extends Fragment implements IHomeView {
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home_customer, container, false);
+
+        im_list_image1= view.findViewById(R.id.list_image1);
+        im_list_image2= view.findViewById(R.id.list_image2);
+        im_list_image3= view.findViewById(R.id.list_image3);
+        im_list_image4= view.findViewById(R.id.list_image4);
+
+        im_list_image1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity().getApplicationContext(), DetailKaryaActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        im_list_image2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity().getApplicationContext(), DetailKaryaActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        im_list_image3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity().getApplicationContext(), DetailKaryaActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        im_list_image4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity().getApplicationContext(), DetailKaryaActivity.class);
+                startActivity(intent);
+            }
+        });
+
         rv_kategori_home = view.findViewById(R.id.rv_kategori_home);
 
         setUpPresenter();
