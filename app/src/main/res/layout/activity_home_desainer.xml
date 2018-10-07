@@ -23,11 +23,12 @@
                 android:layout_marginLeft="20dp"
                 android:orientation="horizontal">
 
-                <ImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="15dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:src="@drawable/mesut_ozil"/>
+                    android:src="@drawable/mesut_ozil"
+                    android:layout_weight="1"/>
+
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -35,7 +36,7 @@
                     android:orientation="vertical"
                     android:layout_weight="1"
                     android:layout_marginTop="30dp"
-                    android:layout_marginLeft="10dp">
+                    android:layout_marginLeft="20dp">
 
                     <TextView
                         android:layout_width="wrap_content"
