@@ -130,6 +130,7 @@ public class HomeCustomerActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         Fragment fragment = null;
+        Class fragmentClass = null;
         int id = item.getItemId();
 
         switch (id){
@@ -140,7 +141,8 @@ public class HomeCustomerActivity extends AppCompatActivity
                 startActivity(new Intent(HomeCustomerActivity.this, ListKaryaActivity.class));
                 return true;
             case  R.id.nav_desainer_customer:
-                break;
+                fragmentClass = DesainerFragment.class;
+                return true;
             case R.id.nav_pesanan_saya_customer:
                 break;
             case R.id.nav_notifikasi_customer:
@@ -150,7 +152,7 @@ public class HomeCustomerActivity extends AppCompatActivity
             case R.id.nav_keluar:
                 break;
         }
-
+        
         if (fragment != null){
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.view_pager_home_customer, fragment);
