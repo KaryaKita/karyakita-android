@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.karyakita.karyakita_android_new.R;
+import com.karyakita.karyakita_android_new.base_class_interface.GlobalVariable;
 import com.karyakita.karyakita_android_new.customer.home.HomeCustomerActivity;
 import com.karyakita.karyakita_android_new.example.MovieResponse;
 import com.karyakita.karyakita_android_new.example.ITestView;
@@ -45,6 +46,7 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
         ButterKnife.bind(this);
         Bundle bundle = getIntent().getExtras();
         role_id = bundle.getInt("role_id");
+        Log.d("Test0 : ", GlobalVariable.TOKEN);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,19 +54,17 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
             }
         });
 
-
     }
 
     @Override
     public void showToast(String s) {
         Toast.makeText(getApplicationContext(), s, Toast.LENGTH_LONG).show();
-
         startActivity(new Intent(LoginActivity.this, HomeCustomerActivity.class));
     }
 
     @Override
     public void display(LoginResultModel model) {
-        Log.d("Result", model.getToken());
+        GlobalVariable.TOKEN = model.getToken();
     }
 
     @Override
