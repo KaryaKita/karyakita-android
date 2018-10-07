@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.karyakita.karyakita_android_new.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class KategoriKaryaAdapter extends RecyclerView.Adapter<KategoriKaryaAdapter.Holder> {
@@ -20,7 +21,7 @@ public class KategoriKaryaAdapter extends RecyclerView.Adapter<KategoriKaryaAdap
     Context context;
 
     public KategoriKaryaAdapter(List<KategoriKaryaModel> kategoriKaryaModelList, Context context) {
-        this.kategoriKaryaModelList = kategoriKaryaModelList;
+        this.kategoriKaryaModelList = new ArrayList<>();
         this.context = context;
     }
 
@@ -33,17 +34,16 @@ public class KategoriKaryaAdapter extends RecyclerView.Adapter<KategoriKaryaAdap
 
     @Override
     public void onBindViewHolder(@NonNull KategoriKaryaAdapter.Holder holder, int position) {
-        Glide.with(context).load(kategoriKaryaModelList.get(position).getLocal_url()).into(holder.iv_image_kategori_home);
+        Glide.with(context).load(kategoriKaryaModelList.get(position).getDeploy_url()).into(holder.iv_image_kategori_home);
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return this.kategoriKaryaModelList.size();
     }
 
     public void addToList(KategoriKaryaModel kategoriKaryaModel) {
         kategoriKaryaModelList.add(kategoriKaryaModel);
-        notifyDataSetChanged();
     }
 
     public class Holder extends RecyclerView.ViewHolder {
@@ -54,13 +54,6 @@ public class KategoriKaryaAdapter extends RecyclerView.Adapter<KategoriKaryaAdap
             context = itemView.getContext();
 
             iv_image_kategori_home = itemView.findViewById(R.id.iv_image_kategori_home);
-
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(context, "OKe", Toast.LENGTH_LONG).show();
-                }
-            });
         }
     }
 }
