@@ -15,7 +15,7 @@
             <android.support.v7.widget.AppCompatImageView
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:src="@drawable/image_1" />
+                android:src="@drawable/image_carousel_1" />
 
             <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/textView3"
@@ -26,12 +26,12 @@
                 android:layout_marginBottom="10dp"
                 android:text="@string/kategori_string" />
 
-            <!--<android.support.v7.widget.RecyclerView-->
-            <!--android:id="@+id/rv_kategori_home"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginBottom="20dp"-->
-            <!--android:orientation="vertical">-->
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_kategori_home"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:orientation="vertical"/>
 
             <!--</android.support.v7.widget.RecyclerView>-->
 
@@ -179,13 +179,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="135dp"
                         android:layout_weight="5"
-                        android:src="@drawable/vecor1" />
+                        android:src="@drawable/image_asset_1" />
 
                     <android.support.v7.widget.AppCompatImageView
                         android:layout_width="wrap_content"
                         android:layout_height="135dp"
                         android:layout_weight="5"
-                        android:src="@drawable/vector2" />
+                        android:src="@drawable/image_asset_2" />
 
                 </android.support.v7.widget.LinearLayoutCompat>
 
@@ -200,13 +200,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="135dp"
                         android:layout_weight="5"
-                        android:src="@drawable/vecor1" />
+                        android:src="@drawable/image_asset_1" />
 
                     <android.support.v7.widget.AppCompatImageView
                         android:layout_width="wrap_content"
                         android:layout_height="135dp"
                         android:layout_weight="5"
-                        android:src="@drawable/vector2" />
+                        android:src="@drawable/image_asset_2" />
 
                 </android.support.v7.widget.LinearLayoutCompat>
 

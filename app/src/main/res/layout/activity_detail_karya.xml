@@ -60,7 +60,7 @@
                             android:layout_height="270dp"
                             android:contentDescription="@string/nav_header_desc"
                             android:paddingTop="@dimen/nav_header_vertical_spacing"
-                            android:src="@drawable/mesut_ozil" />
+                            android:src="@drawable/image_asset_4" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"

@@ -132,19 +132,25 @@ public class HomeCustomerActivity extends AppCompatActivity
         Fragment fragment = null;
         int id = item.getItemId();
 
-        if (id == R.id.nav_beranda_customer) {
-            fragment = new HomeFragment();
-        } else if (id == R.id.nav_kategori_desain_customer) {
-            startActivity(new Intent(HomeCustomerActivity.this, ListKaryaActivity.class));
-        } else if (id == R.id.nav_desainer_customer) {
-
-        } else if (id == R.id.nav_pesanan_saya_customer) {
-
-        } else if (id == R.id.nav_notifikasi_customer) {
-
-        } else if (id == R.id.nav_keluar) {
-
+        switch (id){
+            case R.id.nav_beranda_customer:
+                startActivity(new Intent(getApplicationContext(), HomeCustomerActivity.class));
+                return true;
+            case R.id.nav_kategori_desain_customer:
+                startActivity(new Intent(HomeCustomerActivity.this, ListKaryaActivity.class));
+                return true;
+            case  R.id.nav_desainer_customer:
+                break;
+            case R.id.nav_pesanan_saya_customer:
+                break;
+            case R.id.nav_notifikasi_customer:
+                break;
+            case R.id.nav_akun_customer:
+                break;
+            case R.id.nav_keluar:
+                break;
         }
+
         if (fragment != null){
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.view_pager_home_customer, fragment);

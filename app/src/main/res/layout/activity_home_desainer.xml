@@ -26,9 +26,14 @@
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="15dp"
                     android:layout_height="match_parent"
+<<<<<<< HEAD
                     android:src="@drawable/mesut_ozil"
                     android:layout_weight="1"/>
 
+=======
+                    android:layout_weight="1"
+                    android:src="@drawable/desainer_1"/>
+>>>>>>> 2bac40da9acd1882b72fdaec375afefde3056c57
 
                 <LinearLayout
                     android:layout_width="wrap_content"
