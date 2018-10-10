@@ -43,6 +43,7 @@ public class HomePresenter implements IMainPresenter {
     }
 
     public Observable<KategoriKaryaResultModel> getObservable() {
+        Log.d("TOKEN " , GlobalVariable.TOKEN);
         return RetrofitHelper.getRetrofit().create(IRestServices.class)
                 .getKategoriKarya("Bearer " + GlobalVariable.TOKEN)
                 .subscribeOn(Schedulers.io())
