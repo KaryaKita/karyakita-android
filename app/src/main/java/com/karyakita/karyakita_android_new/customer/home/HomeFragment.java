@@ -6,26 +6,22 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.karyakita.karyakita_android_new.R;
+import com.karyakita.karyakita_android_new.base_class_interface.GlobalVariable;
 import com.karyakita.karyakita_android_new.customer.karya.DetailKaryaActivity;
 import com.karyakita.karyakita_android_new.customer.karya.KategoriKaryaAdapter;
 import com.karyakita.karyakita_android_new.customer.karya.KategoriKaryaModel;
 import com.karyakita.karyakita_android_new.customer.karya.KategoriKaryaResultModel;
-import com.karyakita.karyakita_android_new.customer.karya.ListKaryaActivity;
 
 import java.util.List;
-
-import butterknife.BindView;
 
 import static android.support.constraint.Constraints.TAG;
 
@@ -34,16 +30,6 @@ public class HomeFragment extends Fragment implements IHomeView {
     KategoriKaryaAdapter kategoriKaryaAdapter;
     RecyclerView rv_kategori_home;
 
-    ImageView im_kategori_doodle_art;
-    ImageView im_kategori_kaligrafi;
-    ImageView im_kategori_karikatur;
-    ImageView im_kategori_lettering;
-    ImageView im_kategori_line_art;
-    ImageView im_kategori_mozaik;
-    ImageView im_kategori_origin_karakter;
-    ImageView im_kategori_papercut;
-    ImageView im_kategori_siluet;
-    ImageView im_kategori_sketsa;
     ImageView im_list_image1;
     ImageView im_list_image2;
     ImageView im_list_image3;
@@ -53,110 +39,14 @@ public class HomeFragment extends Fragment implements IHomeView {
 //    @BindView(R.id.rv_image_home)
 //    RecyclerView rv_image_home;
 
-    @Nullable
-    @Override
-//    public void onCreat(Bundle savedInstanceState){
-//        super.onCreate(R.layout.fragment_home_customer);
-//
-//    }
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home_customer, container, false);
 
-        im_kategori_doodle_art = view.findViewById(R.id.kategori_doodle_art);
-        im_kategori_kaligrafi= view.findViewById(R.id.kategori_kaligrafi);
-        im_kategori_karikatur= view.findViewById(R.id.kategori_karikatur);
-        im_kategori_lettering= view.findViewById(R.id.kategori_lettering);
-        im_kategori_line_art= view.findViewById(R.id.kategori_line_art);
-        im_kategori_mozaik= view.findViewById(R.id.kategori_mozaik);
-        im_kategori_origin_karakter= view.findViewById(R.id.kategori_origin_karakter);
-        im_kategori_papercut= view.findViewById(R.id.kategori_papercut);
-        im_kategori_siluet= view.findViewById(R.id.kategori_siluet);
-        im_kategori_sketsa= view.findViewById(R.id.kategori_sketsa);
-        im_list_image1= view.findViewById(R.id.list_image1);
-        im_list_image2= view.findViewById(R.id.list_image2);
-        im_list_image3= view.findViewById(R.id.list_image3);
-        im_list_image4= view.findViewById(R.id.list_image4);
-
-        im_kategori_sketsa.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext().getApplicationContext(), ListKaryaActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        im_kategori_siluet.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext().getApplicationContext(), ListKaryaActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        im_kategori_papercut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext().getApplicationContext(), ListKaryaActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        im_kategori_origin_karakter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext().getApplicationContext(), ListKaryaActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        im_kategori_mozaik.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext().getApplicationContext(), ListKaryaActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        im_kategori_line_art.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext().getApplicationContext(), ListKaryaActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        im_kategori_lettering.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext().getApplicationContext(), ListKaryaActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        im_kategori_karikatur.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext().getApplicationContext(), ListKaryaActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        im_kategori_kaligrafi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext().getApplicationContext(), ListKaryaActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        im_kategori_doodle_art.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext().getApplicationContext(), ListKaryaActivity.class);
-                startActivity(intent);
-            }
-        });
+        im_list_image1 = view.findViewById(R.id.list_image1);
+        im_list_image2 = view.findViewById(R.id.list_image2);
+        im_list_image3 = view.findViewById(R.id.list_image3);
+        im_list_image4 = view.findViewById(R.id.list_image4);
 
         im_list_image1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -190,7 +80,6 @@ public class HomeFragment extends Fragment implements IHomeView {
             }
         });
 
-//        setUpView();
         rv_kategori_home = view.findViewById(R.id.rv_kategori_home);
 
         setUpPresenter();
@@ -240,6 +129,7 @@ public class HomeFragment extends Fragment implements IHomeView {
     }
 
     private void getGridViewHome() {
+        Toast.makeText(getActivity().getApplicationContext(), "Toke " + GlobalVariable.TOKEN, Toast.LENGTH_LONG);
         homePresenter.get();
     }
 
