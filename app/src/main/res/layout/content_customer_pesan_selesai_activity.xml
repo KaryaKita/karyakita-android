@@ -17,6 +17,7 @@
         android:layout_marginTop="10dp"
         android:layout_gravity="center"
         android:textStyle="bold"
+        android:textColor="@color/black"
         android:text="Pesanan Anda Telah Dikirim ke Desainer" />
 
     <TextView
@@ -25,6 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
+        android:textColor="@color/black"
         android:text="Mohon tunggu pemberitahuan apabila Desainer" />
 
     <TextView
@@ -32,6 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textColor="@color/black"
         android:text="Telah Mengkonfirmasi Pesanan Anda" />
 
     <View

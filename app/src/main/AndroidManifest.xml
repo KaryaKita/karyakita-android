@@ -27,8 +27,28 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name=".customer.SplashActivity"
-            android:theme="@style/AppTheme.SplashTheme">
+<<<<<<< HEAD
+            android:theme="@style/AppTheme.SplashTheme" />
 
+        <activity android:name=".customer.home.HomeCustomerActivity"></activity>
+        <activity android:name=".example.MovieActivity">
+
+
+        </activity>
+        <activity android:name=".register_as.RegisterAsActivity">
+        </activity>
+
+        <activity android:name=".login.LoginActivity">
+
+        </activity>
+        <activity android:name=".login_as.LoginAsActivity">
+=======
+            android:theme="@style/AppTheme.SplashTheme">
+<<<<<<< HEAD
+
+=======
+>>>>>>> 32a71dcfe6c4477be5475e89aa4e8a69ed9471ab
+>>>>>>> 1110a2b820f9cbc2906014ed543182dbce60d128
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
