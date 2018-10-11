@@ -4,17 +4,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-
 import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.example.ITestView;
 import com.karyakita.karyakita_android_new.example.MovieResponse;
-<<<<<<< HEAD
 import com.karyakita.karyakita_android_new.customer.karya.ListKaryaPresenter;
 import com.karyakita.karyakita_android_new.login.LoginResultModel;
-=======
->>>>>>> 32a71dcfe6c4477be5475e89aa4e8a69ed9471ab
-
 import butterknife.ButterKnife;
+import retrofit2.http.HEAD;
 
 public class ListKaryaActivity extends AppCompatActivity implements IListKaryaView {
     ListKaryaPresenter listKaryaPresenter = null;
@@ -26,9 +22,7 @@ public class ListKaryaActivity extends AppCompatActivity implements IListKaryaVi
         setContentView(R.layout.activity_list_karya_customer);
         ButterKnife.bind(this);
 
-<<<<<<< HEAD
         //setupPresenter();
-=======
         Toolbar toolbar = findViewById(R.id.toolbar_navigation_list_karya);
         setSupportActionBar(toolbar);
 
@@ -37,7 +31,6 @@ public class ListKaryaActivity extends AppCompatActivity implements IListKaryaVi
         getSupportActionBar().setTitle("List Karya");
 
 //        setupPresenter();
->>>>>>> 32a71dcfe6c4477be5475e89aa4e8a69ed9471ab
         setupView();
     }
 
