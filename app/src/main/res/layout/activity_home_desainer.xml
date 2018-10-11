@@ -145,7 +145,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="5dp"
-                            android:src="@drawable/ic_wifi_black_24dp"/>
+                            android:src="@drawable/ic_signal_bars"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -199,11 +199,38 @@
                     android:layout_marginLeft="10dp"
                     android:background="#bbb" />
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <ImageView
+                        android:id="@+id/iv_gambar_movie"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_margin="5dp"
+                        android:gravity="center"
+                        android:background="@drawable/border"
+                        android:src="@drawable/contoh1"/>
+
+                    <ImageView
+                        android:id="@+id/iv_gambar_movie2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/border"
+                        android:src="@drawable/contoh2"/>
+                </LinearLayout>
+
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/rv_home_designer"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scrollbars="vertical">
+
                 </android.support.v7.widget.RecyclerView>
 
             </LinearLayout>
