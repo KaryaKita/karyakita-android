@@ -24,6 +24,9 @@ import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.customer.karya.DetailKaryaActivity;
 import com.karyakita.karyakita_android_new.customer.karya.ListKaryaActivity;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -55,6 +58,7 @@ public class HomeCustomerActivity extends AppCompatActivity
         setNavigationView(toolbarNavigation);
         setFloatingActionButton();
         setViewPager();
+
     }
 
     private void setViewPager() {
