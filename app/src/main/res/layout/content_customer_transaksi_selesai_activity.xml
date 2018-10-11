@@ -17,6 +17,7 @@
         android:layout_gravity="center"
         android:textStyle="bold"
         android:textSize="20dp"
+        android:textColor="@color/black"
         android:text="Transaksi Anda Telah Selesai" />
 
     <View
@@ -59,5 +60,4 @@
         android:background="@color/mainColor"
         android:textColor="@color/white"
         android:text="KEMBALI KE BERANDA" />
-
 </android.support.v7.widget.LinearLayoutCompat>

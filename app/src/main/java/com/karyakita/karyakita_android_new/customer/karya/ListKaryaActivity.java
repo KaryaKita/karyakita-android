@@ -7,11 +7,13 @@ import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.example.ITestView;
 import com.karyakita.karyakita_android_new.example.MovieResponse;
 import com.karyakita.karyakita_android_new.customer.karya.ListKaryaPresenter;
+import com.karyakita.karyakita_android_new.login.LoginResultModel;
 
 import butterknife.ButterKnife;
 
-public class ListKaryaActivity extends AppCompatActivity implements ITestView {
+public class ListKaryaActivity extends AppCompatActivity implements IListKaryaView {
     ListKaryaPresenter listKaryaPresenter = null;
+    ListKaryaModel listKaryaModel = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +21,7 @@ public class ListKaryaActivity extends AppCompatActivity implements ITestView {
         setContentView(R.layout.customer_list_karya_activity);
         ButterKnife.bind(this);
 
-//        setupPresenter();
+        //setupPresenter();
         setupView();
     }
 
@@ -32,12 +34,17 @@ public class ListKaryaActivity extends AppCompatActivity implements ITestView {
     }
 
     @Override
-    public void display(MovieResponse model) {
+    public void display(LoginResultModel loginResultModel) {
 
     }
 
     @Override
     public void displayError(String s) {
+
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
 
     }
 
