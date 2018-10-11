@@ -11,7 +11,6 @@ import android.view.Menu;
 import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.login.LoginResultModel;
 
-
 import java.util.List;
 
 import butterknife.BindView;
@@ -24,11 +23,10 @@ public class ListKaryaActivity extends AppCompatActivity implements IListKaryaVi
 
     private String TAG = "ListKaryaActivity";
 
-//    @BindView(R.id.rv_list_karya)
+    @BindView(R.id.rv_list_karya)
     RecyclerView rv_list_karya;
 
     ListKaryaModel listKaryaModel = null;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,8 +39,6 @@ public class ListKaryaActivity extends AppCompatActivity implements IListKaryaVi
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setTitle("List Karya");
-
-        rv_list_karya = (RecyclerView) findViewById(R.id.rv_list_karya);
 
         setupView();
         setupPresenter();
@@ -101,13 +97,17 @@ public class ListKaryaActivity extends AppCompatActivity implements IListKaryaVi
 
     }
 
-    private void setupPresenter() {
-        listKaryaPresenter = new ListKaryaPresenter(this);
+    public void display(LoginResultModel loginResultModel) {
+
     }
 
     @Override
     public void displayError(String s) {
 
+    }
+
+    private void setupPresenter() {
+        listKaryaPresenter = new ListKaryaPresenter(this);
     }
 
     @Override
