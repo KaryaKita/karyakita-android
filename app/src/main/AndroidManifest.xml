@@ -28,18 +28,21 @@
         <activity
             android:name=".customer.SplashActivity"
             android:theme="@style/AppTheme.SplashTheme">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity android:name=".login.LoginActivity" />
         <activity android:name=".login.LoginAsActivity" />
         <activity android:name=".register_as.RegisterAsActivity" />
         <activity android:name=".register.RegisterActivity" />
         <activity android:name=".customer.home.HomeCustomerActivity" />
-        <activity android:name=".example.MovieActivity" />
+        <activity android:name=".example.MovieActivity">
+        </activity>
         <activity android:name=".customer.karya.DetailKaryaActivity" />
         <activity android:name=".customer.transaksi.DataPengirimanCustomerActivity" />
         <activity android:name=".customer.transaksi.PesanCustomActivity" />

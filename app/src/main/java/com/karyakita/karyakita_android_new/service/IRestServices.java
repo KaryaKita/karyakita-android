@@ -48,8 +48,8 @@ public interface IRestServices {
 //    @GET("karya/get-by-kategori/kategori_id")
 //    io.reactivex.Observable<ListKaryaResultModel>getListKaryaByKategori(@Path("kategori_id")Integer kategori_id);
 
-    @GET("karya/get-by-kategori/kategori_id")
-    io.reactivex.Observable<ListKaryaResultModel> getListKaryaByKategori(@Path("kategori_id")Integer kategori_id);
+    @GET("karya/get-by-kategori/{kategori_id}")
+    io.reactivex.Observable<ListKaryaResultModel> getListKaryaByKategori(@Header("Authorization") String bearer, @Path("kategori_id")Integer kategori_id);
 
 
 }
