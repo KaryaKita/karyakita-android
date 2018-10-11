@@ -7,14 +7,14 @@
     <android.support.v7.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="120dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
 
         <android.support.v7.widget.AppCompatImageView
             android:id="@+id/iv_gambar_karya"
             android:layout_width="135dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@drawable/image_asset_1" />
+            android:layout_gravity="center" />
 
         <android.support.v7.widget.LinearLayoutCompat
             android:layout_width="match_parent"
