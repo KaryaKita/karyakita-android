@@ -37,7 +37,7 @@ public class LoginModel extends BaseModel {
     @Expose
     private Integer role_id;
 
-    public LoginModel(){
+    public LoginModel() {
 
     }
 

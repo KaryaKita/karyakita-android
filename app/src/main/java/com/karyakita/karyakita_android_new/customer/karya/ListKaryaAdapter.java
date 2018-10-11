@@ -15,11 +15,11 @@ import com.karyakita.karyakita_android_new.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListKaryaAdapter extends RecyclerView.Adapter<ListKaryaAdapter.Holder>{
+public class ListKaryaAdapter extends RecyclerView.Adapter<ListKaryaAdapter.Holder> {
     List<ListKaryaModel> listKaryaModelList;
     Context context;
 
-    public ListKaryaAdapter(List<ListKaryaModel> listKaryaModelList, Context context){
+    public ListKaryaAdapter(List<ListKaryaModel> listKaryaModelList, Context context) {
         this.listKaryaModelList = new ArrayList<>();
         this.context = context;
     }
@@ -41,7 +41,7 @@ public class ListKaryaAdapter extends RecyclerView.Adapter<ListKaryaAdapter.Hold
         return this.listKaryaModelList.size();
     }
 
-    public void addToList(ListKaryaModel listKaryaModel){
+    public void addToList(ListKaryaModel listKaryaModel) {
         listKaryaModelList.add(listKaryaModel);
     }
 

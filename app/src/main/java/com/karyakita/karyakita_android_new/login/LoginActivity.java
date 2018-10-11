@@ -1,25 +1,18 @@
 package com.karyakita.karyakita_android_new.login;
 
 import android.content.Intent;
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.base_class_interface.GlobalVariable;
 import com.karyakita.karyakita_android_new.customer.home.HomeCustomerActivity;
-import com.karyakita.karyakita_android_new.example.MovieResponse;
-import com.karyakita.karyakita_android_new.example.ITestView;
-import com.karyakita.karyakita_android_new.register.RegisterActivity;
-import com.karyakita.karyakita_android_new.register_as.RegisterAsActivity;
 
 import java.util.HashMap;
 import java.util.Map;

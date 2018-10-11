@@ -6,7 +6,7 @@ import com.karyakita.karyakita_android_new.base_class_interface.BaseModel;
 
 import java.util.List;
 
-public class Result extends BaseModel{
+public class Result extends BaseModel {
 
     @SerializedName("vote_count")
     @Expose
@@ -53,13 +53,11 @@ public class Result extends BaseModel{
 
     /**
      * No args constructor for use in serialization
-     *
      */
     public Result() {
     }
 
     /**
-     *
      * @param genreIds
      * @param id
      * @param title

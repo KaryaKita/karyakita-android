@@ -1,10 +1,10 @@
 package com.karyakita.karyakita_android_new.service;
 
+import com.karyakita.karyakita_android_new.customer.karya.KategoriKaryaResultModel;
 import com.karyakita.karyakita_android_new.customer.karya.ListKaryaResultModel;
 import com.karyakita.karyakita_android_new.example.MovieResponse;
 import com.karyakita.karyakita_android_new.example.TestModel;
 import com.karyakita.karyakita_android_new.login.LoginResultModel;
-import com.karyakita.karyakita_android_new.customer.karya.KategoriKaryaResultModel;
 import com.karyakita.karyakita_android_new.register.RegisterResultModel;
 
 import java.util.List;
@@ -38,7 +38,7 @@ public interface IRestServices {
     @FormUrlEncoded
     @POST("user/login")
     io.reactivex.Observable<LoginResultModel> login(@Field("email") String email,
-                                                      @Field("password") String password,
+                                                    @Field("password") String password,
                                                     @Field("role_id") Integer role_id);
 
     @GET("karya/get-all")
@@ -51,7 +51,7 @@ public interface IRestServices {
 //    io.reactivex.Observable<ListKaryaResultModel>getListKaryaByKategori(@Path("kategori_id")Integer kategori_id);
 
     @GET("karya/get-by-kategori/{kategori_id}")
-    io.reactivex.Observable<ListKaryaResultModel> getListKaryaByKategori(@Header("Authorization") String bearer, @Path("kategori_id")Integer kategori_id);
+    io.reactivex.Observable<ListKaryaResultModel> getListKaryaByKategori(@Header("Authorization") String bearer, @Path("kategori_id") Integer kategori_id);
 
 
 }
