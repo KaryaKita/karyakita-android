@@ -41,9 +41,10 @@ public interface IRestServices {
                                                       @Field("password") String password,
                                                     @Field("role_id") Integer role_id);
 
-    @GET("kategori_karya/get-all")
+    @GET("karya/get-all")
     io.reactivex.Observable<KategoriKaryaResultModel> getListKarya(@Header("Authorization") String bearer);
 
+    @GET("kategori_karya/get-all")
     io.reactivex.Observable<KategoriKaryaResultModel> getKategoriKarya(@Header("Authorization") String bearer);
 
 //    @GET("karya/get-by-kategori/kategori_id")
