@@ -28,7 +28,7 @@
                     android:layout_marginLeft="40dp"
                     android:layout_marginRight="40dp"
                     android:layout_weight="1"
-                    android:src="@drawable/mesut_ozil" />
+                    android:src="@drawable/image_asset_4" />
 
                 <Button
                     android:layout_width="200dp"
@@ -110,7 +110,7 @@
                         android:layout_gravity="center"
                         android:layout_marginRight="30dp"
                         android:background="@drawable/spinner_rounded_border"
-                        android:entries="@array/ukuran_desain"></Spinner>
+                        android:entries="@array/ukuran_desain" />
 
                 </LinearLayout>
 

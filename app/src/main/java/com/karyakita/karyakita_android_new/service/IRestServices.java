@@ -13,6 +13,7 @@ import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
@@ -41,10 +42,14 @@ public interface IRestServices {
                                                     @Field("role_id") Integer role_id);
 
     @GET("kategori_karya/get-all")
-    io.reactivex.Observable<KategoriKaryaResultModel> getKategoriKarya();
+
+    io.reactivex.Observable<KategoriKaryaResultModel> getKategoriKarya(@Header("Authorization") String bearer);
+
+//    @GET("karya/get-by-kategori/kategori_id")
+//    io.reactivex.Observable<ListKaryaResultModel>getListKaryaByKategori(@Path("kategori_id")Integer kategori_id);
 
     @GET("karya/get-by-kategori/kategori_id")
-    io.reactivex.Observable<ListKaryaResultModel>getListKaryaByKategori(@Path("kategori_id")Integer kategori_id);
+    io.reactivex.Observable<ListKaryaResultModel> getListKaryaByKategori(@Path("kategori_id")Integer kategori_id);
 
 
 }
