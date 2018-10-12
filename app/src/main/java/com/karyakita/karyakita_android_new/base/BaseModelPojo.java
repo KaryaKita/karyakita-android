@@ -1,4 +1,4 @@
-package com.karyakita.karyakita_android_new.base_class_interface;
+package com.karyakita.karyakita_android_new.base;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -6,17 +6,16 @@ import android.os.Parcelable;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class BaseModel implements Parcelable {
-
-    public static final Creator<BaseModel> CREATOR = new Creator<BaseModel>() {
+public class BaseModelPojo implements Parcelable {
+    public static final Parcelable.Creator<BaseModelPojo> CREATOR = new Parcelable.Creator<BaseModelPojo>() {
         @Override
-        public BaseModel createFromParcel(Parcel in) {
-            return new BaseModel(in);
+        public BaseModelPojo createFromParcel(Parcel in) {
+            return new BaseModelPojo(in);
         }
 
         @Override
-        public BaseModel[] newArray(int size) {
-            return new BaseModel[size];
+        public BaseModelPojo[] newArray(int size) {
+            return new BaseModelPojo[size];
         }
     };
 
@@ -33,10 +32,10 @@ public class BaseModel implements Parcelable {
     @Expose
     protected String updatedAt;
 
-    public BaseModel() {
+    public BaseModelPojo() {
     }
 
-    protected BaseModel(Parcel in) {
+    protected BaseModelPojo(Parcel in) {
         this.id         = in.readInt();
         this.createdAt  = in.readString();
         this.updatedAt  = in.readString();
