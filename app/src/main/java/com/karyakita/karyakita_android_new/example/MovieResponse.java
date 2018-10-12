@@ -6,7 +6,7 @@ import com.karyakita.karyakita_android_new.base_class_interface.BaseModel;
 
 import java.util.List;
 
-public class MovieResponse extends BaseModel{
+public class MovieResponse extends BaseModel {
 
     @SerializedName("page")
     @Expose
@@ -23,13 +23,11 @@ public class MovieResponse extends BaseModel{
 
     /**
      * No args constructor for use in serialization
-     *
      */
     public MovieResponse() {
     }
 
     /**
-     *
      * @param results
      * @param totalResults
      * @param page

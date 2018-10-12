@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -33,7 +32,7 @@
                         android:layout_width="15dp"
                         android:layout_height="match_parent"
                         android:src="@drawable/exmpl"
-                        android:layout_weight="1"/>
+                        android:layout_weight="1" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -48,21 +47,21 @@
                             android:layout_height="wrap_content"
                             android:text="Efriza Luluk Savira"
                             android:textStyle="bold"
-                            android:textSize="18dp"/>
+                            android:textSize="18dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Vector Art Designer"
                             android:textSize="15dp"
-                            android:layout_marginTop="3dp"/>
+                            android:layout_marginTop="3dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Surabaya, Jawa Timur"
                             android:textSize="15dp"
-                            android:layout_marginTop="3dp"/>
+                            android:layout_marginTop="3dp" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -75,14 +74,14 @@
                                 android:layout_height="wrap_content"
                                 android:text="30"
                                 android:textStyle="bold"
-                                android:textSize="15dp"/>
+                                android:textSize="15dp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="  Karya"
                                 android:textStyle="bold"
-                                android:textSize="15dp"/>
+                                android:textSize="15dp" />
                         </LinearLayout>
 
                     </LinearLayout>
@@ -104,7 +103,7 @@
                         android:text="Edit Profile"
                         android:textColor="#ffff"
                         android:textStyle="bold"
-                        android:background="@drawable/button_rounded_skyblue"/>
+                        android:background="@drawable/button_rounded_skyblue" />
 
                     <Button
                         android:layout_width="1dp"
@@ -115,7 +114,7 @@
                         android:text="Upload Karya"
                         android:textColor="#ffff"
                         android:textStyle="bold"
-                        android:background="@drawable/button_rounded_skyblue"/>
+                        android:background="@drawable/button_rounded_skyblue" />
 
                 </LinearLayout>
 
@@ -145,17 +144,17 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="5dp"
-                            android:src="@drawable/ic_wifi_black_24dp"/>
+                            android:src="@drawable/ic_signal_bars" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="57"/>
+                            android:text="57" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text=" Pelanggan"/>
+                            android:text=" Pelanggan" />
                     </LinearLayout>
 
                     <View
@@ -174,17 +173,17 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="5dp"
-                            android:src="@drawable/ic_wifi_black_24dp"/>
+                            android:src="@drawable/ic_wifi_black_24dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="102"/>
+                            android:text="102" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text=" Subscriber"/>
+                            android:text=" Subscriber" />
 
                     </LinearLayout>
 
@@ -199,11 +198,38 @@
                     android:layout_marginLeft="10dp"
                     android:background="#bbb" />
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <ImageView
+                        android:id="@+id/iv_gambar_movie"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_margin="5dp"
+                        android:gravity="center"
+                        android:background="@drawable/border"
+                        android:src="@drawable/contoh1" />
+
+                    <ImageView
+                        android:id="@+id/iv_gambar_movie2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/border"
+                        android:src="@drawable/contoh2" />
+                </LinearLayout>
+
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/rv_home_designer"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scrollbars="vertical">
+
                 </android.support.v7.widget.RecyclerView>
 
             </LinearLayout>
@@ -212,7 +238,6 @@
 
 
     </LinearLayout>
-
 
 
 </android.support.constraint.ConstraintLayout>
