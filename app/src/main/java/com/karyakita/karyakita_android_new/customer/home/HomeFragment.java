@@ -15,7 +15,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.karyakita.karyakita_android_new.R;
-import com.karyakita.karyakita_android_new.base_class_interface.GlobalVariable;
+import com.karyakita.karyakita_android_new.base.GlobalVariable;
 import com.karyakita.karyakita_android_new.customer.karya.DetailKaryaActivity;
 import com.karyakita.karyakita_android_new.customer.karya.KategoriKaryaAdapter;
 import com.karyakita.karyakita_android_new.customer.karya.KategoriKaryaModel;

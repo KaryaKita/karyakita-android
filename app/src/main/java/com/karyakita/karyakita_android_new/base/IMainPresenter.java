@@ -1,4 +1,4 @@
-package com.karyakita.karyakita_android_new.base_class_interface;
+package com.karyakita.karyakita_android_new.base;
 
 import java.util.Map;
 
