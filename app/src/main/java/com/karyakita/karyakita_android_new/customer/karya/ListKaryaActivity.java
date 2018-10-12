@@ -11,11 +11,8 @@ import android.view.Menu;
 import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.example.ITestView;
 import com.karyakita.karyakita_android_new.example.MovieResponse;
-<<<<<<< HEAD
 import com.karyakita.karyakita_android_new.customer.karya.ListKaryaPresenter;
 import com.karyakita.karyakita_android_new.login.LoginResultModel;
-=======
->>>>>>> 32a71dcfe6c4477be5475e89aa4e8a69ed9471ab
 
 import java.util.List;
 
@@ -24,14 +21,11 @@ import butterknife.ButterKnife;
 
 public class ListKaryaActivity extends AppCompatActivity implements IListKaryaView {
     ListKaryaPresenter listKaryaPresenter = null;
-<<<<<<< HEAD
     private String TAG = "ListKaryaActivity";
 
     @BindView(R.id.rv_list_karya)
     RecyclerView rv_list_karya;
-=======
     ListKaryaModel listKaryaModel = null;
->>>>>>> 1110a2b820f9cbc2906014ed543182dbce60d128
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +33,8 @@ public class ListKaryaActivity extends AppCompatActivity implements IListKaryaVi
         setContentView(R.layout.activity_list_karya_customer);
         ButterKnife.bind(this);
 
-<<<<<<< HEAD
         //setupPresenter();
-=======
+
         Toolbar toolbar = findViewById(R.id.toolbar_navigation_list_karya);
         setSupportActionBar(toolbar);
 
@@ -49,12 +42,8 @@ public class ListKaryaActivity extends AppCompatActivity implements IListKaryaVi
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setTitle("List Karya");
 
-<<<<<<< HEAD
         setupPresenter();
-=======
 //        setupPresenter();
->>>>>>> 32a71dcfe6c4477be5475e89aa4e8a69ed9471ab
->>>>>>> 1110a2b820f9cbc2906014ed543182dbce60d128
         setupView();
         getListKarya();
     }
@@ -87,7 +76,6 @@ public class ListKaryaActivity extends AppCompatActivity implements IListKaryaVi
     }
 
     @Override
-<<<<<<< HEAD
     public void display(ListKaryaResultModel listKaryaResultModel) {
         ListKaryaAdapter listKaryaAdapter = new ListKaryaAdapter(listKaryaResultModel.getData(), ListKaryaActivity.this);
 
@@ -109,10 +97,9 @@ public class ListKaryaActivity extends AppCompatActivity implements IListKaryaVi
         }else {
             Log.d(TAG, "null");
         }
-=======
+
     public void display(LoginResultModel loginResultModel) {
 
->>>>>>> 1110a2b820f9cbc2906014ed543182dbce60d128
     }
 
     @Override
@@ -120,14 +107,11 @@ public class ListKaryaActivity extends AppCompatActivity implements IListKaryaVi
 
     }
 
-<<<<<<< HEAD
     private void setupPresenter() {
         listKaryaPresenter = new ListKaryaPresenter(this);
         listKaryaPresenter.get();
     }
 
-
-=======
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
 
@@ -136,5 +120,4 @@ public class ListKaryaActivity extends AppCompatActivity implements IListKaryaVi
 //    private void setupPresenter() {
 //        listKaryaPresenter = new ListKaryaPresenter(this);
 //    }
->>>>>>> 1110a2b820f9cbc2906014ed543182dbce60d128
 }
