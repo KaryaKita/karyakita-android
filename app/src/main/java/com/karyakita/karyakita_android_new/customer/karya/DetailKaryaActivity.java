@@ -11,13 +11,12 @@ import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.customer.transaksi.DataPengirimanCustomerActivity;
 import com.karyakita.karyakita_android_new.customer.transaksi.PesanCustomActivity;
 import com.karyakita.karyakita_android_new.example.MovieResponse;
-import com.karyakita.karyakita_android_new.example.ITestView;
 import com.karyakita.karyakita_android_new.login.LoginActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class DetailKaryaActivity extends AppCompatActivity implements ITestView{
+public class DetailKaryaActivity extends AppCompatActivity implements IDetailKaryaView{
 
     @BindView(R.id.btnKirimPesan)
     Button btnKirimPesan;
@@ -64,15 +63,10 @@ public class DetailKaryaActivity extends AppCompatActivity implements ITestView{
 
     }
 
-    @Override
-    public void display(MovieResponse model) {
-
-    }
-
-    @Override
-    public void displayError(String s) {
-
-    }
+//    @Override
+//    public void display(MovieResponse model) {
+//
+//    }
 
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
