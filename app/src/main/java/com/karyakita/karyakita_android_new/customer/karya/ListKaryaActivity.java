@@ -15,11 +15,10 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import retrofit2.http.HEAD;
 
 public class ListKaryaActivity extends AppCompatActivity implements IListKaryaView {
     ListKaryaPresenter listKaryaPresenter = null;
-    LoginResultModel loginResultModel =null;
+    LoginResultModel loginResultModel = null;
 
     private String TAG = "ListKaryaActivity";
 
@@ -27,6 +26,7 @@ public class ListKaryaActivity extends AppCompatActivity implements IListKaryaVi
     RecyclerView rv_list_karya;
 
     ListKaryaModel listKaryaModel = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

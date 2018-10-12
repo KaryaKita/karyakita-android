@@ -1,7 +1,7 @@
 package com.karyakita.karyakita_android_new.example;
+
 import android.util.Log;
 
-import com.karyakita.karyakita_android_new.base_class_interface.BaseModel;
 import com.karyakita.karyakita_android_new.base_class_interface.IMainPresenter;
 import com.karyakita.karyakita_android_new.service.IRestServices;
 import com.karyakita.karyakita_android_new.service.RetrofitHelper;
@@ -37,32 +37,32 @@ public class TestPresenter implements IMainPresenter {
 
     }
 
-    public Observable<MovieResponse> getObservable(){
+    public Observable<MovieResponse> getObservable() {
         return RetrofitHelper.getRetrofit().create(IRestServices.class)
                 .getMovies("004cbaf19212094e32aa9ef6f6577f22")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }
 
-    public DisposableObserver<MovieResponse> getObserver(){
+    public DisposableObserver<MovieResponse> getObserver() {
         return new DisposableObserver<MovieResponse>() {
 
             @Override
             public void onNext(@NonNull MovieResponse movieResponse) {
-                Log.d(TAG,"OnNext"+movieResponse.getTotalResults());
+                Log.d(TAG, "OnNext" + movieResponse.getTotalResults());
                 testView.display(movieResponse);
             }
 
             @Override
             public void onError(@NonNull Throwable e) {
-                Log.d(TAG,"Error"+e);
+                Log.d(TAG, "Error" + e);
                 e.printStackTrace();
                 testView.displayError("Error fetching Movie Data");
             }
 
             @Override
             public void onComplete() {
-                Log.d(TAG,"Completed");
+                Log.d(TAG, "Completed");
             }
         };
     }

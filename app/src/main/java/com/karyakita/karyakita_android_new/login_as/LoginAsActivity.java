@@ -34,7 +34,7 @@ public class LoginAsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
                 bundle.putInt("role_id", 3);
-                Intent intent =  new Intent(LoginAsActivity.this, LoginActivity.class);
+                Intent intent = new Intent(LoginAsActivity.this, LoginActivity.class);
                 intent.putExtras(bundle);
                 startActivity(intent);
             }
@@ -45,7 +45,7 @@ public class LoginAsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
                 bundle.putInt("role_id", 2);
-                Intent intent =  new Intent(LoginAsActivity.this, LoginActivity.class);
+                Intent intent = new Intent(LoginAsActivity.this, LoginActivity.class);
                 intent.putExtras(bundle);
                 startActivity(intent);
             }

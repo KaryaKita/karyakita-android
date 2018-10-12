@@ -1,7 +1,7 @@
 package com.karyakita.karyakita_android_new.example;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -18,8 +18,8 @@ public class TestActivity extends AppCompatActivity implements ITestView {
     @BindView(R.id.rvMovies)
     RecyclerView rvMovies;
 
-    private String  TAG = "MainActivity";
-    TestPresenter   testPresenter;
+    private String TAG = "MainActivity";
+    TestPresenter testPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +36,7 @@ public class TestActivity extends AppCompatActivity implements ITestView {
         testPresenter = new TestPresenter(this);
     }
 
-    private void setupViews(){
+    private void setupViews() {
         rvMovies.setLayoutManager(new LinearLayoutManager(this.getApplicationContext(), LinearLayoutManager.VERTICAL, false));
         rvMovies.setHasFixedSize(true);
     }
@@ -47,17 +47,17 @@ public class TestActivity extends AppCompatActivity implements ITestView {
 
     @Override
     public void showToast(String str) {
-        Toast.makeText(TestActivity.this,str,Toast.LENGTH_LONG).show();
+        Toast.makeText(TestActivity.this, str, Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void display(MovieResponse movieResponse) {
         MoviesAdapter adapter = new MoviesAdapter(movieResponse.getResults(), TestActivity.this);
 
-        if(movieResponse != null) {
-            Log.d(TAG,movieResponse.getResults().get(0).getTitle());
-            Log.d(TAG,movieResponse.getResults().get(0).getOriginalLanguage());
-            Log.d(TAG,movieResponse.getResults().get(0).getOriginalTitle());
+        if (movieResponse != null) {
+            Log.d(TAG, movieResponse.getResults().get(0).getTitle());
+            Log.d(TAG, movieResponse.getResults().get(0).getOriginalLanguage());
+            Log.d(TAG, movieResponse.getResults().get(0).getOriginalTitle());
 
             List<Result> listResponse = movieResponse.getResults();
             if (listResponse.size() > 0) {
@@ -68,8 +68,8 @@ public class TestActivity extends AppCompatActivity implements ITestView {
             }
 
             rvMovies.setAdapter(adapter);
-        }else{
-            Log.d(TAG,"Movies response null");
+        } else {
+            Log.d(TAG, "Movies response null");
         }
     }
 

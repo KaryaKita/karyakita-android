@@ -17,7 +17,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
 
-                android:src="@drawable/desainer"/>
+                android:src="@drawable/desainer" />
 
             <android.support.v7.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
@@ -29,12 +29,12 @@
                     android:layout_height="20dp"
                     android:text="Desainer Reza Aprillia"
                     android:textStyle="bold"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black" />
 
                 <android.support.v7.widget.AppCompatTextView
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
-                    android:text="Surabaya, Jawa Timur"/>
+                    android:text="Surabaya, Jawa Timur" />
 
                 <android.support.v7.widget.AppCompatTextView
                     android:layout_width="match_parent"
@@ -46,15 +46,14 @@
                     android:layout_height="20dp"
                     android:text="30 karya"
                     android:textSize="@dimen/dimens_10dp"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black" />
 
             </android.support.v7.widget.LinearLayoutCompat>
 
-        <android.support.v7.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-        </android.support.v7.widget.LinearLayoutCompat>
+            <android.support.v7.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"></android.support.v7.widget.LinearLayoutCompat>
         </android.support.v7.widget.LinearLayoutCompat>
     </android.support.v7.widget.LinearLayoutCompat>
 </android.support.v7.widget.LinearLayoutCompat>
