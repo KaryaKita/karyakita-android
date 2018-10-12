@@ -21,10 +21,13 @@ import butterknife.ButterKnife;
 
 public class ListKaryaActivity extends AppCompatActivity implements IListKaryaView {
     ListKaryaPresenter listKaryaPresenter = null;
+    LoginResultModel loginResultModel = null;
+
     private String TAG = "ListKaryaActivity";
 
     @BindView(R.id.rv_list_karya)
     RecyclerView rv_list_karya;
+
     ListKaryaModel listKaryaModel = null;
 
     @Override
@@ -44,7 +47,9 @@ public class ListKaryaActivity extends AppCompatActivity implements IListKaryaVi
 
         setupPresenter();
 //        setupPresenter();
+
         setupView();
+        setupPresenter();
         getListKarya();
     }
 
@@ -79,11 +84,11 @@ public class ListKaryaActivity extends AppCompatActivity implements IListKaryaVi
     public void display(ListKaryaResultModel listKaryaResultModel) {
         ListKaryaAdapter listKaryaAdapter = new ListKaryaAdapter(listKaryaResultModel.getData(), ListKaryaActivity.this);
 
-        if(listKaryaResultModel.getData() != null){
+        if (listKaryaResultModel.getData() != null) {
             List<ListKaryaModel> listResponse = listKaryaResultModel.getData();
             Log.d(TAG, "respon: " + listResponse.get(1).getNama());
-            if (listResponse.size()>0){
-                for (int i=0; i<listResponse.size(); i++){
+            if (listResponse.size() > 0) {
+                for (int i = 0; i < listResponse.size(); i++) {
                     ListKaryaModel listKaryaModel = listResponse.get(i);
                     Log.d(TAG, listKaryaModel.getFilename());
                     listKaryaAdapter.addToList(listKaryaModel);
@@ -94,9 +99,11 @@ public class ListKaryaActivity extends AppCompatActivity implements IListKaryaVi
 //            Log.d(TAG,listKaryaResultModel.getData().get(0).getNama());
 ////            Log.d(TAG,listKaryaResultModel.getData().get(0).getKategori_karya_id().toString());
 //            Log.d(TAG,listKaryaResultModel.getData().get(0).getDeploy_url());
-        }else {
+        } else {
             Log.d(TAG, "null");
         }
+
+    }
 
     public void display(LoginResultModel loginResultModel) {
 
@@ -109,7 +116,6 @@ public class ListKaryaActivity extends AppCompatActivity implements IListKaryaVi
 
     private void setupPresenter() {
         listKaryaPresenter = new ListKaryaPresenter(this);
-        listKaryaPresenter.get();
     }
 
     @Override
