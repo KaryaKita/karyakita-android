@@ -56,7 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="200dp"
-        android:background="@color/mainColor"
-        android:textColor="@color/white"
-        android:text="KEMBALI KE BERANDA" />
+        android:background="@color/yellow_900"
+        android:text="KEMBALI KE BERANDA"
+        android:textColor="@color/white" />
 </android.support.v7.widget.LinearLayoutCompat>
