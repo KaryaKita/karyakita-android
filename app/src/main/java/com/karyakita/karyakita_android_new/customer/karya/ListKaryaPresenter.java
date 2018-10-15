@@ -3,9 +3,9 @@ package com.karyakita.karyakita_android_new.customer.karya;
 
 import android.util.Log;
 
-import com.karyakita.karyakita_android_new.base_class_interface.BaseModel;
-import com.karyakita.karyakita_android_new.base_class_interface.GlobalVariable;
-import com.karyakita.karyakita_android_new.base_class_interface.IMainPresenter;
+import com.karyakita.karyakita_android_new.base.BaseModel;
+import com.karyakita.karyakita_android_new.base.GlobalVariable;
+import com.karyakita.karyakita_android_new.base.IMainPresenter;
 import com.karyakita.karyakita_android_new.service.IRestServices;
 import com.karyakita.karyakita_android_new.service.RetrofitHelper;
 

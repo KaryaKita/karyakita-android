@@ -2,7 +2,7 @@ package com.karyakita.karyakita_android_new.register;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-import com.karyakita.karyakita_android_new.base_class_interface.BaseModel;
+import com.karyakita.karyakita_android_new.base.BaseModel;
 
 public class RegisterModel extends BaseModel {
     @SerializedName("createdAt")

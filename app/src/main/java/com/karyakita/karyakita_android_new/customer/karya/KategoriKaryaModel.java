@@ -2,7 +2,7 @@ package com.karyakita.karyakita_android_new.customer.karya;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-import com.karyakita.karyakita_android_new.base_class_interface.BaseModel;
+import com.karyakita.karyakita_android_new.base.BaseModel;
 
 public class KategoriKaryaModel extends BaseModel {
 
@@ -75,9 +75,7 @@ public class KategoriKaryaModel extends BaseModel {
         this.updatedAt = updatedAt;
     }
 
-    public Integer getId() {
-        return id;
-    }
+    public Integer getId() { return id; }
 
     public void setId(Integer id) {
         this.id = id;
