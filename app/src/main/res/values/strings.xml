@@ -79,4 +79,5 @@
         <item>Bingkai</item>
         <item>Tanpa Bingkai</item>
     </array>
+    <string name="title_activity_customer_home">CustomerHomeActivity</string>
 </resources>
