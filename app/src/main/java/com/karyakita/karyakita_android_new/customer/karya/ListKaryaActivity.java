@@ -18,10 +18,14 @@ import butterknife.ButterKnife;
 
 public class ListKaryaActivity extends AppCompatActivity implements IListKaryaView {
     ListKaryaPresenter listKaryaPresenter = null;
+    LoginResultModel loginResultModel = null;
+
+    private String TAG = "ListKaryaActivity";
+
     @BindView(R.id.rv_list_karya)
     RecyclerView rv_list_karya;
+
     ListKaryaModel listKaryaModel = null;
-    private String TAG = "ListKaryaActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +40,8 @@ public class ListKaryaActivity extends AppCompatActivity implements IListKaryaVi
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setTitle("List Karya");
 
-//        setupPresenter();
         setupView();
+        setupPresenter();
         getListKarya();
     }
 
@@ -90,6 +94,7 @@ public class ListKaryaActivity extends AppCompatActivity implements IListKaryaVi
         } else {
             Log.d(TAG, "null");
         }
+
     }
 
     public void display(LoginResultModel loginResultModel) {
@@ -103,15 +108,10 @@ public class ListKaryaActivity extends AppCompatActivity implements IListKaryaVi
 
     private void setupPresenter() {
         listKaryaPresenter = new ListKaryaPresenter(this);
-        listKaryaPresenter.get();
     }
 
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
 
     }
-
-//    private void setupPresenter() {
-//        listKaryaPresenter = new ListKaryaPresenter(this);
-//    }
 }

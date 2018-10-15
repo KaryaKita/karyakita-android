@@ -2,7 +2,7 @@ package com.karyakita.karyakita_android_new.login;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-import com.karyakita.karyakita_android_new.base_class_interface.BaseModel;
+import com.karyakita.karyakita_android_new.base.BaseModel;
 
 public class LoginModel extends BaseModel {
     @SerializedName("createdAt")
@@ -37,7 +37,7 @@ public class LoginModel extends BaseModel {
     @Expose
     private Integer role_id;
 
-    public LoginModel(){
+    public LoginModel() {
 
     }
 

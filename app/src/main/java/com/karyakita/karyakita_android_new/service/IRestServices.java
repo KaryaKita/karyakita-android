@@ -1,11 +1,12 @@
 package com.karyakita.karyakita_android_new.service;
 
+import com.karyakita.karyakita_android_new.customer.karya.DetailKaryaResultModel;
+import com.karyakita.karyakita_android_new.customer.karya.KategoriKaryaResultModel;
 import com.karyakita.karyakita_android_new.customer.karya.ListKaryaResultModel;
 import com.karyakita.karyakita_android_new.desainer.list_desainer.ListDesainerModel;
 import com.karyakita.karyakita_android_new.example.MovieResponse;
 import com.karyakita.karyakita_android_new.example.TestModel;
 import com.karyakita.karyakita_android_new.login.LoginResultModel;
-import com.karyakita.karyakita_android_new.customer.karya.KategoriKaryaResultModel;
 import com.karyakita.karyakita_android_new.register.RegisterResultModel;
 
 import java.util.List;
@@ -39,21 +40,29 @@ public interface IRestServices {
     @FormUrlEncoded
     @POST("user/login")
     io.reactivex.Observable<LoginResultModel> login(@Field("email") String email,
-                                                      @Field("password") String password,
+                                                    @Field("password") String password,
                                                     @Field("role_id") Integer role_id);
 
-    @GET("kategori_karya/get-all")
+    @GET("karya/get-all")
+    io.reactivex.Observable<KategoriKaryaResultModel> getListKarya(@Header("Authorization") String bearer);
 
+    @GET("kategori_karya/get-all")
     io.reactivex.Observable<KategoriKaryaResultModel> getKategoriKarya(@Header("Authorization") String bearer);
 
 //    @GET("karya/get-by-kategori/kategori_id")
 //    io.reactivex.Observable<ListKaryaResultModel>getListKaryaByKategori(@Path("kategori_id")Integer kategori_id);
 
     @GET("karya/get-by-kategori/{kategori_id}")
+<<<<<<< HEAD
     io.reactivex.Observable<ListKaryaResultModel> getListKaryaByKategori(@Header("Authorization") String bearer, @Path("kategori_id")Integer kategori_id);
 
 //    @GET("discover/movie")
 //    io.reactivex.Observable<ListDesainerModel> getListDesainer(@Path("desainer_id")Integer desainer_id);
 
+=======
+    io.reactivex.Observable<ListKaryaResultModel> getListKaryaByKategori(@Header("Authorization") String bearer, @Path("kategori_id") Integer kategori_id);
+>>>>>>> 2a6f62e6c41c31a4a378a70e636f11f5d10724f3
 
+    @GET("karya/{kategori_id}")
+    io.reactivex.Observable<DetailKaryaResultModel> getDetailKarya(@Header("Authorization") String bearer, @Path("kategori_id")Integer kategori_id);
 }

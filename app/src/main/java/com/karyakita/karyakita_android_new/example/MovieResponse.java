@@ -2,11 +2,11 @@ package com.karyakita.karyakita_android_new.example;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-import com.karyakita.karyakita_android_new.base_class_interface.BaseModel;
+import com.karyakita.karyakita_android_new.base.BaseModel;
 
 import java.util.List;
 
-public class MovieResponse extends BaseModel{
+public class MovieResponse extends BaseModel {
 
     @SerializedName("page")
     @Expose
@@ -23,13 +23,11 @@ public class MovieResponse extends BaseModel{
 
     /**
      * No args constructor for use in serialization
-     *
      */
     public MovieResponse() {
     }
 
     /**
-     *
      * @param results
      * @param totalResults
      * @param page

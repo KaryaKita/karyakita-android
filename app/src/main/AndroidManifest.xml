@@ -31,7 +31,9 @@
         <activity android:name=".customer.home.HomeCustomerActivity"></activity>
         <activity android:name=".example.MovieActivity"></activity>
         <activity android:name=".register_as.RegisterAsActivity"></activity>
-        <activity android:name=".login.LoginActivity"></activity>
+        <activity android:name=".login.LoginActivity">
+
+        </activity>
         <activity android:name=".login_as.LoginAsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,15 +1,11 @@
 package com.karyakita.karyakita_android_new.login;
 
 import android.util.Log;
-import android.view.View;
-import android.widget.Toast;
 
-import com.karyakita.karyakita_android_new.base_class_interface.BaseModel;
-import com.karyakita.karyakita_android_new.base_class_interface.IMainPresenter;
-import com.karyakita.karyakita_android_new.example.MovieResponse;
+import com.karyakita.karyakita_android_new.base.BaseModel;
+import com.karyakita.karyakita_android_new.base.IMainPresenter;
 import com.karyakita.karyakita_android_new.service.IRestServices;
 import com.karyakita.karyakita_android_new.service.RetrofitHelper;
-import com.karyakita.karyakita_android_new.example.ITestView;
 
 import java.util.Map;
 
@@ -21,7 +17,7 @@ import io.reactivex.schedulers.Schedulers;
 
 import static com.bumptech.glide.gifdecoder.GifHeaderParser.TAG;
 
-public class LoginPresenter implements IMainPresenter{
+public class LoginPresenter implements IMainPresenter {
     ILoginView iLoginView;
     BaseModel model = null;
     LoginModel loginModel = null;
@@ -48,7 +44,7 @@ public class LoginPresenter implements IMainPresenter{
     }
 
     public Observable<LoginResultModel> getObservable() {
-        Log.d(TAG   , "Berhasil joss");
+        Log.d(TAG, "Berhasil joss");
         return RetrofitHelper.getRetrofit().create(IRestServices.class)
                 .login(this.input.get("email"),
                         this.input.get("password"),
@@ -57,7 +53,7 @@ public class LoginPresenter implements IMainPresenter{
                 .observeOn(AndroidSchedulers.mainThread());
     }
 
-    public DisposableObserver<LoginResultModel> getObserver(){
+    public DisposableObserver<LoginResultModel> getObserver() {
         return new DisposableObserver<LoginResultModel>() {
 
             @Override
@@ -69,14 +65,14 @@ public class LoginPresenter implements IMainPresenter{
 
             @Override
             public void onError(@NonNull Throwable e) {
-                Log.d(TAG,"Error"+e);
+                Log.d(TAG, "Error" + e);
                 e.printStackTrace();
                 iLoginView.displayError("Error fetching Movie Data");
             }
 
             @Override
             public void onComplete() {
-                Log.d(TAG,"Completed");
+                Log.d(TAG, "Completed");
             }
         };
     }

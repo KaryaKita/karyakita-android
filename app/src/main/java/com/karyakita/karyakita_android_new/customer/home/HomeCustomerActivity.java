@@ -18,10 +18,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 
 import com.karyakita.karyakita_android_new.R;
-import com.karyakita.karyakita_android_new.customer.karya.DetailKaryaActivity;
 import com.karyakita.karyakita_android_new.customer.karya.ListKaryaActivity;
 
 import butterknife.BindView;
@@ -55,6 +53,7 @@ public class HomeCustomerActivity extends AppCompatActivity
         setNavigationView(toolbarNavigation);
         setFloatingActionButton();
         setViewPager();
+
     }
 
     private void setViewPager() {
@@ -126,7 +125,6 @@ public class HomeCustomerActivity extends AppCompatActivity
     }
 
 
-
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -135,14 +133,14 @@ public class HomeCustomerActivity extends AppCompatActivity
         Class fragmentClass = null;
         int id = item.getItemId();
 
-        switch (id){
+        switch (id) {
             case R.id.nav_beranda_customer:
                 startActivity(new Intent(getApplicationContext(), HomeCustomerActivity.class));
                 return true;
             case R.id.nav_kategori_desain_customer:
                 startActivity(new Intent(HomeCustomerActivity.this, ListKaryaActivity.class));
                 return true;
-            case  R.id.nav_desainer_customer:
+            case R.id.nav_desainer_customer:
                 fragmentClass = DesainerFragment.class;
                 return true;
             case R.id.nav_pesanan_saya_customer:
@@ -154,8 +152,8 @@ public class HomeCustomerActivity extends AppCompatActivity
             case R.id.nav_keluar:
                 break;
         }
-        
-        if (fragment != null){
+
+        if (fragment != null) {
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.view_pager_home_customer, fragment);
             fragmentTransaction.commit();

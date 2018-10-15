@@ -26,7 +26,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MoviesHold
 
     @Override
     public MoviesHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.test_list_cardwiew,parent,false);
+        View v = LayoutInflater.from(context).inflate(R.layout.test_list_cardwiew, parent, false);
         return new MoviesHolder(v);
     }
 
@@ -36,7 +36,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MoviesHold
         holder.tvTitle.setText(movieList.get(position).getTitle());
         holder.tvOverview.setText(movieList.get(position).getOverview());
         holder.tvReleaseDate.setText(movieList.get(position).getReleaseDate());
-        Glide.with(context).load("https://image.tmdb.org/t/p/w500/"+movieList.get(position).getPosterPath()).into(holder.ivMovie);
+        Glide.with(context).load("https://image.tmdb.org/t/p/w500/" + movieList.get(position).getPosterPath()).into(holder.ivMovie);
     }
 
     @Override
@@ -51,7 +51,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MoviesHold
 
     public class MoviesHolder extends RecyclerView.ViewHolder {
 
-        TextView tvTitle,tvOverview,tvReleaseDate;
+        TextView tvTitle, tvOverview, tvReleaseDate;
         ImageView ivMovie;
 
         public MoviesHolder(View v) {
