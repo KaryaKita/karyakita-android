@@ -11,6 +11,7 @@
     <string name="kategori_string">Kategori</string>
     <string name="desainer_string">Desainer</string>
     <string name="pesanan_saya_string">Pesanan Saya</string>
+    <string name="search_hint">Cari Karya</string>
     <string name="notifikasi_string">Notifikasi</string>
     <string name="akun_string">Akun</string>
     <string name="keluar_string">Keluar</string>
