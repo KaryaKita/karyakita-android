@@ -2,9 +2,9 @@ package com.karyakita.karyakita_android_new.customer.karya;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-import com.karyakita.karyakita_android_new.base_class_interface.BaseModel;
+import com.karyakita.karyakita_android_new.base.BaseModel;
 
-public class DetailKaryaModel extends BaseModel{
+public class DetailKaryaModel extends BaseModel {
     @SerializedName("createdAt")
     @Expose
     private String createdAt;
