@@ -80,5 +80,12 @@
         <item>Bingkai</item>
         <item>Tanpa Bingkai</item>
     </array>
+
+    <array name="jenis_pengiriman">
+        <item>Pilih Jenis Pengiriman</item>
+        <item>TIKI</item>
+        <item>JNE</item>
+        <item>JT</item>
+    </array>
     <string name="title_activity_customer_home">CustomerHomeActivity</string>
 </resources>
