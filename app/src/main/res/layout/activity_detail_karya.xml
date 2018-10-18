@@ -280,16 +280,22 @@
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:layout_weight="1"
-                            android:background="@drawable/button_rounded_green"
+                            android:background="@color/mainColor"
                             android:text="Kirim Pesan"
                             android:textColor="#fff" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="12dp"
+                            android:background="#fff"/>
 
                         <Button
                             android:id="@+id/btnPesanCustom"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:layout_weight="1"
-                            android:background="@drawable/button_rounded_red"
+                            android:background="@color/mainColor"
                             android:text="Pesan Custom"
                             android:textColor="#fff" />
 
@@ -300,9 +306,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_weight="1"
-                        android:background="@drawable/button_rounded_blue"
+                        android:background="#fff"
                         android:text="Pesan Sekarang"
-                        android:textColor="#fff" />
+                        android:textColor="@color/mainColor" />
 
                 </LinearLayout>
             </RelativeLayout>
