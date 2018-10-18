@@ -50,10 +50,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".customer.transaksi.TransaksiSelesaiActivity">
-        </activity>
-        <activity android:name=".desainer.transaksi.DesainerTransaksiSelesaiActivity">
-        </activity>
+        <activity android:name=".desainer.transaksi.DetailPengirimanDesainerActivity" />
+        <activity android:name=".customer.transaksi.TransaksiSelesaiActivity" />
+        <activity android:name=".desainer.transaksi.DesainerTransaksiSelesaiActivity" />
     </application>
 
 </manifest>
