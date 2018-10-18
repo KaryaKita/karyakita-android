@@ -72,7 +72,7 @@
                             android:src="@drawable/image_asset_4" />
 
                         <LinearLayout
-                            android:layout_width="150dp"
+                            android:layout_width="180dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_marginLeft="30dp"
@@ -81,27 +81,10 @@
                             android:layout_marginBottom="10dp"
                             android:orientation="vertical">
 
-                            <LinearLayout
+                            <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Mozaik" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text=" - " />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Wanita" />
-
-                            </LinearLayout>
+                                android:text="Mozaik" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -114,6 +97,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="5dp"
                                 android:text="efriza8@gmail.com" />
+
                         </LinearLayout>
                     </LinearLayout>
 
@@ -156,17 +140,20 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Jasa Pengiriman" />
+                            android:text="Layanan Pengiriman" />
 
                     </LinearLayout>
 
-                    <Spinner
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="32dp"
-                        android:background="@drawable/rounded_border"
-                        android:entries="@array/opsi_pengiriman">
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
 
-                    </Spinner>
+                        <android.support.v7.widget.AppCompatSpinner
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:entries="@array/jenis_pengiriman"></android.support.v7.widget.AppCompatSpinner>
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -197,15 +184,18 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true">
 
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:background="@color/yellow_900"
-                    android:text="Konfirmassi Pengiriman Barang"
-                    android:textColor="#000" />
+                    android:text="Konfirmasi Pengiriman Barang"
+                    android:textAllCaps="false"
+                    android:textColor="#FFF" />
             </RelativeLayout>
         </RelativeLayout>
     </android.support.design.widget.CoordinatorLayout>
