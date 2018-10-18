@@ -1,149 +1,183 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
 
-    <ScrollView
+    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:context=".example.MainActivity">
 
-        <android.support.v7.widget.LinearLayoutCompat
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-            <LinearLayout
+            <android.support.design.widget.AppBarLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:theme="@style/AppTheme.AppBarOverlay">
 
-                <TextView
-                    android:id="@+id/alamat"
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:elevation="1dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@color/white"
+                    app:titleTextColor="@color/mainColor"
+                    app:popupTheme="@style/AppTheme.PopupOverlay" />
+            </android.support.design.widget.AppBarLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/ic_arrow_back_white_24dp" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="20dp"
-                    android:drawableStart="@drawable/location_black"
-                    android:text="Alamat"
-                    android:textColor="@color/black"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
+                    android:layout_marginTop="60dp"
+                    android:background="@color/white"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/text_opsi_provinsi"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="13dp"
-                    android:text="Provinsi"
-                    android:textColor="@color/black"
-                    android:textSize="17dp" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="27dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="20dp"
+                        android:text="PROVINSI"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
 
-                <Spinner
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="3dp"
-                    android:layout_marginRight="20dp"
-                    android:background="@drawable/dropdown_putih"
-                    android:entries="@array/opsi_provinsi"
-                    android:padding="7dp"
-                    android:popupBackground="@color/white" />
+                    <Spinner
+                        style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="3dp"
+                        android:backgroundTint="@color/mainColor"
+                        android:entries="@array/opsi_provinsi"
+                        android:paddingLeft="0dp"
+                        android:paddingRight="0dp"></Spinner>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="15dp"
-                    android:text="Kota / Kabupaten"
-                    android:textColor="@color/black"
-                    android:textSize="17dp" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="27dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="20dp"
+                        android:text="KOTA / KABUPATEN"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
 
-                <Spinner
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="3dp"
-                    android:layout_marginRight="20dp"
-                    android:background="@drawable/dropdown_putih"
-                    android:entries="@array/opsi_kabupaten"
-                    android:padding="7dp"
-                    android:popupBackground="@color/white" />
+                    <Spinner
+                        style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="3dp"
+                        android:backgroundTint="@color/mainColor"
+                        android:entries="@array/opsi_kabupaten"
+                        android:paddingLeft="0dp"
+                        android:paddingRight="0dp"></Spinner>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="15dp"
-                    android:text="Kecamatan"
-                    android:textColor="@color/black"
-                    android:textSize="17dp" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="27dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="20dp"
+                        android:text="KECAMATAN"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
 
-                <Spinner
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="3dp"
-                    android:layout_marginRight="20dp"
-                    android:background="@drawable/dropdown_putih"
-                    android:entries="@array/opsi_kecamatan"
-                    android:padding="7dp"
-                    android:popupBackground="@color/white" />
+                    <Spinner
+                        style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="3dp"
+                        android:backgroundTint="@color/mainColor"
+                        android:entries="@array/opsi_kecamatan"
+                        android:paddingLeft="0dp"
+                        android:paddingRight="0dp"></Spinner>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="15dp"
-                    android:text="Alamat"
-                    android:textColor="@color/black"
-                    android:textSize="17dp" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="27dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="20dp"
+                        android:text="ALAMAT"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="3dp"
-                    android:layout_marginRight="20dp"
-                    android:background="@drawable/dropdown_putih"
-                    android:padding="40dp"
-                    android:textSize="17dp" />
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="23dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="3dp"
+                        android:backgroundTint="@color/mainColor"
+                        android:ems="10"
+                        android:hint="Masukkan Nama Jalan, Gedung, Nomor, RT RW"
+                        android:inputType="textCapSentences"
+                        android:paddingLeft="0dp"
+                        android:paddingRight="0dp"
+                        android:textSize="14dp" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="50dp"
-                    android:drawableLeft="@drawable/opsi_pengiriman"
-                    android:text="Opsi Pengiriman"
-                    android:textColor="@color/black"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="27dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="20dp"
+                        android:text="OPSI PENGIRIMAN"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
 
-                <Spinner
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="3dp"
-                    android:layout_marginRight="20dp"
-                    android:background="@drawable/dropdown_putih"
-                    android:entries="@array/opsi_pengiriman"
-                    android:padding="7dp"
-                    android:popupBackground="@color/white" />
+                    <Spinner
+                        style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="5dp"
+                        android:backgroundTint="@color/mainColor"
+                        android:entries="@array/opsi_pengiriman"
+                        android:paddingLeft="0dp"
+                        android:paddingRight="-1dp"></Spinner>
 
-            </LinearLayout>
+                </LinearLayout>
 
-        </android.support.v7.widget.LinearLayoutCompat>
+            </ScrollView>
 
-    </ScrollView>
-
-    <Button
-        android:id="@+id/id_pesanan"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/button_navy"
-        android:text="Pesan"
-        android:textColor="@color/white" />
-</RelativeLayout>
+            <Button
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/rounded_border"
+                android:textColor="@color/white"
+                android:text="Pesan"
+                />
+        </RelativeLayout>
+    </android.support.design.widget.CoordinatorLayout>
+</android.support.v4.widget.DrawerLayout>
