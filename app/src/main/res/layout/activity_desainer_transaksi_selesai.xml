@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -19,26 +20,13 @@
         android:textColor="@color/black"
         android:text="Transaksi Anda Telah Selesai" />
 
-    <View
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_gravity="center"
-        android:layout_width="250dp"
-        android:layout_height="2dp"
-        android:layout_marginTop="45dp"
-        android:background="@android:color/darker_gray" />
-
-    <View
-        android:layout_gravity="center"
-        android:layout_width="300dp"
-        android:layout_height="2dp"
-        android:layout_marginTop="30dp"
-        android:background="@android:color/darker_gray" />
-
-    <View
-        android:layout_gravity="center"
-        android:layout_width="250dp"
-        android:layout_height="2dp"
-        android:layout_marginTop="30dp"
-        android:background="@android:color/darker_gray" />
+        android:layout_marginTop="20dp"
+        app:srcCompat="@drawable/ic_credit_card" />
 
     <Button
         android:id="@+id/button6"
@@ -48,6 +36,7 @@
         android:layout_marginTop="60dp"
         android:background="@color/colorAccent"
         android:textColor="@color/white"
+        android:textAllCaps="false"
         android:text="Berikan Rating" />
 
     <Button
@@ -55,8 +44,9 @@
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="151dp"
         android:background="@color/yellow_900"
-        android:text="KEMBALI KE BERANDA"
+        android:textAllCaps="false"
+        android:text="Kembali Ke Beranda"
         android:textColor="@color/white" />
 </android.support.v7.widget.LinearLayoutCompat>
