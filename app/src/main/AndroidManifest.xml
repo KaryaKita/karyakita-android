@@ -31,9 +31,8 @@
         <activity android:name=".customer.home.HomeCustomerActivity" />
         <activity android:name=".example.MovieActivity" />
         <activity android:name=".register_as.RegisterAsActivity" />
-        <activity android:name=".login.LoginActivity"></activity>
-        <activity android:name=".login_as.LoginAsActivity">
-        </activity>
+        <activity android:name=".login.LoginActivity" />
+        <activity android:name=".login_as.LoginAsActivity" />
         <activity android:name=".register.RegisterActivity" />
         <activity android:name=".customer.karya.DetailKaryaActivity" />
         <activity android:name=".customer.transaksi.DataPengirimanCustomerActivity" />
@@ -43,8 +42,9 @@
         <activity android:name=".desainer.home.HomeDesainerActivity" />
         <activity
             android:name=".customer.home.CustomerHomeActivity"
-            android:label="@string/title_activity_customer_home">
-
+            android:label="@string/title_activity_customer_home" />
+        <activity android:name=".customer.karya.KonfirmasiDesainActivity"></activity>
+        <activity android:name=".desainer.transaksi.UploadBiasaDesainerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
