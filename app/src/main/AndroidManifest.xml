@@ -43,7 +43,7 @@
         <activity android:name=".desainer.home.HomeDesainerActivity" />
         <activity
             android:name=".customer.home.CustomerHomeActivity"
-            android:label="@string/title_activity_customer_home">
+            android:label="@string/title_activity_customer_home" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

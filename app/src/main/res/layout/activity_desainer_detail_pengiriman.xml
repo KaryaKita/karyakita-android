@@ -123,7 +123,7 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
-                        android:background="@drawable/rounded_border" />
+                        android:background="@color/white" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
