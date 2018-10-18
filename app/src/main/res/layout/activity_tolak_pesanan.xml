@@ -34,102 +34,59 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"
-                android:background="#bbb" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
                 android:layout_marginLeft="15dp"
                 android:text="Mengapa Anda Membatalkan Pesanan?"
                 android:textSize="15dp" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"
-                android:background="#bbb" />
-
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
                 android:text="Antrian pesanan penuh"
                 android:textSize="15dp" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"
-                android:background="#bbb" />
-
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
                 android:text="Desainer sedang tidak menerima pesanan"
                 android:textSize="15dp" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"
-                android:background="#bbb" />
-
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
                 android:text="Desainer tidak menerima kategori desain"
                 android:textSize="15dp" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"
-                android:background="#bbb" />
-
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
                 android:text="Desainer terlalu rumit"
                 android:textSize="15dp" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"
-                android:background="#bbb" />
-
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
                 android:text="Alasan lainnya"
                 android:textSize="15dp" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="2dp"
-                android:background="#bbb" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="148dp"
-                android:background="@drawable/border"
-                android:hint="Karena sedang tidak sehat" />
+                android:layout_margin="20dp"
+                android:background="@drawable/border" />
         </LinearLayout>
     </ScrollView>
 
