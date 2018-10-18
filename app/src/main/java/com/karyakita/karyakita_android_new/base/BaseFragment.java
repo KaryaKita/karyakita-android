@@ -6,6 +6,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 
 import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.base_customview.BaseToaster;
+import com.karyakita.karyakita_android_new.base_customview.SnakeBar;
 
 import butterknife.Unbinder;
 
@@ -90,6 +92,17 @@ public abstract class BaseFragment<T1 extends FragmentActivity, T2 extends IBase
 
     protected void showStatus(int type, String message) {
         showToast(type, message);
+    }
+
+    protected void showSnackBar(int type, String message, String action, View root, View.OnClickListener listener) {
+        new SnakeBar().builder(activity)
+                .setMessage(message)
+                .setActionName(action)
+                .setLength(Snackbar.LENGTH_SHORT)
+                .setRoot(fragmentView)
+                .setType(type)
+                .setActionListener(listener)
+                .show();
     }
 
     protected void showToast(int type, String message) {
