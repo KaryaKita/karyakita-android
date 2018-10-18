@@ -11,6 +11,7 @@
     <string name="kategori_string">Kategori</string>
     <string name="desainer_string">Desainer</string>
     <string name="pesanan_saya_string">Pesanan Saya</string>
+    <string name="search_hint">Cari Karya</string>
     <string name="notifikasi_string">Notifikasi</string>
     <string name="akun_string">Akun</string>
     <string name="keluar_string">Keluar</string>
@@ -72,11 +73,31 @@
     </array>
 
     <array name="ukuran_desain">
+        <item>Pilih Ukuran</item>
         <item>4R</item>
         <item>10R</item>
     </array>
+
     <array name="opsi_desain">
+        <item>Pilih Opsi</item>
         <item>Bingkai</item>
         <item>Tanpa Bingkai</item>
     </array>
+
+<<<<<<< HEAD
+    <array name="opsi_desain">
+        <item>Pilih Tanggal</item>
+        <item>1</item>
+        <item>2</item>
+    </array>
+
+=======
+    <array name="jenis_pengiriman">
+        <item>Pilih Jenis Pengiriman</item>
+        <item>TIKI</item>
+        <item>JNE</item>
+        <item>JT</item>
+    </array>
+>>>>>>> c536215463fc47174454ce73bd4ce66229a92c2b
+    <string name="title_activity_customer_home">CustomerHomeActivity</string>
 </resources>

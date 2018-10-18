@@ -9,6 +9,9 @@ import android.util.Log;
 import android.view.Menu;
 
 import com.karyakita.karyakita_android_new.R;
+import com.karyakita.karyakita_android_new.example.ITestView;
+import com.karyakita.karyakita_android_new.example.MovieResponse;
+import com.karyakita.karyakita_android_new.customer.karya.ListKaryaPresenter;
 import com.karyakita.karyakita_android_new.login.LoginResultModel;
 
 import java.util.List;
@@ -33,12 +36,17 @@ public class ListKaryaActivity extends AppCompatActivity implements IListKaryaVi
         setContentView(R.layout.activity_list_karya_customer);
         ButterKnife.bind(this);
 
+        //setupPresenter();
+
         Toolbar toolbar = findViewById(R.id.toolbar_navigation_list_karya);
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setTitle("List Karya");
+
+        setupPresenter();
+//        setupPresenter();
 
         setupView();
         setupPresenter();
@@ -114,4 +122,8 @@ public class ListKaryaActivity extends AppCompatActivity implements IListKaryaVi
     public void onPointerCaptureChanged(boolean hasCapture) {
 
     }
+
+//    private void setupPresenter() {
+//        listKaryaPresenter = new ListKaryaPresenter(this);
+//    }
 }
