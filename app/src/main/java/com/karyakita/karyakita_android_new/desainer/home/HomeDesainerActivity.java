@@ -43,7 +43,6 @@ public class HomeDesainerActivity extends AppCompatActivity implements IHomeDesa
 
         setupPresenter();
         setupView();
-        setupPresenter();
         getHomeDesainer();
 
     }
@@ -99,10 +98,6 @@ public class HomeDesainerActivity extends AppCompatActivity implements IHomeDesa
         } else {
             Log.d(TAG, "null");
         }
-
-    }
-
-    public void display(HomeDesainerResultModel homeDesainerResultModel) {
 
     }
 

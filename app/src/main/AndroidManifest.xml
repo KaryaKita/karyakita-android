@@ -43,26 +43,20 @@
         <activity android:name=".desainer.home.HomeDesainerActivity" />
         <activity
             android:name=".customer.home.CustomerHomeActivity"
-<<<<<<< HEAD
             android:label="@string/title_activity_customer_home" />
         <activity android:name=".customer.karya.KonfirmasiDesainActivity">
-=======
-            android:label="@string/title_activity_customer_home" >
->>>>>>> f0ca4a8ab059e73299d3e3b9362694bc2e26976b
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
         <activity android:name=".desainer.transaksi.UploadBiasaDesainerActivity" />
         <activity android:name=".desainer.transaksi.UploadkaryaDesainerActivity"></activity>
-=======
         <activity android:name=".desainer.transaksi.DetailPengirimanDesainerActivity" />
         <activity android:name=".customer.transaksi.TransaksiSelesaiActivity" />
         <activity android:name=".desainer.transaksi.DesainerTransaksiSelesaiActivity" />
->>>>>>> f0ca4a8ab059e73299d3e3b9362694bc2e26976b
     </application>
 
 </manifest>
