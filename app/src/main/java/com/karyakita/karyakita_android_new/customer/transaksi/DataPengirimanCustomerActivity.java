@@ -16,8 +16,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class DataPengirimanCustomerActivity extends AppCompatActivity implements ITestView {
-    @BindView(R.id.id_pesanan)
-    Button bt_id_pesanan;
+//    @BindView(R.id.id_pesanan)
+//    Button bt_id_pesanan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,13 +27,13 @@ public class DataPengirimanCustomerActivity extends AppCompatActivity implements
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        bt_id_pesanan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(DataPengirimanCustomerActivity.this, PesananSelesai.class);
-                startActivity(intent);
-            }
-        });
+//        bt_id_pesanan.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(DataPengirimanCustomerActivity.this, PesananSelesai.class);
+//                startActivity(intent);
+//            }
+//        });
     }
 
     @Override
