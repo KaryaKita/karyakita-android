@@ -90,5 +90,11 @@
         <item>JNE</item>
         <item>JT</item>
     </array>
+
+    <array name="ukuran_kertas">
+        <item>Pilih Ukuran Kertas</item>
+        <item>4R</item>
+        <item>10R</item>
+    </array>
     <string name="title_activity_customer_home">CustomerHomeActivity</string>
 </resources>
