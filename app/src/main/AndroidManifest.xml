@@ -48,16 +48,17 @@
         <activity android:name=".customer.transaksi.TransaksiSelesaiActivity" />
         <activity android:name=".desainer.transaksi.DesainerTransaksiSelesaiActivity" />
         <activity android:name=".desainer.transaksi.FormUploadKaryaDesaigner" />
-        <activity android:name=".desainer.transaksi.KonfimasiBayarDesainer">
+        <activity android:name=".desainer.transaksi.KonfimasiBayarDesainer" />
+        <activity android:name=".desainer.transaksi.PilihanBankDesainerActivity" />
+        <activity android:name=".desainer.transaksi.DetailPengirimanDesainerActivity" />
+        <activity android:name=".customer.CustomerNotifikasiActivity" />
+        <activity android:name=".desainer.UploadRevisiDesainerActivity"></activity>
+        <activity android:name=".customer.HalamanDesainerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".desainer.transaksi.PilihanBankDesainerActivity"></activity>
-        <activity android:name=".desainer.transaksi.DetailPengirimanDesainerActivity" />
-        <activity android:name=".customer.CustomerNotifikasiActivity">
         </activity>
     </application>
 
