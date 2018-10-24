@@ -21,8 +21,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class LoginActivity extends AppCompatActivity implements ILoginView {
-    LoginPresenter loginPresenter = null;
-    LoginModel loginModel = null;
+    LoginPresenter loginPresenter;
     Integer role_id;
 
     @BindView(R.id.et_Username_login)
