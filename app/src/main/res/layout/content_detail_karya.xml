@@ -205,55 +205,52 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_marginTop="450dp"
-                android:background="#FFFFFF"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:weightSum="2">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:orientation="horizontal">
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
 
                     <Button
-                        android:layout_width="157dp"
-                        android:layout_height="45dp"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="4dp"
-                        android:background="#008000"
-                        android:text="Kirim Pesan"
-                        android:textColor="#FFFFF0"
-                        android:typeface="normal" />
-
-                    <Button
+                        android:id="@+id/btnKirimPesan"
                         android:layout_width="match_parent"
-                        android:layout_height="45dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="20dp"
-                        android:background="#CC0000"
-                        android:text="Pesan Request"
-                        android:textColor="#FFFFF0"
-                        android:typeface="normal" />
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:background="@color/mainColor"
+                        android:text="Kirim Pesan"
+                        android:textColor="#fff" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="12dp"
+                        android:background="#fff"/>
+
+                    <Button
+                        android:id="@+id/btnPesanCustom"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:background="@color/mainColor"
+                        android:text="Pesan Custom"
+                        android:textColor="#fff" />
 
                 </LinearLayout>
 
                 <Button
+                    android:id="@+id/btnPesanSekarang"
                     android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="7dp"
-                    android:layout_marginRight="20dp"
-                    android:background="#003333"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:background="#fff"
                     android:text="Pesan Sekarang"
-                    android:textColor="#FFFFF0"
-                    android:typeface="normal" />
+                    android:textColor="@color/mainColor" />
 
             </LinearLayout>
-
         </RelativeLayout>
-
-
     </android.support.design.widget.CoordinatorLayout>
-
-
 </android.support.v4.widget.DrawerLayout>

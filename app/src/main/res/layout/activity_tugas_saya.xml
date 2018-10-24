@@ -31,5 +31,4 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tab_home_customer" />
 
-
 </android.support.v7.widget.LinearLayoutCompat>
