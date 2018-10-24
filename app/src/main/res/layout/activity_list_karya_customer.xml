@@ -23,7 +23,7 @@
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar_navigation_list_karya"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
+                android:layout_height="wrap_content"
                 android:background="@color/mainColor"
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
 
