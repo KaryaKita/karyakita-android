@@ -84,20 +84,17 @@
         <item>Tanpa Bingkai</item>
     </array>
 
-<<<<<<< HEAD
-    <array name="opsi_desain">
-        <item>Pilih Tanggal</item>
-        <item>1</item>
-        <item>2</item>
-    </array>
-
-=======
     <array name="jenis_pengiriman">
         <item>Pilih Jenis Pengiriman</item>
         <item>TIKI</item>
         <item>JNE</item>
         <item>JT</item>
     </array>
->>>>>>> c536215463fc47174454ce73bd4ce66229a92c2b
+
+    <array name="ukuran_kertas">
+        <item>Pilih Ukuran Kertas</item>
+        <item>4R</item>
+        <item>10R</item>
+    </array>
     <string name="title_activity_customer_home">CustomerHomeActivity</string>
 </resources>

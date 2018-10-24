@@ -32,28 +32,33 @@
         <activity android:name=".example.MovieActivity" />
         <activity android:name=".register_as.RegisterAsActivity" />
         <activity android:name=".login.LoginActivity" />
-        <activity android:name=".login_as.LoginAsActivity">
-        </activity>
+        <activity android:name=".login_as.LoginAsActivity" />
         <activity android:name=".register.RegisterActivity" />
         <activity android:name=".customer.karya.DetailKaryaActivity" />
-        <activity android:name=".customer.transaksi.DataPengirimanCustomerActivity" />
         <activity android:name=".customer.transaksi.PesanCustomActivity" />
         <activity android:name=".customer.PesananSelesai" />
         <activity android:name=".customer.karya.ListKaryaActivity" />
         <activity android:name=".desainer.home.HomeDesainerActivity" />
         <activity
             android:name=".customer.home.CustomerHomeActivity"
-            android:label="@string/title_activity_customer_home">
+            android:label="@string/title_activity_customer_home" />
+        <activity android:name=".customer.karya.KonfirmasiDesainActivity" />
+        <activity android:name=".desainer.transaksi.UploadBiasaDesainerActivity" />
+        <activity android:name=".customer.transaksi.UploadkaryaCusromerActivity" />
+        <activity android:name=".customer.transaksi.TransaksiSelesaiActivity" />
+        <activity android:name=".desainer.transaksi.DesainerTransaksiSelesaiActivity" />
+        <activity android:name=".desainer.transaksi.FormUploadKaryaDesaigner" />
+        <activity android:name=".desainer.transaksi.KonfimasiBayarDesainer" />
+        <activity android:name=".desainer.transaksi.PilihanBankDesainerActivity" />
+        <activity android:name=".desainer.transaksi.DetailPengirimanDesainerActivity" />
+        <activity android:name=".customer.CustomerNotifikasiActivity" />
+        <activity android:name=".desainer.UploadRevisiDesainerActivity"></activity>
+        <activity android:name=".customer.HalamanDesainerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".desainer.transaksi.DetailPengirimanDesainerActivity" />
-        <activity android:name=".customer.transaksi.TransaksiSelesaiActivity" />
-        <activity android:name=".desainer.transaksi.DesainerTransaksiSelesaiActivity" />
-        <activity android:name=".customer.CustomerNotifikasiActivity">
         </activity>
     </application>
 
