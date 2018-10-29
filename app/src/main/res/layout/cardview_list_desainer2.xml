@@ -58,7 +58,7 @@
                         android:id="@+id/tv_keahlian_desainer"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text=""Jl. Teknik Komputer No 67" />
+                        android:text="Jl. Teknik Komputer No 67" />
 
                     <android.support.v7.widget.AppCompatTextView
                         android:layout_width="match_parent"
