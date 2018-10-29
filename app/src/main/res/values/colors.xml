@@ -6,11 +6,11 @@
 
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
-    <color name="mainColor">#EA7F0D</color>
 
     <color name="thirdColor">#113f4c</color>
-    <color name="secondColor">#ff9741</color>
 
+    <color name="mainColor">#ea7c0d</color>
+    <color name="secondColor">#ff9741</color>
     <color name="Putih">#ffffff</color>
 
     <color name="grey">#c6c6c6</color>

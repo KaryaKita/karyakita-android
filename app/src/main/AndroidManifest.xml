@@ -55,12 +55,6 @@
         <activity android:name=".desainer.transaksi.DesainerTransaksiSelesaiActivity" />
         <activity android:name=".customer.CustomerNotifikasiActivity">
         </activity>
-        <activity android:name=".desainer.DesainerNotifikasiActivity">
-        </activity>
-        <activity android:name=".customer.CustomerDaftarPesanan">
-        </activity>
-        <activity android:name=".desainer.DesainerTugasSayaActivity">
-        </activity>
     </application>
 
 </manifest>

@@ -40,6 +40,8 @@ dependencies {
     //noinspection GradleCompatible
     implementation 'com.android.support:recyclerview-v7:27.1.1'
 
+    implementation 'de.hdodenhof:circleimageview:2.1.0'
+
     //retofit dependencies
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
 

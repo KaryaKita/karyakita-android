@@ -8,7 +8,7 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="wrap_content"
         android:background="@color/mainColor"
         app:popupTheme="@style/AppTheme.PopupOverlay" />
 
@@ -30,6 +30,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tab_home_customer" />
-
 
 </android.support.v7.widget.LinearLayoutCompat>
