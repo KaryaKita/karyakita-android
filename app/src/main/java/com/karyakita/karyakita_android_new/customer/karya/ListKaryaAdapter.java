@@ -28,7 +28,7 @@ public class ListKaryaAdapter extends RecyclerView.Adapter<ListKaryaAdapter.Hold
     @NonNull
     @Override
     public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.cardview_list_karya, parent, false);
+        View v = LayoutInflater.from(context).inflate(R.layout.cardview_list_karya2, parent, false);
         return new Holder(v);
     }
 
@@ -36,7 +36,7 @@ public class ListKaryaAdapter extends RecyclerView.Adapter<ListKaryaAdapter.Hold
     public void onBindViewHolder(@NonNull Holder holder, int position) {
         Glide.with(context).load(listKaryaModelList.get(position).getDeploy_url()).into(holder.iv_listKarya);
         holder.tv_judulkarya.setText(listKaryaModelList.get(position).getNama());
-//        holder.tv_kategorikarya.setText(listKaryaModelList.get(position).getKategori_karya_id().toString());
+        //holder.tv_kategorikarya.setText(listKaryaModelList.get(position).getKategori_karya_id().toString());
     }
 
     @Override
@@ -58,7 +58,8 @@ public class ListKaryaAdapter extends RecyclerView.Adapter<ListKaryaAdapter.Hold
 
             iv_listKarya = itemView.findViewById(R.id.iv_gambar_karya);
             tv_judulkarya = itemView.findViewById(R.id.iv_judul_karya);
-//            tv_kategorikarya=itemView.findViewById(R.id.iv_category_karya);
+            //tv_kategorikarya=itemView.findViewById(R.id.iv_category_karya);
+            //tv_hargakarya = itemView.findViewById(R.id.iv_harga);
             iv_listKarya.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
