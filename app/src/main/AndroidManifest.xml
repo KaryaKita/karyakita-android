@@ -36,7 +36,15 @@
         </activity>
         <activity android:name=".register.RegisterActivity" />
         <activity android:name=".customer.karya.DetailKaryaActivity" />
-        <activity android:name=".customer.transaksi.DataPengirimanCustomerActivity" />
+        <activity android:name=".desainer.transaksi.DetailPengirimanActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+
+            </intent-filter>
+        </activity>
+
         <activity android:name=".customer.transaksi.PesanCustomActivity" />
         <activity android:name=".customer.PesananSelesai" />
         <activity android:name=".customer.karya.ListKaryaActivity" />
@@ -44,11 +52,6 @@
         <activity
             android:name=".customer.home.CustomerHomeActivity"
             android:label="@string/title_activity_customer_home">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".desainer.transaksi.DetailPengirimanDesainerActivity" />
         <activity android:name=".customer.transaksi.TransaksiSelesaiActivity" />
