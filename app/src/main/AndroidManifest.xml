@@ -41,6 +41,7 @@
         </activity>
         <activity android:name=".register.RegisterActivity" />
         <activity android:name=".customer.karya.DetailKaryaActivity" />
+        <activity android:name=".customer.transaksi.DataPengirimanCustomerActivity" />
         <activity android:name=".customer.transaksi.PesanCustomActivity" />
         <activity android:name=".customer.PesananSelesai" />
         <activity android:name=".customer.karya.ListKaryaActivity" />
@@ -59,6 +60,15 @@
         <activity android:name=".customer.CustomerNotifikasiActivity" />
         <activity android:name=".desainer.UploadRevisiDesainerActivity"></activity>
         <activity android:name=".customer.HalamanDesainerActivity"/>
+        <activity
+            android:name=".customer.home.CustomerHomeActivity"
+            android:label="@string/title_activity_customer_home">
+        </activity>
+        <activity android:name=".desainer.transaksi.DetailPengirimanDesainerActivity" />
+        <activity android:name=".customer.transaksi.TransaksiSelesaiActivity" />
+        <activity android:name=".desainer.transaksi.DesainerTransaksiSelesaiActivity" />
+        <activity android:name=".customer.CustomerNotifikasiActivity">
+        </activity>
     </application>
 
 </manifest>
