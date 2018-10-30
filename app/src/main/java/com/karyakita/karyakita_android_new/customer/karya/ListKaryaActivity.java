@@ -2,6 +2,7 @@ package com.karyakita.karyakita_android_new.customer.karya;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -67,7 +68,7 @@ public class ListKaryaActivity extends AppCompatActivity implements IListKaryaVi
     }
 
     private void setupView() {
-        rv_list_karya.setLayoutManager(new LinearLayoutManager(this.getApplicationContext(), LinearLayoutManager.VERTICAL, false));
+        rv_list_karya.setLayoutManager(new GridLayoutManager(getApplicationContext(), 2));
         rv_list_karya.setHasFixedSize(true);
     }
 
