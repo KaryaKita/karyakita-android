@@ -22,6 +22,10 @@
         <item name="android:windowBackground">@drawable/background_splash</item>
     </style>
 
+    <style name="Spinner" parent="Base.Widget.AppCompat.DropDownItem.Spinner">
+        <item name="android:textSize">15sp</item>
+    </style>
+
     <style name="button_style" parent="@android:style/Widget.Button">
         <item name="android:textSize">15sp</item>
         <item name="android:textStyle">bold</item>

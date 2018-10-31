@@ -1,7 +1,0 @@
-<application>
-  <component name="HttpConfigurable">
-    <option name="PROXY_HOST" value="proxy3.pens.ac.id" />
-    <option name="PROXY_PORT" value="3128" />
-    <option name="PROXY_AUTHENTICATION" value="true" />
-  </component>
-</application>
