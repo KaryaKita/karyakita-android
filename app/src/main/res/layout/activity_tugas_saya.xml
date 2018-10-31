@@ -29,6 +29,6 @@
         android:id="@+id/view_pager_tugas_saya_desainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tab_home_customer" />
+        android:layout_below="@id/tab_tugas_saya_desainer" />
 
 </android.support.v7.widget.LinearLayoutCompat>

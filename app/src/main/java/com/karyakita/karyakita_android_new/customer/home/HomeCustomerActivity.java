@@ -2,6 +2,8 @@ package com.karyakita.karyakita_android_new.customer.home;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -18,6 +20,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.customer.karya.ListKaryaActivity;
@@ -28,18 +31,64 @@ import butterknife.ButterKnife;
 public class HomeCustomerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    @BindView(R.id.tab_home_customer)
-    TabLayout tabHomeCustomer;
-    @BindView(R.id.view_pager_home_customer)
-    ViewPager viewPagerHomeCustomer;
-    @BindView(R.id.drawer_layout_navigation)
-    DrawerLayout drawerLayoutNavigation;
-    @BindView(R.id.nav_view_application)
-    NavigationView navViewApplication;
-    @BindView(R.id.toolbar_navigation)
-    Toolbar toolbarNavigation;
-    @BindView(R.id.fab_application)
-    FloatingActionButton fabApplication;
+//    @BindView(R.id.tab_home_customer)
+//    TabLayout tabHomeCustomer;
+//    @BindView(R.id.view_pager_home_customer)
+//    ViewPager viewPagerHomeCustomer;
+//    @BindView(R.id.drawer_layout_navigation)
+//    DrawerLayout drawerLayoutNavigation;
+//    @BindView(R.id.nav_view_application)
+//    NavigationView navViewApplication;
+//    @BindView(R.id.toolbar_navigation)
+//    Toolbar toolbarNavigation;
+//    @BindView(R.id.fab_application)
+//    FloatingActionButton fabApplication;
+
+    private TextView mTextMessage;
+
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+            FragmentManager fm = getSupportFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            Fragment fragment = null;
+
+
+            switch (item.getItemId()) {
+                case R.id.nav_beranda_customer:
+                    fragment = new HomeFragment();
+                    ft.replace(R.id.frame_home_customer, fragment);
+                    ft.commit();
+                    return true;
+                case R.id.nav_desainer_customer:
+                    fragment = new DesainerFragment();
+                    ft.replace(R.id.frame_home_customer, fragment);
+                    ft.commit();
+                    return true;
+                case R.id.nav_pesanan_saya_customer:
+                    fragment = new DesainerFragment();
+                    ft.replace(R.id.frame_home_customer, fragment);
+                    ft.commit();
+                    return true;
+                case R.id.nav_notif_customer:
+                    fragment = new DesainerFragment();
+                    ft.replace(R.id.frame_home_customer, fragment);
+                    ft.commit();
+                    return true;
+                case R.id.nav_akun_customer:
+                    fragment = new DesainerFragment();
+                    ft.replace(R.id.frame_home_customer, fragment);
+                    ft.commit();
+                    return true;
+            }
+
+
+            return false;
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,59 +96,74 @@ public class HomeCustomerActivity extends AppCompatActivity
         setContentView(R.layout.activity_home_customer);
         ButterKnife.bind(this);
 
-//        Toolbar toolbar = findViewById(R.id.toolbar_navigation);
-        setSupportActionBar(toolbarNavigation);
+//        mTextMessage = findViewById(R.id.message_home);
 
-        setNavigationView(toolbarNavigation);
-        setFloatingActionButton();
-        setViewPager();
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_home_customer);
+        bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        View container = findViewById(R.id.frame_home_customer);
+
+        Fragment fragment = new HomeFragment();
+
+        ft.replace(R.id.frame_home_customer, fragment);
+        ft.commit();
+
+//        Toolbar toolbar = findViewById(R.id.toolbar_navigation);
+//        setSupportActionBar(toolbarNavigation);
+
+//        setNavigationView(toolbarNavigation);
+//        setFloatingActionButton();
+//        setViewPager();
 
     }
 
     private void setViewPager() {
         FragmentManager fragmentManager = getSupportFragmentManager();
         HomeCustomerAdapter homeCustomerAdapter = new HomeCustomerAdapter(fragmentManager);
-        viewPagerHomeCustomer.setAdapter(homeCustomerAdapter);
-        viewPagerHomeCustomer.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabHomeCustomer));
-        tabHomeCustomer.setupWithViewPager(viewPagerHomeCustomer);
-        tabHomeCustomer.setTabsFromPagerAdapter(homeCustomerAdapter);
+//        viewPagerHomeCustomer.setAdapter(homeCustomerAdapter);
+//        viewPagerHomeCustomer.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabHomeCustomer));
+//        tabHomeCustomer.setupWithViewPager(viewPagerHomeCustomer);
+//        tabHomeCustomer.setTabsFromPagerAdapter(homeCustomerAdapter);
     }
 
-    public void setNavigationView(Toolbar toolbar) {
-//        DrawerLayout drawer = findViewById(R.id.drawer_layout_navigation);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayoutNavigation, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawerLayoutNavigation.addDrawerListener(toggle);
-        toggle.syncState();
+//    public void setNavigationView(Toolbar toolbar) {
+////        DrawerLayout drawer = findViewById(R.id.drawer_layout_navigation);
+//        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayoutNavigation, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+//        drawerLayoutNavigation.addDrawerListener(toggle);
+//        toggle.syncState();
+//
+////        NavigationView navigationView = findViewById(R.id.nav_view_application);
+//        navViewApplication.setNavigationItemSelectedListener(this);
+//    }
 
-//        NavigationView navigationView = findViewById(R.id.nav_view_application);
-        navViewApplication.setNavigationItemSelectedListener(this);
-    }
-
-    public void setFloatingActionButton() {
-//        FloatingActionButton fab = findViewById(R.id.fab_application);
-        fabApplication.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-    }
+//    public void setFloatingActionButton() {
+////        FloatingActionButton fab = findViewById(R.id.fab_application);
+//        fabApplication.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
+//    }
 
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
 
     }
 
-    @Override
-    public void onBackPressed() {
-//        DrawerLayout drawer = findViewById(R.id.drawer_layout_navigation);
-        if (drawerLayoutNavigation.isDrawerOpen(GravityCompat.START)) {
-            drawerLayoutNavigation.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
+//    @Override
+//    public void onBackPressed() {
+////        DrawerLayout drawer = findViewById(R.id.drawer_layout_navigation);
+//        if (drawerLayoutNavigation.isDrawerOpen(GravityCompat.START)) {
+//            drawerLayoutNavigation.closeDrawer(GravityCompat.START);
+//        } else {
+//            super.onBackPressed();
+//        }
+//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -124,44 +188,49 @@ public class HomeCustomerActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        Fragment fragment = null;
-        Class fragmentClass = null;
-        int id = item.getItemId();
-
-        switch (id) {
-            case R.id.nav_beranda_customer:
-                startActivity(new Intent(getApplicationContext(), HomeCustomerActivity.class));
-                return true;
-            case R.id.nav_kategori_desain_customer:
-                startActivity(new Intent(HomeCustomerActivity.this, ListKaryaActivity.class));
-                return true;
-            case R.id.nav_desainer_customer:
-                fragmentClass = DesainerFragment.class;
-                return true;
-            case R.id.nav_pesanan_saya_customer:
-                break;
-            case R.id.nav_notifikasi_customer:
-                break;
-            case R.id.nav_akun_customer:
-                break;
-            case R.id.nav_keluar:
-                break;
-        }
-
-        if (fragment != null) {
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.view_pager_home_customer, fragment);
-            fragmentTransaction.commit();
-        }
-
-        DrawerLayout drawer = findViewById(R.id.drawer_layout_navigation);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        return false;
     }
+
+
+//    @SuppressWarnings("StatementWithEmptyBody")
+//    @Override
+//    public boolean onNavigationItemSelected(MenuItem item) {
+//        // Handle navigation view item clicks here.
+//        Fragment fragment = null;
+//        Class fragmentClass = null;
+//        int id = item.getItemId();
+//
+//        switch (id) {
+//            case R.id.nav_beranda_customer:
+//                startActivity(new Intent(getApplicationContext(), HomeCustomerActivity.class));
+//                return true;
+//            case R.id.nav_kategori_desain_customer:
+//                startActivity(new Intent(HomeCustomerActivity.this, ListKaryaActivity.class));
+//                return true;
+//            case R.id.nav_desainer_customer:
+//                fragmentClass = DesainerFragment.class;
+//                return true;
+//            case R.id.nav_pesanan_saya_customer:
+//                break;
+//            case R.id.nav_notifikasi_customer:
+//                break;
+//            case R.id.nav_akun_customer:
+//                break;
+//            case R.id.nav_keluar:
+//                break;
+//        }
+//
+//        if (fragment != null) {
+//            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+//            fragmentTransaction.replace(R.id.view_pager_home_customer, fragment);
+//            fragmentTransaction.commit();
+//        }
+//
+//        DrawerLayout drawer = findViewById(R.id.drawer_layout_navigation);
+//        drawer.closeDrawer(GravityCompat.START);
+//        return true;
+//    }
 
 }
