@@ -4,6 +4,7 @@ import com.karyakita.karyakita_android_new.customer.karya.DetailKaryaResultModel
 import com.karyakita.karyakita_android_new.customer.karya.KategoriKaryaResultModel;
 import com.karyakita.karyakita_android_new.customer.karya.ListKaryaResultModel;
 import com.karyakita.karyakita_android_new.desainer.list_desainer.ListDesainerModel;
+import com.karyakita.karyakita_android_new.desainer.list_desainer.ListDesainerResultModel;
 import com.karyakita.karyakita_android_new.example.MovieResponse;
 import com.karyakita.karyakita_android_new.example.TestModel;
 import com.karyakita.karyakita_android_new.login.LoginResultModel;
@@ -49,11 +50,13 @@ public interface IRestServices {
     @GET("kategori_karya/get-all")
     io.reactivex.Observable<KategoriKaryaResultModel> getKategoriKarya(@Header("Authorization") String bearer);
 
+    @GET("desainer/get-all")
+    io.reactivex.Observable<ListDesainerResultModel> getListDesainer(@Header("Authorization") String bearer);
+
 //    @GET("karya/get-by-kategori/kategori_id")
 //    io.reactivex.Observable<ListKaryaResultModel>getListKaryaByKategori(@Path("kategori_id")Integer kategori_id);
 
     @GET("karya/get-by-kategori/{kategori_id}")
-
     io.reactivex.Observable<ListKaryaResultModel> getListKaryaByKategori(@Header("Authorization") String bearer, @Path("kategori_id")Integer kategori_id);
 
 //    @GET("discover/movie")

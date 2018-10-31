@@ -50,11 +50,15 @@ public class ListKaryaModel extends BaseModel {
     @Expose
     private String local_url;
 
+    @SerializedName("harga")
+    @Expose
+    private Double harga;
+
     @SerializedName("deploy_url")
     @Expose
     private String deploy_url;
 
-    public ListKaryaModel(String createdAt, String updatedAt, Integer id, String nama, String deskripsi, Integer jumlah_revisi, String path, String filename, Integer filesize, Integer kategori_karya_id, String local_url, String deploy_url) {
+    public ListKaryaModel(String createdAt, String updatedAt, Integer id, String nama, String deskripsi, Integer jumlah_revisi, String path, String filename, Integer filesize, Integer kategori_karya_id, String local_url, Double harga, String deploy_url) {
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.id = id;
@@ -66,6 +70,7 @@ public class ListKaryaModel extends BaseModel {
         this.filesize = filesize;
         this.kategori_karya_id = kategori_karya_id;
         this.local_url = local_url;
+        this.harga = harga;
         this.deploy_url = deploy_url;
     }
 
@@ -166,5 +171,13 @@ public class ListKaryaModel extends BaseModel {
 
     public void setDeploy_url(String deploy_url) {
         this.deploy_url = deploy_url;
+    }
+
+    public Double getHarga() {
+        return harga;
+    }
+
+    public void seHarga(Double harga) {
+        this.harga = harga;
     }
 }

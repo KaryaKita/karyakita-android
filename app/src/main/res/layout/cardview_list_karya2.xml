@@ -42,7 +42,7 @@
             android:text="#WPAP #VectorArt"/>
 
         <TextView
-            android:id="@+id/iv_harga"
+            android:id="@+id/iv_hargakarya"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dimens_10dp"
