@@ -4,7 +4,9 @@
     <item
         android:id="@+id/nav_beranda_customer"
         android:icon="@drawable/ic_beranda"
-        android:title="@string/beranda_string" />
+        android:title="@string/beranda_string"
+        android:iconTint="@color/mainColor"
+        />
 
     <item
         android:id="@+id/nav_desainer_customer"
@@ -22,7 +24,7 @@
         android:title="@string/notifikasi_string" />
 
     <item
-        android:id="@+id/nav_akun_customer"
+        android:id="@+id/nav_kategori_desain_customer"
         android:icon="@drawable/ic_akun"
         android:title="@string/akun_string" />
 

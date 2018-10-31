@@ -7,7 +7,7 @@
 
             <!-- #f9fcff -->
             <!--corners allow us to make the rounded corners button-->
-            <corners android:radius="5dp" />
+            <corners android:radius="1dp" />
         </shape>
     </item>
 </selector>

@@ -27,6 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dimens_10dp"
+            android:layout_marginTop="@dimen/dimens_10dp"
             android:layout_marginRight="@dimen/dimens_10dp"
             android:text="Ariana Summer Vacations"
             android:textColor="@color/black"
