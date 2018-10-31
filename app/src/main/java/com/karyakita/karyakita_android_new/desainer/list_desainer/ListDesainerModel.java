@@ -41,19 +41,44 @@ public class ListDesainerModel extends BaseModel {
     @Expose
     private Integer subscriber;
 
+    @SerializedName("alamat_lengkap")
+    @Expose
+    private String alamat_lengkap;
+
+    @SerializedName("kode_pos")
+    @Expose
+    private String kode_pos;
+
+    @SerializedName("kecamatan")
+    @Expose
+    private String kecamatan;
+
+    @SerializedName("kota_kab")
+    @Expose
+    private String kota_kab;
+
+    @SerializedName("provinsi")
+    @Expose
+    private String provinsi;
+
     public ListDesainerModel() {
     }
 
-    public ListDesainerModel(String createdAt, String updatedAt, Integer id, String email, String nama, String notelp, Integer role_id, Integer rating, Integer subscriber) {
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
-        this.id = id;
-        this.email = email;
-        this.nama = nama;
-        this.notelp = notelp;
-        this.role_id = role_id;
-        this.rating = rating;
-        this.subscriber = subscriber;
+    public ListDesainerModel(ListDesainerModel listDesainerModel) {
+        this.createdAt = listDesainerModel.createdAt;
+        this.updatedAt = listDesainerModel.updatedAt;
+        this.id = listDesainerModel.id;
+        this.email = listDesainerModel.email;
+        this.nama = listDesainerModel.nama;
+        this.notelp = listDesainerModel.notelp;
+        this.role_id = listDesainerModel.role_id;
+        this.rating = listDesainerModel.rating;
+        this.subscriber = listDesainerModel.subscriber;
+        this.alamat_lengkap = listDesainerModel.alamat_lengkap;
+        this.kode_pos = listDesainerModel.kode_pos;
+        this.kecamatan = listDesainerModel.kecamatan;
+        this.kota_kab = listDesainerModel.kota_kab;
+        this.provinsi = listDesainerModel.provinsi;
     }
 
     public void setCreatedAt(String createdAt) {
@@ -118,6 +143,46 @@ public class ListDesainerModel extends BaseModel {
 
     public Integer getRole_id() {
         return role_id;
+    }
+
+    public void setAlamat_lengkap(String alamat_lengkap) {
+        this.alamat_lengkap = alamat_lengkap;
+    }
+
+    public void setKode_pos(String kode_pos) {
+        this.kode_pos = kode_pos;
+    }
+
+    public void setKecamatan(String kecamatan) {
+        this.kecamatan = kecamatan;
+    }
+
+    public void setKota_kab(String kota_kab) {
+        this.kota_kab = kota_kab;
+    }
+
+    public void setProvinsi(String provinsi) {
+        this.provinsi = provinsi;
+    }
+
+    public String getAlamat_lengkap() {
+        return alamat_lengkap;
+    }
+
+    public String getKode_pos() {
+        return kode_pos;
+    }
+
+    public String getKecamatan() {
+        return kecamatan;
+    }
+
+    public String getKota_kab() {
+        return kota_kab;
+    }
+
+    public String getProvinsi() {
+        return provinsi;
     }
 
     public Integer getRating() {
