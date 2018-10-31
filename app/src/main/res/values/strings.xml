@@ -96,5 +96,11 @@
         <item>4R</item>
         <item>10R</item>
     </array>
+
+    <array name="ukuran_pigora">
+        <item>Pilih Ukuran Kertas</item>
+        <item>4R</item>
+        <item>10R</item>
+    </array>
     <string name="title_activity_customer_home">CustomerHomeActivity</string>
 </resources>

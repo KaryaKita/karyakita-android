@@ -57,12 +57,12 @@
                         android:layout_marginLeft="27dp"
                         android:layout_marginRight="15dp"
                         android:layout_marginTop="20dp"
-                        android:text="PROVINSI"
+                        android:text="UKURAN KERTAS"
                         android:textSize="14dp"
                         android:textStyle="bold" />
 
+
                     <Spinner
-                        android:id="@+id/sp_prov"
                         style="@style/Base.Widget.AppCompat.Spinner.Underlined"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -70,7 +70,7 @@
                         android:layout_marginRight="15dp"
                         android:layout_marginTop="3dp"
                         android:backgroundTint="@color/mainColor"
-                        android:entries="@array/opsi_provinsi"
+                        android:entries="@array/ukuran_kertas"
                         android:paddingLeft="0dp"
                         android:paddingRight="0dp"></Spinner>
 
@@ -80,12 +80,12 @@
                         android:layout_marginLeft="27dp"
                         android:layout_marginRight="15dp"
                         android:layout_marginTop="20dp"
-                        android:text="KOTA / KABUPATEN"
+                        android:text="UKURAN PIGORA"
                         android:textSize="14dp"
                         android:textStyle="bold" />
 
+
                     <Spinner
-                        android:id="@+id/sp_kab"
                         style="@style/Base.Widget.AppCompat.Spinner.Underlined"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -93,80 +93,9 @@
                         android:layout_marginRight="15dp"
                         android:layout_marginTop="3dp"
                         android:backgroundTint="@color/mainColor"
-                        android:entries="@array/opsi_kabupaten"
+                        android:entries="@array/ukuran_pigora"
                         android:paddingLeft="0dp"
                         android:paddingRight="0dp"></Spinner>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="27dp"
-                        android:layout_marginRight="15dp"
-                        android:layout_marginTop="20dp"
-                        android:text="KECAMATAN"
-                        android:textSize="14dp"
-                        android:textStyle="bold" />
-
-                    <Spinner
-                        android:id="@+id/sp_kec"
-                        style="@style/Base.Widget.AppCompat.Spinner.Underlined"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="15dp"
-                        android:layout_marginTop="3dp"
-                        android:backgroundTint="@color/mainColor"
-                        android:entries="@array/opsi_kecamatan"
-                        android:paddingLeft="0dp"
-                        android:paddingRight="0dp"></Spinner>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="27dp"
-                        android:layout_marginRight="15dp"
-                        android:layout_marginTop="20dp"
-                        android:text="ALAMAT"
-                        android:textSize="14dp"
-                        android:textStyle="bold" />
-
-                    <EditText
-                        android:id="@+id/sp_alamat"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="23dp"
-                        android:layout_marginRight="15dp"
-                        android:layout_marginTop="3dp"
-                        android:backgroundTint="@color/mainColor"
-                        android:ems="10"
-                        android:hint="Masukkan Nama Jalan, Gedung, Nomor, RT RW"
-                        android:inputType="textCapSentences"
-                        android:paddingLeft="0dp"
-                        android:paddingRight="0dp"
-                        android:textSize="14dp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="27dp"
-                        android:layout_marginRight="15dp"
-                        android:layout_marginTop="20dp"
-                        android:text="OPSI PENGIRIMAN"
-                        android:textSize="14dp"
-                        android:textStyle="bold" />
-
-                    <Spinner
-                        android:id="@+id/sp_opsipengiriman"
-                        style="@style/Base.Widget.AppCompat.Spinner.Underlined"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="15dp"
-                        android:layout_marginTop="5dp"
-                        android:backgroundTint="@color/mainColor"
-                        android:entries="@array/opsi_pengiriman"
-                        android:paddingLeft="0dp"
-                        android:paddingRight="-1dp"></Spinner>
 
                 </LinearLayout>
 
@@ -181,7 +110,7 @@
                 android:layout_alignParentBottom="true"
                 android:background="@drawable/rounded_border"
                 android:textColor="@color/white"
-                android:text="Pesan"
+                android:text="Konfirmasi"
                 />
         </RelativeLayout>
     </android.support.design.widget.CoordinatorLayout>

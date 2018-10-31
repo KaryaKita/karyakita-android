@@ -1,5 +1,6 @@
 package com.karyakita.karyakita_android_new.service;
 
+import com.karyakita.karyakita_android_new.customer.data_pengiriman.DataPengirimanResultModel;
 import com.karyakita.karyakita_android_new.customer.karya.DetailKaryaResultModel;
 import com.karyakita.karyakita_android_new.customer.karya.KategoriKaryaResultModel;
 import com.karyakita.karyakita_android_new.customer.karya.ListKaryaResultModel;
@@ -43,6 +44,13 @@ public interface IRestServices {
                                                     @Field("password") String password,
                                                     @Field("role_id") Integer role_id);
 
+    @POST("customer/datapengiriman")
+    io.reactivex.Observable<DataPengirimanResultModel> datapengiriman (@Field("provinsi") String provinsi,
+                                                                       @Field("kabupaten") String kabupaten,
+                                                                       @Field("kecamatan") String kecamatan,
+                                                                       @Field("alamat") String alamat,
+                                                                       @Field("opsipengiriman") String opsipengiriman);
+
     @GET("karya/get-all")
     io.reactivex.Observable<KategoriKaryaResultModel> getListKarya(@Header("Authorization") String bearer);
 
@@ -60,6 +68,6 @@ public interface IRestServices {
 //    io.reactivex.Observable<ListDesainerModel> getListDesainer(@Path("desainer_id")Integer desainer_id);
 
 
-    @GET("karya/{kategori_id}")
-    io.reactivex.Observable<DetailKaryaResultModel> getDetailKarya(@Header("Authorization") String bearer, @Path("kategori_id")Integer kategori_id);
+    @GET("karya/{id}")
+    io.reactivex.Observable<DetailKaryaResultModel> getDetailKarya(@Header("Authorization") String bearer, @Path("id")Integer id);
 }

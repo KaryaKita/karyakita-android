@@ -6,19 +6,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.karyakita.karyakita_android_new.R;
-import com.karyakita.karyakita_android_new.customer.transaksi.DataPengirimanCustomerActivity;
+import com.karyakita.karyakita_android_new.customer.data_pengiriman.DataPengirimanCustomerActivity;
 import com.karyakita.karyakita_android_new.customer.transaksi.PesanCustomActivity;
 
-import com.karyakita.karyakita_android_new.example.ITestView;
-import com.karyakita.karyakita_android_new.example.MovieResponse;
 import com.karyakita.karyakita_android_new.login.LoginActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class DetailKaryaActivity extends AppCompatActivity implements IDetailKaryaView{
+    DetailKaryaPresenter detailKaryaPresenter = null;
+    DetailKaryaModel detailKaryaModel = null;
+
+//    private String TAG = "DetailKaryaActivity";
 
     @BindView(R.id.btnKirimPesan)
     Button btnKirimPesan;
@@ -26,6 +31,15 @@ public class DetailKaryaActivity extends AppCompatActivity implements IDetailKar
     Button btnPesanCustom;
     @BindView(R.id.btnPesanSekarang)
     Button btnPesanSekarang;
+    @BindView(R.id.imageView)
+    ImageView img_detail;
+    @BindView(R.id.tv_hargaKarya)
+    TextView hargakarya;
+    @BindView(R.id.tv_katkarya)
+    TextView katkarya;
+    @BindView(R.id.tv_namakar)
+    TextView namakarya;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +48,9 @@ public class DetailKaryaActivity extends AppCompatActivity implements IDetailKar
         ButterKnife.bind(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        setUpPresenter();
+        getDetailKarya();
 
         btnPesanSekarang.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,18 +77,34 @@ public class DetailKaryaActivity extends AppCompatActivity implements IDetailKar
         });
     }
 
+    private void getDetailKarya(){
+        detailKaryaPresenter.get();
+    }
+
     @Override
     public void showToast(String s) {
+        Toast.makeText(getApplicationContext(), s, Toast.LENGTH_LONG).show();
+        startActivity(new Intent(DetailKaryaActivity.this, DataPengirimanCustomerActivity.class));
+    }
+
+
+    @Override
+    public void display(DetailKaryaResultModel detailKaryaResultModel) {
+        //Glide.with(getApplicationContext()).load(detailKaryaModel.getPath().toString());
+        katkarya.setText(detailKaryaResultModel.getData().getKategori_karya_id().toString());
+        namakarya.setText(detailKaryaResultModel.getData().getNama());
+    }
+
+    @Override
+    public void displayError(String s) {
 
     }
 
-//    @Override
-//    public void display(MovieResponse model) {
-//
-//    }
-
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
+    }
 
+    private void setUpPresenter(){
+        detailKaryaPresenter = new DetailKaryaPresenter(this);
     }
 }
