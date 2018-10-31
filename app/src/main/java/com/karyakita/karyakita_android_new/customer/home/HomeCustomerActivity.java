@@ -51,23 +51,41 @@ public class HomeCustomerActivity extends AppCompatActivity
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+            FragmentManager fm = getSupportFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            Fragment fragment = null;
+
+
             switch (item.getItemId()) {
                 case R.id.nav_beranda_customer:
-                    mTextMessage.setText("Beranda");
+                    fragment = new HomeFragment();
+                    ft.replace(R.id.frame_home_customer, fragment);
+                    ft.commit();
                     return true;
                 case R.id.nav_desainer_customer:
-                    mTextMessage.setText("Desainer");
+                    fragment = new DesainerFragment();
+                    ft.replace(R.id.frame_home_customer, fragment);
+                    ft.commit();
                     return true;
                 case R.id.nav_pesanan_saya_customer:
-                    mTextMessage.setText("Pesanan Saya");
+                    fragment = new DesainerFragment();
+                    ft.replace(R.id.frame_home_customer, fragment);
+                    ft.commit();
                     return true;
                 case R.id.nav_notif_customer:
-                    mTextMessage.setText("Notifikasi");
+                    fragment = new DesainerFragment();
+                    ft.replace(R.id.frame_home_customer, fragment);
+                    ft.commit();
                     return true;
                 case R.id.nav_akun_customer:
-                    mTextMessage.setText("Akun");
+                    fragment = new DesainerFragment();
+                    ft.replace(R.id.frame_home_customer, fragment);
+                    ft.commit();
                     return true;
             }
+
+
             return false;
         }
     };
@@ -78,10 +96,20 @@ public class HomeCustomerActivity extends AppCompatActivity
         setContentView(R.layout.activity_home_customer);
         ButterKnife.bind(this);
 
-        mTextMessage = findViewById(R.id.message_home);
+//        mTextMessage = findViewById(R.id.message_home);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_home_customer);
         bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        View container = findViewById(R.id.frame_home_customer);
+
+        Fragment fragment = new HomeFragment();
+
+        ft.replace(R.id.frame_home_customer, fragment);
+        ft.commit();
 
 //        Toolbar toolbar = findViewById(R.id.toolbar_navigation);
 //        setSupportActionBar(toolbarNavigation);
