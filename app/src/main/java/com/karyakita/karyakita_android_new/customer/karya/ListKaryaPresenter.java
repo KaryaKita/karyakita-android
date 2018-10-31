@@ -1,6 +1,5 @@
 package com.karyakita.karyakita_android_new.customer.karya;
 
-
 import android.util.Log;
 
 import com.karyakita.karyakita_android_new.base.BaseModel;
@@ -18,7 +17,6 @@ import io.reactivex.observers.DisposableObserver;
 import io.reactivex.schedulers.Schedulers;
 
 import static android.support.constraint.Constraints.TAG;
-
 
 public class ListKaryaPresenter implements IMainPresenter {
     IListKaryaView iListKaryaView;

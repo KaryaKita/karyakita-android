@@ -31,7 +31,7 @@
                 android:gravity="center">
 
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/profile_image"
+                    android:id="@+id/iv_profile_image"
                     android:layout_width="96dp"
                     android:layout_height="96dp"
                     android:src="@drawable/line_art"
@@ -55,12 +55,13 @@
                         android:textStyle="bold" />
 
                     <android.support.v7.widget.AppCompatTextView
-                        android:id="@+id/tv_keahlian_desainer"
+                        android:id="@+id/tv_kota_asal_desainer"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Jl. Teknik Komputer No 67" />
+                        android:text="Surabaya" />
 
                     <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/tv_jumlah_karya"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="3dp"

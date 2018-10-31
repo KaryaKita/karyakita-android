@@ -42,7 +42,8 @@
                 android:layout_marginRight="35dp"
                 android:background="@drawable/shapeemail"
                 android:padding="5dp"
-                android:paddingLeft="8dp" />
+                android:paddingLeft="8dp"
+                android:textColor="@color/white"/>
 
             <TextView
                 android:id="@+id/username"
@@ -66,7 +67,8 @@
                 android:layout_marginRight="35dp"
                 android:background="@drawable/shapeemail"
                 android:padding="5dp"
-                android:paddingLeft="8dp" />
+                android:paddingLeft="8dp"
+                android:textColor="@color/white"/>
 
             <TextView
                 android:id="@+id/email"
@@ -90,7 +92,8 @@
                 android:layout_marginRight="35dp"
                 android:background="@drawable/shapeemail"
                 android:padding="5dp"
-                android:paddingLeft="8dp" />
+                android:paddingLeft="8dp"
+                android:textColor="@color/white"/>
 
             <TextView
                 android:id="@+id/password"
@@ -115,7 +118,8 @@
                 android:background="@drawable/shapeemail"
                 android:inputType="textPassword"
                 android:padding="5dp"
-                android:paddingLeft="8dp" />
+                android:paddingLeft="8dp"
+                android:textColor="@color/white"/>
 
             <TextView
                 android:id="@+id/konfirPassword"
@@ -140,7 +144,8 @@
                 android:background="@drawable/shapeemail"
                 android:inputType="textPassword"
                 android:padding="5dp"
-                android:paddingLeft="8dp" />
+                android:paddingLeft="8dp"
+                android:textColor="@color/white"/>
 
             <CheckBox
                 android:id="@+id/cekbox"
