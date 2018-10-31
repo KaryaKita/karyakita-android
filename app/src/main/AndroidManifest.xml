@@ -30,7 +30,6 @@
             android:theme="@style/AppTheme.SplashTheme" />
         <activity android:name=".customer.home.HomeCustomerActivity" />
         <activity android:name=".example.MovieActivity" />
-        <activity android:name=".register_as.RegisterAsActivity" />
         <activity android:name=".login.LoginActivity" />
         <activity android:name=".login_as.LoginAsActivity">
             <intent-filter>
@@ -40,17 +39,17 @@
             </intent-filter>
         </activity>
         <activity android:name=".register.RegisterActivity" />
+        <activity android:name=".register_as.RegisterAsActivity" />
         <activity android:name=".customer.karya.DetailKaryaActivity" />
         <activity android:name=".customer.transaksi.DataPengirimanCustomerActivity" />
         <activity android:name=".customer.transaksi.PesanCustomActivity" />
         <activity android:name=".customer.PesananSelesai" />
         <activity android:name=".customer.karya.ListKaryaActivity" />
-        <activity android:name=".customer.home.CustomerHomeActivity" />
         <activity android:name=".customer.karya.KonfirmasiDesainActivity" />
         <activity android:name=".customer.transaksi.UploadkaryaCusromerActivity" />
         <activity android:name=".customer.transaksi.TransaksiSelesaiActivity" />
         <activity android:name=".customer.CustomerNotifikasiActivity" />
-        <activity android:name=".customer.HalamanDesainerActivity"/>
+        <activity android:name=".customer.HalamanDesainerActivity" />
         <activity android:name=".desainer.home.HomeDesainerActivity" />
         <activity android:name=".desainer.transaksi.UploadBiasaDesainerActivity" />
         <activity android:name=".desainer.transaksi.DesainerTransaksiSelesaiActivity" />
