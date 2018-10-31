@@ -58,12 +58,6 @@
         <activity android:name=".desainer.transaksi.KonfimasiBayarDesainer" />
         <activity android:name=".desainer.transaksi.PilihanBankDesainerActivity" />
         <activity android:name=".desainer.transaksi.DetailPengirimanDesainerActivity" />
-<<<<<<< HEAD
-        <activity android:name=".customer.CustomerNotifikasiActivity" />
         <activity android:name=".desainer.UploadRevisiDesainerActivity"/>
-        <activity android:name=".customer.HalamanDesainerActivity"/>
-=======
-        <activity android:name=".desainer.UploadRevisiDesainerActivity" />
->>>>>>> 4684434ffbc4d14d5995be6e87fbd0a884aa4b9c
     </application>
 </manifest>

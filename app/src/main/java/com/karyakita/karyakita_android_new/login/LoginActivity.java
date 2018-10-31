@@ -58,6 +58,7 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
     @Override
     public void display(LoginResultModel model) {
         GlobalVariable.TOKEN = model.getToken();
+        Log.i("Test", GlobalVariable.TOKEN);
     }
 
     @Override
