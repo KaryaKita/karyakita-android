@@ -17,11 +17,11 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_main_app_karyakita"
+        android:icon="@mipmap/ic_karyakita"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:networkSecurityConfig="@xml/network_security_config"
-        android:roundIcon="@mipmap/ic_main_app_karyakita"
+        android:roundIcon="@mipmap/ic_karyakita"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
@@ -30,7 +30,6 @@
             android:theme="@style/AppTheme.SplashTheme" />
         <activity android:name=".customer.home.HomeCustomerActivity" />
         <activity android:name=".example.MovieActivity" />
-        <activity android:name=".register_as.RegisterAsActivity" />
         <activity android:name=".login.LoginActivity" />
         <activity android:name=".login_as.LoginAsActivity">
             <intent-filter>
@@ -40,22 +39,23 @@
             </intent-filter>
         </activity>
         <activity android:name=".register.RegisterActivity" />
+        <activity android:name=".register_as.RegisterAsActivity" />
         <activity android:name=".customer.karya.DetailKaryaActivity" />
         <activity android:name=".customer.transaksi.PesanCustomActivity" />
         <activity android:name=".customer.PesananSelesai" />
         <activity android:name=".customer.karya.ListKaryaActivity" />
-        <activity android:name=".customer.home.CustomerHomeActivity" />
         <activity android:name=".customer.karya.KonfirmasiDesainActivity" />
         <activity android:name=".customer.transaksi.UploadkaryaCusromerActivity" />
         <activity android:name=".customer.transaksi.TransaksiSelesaiActivity" />
+
+        <activity android:name=".customer.CustomerNotifikasiActivity" />
+        <activity android:name=".desainer.home.HomeDesainerActivity" />
         <activity android:name=".desainer.transaksi.UploadBiasaDesainerActivity" />
         <activity android:name=".desainer.transaksi.DesainerTransaksiSelesaiActivity" />
         <activity android:name=".desainer.transaksi.FormUploadKaryaDesaigner" />
         <activity android:name=".desainer.transaksi.KonfimasiBayarDesainer" />
         <activity android:name=".desainer.transaksi.PilihanBankDesainerActivity" />
         <activity android:name=".desainer.transaksi.DetailPengirimanDesainerActivity" />
-
-        <activity android:name=".customer.CustomerNotifikasiActivity" />
 
         <activity android:name=".desainer.UploadRevisiDesainerActivity" />
         <activity android:name=".customer.HalamanDesainerActivity">
