@@ -45,16 +45,12 @@ public class DetailKaryaModel extends BaseModel {
     @Expose
     private Integer kategori_karya_id;
 
-    @SerializedName("local_url")
+    @SerializedName("desainer_id")
     @Expose
-    private String local_url;
-
-    @SerializedName("deploy_url")
-    @Expose
-    private String deploy_url;
+    private Integer desainer_id;
 
 
-    public DetailKaryaModel(String createdAt, String updatedAt, Integer id, String nama,String deskripsi, Integer jumlah_revisi, String path, String filename, Integer filesize, Integer kategori_karya_id, String local_url, String deploy_url){
+    public DetailKaryaModel(String createdAt, String updatedAt, Integer id, String nama,String deskripsi, Integer jumlah_revisi, String path, String filename, Integer filesize, Integer kategori_karya_id, Integer desainer_id){
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.id = id;
@@ -65,8 +61,7 @@ public class DetailKaryaModel extends BaseModel {
         this.filename = filename;
         this.filesize = filesize;
         this.kategori_karya_id = kategori_karya_id;
-        this.local_url = local_url;
-        this.deploy_url = deploy_url;
+        this.desainer_id = desainer_id;
     }
 
     public DetailKaryaModel(){
@@ -153,20 +148,10 @@ public class DetailKaryaModel extends BaseModel {
         this.kategori_karya_id = kategori_karya_id;
     }
 
-    public String getLocal_url() {
-        return local_url;
-    }
+    public Integer desainer_id(){ return desainer_id; }
 
-    public void setLocal_url(String local_url) {
-        this.local_url = local_url;
-    }
-
-    public String getDeploy_url() {
-        return deploy_url;
-    }
-
-    public void setDeploy_url(String deploy_url) {
-        this.deploy_url = deploy_url;
+    public void setDesainer_id(Integer desainer_id){
+        this.desainer_id = desainer_id;
     }
 
 }

@@ -15,7 +15,6 @@
     <string name="notifikasi_string">Notifikasi</string>
     <string name="akun_string">Akun</string>
     <string name="keluar_string">Keluar</string>
-    <string name="title_activity_pesanan_saya_desainer">PesananSayaDesainerActivity</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
@@ -96,5 +95,12 @@
         <item>4R</item>
         <item>10R</item>
     </array>
+
+    <array name="ukuran_pigora">
+        <item>Pilih Ukuran Kertas</item>
+        <item>4R</item>
+        <item>10R</item>
+    </array>
     <string name="title_activity_customer_home">CustomerHomeActivity</string>
+    <string name="title_activity_main2">Main2Activity</string>
 </resources>

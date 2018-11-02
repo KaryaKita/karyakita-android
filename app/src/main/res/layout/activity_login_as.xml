@@ -56,6 +56,4 @@
             android:textStyle="italic" />
 
     </LinearLayout>
-
-
 </android.support.v7.widget.LinearLayoutCompat>

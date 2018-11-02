@@ -6,6 +6,4 @@ public interface IListKaryaView {
     void display(ListKaryaResultModel listKaryaResultModel);
 
     void displayError(String s);
-
-
 }
