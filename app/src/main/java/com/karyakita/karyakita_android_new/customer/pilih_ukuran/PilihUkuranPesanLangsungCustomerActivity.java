@@ -9,6 +9,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.karyakita.karyakita_android_new.R;
+import com.karyakita.karyakita_android_new.data.local.realm.RealmHelper;
 import com.karyakita.karyakita_android_new.customer.data_pengiriman.DataPengirimanCustomerActivity;
 
 import java.util.HashMap;
@@ -16,10 +17,14 @@ import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
 
 public class PilihUkuranPesanLangsungCustomerActivity extends AppCompatActivity implements IPilihUkuranPesanLangsungView{
     PilihUkuranPesanLangsungPresenter pilihUkuranPesanLangsungPresenter = null;
     PilihUkuranPesanLangsungModel pilihUkuranPesanLangsungModel = null;
+    Realm realm;
+    RealmHelper realmHelper;
 
     @BindView(R.id.sp_ukuran_kertas)
     Spinner ukuran_kertas;
@@ -28,11 +33,17 @@ public class PilihUkuranPesanLangsungCustomerActivity extends AppCompatActivity 
     @BindView(R.id.bt_konfimasi)
     Button konfirmasi;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pilih_ukuran_pesan_langsung_customer);
         ButterKnife.bind(this);
+        RealmConfiguration configuration = new RealmConfiguration.Builder().build();
+        realm = Realm.getInstance(configuration);
+        realmHelper = new RealmHelper(realm);
+
         konfirmasi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
