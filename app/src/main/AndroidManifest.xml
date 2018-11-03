@@ -41,7 +41,7 @@
         <activity android:name=".register.RegisterActivity" />
         <activity android:name=".register_as.RegisterAsActivity" />
         <activity android:name=".customer.karya.DetailKaryaActivity" />
-        <activity android:name=".customer.transaksi.PesanCustomActivity" />
+        <activity android:name=".customer.pesan_custom.PesanCustomActivity" />
         <activity android:name=".customer.PesananSelesai" />
         <activity android:name=".customer.karya.ListKaryaActivity" />
         <activity android:name=".customer.karya.KonfirmasiDesainActivity" />
@@ -65,6 +65,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".customer.pilih_ukuran.PilihUkuranPesanLangsungCustomer"></activity>
+        <activity android:name=".customer.pilih_ukuran.PilihUkuranPesanLangsungCustomerActivity"></activity>
     </application>
 </manifest>
