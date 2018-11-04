@@ -6,7 +6,7 @@
     tools:context=".customer.pesan_custom.PesanCustomActivity">
 
     <ScrollView
-        android:id="@+id/pesan_custom"
+        android:id="@+id/iv_pesan_custom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -26,6 +26,7 @@
                 android:background="#FFE4B5">
 
                 <ImageView
+                    android:id="@+id/iv_img_custom"
                     android:layout_width="60dp"
                     android:layout_height="50dp"
                     android:layout_gravity="center"
