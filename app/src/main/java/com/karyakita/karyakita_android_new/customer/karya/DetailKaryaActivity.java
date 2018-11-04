@@ -106,7 +106,7 @@ public class DetailKaryaActivity extends AppCompatActivity implements IDetailKar
     @Override
     public void display(DetailKaryaResultModel detailKaryaResultModel) {
         //Glide.with(getApplicationContext()).load(detailKaryaModel.getPath().toString());
-        Glide.with(context).load(detailKaryaResultModel.getData().getPath()).into(imageKarya);
+        Glide.with(context).load(detailKaryaResultModel.getData().getDeploy_url()).into(imageKarya);
         katkarya.setText(detailKaryaResultModel.getData().getKategori_karya_id().toString());
         namakarya.setText(detailKaryaResultModel.getData().getNama());
         deskripsikarya.setText(detailKaryaResultModel.getData().getDeskripsi());
