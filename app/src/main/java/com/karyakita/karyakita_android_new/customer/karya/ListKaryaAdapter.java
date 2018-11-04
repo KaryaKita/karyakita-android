@@ -18,6 +18,7 @@ import java.util.List;
 
 public class ListKaryaAdapter extends RecyclerView.Adapter<ListKaryaAdapter.Holder> {
     List<ListKaryaModel> listKaryaModelList;
+    //List<KategoriKaryaModel> kategoriKaryaModelList;
     Context context;
 
     public ListKaryaAdapter(List<ListKaryaModel> listKaryaModelList, Context context) {
@@ -37,7 +38,7 @@ public class ListKaryaAdapter extends RecyclerView.Adapter<ListKaryaAdapter.Hold
         Glide.with(context).load(listKaryaModelList.get(position).getDeploy_url()).into(holder.iv_listKarya);
         holder.tv_judulkarya.setText(listKaryaModelList.get(position).getNama());
         holder.tv_kategorikarya.setText(listKaryaModelList.get(position).getKategori_karya_id().toString());
-        holder.tv_hargakarya.setText(listKaryaModelList.get(position).getHarga().toString());
+        holder.tv_hargakarya.setText("Rp" + listKaryaModelList.get(position).getHarga().toString());
     }
 
     @Override
