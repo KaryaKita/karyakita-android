@@ -13,7 +13,7 @@ import android.widget.Toast;
 import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.customer.data_pengiriman.DataPengirimanCustomerActivity;
 import com.karyakita.karyakita_android_new.customer.pilih_ukuran.PilihUkuranPesanLangsungCustomer;
-import com.karyakita.karyakita_android_new.customer.transaksi.PesanCustomActivity;
+import com.karyakita.karyakita_android_new.customer.pesan_custom.PesanCustomActivity;
 
 import com.karyakita.karyakita_android_new.login.LoginActivity;
 

@@ -9,7 +9,6 @@ import android.widget.Button;
 import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.customer.PesananSelesai;
 import com.karyakita.karyakita_android_new.customer.data_pengiriman.DataPengirimanCustomerActivity;
-import com.karyakita.karyakita_android_new.customer.transaksi.PesanCustomActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

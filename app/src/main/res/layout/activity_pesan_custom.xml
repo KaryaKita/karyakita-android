@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".customer.transaksi.PesanCustomActivity">
+    tools:context=".customer.pesan_custom.PesanCustomActivity">
 
     <ScrollView
         android:id="@+id/pesan_custom"

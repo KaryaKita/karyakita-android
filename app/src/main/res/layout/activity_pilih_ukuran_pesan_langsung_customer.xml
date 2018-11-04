@@ -63,6 +63,7 @@
 
 
                     <Spinner
+                        android:id="@+id/sp_ukuran_kertas"
                         style="@style/Base.Widget.AppCompat.Spinner.Underlined"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -86,6 +87,7 @@
 
 
                     <Spinner
+                        android:id="@+id/sp_ukuran_bingkai"
                         style="@style/Base.Widget.AppCompat.Spinner.Underlined"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
