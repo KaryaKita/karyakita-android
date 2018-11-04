@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class DetailPengirimanPresenter implements IMainPresenter {
     @Override
-    public void get() {
+    public void get(Map<String, String> dataInput) {
 
     }
 

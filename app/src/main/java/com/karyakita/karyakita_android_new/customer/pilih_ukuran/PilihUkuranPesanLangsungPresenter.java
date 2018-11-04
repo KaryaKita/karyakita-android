@@ -14,7 +14,7 @@ public class PilihUkuranPesanLangsungPresenter implements IMainPresenter{
 //    public class Pili
 
     @Override
-    public void get() {
+    public void get(Map<String, String> dataInput) {
 
     }
 

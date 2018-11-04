@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.karyakita.karyakita_android_new.R;
@@ -19,9 +20,9 @@ import java.util.Map;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class DataPengirimanCustomerActivity extends AppCompatActivity implements ITestView {
-//    @BindView(R.id.id_pesanan)
-//    Button bt_id_pesanan;
+public class DataPengirimanCustomerActivity extends AppCompatActivity implements IDataPengirimanView {
+    @BindView(R.id.btnPesan)
+    Button bt_id_pesanan;
     @BindView(R.id.sp_prov)
     Spinner prov;
     @BindView(R.id.sp_kab)
@@ -29,7 +30,7 @@ public class DataPengirimanCustomerActivity extends AppCompatActivity implements
     @BindView(R.id.sp_kec)
     Spinner kec;
     @BindView(R.id.sp_alamat)
-    Spinner alamat;
+    EditText alamat;
     @BindView(R.id.sp_opsipengiriman)
     Spinner opsipengiriman;
 
@@ -44,14 +45,14 @@ public class DataPengirimanCustomerActivity extends AppCompatActivity implements
         ButterKnife.bind(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        setupPresenter();
-//        bt_id_pesanan.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(DataPengirimanCustomerActivity.this, PesananSelesai.class);
-//                startActivity(intent);
-//            }
-//        });
+//        setupPresenter();
+        bt_id_pesanan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DataPengirimanCustomerActivity.this, PesananSelesai.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -60,7 +61,7 @@ public class DataPengirimanCustomerActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void display(MovieResponse model) {
+    public void display(DataPengirimanResultModel model) {
 
     }
 
@@ -76,7 +77,7 @@ public class DataPengirimanCustomerActivity extends AppCompatActivity implements
         inputan.put("alamat", alamat.toString());
         inputan.put("opsipengiriman", opsipengiriman.toString());
 
-//       dataPengirimanPresenter = new DataPengirimanPresenter(this);
+       dataPengirimanPresenter = new DataPengirimanPresenter(this);
         dataPengirimanPresenter.insert(inputan);
     }
 }

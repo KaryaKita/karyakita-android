@@ -49,6 +49,7 @@
         <activity android:name=".customer.transaksi.TransaksiSelesaiActivity" />
 
         <activity android:name=".customer.CustomerNotifikasiActivity" />
+        <activity android:name=".customer.data_pengiriman.DataPengirimanCustomerActivity" />
         <activity android:name=".desainer.home.HomeDesainerActivity" />
         <activity android:name=".desainer.transaksi.UploadBiasaDesainerActivity" />
         <activity android:name=".desainer.transaksi.DesainerTransaksiSelesaiActivity" />
@@ -58,13 +59,7 @@
         <activity android:name=".desainer.transaksi.DetailPengirimanDesainerActivity" />
 
         <activity android:name=".desainer.UploadRevisiDesainerActivity" />
-        <activity android:name=".customer.HalamanDesainerActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".customer.pilih_ukuran.PilihUkuranPesanLangsungCustomer"></activity>
+        <activity android:name=".customer.HalamanDesainerActivity" />
+        <activity android:name=".customer.pilih_ukuran.PilihUkuranPesanLangsungCustomer" />
     </application>
 </manifest>
