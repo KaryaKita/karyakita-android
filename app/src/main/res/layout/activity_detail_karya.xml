@@ -47,6 +47,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="56dp"
                     android:gravity="top"
+                    android:paddingBottom="100dp"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -55,7 +56,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/imageView"
+                            android:id="@+id/iv_karya"
                             android:layout_width="match_parent"
                             android:layout_height="270dp"
                             android:contentDescription="@string/nav_header_desc"
@@ -236,15 +237,13 @@
                             android:typeface="sans" />
 
                         <TextView
+                            android:id="@+id/tv_deskripsi"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="20dp"
                             android:layout_marginTop="12dp"
                             android:layout_marginRight="20dp"
-                            android:text="bla bla bla bla bla bla bla bla bla bla bla bla
-                            bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-                            bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-                            bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla "
+                            android:text="Art bertemakan kontemporer dengan vector dan line"
                             android:textSize="17sp"
                             android:typeface="sans" />
                     </LinearLayout>

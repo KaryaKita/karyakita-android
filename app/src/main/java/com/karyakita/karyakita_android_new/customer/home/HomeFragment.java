@@ -130,7 +130,7 @@ public class HomeFragment extends Fragment implements IHomeView {
 
     private void getGridViewHome() {
         Toast.makeText(getActivity().getApplicationContext(), "Toke " + GlobalVariable.TOKEN, Toast.LENGTH_LONG);
-        homePresenter.get();
+        homePresenter.get(null);
     }
 
 

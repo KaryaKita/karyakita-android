@@ -39,4 +39,9 @@ public abstract class BaseActivity extends AppCompatActivity implements IBaseFra
 
         this.currentFragment = fragment;
     }
+
+    @Override
+    public void setTitle(String title) {
+        tvToolbarTitle.setText(title);
+    }
 }

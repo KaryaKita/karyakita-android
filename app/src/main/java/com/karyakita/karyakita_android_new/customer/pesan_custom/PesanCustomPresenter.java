@@ -11,7 +11,7 @@ public class PesanCustomPresenter implements IMainPresenter{
     PesanCustomModel pesanCustomModel = null;
 
     @Override
-    public void get() {
+    public void get(Map<String, String> dataInput) {
 
     }
 

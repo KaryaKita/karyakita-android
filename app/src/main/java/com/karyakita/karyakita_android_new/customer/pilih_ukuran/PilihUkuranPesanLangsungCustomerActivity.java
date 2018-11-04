@@ -30,7 +30,7 @@ public class PilihUkuranPesanLangsungCustomerActivity extends AppCompatActivity 
     Spinner ukuran_kertas;
     @BindView(R.id.sp_ukuran_bingkai)
     Spinner ukuran_bingkai;
-    @BindView(R.id.bt_konfimasi)
+    @BindView(R.id.btnLanjut)
     Button konfirmasi;
 
 

@@ -6,7 +6,7 @@ import android.os.Parcelable;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class BaseModelPojo implements Parcelable {
+public class BaseModelPojo implements Parcelable, IBaseModel {
     public static final Parcelable.Creator<BaseModelPojo> CREATOR = new Parcelable.Creator<BaseModelPojo>() {
         @Override
         public BaseModelPojo createFromParcel(Parcel in) {

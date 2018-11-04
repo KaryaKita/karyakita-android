@@ -42,7 +42,7 @@ public class TestActivity extends AppCompatActivity implements ITestView {
     }
 
     private void getMovieList() {
-        testPresenter.get();
+        testPresenter.get(null);
     }
 
     @Override

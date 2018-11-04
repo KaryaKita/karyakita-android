@@ -1,5 +1,6 @@
 package com.karyakita.karyakita_android_new.customer.karya;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,11 +11,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.customer.data_pengiriman.DataPengirimanCustomerActivity;
+import com.karyakita.karyakita_android_new.customer.pilih_ukuran.PilihUkuranPesanLangsungCustomer;
 import com.karyakita.karyakita_android_new.customer.pesan_custom.PesanCustomActivity;
 
 import com.karyakita.karyakita_android_new.login.LoginActivity;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -22,6 +28,8 @@ import butterknife.ButterKnife;
 public class DetailKaryaActivity extends AppCompatActivity implements IDetailKaryaView{
     DetailKaryaPresenter detailKaryaPresenter = null;
     DetailKaryaModel detailKaryaModel = null;
+    Integer karya_id;
+    Context context;
 
 //    private String TAG = "DetailKaryaActivity";
 
@@ -31,14 +39,16 @@ public class DetailKaryaActivity extends AppCompatActivity implements IDetailKar
     Button btnPesanCustom;
     @BindView(R.id.btnPesanSekarang)
     Button btnPesanSekarang;
-    @BindView(R.id.imageView)
-    ImageView img_detail;
+    @BindView(R.id.iv_karya)
+    ImageView imageKarya;
     @BindView(R.id.tv_hargaKarya)
     TextView hargakarya;
     @BindView(R.id.tv_katkarya)
     TextView katkarya;
     @BindView(R.id.tv_namakar)
     TextView namakarya;
+    @BindView(R.id.tv_deskripsi)
+    TextView deskripsikarya;
 
 
     @Override
@@ -48,6 +58,9 @@ public class DetailKaryaActivity extends AppCompatActivity implements IDetailKar
         ButterKnife.bind(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        Bundle bundle = getIntent().getExtras();
+        karya_id = bundle.getInt("karya_id");
 
         setUpPresenter();
         getDetailKarya();
@@ -71,14 +84,16 @@ public class DetailKaryaActivity extends AppCompatActivity implements IDetailKar
         btnPesanSekarang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DetailKaryaActivity.this, DataPengirimanCustomerActivity.class);
+                Intent intent = new Intent(DetailKaryaActivity.this, PilihUkuranPesanLangsungCustomer.class);
                 startActivity(intent);
             }
         });
     }
 
     private void getDetailKarya(){
-        detailKaryaPresenter.get();
+        Map<String, String> dataInput = new HashMap<>();
+        dataInput.put("karya_id", karya_id.toString());
+        detailKaryaPresenter.get(dataInput);
     }
 
     @Override
@@ -91,8 +106,10 @@ public class DetailKaryaActivity extends AppCompatActivity implements IDetailKar
     @Override
     public void display(DetailKaryaResultModel detailKaryaResultModel) {
         //Glide.with(getApplicationContext()).load(detailKaryaModel.getPath().toString());
+        Glide.with(context).load(detailKaryaResultModel.getData().getPath()).into(imageKarya);
         katkarya.setText(detailKaryaResultModel.getData().getKategori_karya_id().toString());
         namakarya.setText(detailKaryaResultModel.getData().getNama());
+        deskripsikarya.setText(detailKaryaResultModel.getData().getDeskripsi());
     }
 
     @Override

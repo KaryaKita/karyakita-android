@@ -31,7 +31,7 @@ public class ListDesainerPresenter implements IMainPresenter{
     }
 
     @Override
-    public void get() {
+    public void get(Map<String, String> dataInput) {
         getObservable().subscribeWith(getObserver());
     }
 

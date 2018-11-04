@@ -4,68 +4,74 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
-
-    <android.support.v7.widget.Toolbar
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:background="@color/colorPrimary"
-        app:contentInsetLeft="0dp"
-        app:contentInsetStart="0dp">
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/mainColor"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
 
-            <ImageView
-                android:id="@+id/ivIcon"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_alignParentLeft="true"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
-                android:tint="@color/pure_white"
-                android:visibility="gone" />
+            <!--<RelativeLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:orientation="horizontal">-->
 
-            <ImageButton
-                android:id="@+id/btBack"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_toRightOf="@+id/ivIcon"
-                android:background="@android:color/transparent"
-                android:foreground="?android:attr/selectableItemBackground"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
-                android:src="@drawable/ic_arrow_back_white_24dp" />
+                <!--<ImageView-->
+                    <!--android:id="@+id/ivIcon"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_alignParentLeft="true"-->
+                    <!--android:paddingLeft="16dp"-->
+                    <!--android:paddingRight="16dp"-->
+                    <!--android:tint="@color/pure_white"-->
+                    <!--android:visibility="gone" />-->
 
-            <TextView
-                android:id="@+id/tvToolbarTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_toLeftOf="@+id/btOptionMenu"
-                android:layout_toRightOf="@+id/btBack"
-                android:ellipsize="end"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center_vertical"
-                android:maxLines="1"
-                android:text="@string/app_name"
-                android:textColor="@color/pure_white"
-                android:textSize="18sp" />
+                <!--<ImageButton-->
+                    <!--android:id="@+id/btBack"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_toRightOf="@+id/ivIcon"-->
+                    <!--android:background="@android:color/transparent"-->
+                    <!--android:foreground="?android:attr/selectableItemBackground"-->
+                    <!--android:paddingLeft="16dp"-->
+                    <!--android:paddingRight="16dp"-->
+                    <!--android:src="@drawable/ic_arrow_back_white_24dp" />-->
 
-            <ImageButton
-                android:id="@+id/btOptionMenu"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_alignParentRight="true"
-                android:background="?android:attr/selectableItemBackground"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
-                android:tint="@color/pure_white"
-                android:visibility="gone" />
+                <!--<TextView-->
+                    <!--android:id="@+id/tvToolbarTitle"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_toLeftOf="@+id/btOptionMenu"-->
+                    <!--android:layout_toRightOf="@+id/btBack"-->
+                    <!--android:ellipsize="end"-->
+                    <!--android:fontFamily="sans-serif-medium"-->
+                    <!--android:gravity="center_vertical"-->
+                    <!--android:maxLines="1"-->
+                    <!--android:text="@string/app_name"-->
+                    <!--android:textColor="@color/pure_white"-->
+                    <!--android:textSize="18sp" />-->
 
-        </RelativeLayout>
+                <!--<ImageButton-->
+                    <!--android:id="@+id/btOptionMenu"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:background="?android:attr/selectableItemBackground"-->
+                    <!--android:paddingLeft="16dp"-->
+                    <!--android:paddingRight="16dp"-->
+                    <!--android:tint="@color/pure_white"-->
+                    <!--android:visibility="gone" />-->
 
-    </android.support.v7.widget.Toolbar>
+            <!--</RelativeLayout>-->
+
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
 
     <View
         android:id="@+id/vMenuBarShadow"
