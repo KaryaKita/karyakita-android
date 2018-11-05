@@ -3,7 +3,7 @@ package com.karyakita.karyakita_android_new.base;
 import java.util.Map;
 
 public interface IMainPresenter {
-    void get();
+    void get(Map<String, String> dataInputs);
 
     void update();
 

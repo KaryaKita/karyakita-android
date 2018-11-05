@@ -41,13 +41,14 @@
         <activity android:name=".register.RegisterActivity" />
         <activity android:name=".register_as.RegisterAsActivity" />
         <activity android:name=".customer.karya.DetailKaryaActivity" />
-        <activity android:name=".customer.transaksi.PesanCustomActivity" />
+        <activity android:name=".customer.pesan_custom.PesanCustomActivity" />
         <activity android:name=".customer.PesananSelesai" />
         <activity android:name=".customer.karya.ListKaryaActivity" />
         <activity android:name=".customer.karya.KonfirmasiDesainActivity" />
         <activity android:name=".customer.transaksi.UploadkaryaCusromerActivity" />
         <activity android:name=".customer.transaksi.TransaksiSelesaiActivity" />
         <activity android:name=".customer.CustomerNotifikasiActivity" />
+        <activity android:name=".customer.data_pengiriman.DataPengirimanCustomerActivity" />
         <activity android:name=".desainer.home.HomeDesainerActivity" />
         <activity android:name=".desainer.transaksi.UploadBiasaDesainerActivity" />
         <activity android:name=".desainer.transaksi.DesainerTransaksiSelesaiActivity" />
@@ -64,8 +65,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".customer.pilih_ukuran.PilihUkuranPesanLangsungCustomer" />
-        <activity android:name=".customer.transaksi.CustomerPesanActivity">
-        </activity>
+        <activity android:name=".customer.transaksi.CustomerPesanActivity"/>
+        <activity android:name=".customer.pilih_ukuran.PilihUkuranPesanLangsungCustomerActivity"/>
     </application>
 
 </manifest>

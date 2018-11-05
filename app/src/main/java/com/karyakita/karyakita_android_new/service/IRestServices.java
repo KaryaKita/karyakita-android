@@ -4,6 +4,7 @@ import com.karyakita.karyakita_android_new.customer.data_pengiriman.DataPengirim
 import com.karyakita.karyakita_android_new.customer.karya.DetailKaryaResultModel;
 import com.karyakita.karyakita_android_new.customer.karya.KategoriKaryaResultModel;
 import com.karyakita.karyakita_android_new.customer.karya.ListKaryaResultModel;
+import com.karyakita.karyakita_android_new.customer.pilih_ukuran.PilihUkuranPesanLangsungModel;
 import com.karyakita.karyakita_android_new.desainer.list_desainer.ListDesainerModel;
 import com.karyakita.karyakita_android_new.desainer.list_desainer.ListDesainerResultModel;
 import com.karyakita.karyakita_android_new.example.MovieResponse;
@@ -44,6 +45,12 @@ public interface IRestServices {
     io.reactivex.Observable<LoginResultModel> login(@Field("email") String email,
                                                     @Field("password") String password,
                                                     @Field("role_id") Integer role_id);
+
+    @FormUrlEncoded
+    @POST("user/login")
+    io.reactivex.Observable<LoginResultModel> pilihukuran (@Field("ukuran_kertas") String ukuran_kertas,
+                                                    @Field("ukuran_bingkai") String ukuran_bingkai);
+
 
     @POST("customer/datapengiriman")
     io.reactivex.Observable<DataPengirimanResultModel> datapengiriman (@Field("provinsi") String provinsi,

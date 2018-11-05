@@ -28,7 +28,7 @@ public class HomePresenter implements IMainPresenter {
 
     @SuppressLint("CheckResult")
     @Override
-    public void get() {
+    public void get(Map<String, String> dataInput) {
         getObservable().subscribeWith(getObserver());
     }
 
