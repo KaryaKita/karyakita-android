@@ -78,9 +78,8 @@
     </array>
 
     <array name="opsi_desain">
-        <item>Pilih Opsi</item>
-        <item>Bingkai</item>
         <item>Tanpa Bingkai</item>
+        <item>Dengan Bingkai</item>
     </array>
 
     <array name="jenis_pengiriman">
@@ -91,15 +90,15 @@
     </array>
 
     <array name="ukuran_kertas">
-        <item>Pilih Ukuran Kertas</item>
-        <item>4R</item>
-        <item>10R</item>
+        <item>A4</item>
+        <item>A3</item>
+        <item>F4</item>
     </array>
 
-    <array name="ukuran_pigora">
-        <item>Pilih Ukuran Kertas</item>
-        <item>4R</item>
-        <item>10R</item>
+    <array name="jenis_kertas">
+        <item>HVS</item>
+        <item>Asturo</item>
+        <item>Manila</item>
     </array>
     <string name="title_activity_customer_home">CustomerHomeActivity</string>
     <string name="title_activity_main2">Main2Activity</string>
