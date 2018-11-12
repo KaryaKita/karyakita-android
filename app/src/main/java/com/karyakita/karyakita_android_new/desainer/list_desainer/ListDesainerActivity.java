@@ -69,7 +69,7 @@ public class ListDesainerActivity extends AppCompatActivity implements IListDesa
     }
 
     private void getListDesainer() {
-        listDesainerPresenter.get();
+        listDesainerPresenter.get(null);
     }
 
     @Override

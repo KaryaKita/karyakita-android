@@ -95,6 +95,7 @@ public class HomeCustomerActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_customer);
         ButterKnife.bind(this);
+        setTitle("KaryaKita");
 
 //        mTextMessage = findViewById(R.id.message_home);
 

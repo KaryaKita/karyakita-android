@@ -23,13 +23,15 @@ public class DetailKaryaPresenter implements IMainPresenter{
     BaseModel model = null;
     DetailKaryaModel detailKaryaModel = null;
     Map<String, String> input;
+    Integer karya_id = null;
 
     public DetailKaryaPresenter(IDetailKaryaView iDetailKaryaView){
         this.iDetailKaryaView = iDetailKaryaView;
     }
 
     @Override
-    public void get() {
+    public void get(Map<String, String> dataInput) {
+        this.karya_id = Integer.parseInt(dataInput.get("karya_id"));
         getObservable().subscribeWith(getObserver());
     }
 
@@ -45,20 +47,19 @@ public class DetailKaryaPresenter implements IMainPresenter{
 
     public Observable<DetailKaryaResultModel> getObservable(){
         return RetrofitHelper.getRetrofit().create(IRestServices.class)
-                .getDetailKarya("Bearer " + GlobalVariable.TOKEN, 1)
+                .getDetailKarya("Bearer " + GlobalVariable.TOKEN, this.karya_id)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }
 
     public DisposableObserver<DetailKaryaResultModel>getObserver(){
         return new DisposableObserver<DetailKaryaResultModel>() {
+
             @Override
             public void onNext(DetailKaryaResultModel detailKaryaResultModel) {
                 Log.d("tag", "OnNext iii" + detailKaryaResultModel.getData());
                 iDetailKaryaView.display(detailKaryaResultModel);
             }
-
-
 
             @Override
             public void onError(Throwable e) {

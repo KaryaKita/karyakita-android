@@ -9,9 +9,14 @@ public class PesanCustomPresenter implements IMainPresenter{
     IPesanCustomView iPesanCustomView;
     BaseModel model;
     PesanCustomModel pesanCustomModel = null;
+    Map<String, String>input;
+
+    public PesanCustomPresenter(IPesanCustomView iPesanCustomView){
+        this.iPesanCustomView = iPesanCustomView;
+    }
 
     @Override
-    public void get() {
+    public void get(Map<String, String> dataInput) {
 
     }
 

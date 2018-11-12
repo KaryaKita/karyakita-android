@@ -73,7 +73,7 @@ public class ListKaryaActivity extends AppCompatActivity implements IListKaryaVi
     }
 
     private void getListKarya() {
-        listKaryaPresenter.get();
+        listKaryaPresenter.get(null);
     }
 
     @Override

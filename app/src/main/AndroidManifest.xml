@@ -28,7 +28,9 @@
         <activity
             android:name=".customer.SplashActivity"
             android:theme="@style/AppTheme.SplashTheme" />
-        <activity android:name=".customer.home.HomeCustomerActivity" />
+        <activity android:name=".customer.home.HomeCustomerActivity"
+            android:label="@string/app_name"
+            />
         <activity android:name=".example.MovieActivity" />
         <activity android:name=".login.LoginActivity" />
         <activity android:name=".login_as.LoginAsActivity">
@@ -49,6 +51,7 @@
         <activity android:name=".customer.transaksi.TransaksiSelesaiActivity" />
 
         <activity android:name=".customer.CustomerNotifikasiActivity" />
+        <activity android:name=".customer.data_pengiriman.DataPengirimanCustomerActivity" />
         <activity android:name=".desainer.home.HomeDesainerActivity" />
         <activity android:name=".desainer.transaksi.UploadBiasaDesainerActivity" />
         <activity android:name=".desainer.transaksi.DesainerTransaksiSelesaiActivity" />
@@ -58,13 +61,8 @@
         <activity android:name=".desainer.transaksi.DetailPengirimanDesainerActivity" />
 
         <activity android:name=".desainer.UploadRevisiDesainerActivity" />
-        <activity android:name=".customer.HalamanDesainerActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".customer.HalamanDesainerActivity" />
+        <activity android:name=".customer.pilih_ukuran.PilihUkuranPesanLangsungCustomer" />
         <activity android:name=".customer.pilih_ukuran.PilihUkuranPesanLangsungCustomerActivity"></activity>
     </application>
 </manifest>
