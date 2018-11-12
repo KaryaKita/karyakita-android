@@ -50,7 +50,6 @@ public class DetailKaryaActivity extends AppCompatActivity implements IDetailKar
     @BindView(R.id.tv_deskripsi)
     TextView deskripsikarya;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -101,7 +100,6 @@ public class DetailKaryaActivity extends AppCompatActivity implements IDetailKar
         Toast.makeText(getApplicationContext(), s, Toast.LENGTH_LONG).show();
         startActivity(new Intent(DetailKaryaActivity.this, DataPengirimanCustomerActivity.class));
     }
-
 
     @Override
     public void display(DetailKaryaResultModel detailKaryaResultModel) {
