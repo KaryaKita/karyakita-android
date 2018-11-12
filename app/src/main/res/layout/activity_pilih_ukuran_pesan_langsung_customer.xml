@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="15dp"
-                android:src="@drawable/ic_arrow_back_white_24dp" />
+                android:src="@drawable/ic_arrow_back_black_24dp" />
 
             <ScrollView
                 android:layout_width="match_parent"
@@ -50,6 +50,29 @@
                     android:layout_marginTop="60dp"
                     android:background="@color/white"
                     android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView63"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="27dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="15dp"
+                        android:text="JENIS KERTAS"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spinner4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="3dp"
+                        android:entries="@array/jenis_kertas"
+                        android:paddingLeft="0dp"
+                        android:paddingRight="0dp"
+                        android:backgroundTint="@color/mainColor"/>
 
                     <TextView
                         android:layout_width="match_parent"
@@ -81,23 +104,34 @@
                         android:layout_marginLeft="27dp"
                         android:layout_marginRight="15dp"
                         android:layout_marginTop="20dp"
-                        android:text="UKURAN PIGORA"
+                        android:text="OPSI PIGORA"
                         android:textSize="14dp"
                         android:textStyle="bold" />
 
-
-                    <Spinner
-                        android:id="@+id/sp_ukuran_bingkai"
-                        style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
+                        android:layout_height="21dp"
+                        android:layout_marginLeft="27dp"
+                        android:layout_marginTop="7dp"
                         android:layout_marginRight="15dp"
-                        android:layout_marginTop="3dp"
-                        android:backgroundTint="@color/mainColor"
-                        android:entries="@array/ukuran_pigora"
-                        android:paddingLeft="0dp"
-                        android:paddingRight="0dp"></Spinner>
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radioButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Dengan Pigora" />
+
+                        <RadioButton
+                            android:id="@+id/radioButton2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="true"
+                            android:text="Tanpa Pigora" />
+                    </LinearLayout>
+
 
                 </LinearLayout>
 
