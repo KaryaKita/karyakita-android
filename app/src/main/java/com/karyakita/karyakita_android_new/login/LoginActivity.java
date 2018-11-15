@@ -1,5 +1,6 @@
 package com.karyakita.karyakita_android_new.login;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -13,12 +14,16 @@ import android.widget.Toast;
 import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.base.GlobalVariable;
 import com.karyakita.karyakita_android_new.customer.home.HomeCustomerActivity;
+import com.karyakita.karyakita_android_new.data.local.realm.RealmHelper;
+import com.karyakita.karyakita_android_new.example.MainActivity;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
 
 public class LoginActivity extends AppCompatActivity implements ILoginView {
     LoginPresenter loginPresenter;
@@ -30,6 +35,8 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
     EditText et_Password_login;
     @BindView(R.id.button1)
     Button button1;
+    Realm realm;
+    RealmHelper realmHelper;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,13 +46,19 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
         Bundle bundle = getIntent().getExtras();
         role_id = bundle.getInt("role_id");
         Log.d("Test0 : ", GlobalVariable.TOKEN);
+
+        Realm.init(LoginActivity.this);
+        RealmConfiguration configuration = new RealmConfiguration.Builder().build();
+        realm = Realm.getInstance(configuration);
+
+        realmHelper = new RealmHelper(realm);
+
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 setUpPresenter();
             }
         });
-
     }
 
     @Override

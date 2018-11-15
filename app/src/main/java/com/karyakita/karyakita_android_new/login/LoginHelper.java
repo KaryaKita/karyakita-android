@@ -13,14 +13,14 @@ public class LoginHelper {
         this.realm = realm;
     }
 
-    public void save(final LoginModel loginModel){
+    public void save(final SessionModel sessionModel){
         realm.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
                 if(realm != null){
                     Log.d("Created : ", "Database was created");
 
-                    Number currentIdNum = realm.where(LoginModel.class).max("id");
+                    Number currentIdNum = realm.where(SessionModel.class).max("id");
                     int nextId;
 
                     if(currentIdNum == null){
@@ -29,13 +29,12 @@ public class LoginHelper {
                         nextId = currentIdNum.intValue() + 1;
                     }
 
-                    loginModel.setId(nextId);
-                    LoginModel model = realm.copyToRealm(loginModel);
+                    sessionModel.setId(nextId);
+                    SessionModel model = realm.copyToRealm(sessionModel);
                 } else {
                     Log.e("Error : ", "Database not exist");
                 }
             }
         });
     }
-
 }
