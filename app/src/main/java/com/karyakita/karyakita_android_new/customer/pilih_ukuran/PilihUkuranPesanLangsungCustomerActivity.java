@@ -28,12 +28,8 @@ public class PilihUkuranPesanLangsungCustomerActivity extends AppCompatActivity 
 
     @BindView(R.id.sp_ukuran_kertas)
     Spinner ukuran_kertas;
-    @BindView(R.id.sp_ukuran_bingkai)
-    Spinner ukuran_bingkai;
     @BindView(R.id.btnLanjut)
     Button konfirmasi;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +71,6 @@ public class PilihUkuranPesanLangsungCustomerActivity extends AppCompatActivity 
     private void setupPresenter(){
         Map<String, String> inputan = new HashMap<String, String>();
         inputan.put("ukuran_kertas", ukuran_kertas.toString());
-        inputan.put("ukuran_bingkai", ukuran_bingkai.toString());
 
         pilihUkuranPesanLangsungPresenter = new PilihUkuranPesanLangsungPresenter(this);
         pilihUkuranPesanLangsungPresenter.insert(inputan);
