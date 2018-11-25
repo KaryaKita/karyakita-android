@@ -10,17 +10,18 @@ import com.karyakita.karyakita_android_new.service.RetrofitHelper;
 
 import java.util.Map;
 
+import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.observers.DisposableObserver;
 import io.reactivex.schedulers.Schedulers;
 
-public class PilihUkuranPesanLangsungPresenter implements IMainPresenter{
-    IPilihUkuranPesanLangsungView iPilihUkuranPesanLangsungView;
+public class PilihUkuranPresenter implements IMainPresenter{
+    IPilihUkuranView iPilihUkuranPesanLangsungView;
     BaseModel model;
-    PilihUkuranPesanLangsungModel pilihUkuranPesanLangsungModel = null;
+    PilihUkuranModel pilihUkuranModel = null;
     Map<String, String> input = null;
 
-    public PilihUkuranPesanLangsungPresenter(IPilihUkuranPesanLangsungView iPilihUkuranPesanLangsungView){
+    public PilihUkuranPresenter(IPilihUkuranView iPilihUkuranPesanLangsungView){
         this.iPilihUkuranPesanLangsungView = iPilihUkuranPesanLangsungView;
     }
 
@@ -40,20 +41,20 @@ public class PilihUkuranPesanLangsungPresenter implements IMainPresenter{
         Log.d("tag", "kenek");
     }
 
-    public io.reactivex.Observable<LoginResultModel> getObservable(){
+    public Observable<PilihUkuranResultModel> getObservable(){
         Log.d("tag", "masuk observable");
         return RetrofitHelper.getRetrofit().create(IRestServices.class)
-                .pilihukuran(this.input.get("ukuran_kertas"),
-                        this.input.get("ukuran_bingkai"))
+                .pilihukuran(this.input.get("sp_ukuran_kertas"),
+                        this.input.get("sp_jenis_kertas"))
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }
 
-    public DisposableObserver<PilihUkuranPesanLangsungModel> getObserver(){
-        return new DisposableObserver<PilihUkuranPesanLangsungModel>() {
+    public DisposableObserver<PilihUkuranModel> getObserver(){
+        return new DisposableObserver<PilihUkuranModel>() {
             @Override
-            public void onNext(PilihUkuranPesanLangsungModel pilihUkuranPesanLangsungModel) {
-                iPilihUkuranPesanLangsungView.display(pilihUkuranPesanLangsungModel);
+            public void onNext(PilihUkuranModel pilihUkuranModel) {
+                iPilihUkuranPesanLangsungView.display(pilihUkuranModel);
                 Log.d("tag", "succes");
             }
 

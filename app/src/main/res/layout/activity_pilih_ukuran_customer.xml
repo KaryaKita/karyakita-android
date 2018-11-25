@@ -63,7 +63,7 @@
                         android:textStyle="bold" />
 
                     <Spinner
-                        android:id="@+id/spinner4"
+                        android:id="@+id/sp_jenis_kertas"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
@@ -112,24 +112,33 @@
                         android:layout_width="match_parent"
                         android:layout_height="21dp"
                         android:layout_marginLeft="27dp"
-                        android:layout_marginTop="7dp"
                         android:layout_marginRight="15dp"
-                        android:orientation="horizontal">
+                        android:layout_marginTop="7dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
 
-                        <RadioButton
-                            android:id="@+id/radioButton"
-                            android:layout_width="wrap_content"
+                        <RadioGroup
+                            android:id="@+id/rd_pilih_opsi"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Dengan Pigora" />
+                            android:orientation="horizontal"
+                            android:weightSum="2">
 
-                        <RadioButton
-                            android:id="@+id/radioButton2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:checked="true"
-                            android:text="Tanpa Pigora" />
+                            <RadioButton
+                                android:id="@+id/rd_dg_pigora"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Dengan Pigora" />
+
+                            <RadioButton
+                                android:id="@+id/rd_tp_pigora"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="true"
+                                android:text="Tanpa Pigora" />
+                        </RadioGroup>
                     </LinearLayout>
 
 

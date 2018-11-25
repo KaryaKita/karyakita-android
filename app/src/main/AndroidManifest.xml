@@ -33,17 +33,12 @@
             />
         <activity android:name=".example.MovieActivity" />
         <activity android:name=".login.LoginActivity" />
-        <activity android:name=".login_as.LoginAsActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".login_as.LoginAsActivity"/>
         <activity android:name=".register.RegisterActivity" />
         <activity android:name=".register_as.RegisterAsActivity" />
         <activity android:name=".customer.karya.DetailKaryaActivity" />
-        <activity android:name=".customer.pesan_custom.PesanCustomActivity" />
+        <activity android:name=".customer.pesan_custom.PesanCustomActivity">
+        </activity>
         <activity android:name=".customer.PesananSelesai" />
         <activity android:name=".customer.karya.ListKaryaActivity" />
         <activity android:name=".customer.karya.KonfirmasiDesainActivity" />
@@ -59,16 +54,15 @@
         <activity android:name=".desainer.transaksi.PilihanBankDesainerActivity" />
         <activity android:name=".desainer.transaksi.DetailPengirimanDesainerActivity" />
         <activity android:name=".desainer.UploadRevisiDesainerActivity" />
-        <activity android:name=".customer.HalamanDesainerActivity">
+        <activity android:name=".customer.HalamanDesainerActivity"></activity>
+        <activity android:name=".customer.transaksi.CustomerPesanActivity"/>
+        <activity android:name=".customer.pilih_ukuran.PilihUkuranCustomerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".customer.pilih_ukuran.PilihUkuranPesanLangsungCustomer" />
-        <activity android:name=".customer.transaksi.CustomerPesanActivity"/>
-        <activity android:name=".customer.pilih_ukuran.PilihUkuranPesanLangsungCustomerActivity"/>
     </application>
 
 </manifest>
