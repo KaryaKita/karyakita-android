@@ -6,7 +6,7 @@ import com.karyakita.karyakita_android_new.base.BaseModel;
 
 import io.realm.RealmObject;
 
-public class LoginModel extends BaseModel {
+public class SessionModel extends RealmObject {
     @SerializedName("createdAt")
     @Expose
     private String createdAt;
@@ -39,11 +39,11 @@ public class LoginModel extends BaseModel {
     @Expose
     private Integer role_id;
 
-    public LoginModel() {
+    public SessionModel() {
 
     }
 
-    public LoginModel(String createdAt, String updatedAt, Integer id, String email, String username, String nama, String notelp, Integer role_id) {
+    public SessionModel(String createdAt, String updatedAt, Integer id, String email, String username, String nama, String notelp, Integer role_id) {
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.id = id;

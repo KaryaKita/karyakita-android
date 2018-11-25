@@ -10,6 +10,9 @@ public class CustomerPesanActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
 //        setContentView(R.layout.activity_customer_pesan);
+
+        //setContentView(R.layout.activity_customer_pesan);
     }
 }
