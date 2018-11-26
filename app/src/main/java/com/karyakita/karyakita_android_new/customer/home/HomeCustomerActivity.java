@@ -39,8 +39,8 @@ public class HomeCustomerActivity extends AppCompatActivity
 //    DrawerLayout drawerLayoutNavigation;
 //    @BindView(R.id.nav_view_application)
 //    NavigationView navViewApplication;
-//    @BindView(R.id.toolbar_navigation)
-//    Toolbar toolbarNavigation;
+    @BindView(R.id.toolbar_navigation)
+    Toolbar toolbarNavigation;
 //    @BindView(R.id.fab_application)
 //    FloatingActionButton fabApplication;
 
@@ -95,6 +95,7 @@ public class HomeCustomerActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_customer);
         ButterKnife.bind(this);
+        setSupportActionBar(toolbarNavigation);
         setTitle("KaryaKita");
 
 //        mTextMessage = findViewById(R.id.message_home);

@@ -95,6 +95,11 @@
         <item>F4</item>
     </array>
 
+    <array name="ukuran_pigora">
+        <item>Pilih Opsi</item>
+        <item>Ya</item>
+        <item>Tidak</item>
+    </array>
     <array name="jenis_kertas">
         <item>HVS</item>
         <item>Asturo</item>
