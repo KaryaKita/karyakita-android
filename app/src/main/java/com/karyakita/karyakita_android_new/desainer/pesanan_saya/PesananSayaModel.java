@@ -25,7 +25,7 @@ public class PesananSayaModel extends BaseModel {
 
     @SerializedName("nama")
     @Expose
-    private Date nama;
+    private String nama;
 
     @SerializedName("ukuran_kertas")
     @Expose
@@ -39,10 +39,14 @@ public class PesananSayaModel extends BaseModel {
     @Expose
     private Integer status;
 
+    @SerializedName("jenis_order_id")
+    @Expose
+    private Integer jenis_order_id;
+
     public PesananSayaModel() {
     }
 
-    public PesananSayaModel(String createdAt, String updatedAt, Integer id, Date deadline, Date nama, String ukuran_kertas, String opsi_bingkai, Integer status) {
+    public PesananSayaModel(String createdAt, String updatedAt, Integer id, Date deadline, String nama, String ukuran_kertas, String opsi_bingkai, Integer status, Integer jenis_order_id) {
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.id = id;
@@ -51,6 +55,7 @@ public class PesananSayaModel extends BaseModel {
         this.ukuran_kertas = ukuran_kertas;
         this.opsi_bingkai = opsi_bingkai;
         this.status = status;
+        this.jenis_order_id = jenis_order_id;
     }
 
     public void setCreatedAt(String createdAt) {
@@ -69,7 +74,7 @@ public class PesananSayaModel extends BaseModel {
         this.deadline = deadline;
     }
 
-    public void setNama(Date nama) {
+    public void setNama(String nama) {
         this.nama = nama;
     }
 
@@ -83,6 +88,10 @@ public class PesananSayaModel extends BaseModel {
 
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    public void setJenis_order_id(Integer jenis_order_id){
+        this.jenis_order_id = jenis_order_id;
     }
 
     public String getCreatedAt() {
@@ -101,7 +110,7 @@ public class PesananSayaModel extends BaseModel {
         return deadline;
     }
 
-    public Date getNama() {
+    public String getNama() {
         return nama;
     }
 
@@ -116,4 +125,6 @@ public class PesananSayaModel extends BaseModel {
     public Integer getStatus() {
         return status;
     }
+
+    public Integer getJenis_order_id() { return jenis_order_id; }
 }
