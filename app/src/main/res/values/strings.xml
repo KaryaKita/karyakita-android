@@ -97,9 +97,9 @@
     </array>
 
     <array name="ukuran_pigora">
-        <item>Pilih Ukuran Kertas</item>
-        <item>4R</item>
-        <item>10R</item>
+        <item>Pilih Opsi</item>
+        <item>Ya</item>
+        <item>Tidak</item>
     </array>
     <string name="title_activity_customer_home">CustomerHomeActivity</string>
     <string name="title_activity_main2">Main2Activity</string>

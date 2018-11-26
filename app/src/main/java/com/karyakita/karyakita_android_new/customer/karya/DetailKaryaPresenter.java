@@ -57,7 +57,7 @@ public class DetailKaryaPresenter implements IMainPresenter{
 
             @Override
             public void onNext(DetailKaryaResultModel detailKaryaResultModel) {
-                Log.d("tag", "OnNext iii" + detailKaryaResultModel.getData());
+                Log.d("tag", "OnNext iii" + detailKaryaResultModel.getData().getDeploy_url());
                 iDetailKaryaView.display(detailKaryaResultModel);
             }
 

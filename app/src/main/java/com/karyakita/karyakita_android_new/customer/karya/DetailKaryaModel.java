@@ -49,6 +49,15 @@ public class DetailKaryaModel extends BaseModel {
     @Expose
     private Integer desainer_id;
 
+    @SerializedName("local_url")
+    @Expose
+    private String local_url;
+
+    @SerializedName("deploy_url")
+    @Expose
+    private String deploy_url;
+
+
 
     public String getDeploy_url() {
         return deploy_url;
@@ -66,14 +75,6 @@ public class DetailKaryaModel extends BaseModel {
         this.local_url = local_url;
     }
 
-    @SerializedName("deploy_url")
-    @Expose
-    private String deploy_url;
-
-
-    @SerializedName("local_url")
-    @Expose
-    private String local_url;
 
 
     public DetailKaryaModel(String createdAt, String updatedAt, Integer id, String nama,String deskripsi, Integer jumlah_revisi, String path, String filename, Integer filesize, Integer kategori_karya_id, Integer desainer_id){
