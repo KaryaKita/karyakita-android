@@ -14,9 +14,9 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.customer.data_pengiriman.DataPengirimanCustomerActivity;
-import com.karyakita.karyakita_android_new.customer.pilih_ukuran.PilihUkuranPesanLangsungCustomer;
 import com.karyakita.karyakita_android_new.customer.pesan_custom.PesanCustomActivity;
 
+import com.karyakita.karyakita_android_new.customer.pilih_ukuran.PilihUkuranCustomerActivity;
 import com.karyakita.karyakita_android_new.login.LoginActivity;
 
 import java.util.HashMap;
@@ -49,7 +49,6 @@ public class DetailKaryaActivity extends AppCompatActivity implements IDetailKar
     TextView namakarya;
     @BindView(R.id.tv_deskripsi)
     TextView deskripsikarya;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +83,7 @@ public class DetailKaryaActivity extends AppCompatActivity implements IDetailKar
         btnPesanSekarang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DetailKaryaActivity.this, PilihUkuranPesanLangsungCustomer.class);
+                Intent intent = new Intent(DetailKaryaActivity.this, PilihUkuranCustomerActivity.class);
                 startActivity(intent);
             }
         });
@@ -101,7 +100,6 @@ public class DetailKaryaActivity extends AppCompatActivity implements IDetailKar
         Toast.makeText(getApplicationContext(), s, Toast.LENGTH_LONG).show();
         startActivity(new Intent(DetailKaryaActivity.this, DataPengirimanCustomerActivity.class));
     }
-
 
     @Override
     public void display(DetailKaryaResultModel detailKaryaResultModel) {

@@ -1,9 +1,9 @@
 package com.karyakita.karyakita_android_new.customer.pilih_ukuran;
 
-interface IPilihUkuranPesanLangsungView {
+interface IPilihUkuranView {
     void showToast(String s);
 
-    void display(PilihUkuranPesanLangsungModel model);
+    void display(PilihUkuranModel model);
 
     void displayError(String s);
 }
