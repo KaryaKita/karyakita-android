@@ -6,4 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".desainer.edit_bio.DesainerEditBioActivity">
 
+    <include layout="@layout/content_desainer_edit_bio_activity"></include>
+
 </android.support.v7.widget.LinearLayoutCompat>
