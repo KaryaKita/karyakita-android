@@ -36,12 +36,12 @@ public class PesananSayaAdapter extends RecyclerView.Adapter<PesananSayaAdapter.
 
     @Override
     public void onBindViewHolder(Holder holder, int position) {
+        Glide.with(context).load(pesananSayaModelList.get(position).getDeploy_url()).into(holder.iv_gambarPesanan);
         holder.tv_judulKarya.setText(pesananSayaModelList.get(position).getNama());
         holder.tv_deadline.setText(pesananSayaModelList.get(position).getDeadline().toString());
         holder.tv_ukuranKarya.setText(pesananSayaModelList.get(position).getUkuran_kertas());
         holder.tv_opsiBingkai.setText(pesananSayaModelList.get(position).getOpsi_bingkai());
         holder.tv_jenisPesanan.setText(pesananSayaModelList.get(position).getJenis_order_id());
-         //Glide.with(context).load(pesananSayaModelList.get(position).getDeploy_url()).into(holder.iv_pesananSaya);
     }
 
     @Override

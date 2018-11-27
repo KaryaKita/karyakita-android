@@ -43,10 +43,14 @@ public class PesananSayaModel extends BaseModel {
     @Expose
     private Integer jenis_order_id;
 
+    @SerializedName("deploy_url")
+    @Expose
+    private String deploy_url;
+
     public PesananSayaModel() {
     }
 
-    public PesananSayaModel(String createdAt, String updatedAt, Integer id, Date deadline, String nama, String ukuran_kertas, String opsi_bingkai, Integer status, Integer jenis_order_id) {
+    public PesananSayaModel(String createdAt, String updatedAt, Integer id, Date deadline, String nama, String ukuran_kertas, String opsi_bingkai, Integer status, Integer jenis_order_id, String deploy_url) {
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.id = id;
@@ -56,6 +60,7 @@ public class PesananSayaModel extends BaseModel {
         this.opsi_bingkai = opsi_bingkai;
         this.status = status;
         this.jenis_order_id = jenis_order_id;
+        this.deploy_url = deploy_url;
     }
 
     public void setCreatedAt(String createdAt) {
@@ -94,6 +99,14 @@ public class PesananSayaModel extends BaseModel {
         this.jenis_order_id = jenis_order_id;
     }
 
+    public void setDeploy_url(String deploy_url) {
+        this.deploy_url = deploy_url;
+    }
+
+    public String getDeploy_url() {
+        return deploy_url;
+    }
+
     public String getCreatedAt() {
         return createdAt;
     }
@@ -126,5 +139,7 @@ public class PesananSayaModel extends BaseModel {
         return status;
     }
 
-    public Integer getJenis_order_id() { return jenis_order_id; }
+    public Integer getJenis_order_id() {
+        return jenis_order_id;
+    }
 }
