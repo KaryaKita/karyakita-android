@@ -4,8 +4,8 @@ import com.karyakita.karyakita_android_new.customer.data_pengiriman.DataPengirim
 import com.karyakita.karyakita_android_new.customer.karya.DetailKaryaResultModel;
 import com.karyakita.karyakita_android_new.customer.karya.KategoriKaryaResultModel;
 import com.karyakita.karyakita_android_new.customer.karya.ListKaryaResultModel;
-import com.karyakita.karyakita_android_new.customer.pilih_ukuran.PilihUkuranPesanLangsungModel;
-import com.karyakita.karyakita_android_new.desainer.list_desainer.ListDesainerModel;
+import com.karyakita.karyakita_android_new.customer.pesan_custom.PesanCustomResultModel;
+import com.karyakita.karyakita_android_new.customer.pilih_ukuran.PilihUkuranResultModel;
 import com.karyakita.karyakita_android_new.desainer.list_desainer.ListDesainerResultModel;
 import com.karyakita.karyakita_android_new.desainer.pesanan_saya.PesananSayaResultModel;
 import com.karyakita.karyakita_android_new.example.MovieResponse;
@@ -42,6 +42,15 @@ public interface IRestServices {
             @Field("nama") String nama);
 
     @FormUrlEncoded
+    @POST
+    io.reactivex.Observable<PesanCustomResultModel> pesan_custom(
+            @Field("id")Integer id,
+            @Field("image")String image,
+            @Field("pilih_ukuran")String pilih_ukuran,
+            @Field("opsi")String opsi
+    );
+
+    @FormUrlEncoded
     @POST("user/login")
     io.reactivex.Observable<LoginResultModel> login(@Field("email") String email,
                                                     @Field("password") String password,
@@ -49,8 +58,8 @@ public interface IRestServices {
 
     @FormUrlEncoded
     @POST("user/login")
-    io.reactivex.Observable<LoginResultModel> pilihukuran (@Field("ukuran_kertas") String ukuran_kertas,
-                                                    @Field("ukuran_bingkai") String ukuran_bingkai);
+    io.reactivex.Observable<PilihUkuranResultModel> pilihukuran (@Field("ukuran_kertas") String ukuran_kertas,
+                                                                 @Field("ukuran_bingkai") String ukuran_bingkai);
 
 
     @POST("customer/datapengiriman")
