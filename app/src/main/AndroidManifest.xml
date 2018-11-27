@@ -37,8 +37,7 @@
         <activity android:name=".register.RegisterActivity" />
         <activity android:name=".register_as.RegisterAsActivity" />
         <activity android:name=".customer.karya.DetailKaryaActivity" />
-        <activity android:name=".customer.pesan_custom.PesanCustomActivity">
-        </activity>
+        <activity android:name=".customer.pesan_custom.PesanCustomActivity"/>
         <activity android:name=".customer.PesananSelesai" />
         <activity android:name=".customer.karya.ListKaryaActivity" />
         <activity android:name=".customer.karya.KonfirmasiDesainActivity" />
@@ -46,7 +45,10 @@
         <activity android:name=".customer.transaksi.TransaksiSelesaiActivity" />
         <activity android:name=".customer.CustomerNotifikasiActivity" />
         <activity android:name=".customer.data_pengiriman.DataPengirimanCustomerActivity" />
-        <activity android:name=".desainer.home.HomeDesainerActivity" />
+        <activity android:name=".desainer.home.HomeDesainerActivity">
+
+        </activity>
+
         <activity android:name=".desainer.transaksi.UploadBiasaDesainerActivity" />
         <activity android:name=".desainer.transaksi.DesainerTransaksiSelesaiActivity" />
         <activity android:name=".desainer.transaksi.FormUploadKaryaDesaigner" />
@@ -56,14 +58,13 @@
         <activity android:name=".desainer.UploadRevisiDesainerActivity" />
         <activity android:name=".customer.HalamanDesainerActivity" />
         <activity android:name=".customer.transaksi.CustomerPesanActivity" />
-        <activity android:name=".customer.pilih_ukuran.PilihUkuranCustomerActivity">
+        <activity android:name=".customer.pilih_ukuran.PilihUkuranCustomerActivity"/>
+        <activity android:name=".desainer.edit_bio.DesainerEditBioActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".desainer.edit_bio.DesainerEditBioActivity">
         </activity>
     </application>
 
