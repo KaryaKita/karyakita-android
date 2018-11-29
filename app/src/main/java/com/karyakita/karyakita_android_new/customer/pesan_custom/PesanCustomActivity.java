@@ -61,7 +61,8 @@ public class PesanCustomActivity extends AppCompatActivity {
     @BindView(R.id.ed_catatan) EditText ed_catatan;
     @BindView(R.id.btnLanjut) Button btnLanjut;
 
-    String ukuran, calender, catatan;
+
+    String ukuran, calender, catatan, image;
     Integer kategori;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,13 +89,15 @@ public class PesanCustomActivity extends AppCompatActivity {
                 ukuran   = ukuran_kertas.getSelectedItem().toString();
                 calender = calendar.toString();
                 catatan  = ed_catatan.getText().toString();
+                image    = img_custom.toString();
 
-                if (!kategori.equals("")&&!ukuran.equals("")&&!calender.equals("")&&!catatan.equals((""))){
+                if (!kategori.equals("")&&!ukuran.equals("")&&!calender.equals("")&&!catatan.equals((""))&&!image.equals((""))){
                     pesanCustomModelRealm = new PesanCustomModelRealm();
                     pesanCustomModelRealm.setKategori_id(kategori);
                     pesanCustomModelRealm.setUkuran_karya(ukuran);
                     pesanCustomModelRealm.setDeadline(calender);
                     pesanCustomModelRealm.setCatatan(catatan);
+                    pesanCustomModelRealm.setImage(image);
 
                     pesanCustomRealmHelper = new PesanCustomRealmHelper(realm);
                     pesanCustomRealmHelper.save(pesanCustomModelRealm);
@@ -160,7 +163,7 @@ public class PesanCustomActivity extends AppCompatActivity {
                     Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), contentURI);
                     String path = saveImage(bitmap);
                     Toast.makeText(PesanCustomActivity.this, "Image Saved!", Toast.LENGTH_SHORT).show();
-                    imageview.setImageBitmap(bitmap);
+                    img_custom.setImageBitmap(bitmap);
 
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -170,7 +173,7 @@ public class PesanCustomActivity extends AppCompatActivity {
 
         } else if (requestCode == CAMERA) {
             Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
-            imageview.setImageBitmap(thumbnail);
+            img_custom.setImageBitmap(thumbnail);
             saveImage(thumbnail);
             Toast.makeText(PesanCustomActivity.this, "Image Saved!", Toast.LENGTH_SHORT).show();
         }

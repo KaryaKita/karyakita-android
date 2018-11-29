@@ -5,10 +5,18 @@ import io.realm.RealmObject;
 public class PesanCustomModelRealm extends RealmObject{
     private Integer id;
     private Integer kategori_id;
-//    private String image;
+    private String image;
     private String ukuran_karya;
     private String deadline;
     private String catatan;
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
 
     public Integer getId() {
         return id;

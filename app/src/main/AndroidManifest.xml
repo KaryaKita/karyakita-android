@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.karyakita.karyakita_android_new">
 
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -16,7 +17,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -31,9 +32,9 @@
         <activity
             android:name=".customer.SplashActivity"
             android:theme="@style/AppTheme.SplashTheme" />
-        <activity android:name=".customer.home.HomeCustomerActivity"
-            android:label="@string/app_name"
-            />
+        <activity
+            android:name=".customer.home.HomeCustomerActivity"
+            android:label="@string/app_name" />
         <activity android:name=".example.MovieActivity" />
         <activity android:name=".login.LoginActivity" />
         <activity android:name=".login_as.LoginAsActivity">
@@ -62,9 +63,12 @@
         <activity android:name=".desainer.transaksi.PilihanBankDesainerActivity" />
         <activity android:name=".desainer.transaksi.DetailPengirimanDesainerActivity" />
         <activity android:name=".desainer.UploadRevisiDesainerActivity" />
-        <activity android:name=".customer.HalamanDesainerActivity"></activity>
-        <activity android:name=".customer.transaksi.CustomerPesanActivity"/>
-        <activity android:name=".customer.pilih_ukuran.PilihUkuranCustomerActivity"></activity>
+        <activity android:name=".customer.HalamanDesainerActivity" />
+        <activity android:name=".customer.transaksi.CustomerPesanActivity" />
+        <activity android:name=".customer.pilih_ukuran.PilihUkuranCustomerActivity">
+        </activity>
+        <activity android:name=".desainer.edit_bio.DesainerEditBioActivity">
+        </activity>
     </application>
 
 </manifest>
