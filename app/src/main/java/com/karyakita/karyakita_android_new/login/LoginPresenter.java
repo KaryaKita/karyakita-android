@@ -15,8 +15,6 @@ import io.reactivex.annotations.NonNull;
 import io.reactivex.observers.DisposableObserver;
 import io.reactivex.schedulers.Schedulers;
 
-import static com.bumptech.glide.gifdecoder.GifHeaderParser.TAG;
-
 public class LoginPresenter implements IMainPresenter {
     ILoginView iLoginView;
     BaseModel model = null;
@@ -44,7 +42,7 @@ public class LoginPresenter implements IMainPresenter {
     }
 
     public Observable<LoginResultModel> getObservable() {
-        Log.d(TAG, "Berhasil joss");
+        Log.d("TAG", "Berhasil joss");
         return RetrofitHelper.getRetrofit().create(IRestServices.class)
                 .login(this.input.get("email"),
                         this.input.get("password"),
@@ -60,19 +58,19 @@ public class LoginPresenter implements IMainPresenter {
             public void onNext(@NonNull LoginResultModel loginResultModel) {
                 iLoginView.display(loginResultModel);
                 iLoginView.showToast(loginResultModel.getMessage());
-                Log.d(TAG, "Success");
+                Log.d("TAG", "Success");
             }
 
             @Override
             public void onError(@NonNull Throwable e) {
-                Log.d(TAG, "Error" + e);
+                Log.d("TAG", "Error" + e);
                 e.printStackTrace();
                 iLoginView.displayError("Error fetching Movie Data");
             }
 
             @Override
             public void onComplete() {
-                Log.d(TAG, "Completed");
+                Log.d("TAG", "Completed");
             }
         };
     }

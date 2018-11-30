@@ -1,6 +1,5 @@
-package com.karyakita.karyakita_android_new.customer.home;
+package com.karyakita.karyakita_android_new.customer.home.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -11,12 +10,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.base.GlobalVariable;
-import com.karyakita.karyakita_android_new.customer.karya.DetailKaryaActivity;
+import com.karyakita.karyakita_android_new.customer.home.HomePresenter;
+import com.karyakita.karyakita_android_new.customer.home.IHomeView;
 import com.karyakita.karyakita_android_new.customer.karya.KategoriKaryaAdapter;
 import com.karyakita.karyakita_android_new.customer.karya.KategoriKaryaModel;
 import com.karyakita.karyakita_android_new.customer.karya.KategoriKaryaResultModel;
@@ -25,69 +24,27 @@ import java.util.List;
 
 import static android.support.constraint.Constraints.TAG;
 
-public class HomeFragment extends Fragment implements IHomeView {
+
+public class CustomerBerandaFragment extends Fragment implements IHomeView {
+
     HomePresenter homePresenter = null;
     KategoriKaryaAdapter kategoriKaryaAdapter;
     RecyclerView rv_kategori_home;
 
-    ImageView im_list_image1;
-    ImageView im_list_image2;
-    ImageView im_list_image3;
-    ImageView im_list_image4;
-
-
-//    @BindView(R.id.rv_image_home)
-//    RecyclerView rv_image_home;
-
-
+    @Nullable
+    @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_home_customer, container, false);
-
-        im_list_image1 = view.findViewById(R.id.list_image1);
-        im_list_image2 = view.findViewById(R.id.list_image2);
-        im_list_image3 = view.findViewById(R.id.list_image3);
-        im_list_image4 = view.findViewById(R.id.list_image4);
-
-        im_list_image1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity().getApplicationContext(), DetailKaryaActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        im_list_image2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity().getApplicationContext(), DetailKaryaActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        im_list_image3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity().getApplicationContext(), DetailKaryaActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        im_list_image4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity().getApplicationContext(), DetailKaryaActivity.class);
-                startActivity(intent);
-            }
-        });
+        View view = inflater.inflate(R.layout.fragment_customer_beranda, container, false);
 
         rv_kategori_home = view.findViewById(R.id.rv_kategori_home);
 
         setUpPresenter();
         setUpView();
         getGridViewHome();
+
+
         return view;
     }
-
 
     @Override
     public void showToast(String str) {
@@ -132,6 +89,5 @@ public class HomeFragment extends Fragment implements IHomeView {
         Toast.makeText(getActivity().getApplicationContext(), "Toke " + GlobalVariable.TOKEN, Toast.LENGTH_LONG);
         homePresenter.get(null);
     }
-
 
 }

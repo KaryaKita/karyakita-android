@@ -1,4 +1,4 @@
-package com.karyakita.karyakita_android_new.customer.home;
+package com.karyakita.karyakita_android_new.customer.home.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,12 +10,11 @@ import android.view.ViewGroup;
 
 import com.karyakita.karyakita_android_new.R;
 
-public class DesainerFragment extends Fragment {
-
+public class CustomerNotifikasiFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_desainer_customer, null);
+        View view = inflater.inflate(R.layout.fragment_customer_notifikasi, container, false);
         return view;
     }
 }

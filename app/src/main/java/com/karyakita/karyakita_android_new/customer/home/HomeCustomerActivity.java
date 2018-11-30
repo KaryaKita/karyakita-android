@@ -4,235 +4,105 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.view.ViewPager;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.ImageView;
 
 import com.karyakita.karyakita_android_new.R;
-import com.karyakita.karyakita_android_new.customer.karya.ListKaryaActivity;
+import com.karyakita.karyakita_android_new.SearchActivity;
+import com.karyakita.karyakita_android_new.customer.home.fragment.CustomerAkunFragment;
+import com.karyakita.karyakita_android_new.customer.home.fragment.CustomerBerandaFragment;
+import com.karyakita.karyakita_android_new.customer.home.fragment.CustomerDesainerFragment;
+import com.karyakita.karyakita_android_new.customer.home.fragment.CustomerNotifikasiFragment;
+import com.karyakita.karyakita_android_new.customer.home.fragment.CustomerPesananSayaFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class HomeCustomerActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements BottomNavigationView.OnNavigationItemSelectedListener {
 
-//    @BindView(R.id.tab_home_customer)
-//    TabLayout tabHomeCustomer;
-//    @BindView(R.id.view_pager_home_customer)
-//    ViewPager viewPagerHomeCustomer;
-//    @BindView(R.id.drawer_layout_navigation)
-//    DrawerLayout drawerLayoutNavigation;
-//    @BindView(R.id.nav_view_application)
-//    NavigationView navViewApplication;
-    @BindView(R.id.toolbar_navigation)
-    Toolbar toolbarNavigation;
-//    @BindView(R.id.fab_application)
-//    FloatingActionButton fabApplication;
-
-    private TextView mTextMessage;
-
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-            FragmentManager fm = getSupportFragmentManager();
-            FragmentTransaction ft = fm.beginTransaction();
-            Fragment fragment = null;
-
-
-            switch (item.getItemId()) {
-                case R.id.nav_beranda_customer:
-                    fragment = new HomeFragment();
-                    ft.replace(R.id.frame_home_customer, fragment);
-                    ft.commit();
-                    return true;
-                case R.id.nav_desainer_customer:
-                    fragment = new DesainerFragment();
-                    ft.replace(R.id.frame_home_customer, fragment);
-                    ft.commit();
-                    return true;
-                case R.id.nav_pesanan_saya_customer:
-                    fragment = new DesainerFragment();
-                    ft.replace(R.id.frame_home_customer, fragment);
-                    ft.commit();
-                    return true;
-                case R.id.nav_notif_customer:
-                    fragment = new DesainerFragment();
-                    ft.replace(R.id.frame_home_customer, fragment);
-                    ft.commit();
-                    return true;
-                case R.id.nav_akun_customer:
-                    fragment = new DesainerFragment();
-                    ft.replace(R.id.frame_home_customer, fragment);
-                    ft.commit();
-                    return true;
-            }
-
-
-            return false;
-        }
-    };
+    @BindView(R.id.bottom_nav_view_customer)
+    BottomNavigationView bottom_nav_view_customer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_customer);
         ButterKnife.bind(this);
-        setSupportActionBar(toolbarNavigation);
-        setTitle("KaryaKita");
 
-//        mTextMessage = findViewById(R.id.message_home);
-
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_home_customer);
-        bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
+        setListeners();
 
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
-        View container = findViewById(R.id.frame_home_customer);
 
-        Fragment fragment = new HomeFragment();
+        Fragment fragment = new CustomerBerandaFragment();
 
-        ft.replace(R.id.frame_home_customer, fragment);
+        ft.replace(R.id.frame_container_customer, fragment);
         ft.commit();
 
-//        Toolbar toolbar = findViewById(R.id.toolbar_navigation);
-//        setSupportActionBar(toolbarNavigation);
+        ImageView actionbar_search = findViewById(R.id.actionbar_search);
+        actionbar_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeCustomerActivity.this, SearchActivity.class));
+            }
+        });
 
-//        setNavigationView(toolbarNavigation);
-//        setFloatingActionButton();
 //        setViewPager();
-
     }
+
+    private void setListeners() {
+        bottom_nav_view_customer.setOnNavigationItemSelectedListener(this);
+    }
+
 
     private void setViewPager() {
         FragmentManager fragmentManager = getSupportFragmentManager();
         HomeCustomerAdapter homeCustomerAdapter = new HomeCustomerAdapter(fragmentManager);
-//        viewPagerHomeCustomer.setAdapter(homeCustomerAdapter);
-//        viewPagerHomeCustomer.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabHomeCustomer));
-//        tabHomeCustomer.setupWithViewPager(viewPagerHomeCustomer);
-//        tabHomeCustomer.setTabsFromPagerAdapter(homeCustomerAdapter);
     }
-
-//    public void setNavigationView(Toolbar toolbar) {
-////        DrawerLayout drawer = findViewById(R.id.drawer_layout_navigation);
-//        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayoutNavigation, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-//        drawerLayoutNavigation.addDrawerListener(toggle);
-//        toggle.syncState();
-//
-////        NavigationView navigationView = findViewById(R.id.nav_view_application);
-//        navViewApplication.setNavigationItemSelectedListener(this);
-//    }
-
-//    public void setFloatingActionButton() {
-////        FloatingActionButton fab = findViewById(R.id.fab_application);
-//        fabApplication.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
-//    }
 
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
 
     }
 
-//    @Override
-//    public void onBackPressed() {
-////        DrawerLayout drawer = findViewById(R.id.drawer_layout_navigation);
-//        if (drawerLayoutNavigation.isDrawerOpen(GravityCompat.START)) {
-//            drawerLayoutNavigation.closeDrawer(GravityCompat.START);
-//        } else {
-//            super.onBackPressed();
-//        }
-//    }
-
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_cari) {
-            return true;
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        Fragment fragment = null;
+        switch (menuItem.getItemId()) {
+            case R.id.nav_beranda_customer:
+                fragment = new CustomerBerandaFragment();
+                ft.replace(R.id.frame_container_customer, fragment);
+                ft.commit();
+                return true;
+            case R.id.nav_desainer_customer:
+                fragment = new CustomerDesainerFragment();
+                ft.replace(R.id.frame_container_customer, fragment);
+                ft.commit();
+                return true;
+            case R.id.nav_pesanan_saya_customer:
+                fragment = new CustomerPesananSayaFragment();
+                ft.replace(R.id.frame_container_customer, fragment);
+                ft.commit();
+                return true;
+            case R.id.nav_notif_customer:
+                fragment = new CustomerNotifikasiFragment();
+                ft.replace(R.id.frame_container_customer, fragment);
+                ft.commit();
+                return true;
+            case R.id.nav_akun_customer:
+                fragment = new CustomerAkunFragment();
+                ft.replace(R.id.frame_container_customer, fragment);
+                ft.commit();
+                return true;
         }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         return false;
     }
-
-
-//    @SuppressWarnings("StatementWithEmptyBody")
-//    @Override
-//    public boolean onNavigationItemSelected(MenuItem item) {
-//        // Handle navigation view item clicks here.
-//        Fragment fragment = null;
-//        Class fragmentClass = null;
-//        int id = item.getItemId();
-//
-//        switch (id) {
-//            case R.id.nav_beranda_customer:
-//                startActivity(new Intent(getApplicationContext(), HomeCustomerActivity.class));
-//                return true;
-//            case R.id.nav_kategori_desain_customer:
-//                startActivity(new Intent(HomeCustomerActivity.this, ListKaryaActivity.class));
-//                return true;
-//            case R.id.nav_desainer_customer:
-//                fragmentClass = DesainerFragment.class;
-//                return true;
-//            case R.id.nav_pesanan_saya_customer:
-//                break;
-//            case R.id.nav_notifikasi_customer:
-//                break;
-//            case R.id.nav_akun_customer:
-//                break;
-//            case R.id.nav_keluar:
-//                break;
-//        }
-//
-//        if (fragment != null) {
-//            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-//            fragmentTransaction.replace(R.id.view_pager_home_customer, fragment);
-//            fragmentTransaction.commit();
-//        }
-//
-//        DrawerLayout drawer = findViewById(R.id.drawer_layout_navigation);
-//        drawer.closeDrawer(GravityCompat.START);
-//        return true;
-//    }
-
 }

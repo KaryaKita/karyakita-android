@@ -1,6 +1,5 @@
 package com.karyakita.karyakita_android_new.base;
 
-import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Bundle;
@@ -20,18 +19,18 @@ import com.karyakita.karyakita_android_new.base_customview.SnakeBar;
 
 import butterknife.Unbinder;
 
-public abstract class BaseFragment<T1 extends FragmentActivity, T2 extends IBasePresenter> extends Fragment{
-    protected String    title;
-    protected T1        activity;
-    protected T2        mPresenter;
-    protected View      fragmentView;
+public abstract class BaseFragment<T1 extends FragmentActivity, T2 extends IBasePresenter> extends Fragment {
+    protected String title;
+    protected T1 activity;
+    protected T2 mPresenter;
+    protected View fragmentView;
 
     protected IBaseFragmentListener fragmentListener;
 
-    protected Unbinder      unbinder;
-    protected AlertDialog   alertDialog;
+    protected Unbinder unbinder;
+    protected AlertDialog alertDialog;
 
-    protected Boolean   loading;
+    protected Boolean loading;
 
     protected abstract void setTitle();
 
@@ -70,12 +69,11 @@ public abstract class BaseFragment<T1 extends FragmentActivity, T2 extends IBase
         }
     }
 
-    @SuppressLint("RestrictedApi")
     protected void setLoadingDialog(boolean isLoading, @Nullable String message) {
         loading = isLoading;
         if (isLoading) {
             AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(activity);
-            LayoutInflater inflater = this.getLayoutInflater(null);
+            LayoutInflater inflater = this.getLayoutInflater();
             View dialogView = inflater.inflate(R.layout.dialog_loading, null);
             TextView tvMessage = (TextView) dialogView.findViewById(R.id.tvMessage);
             tvMessage.setText(message);

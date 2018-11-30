@@ -33,12 +33,13 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
     LoginPresenter loginPresenter;
     Integer role_id;
 
-    @BindView(R.id.et_Username_login)
+    @BindView(R.id.et_username_login)
     EditText et_Username_login;
-    @BindView(R.id.et_Password_login)
+    @BindView(R.id.et_password_login)
     EditText et_Password_login;
-    @BindView(R.id.button1)
-    Button button1;
+    @BindView(R.id.bt_masuk)
+    Button bt_masuk;
+
     Realm realm;
     RealmHelper realmHelper;
 
@@ -56,7 +57,7 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
         realm = Realm.getInstance(configuration);
         realmHelper = new RealmHelper(realm);
 
-        button1.setOnClickListener(new View.OnClickListener() {
+        bt_masuk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 setUpPresenter();

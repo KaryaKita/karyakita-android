@@ -25,54 +25,45 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity
-            android:name=".customer.SplashActivity"
-            android:theme="@style/AppTheme.SplashTheme" />
-        <activity
-            android:name=".customer.home.HomeCustomerActivity"
-            android:label="@string/app_name" />
-        <activity android:name=".example.MovieActivity" />
-        <activity android:name=".login.LoginActivity" />
-        <activity android:name=".login_as.LoginAsActivity">
+        <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".login_as.LoginAsActivity" />
+        <activity android:name=".login.LoginActivity" />
         <activity android:name=".register.RegisterActivity" />
         <activity android:name=".register_as.RegisterAsActivity" />
-        <activity android:name=".customer.karya.DetailKaryaActivity" />
-        <activity android:name=".customer.pesan_custom.PesanCustomActivity" />
-        <activity android:name=".customer.PesananSelesai"/>
-        <activity android:name=".customer.karya.ListKaryaActivity" />
-        <activity android:name=".customer.karya.KonfirmasiDesainActivity" />
-        <activity android:name=".customer.transaksi.UploadkaryaCusromerActivity" />
-        <activity android:name=".customer.transaksi.TransaksiSelesaiActivity" />
-        <activity android:name=".customer.CustomerNotifikasiActivity"/>
-        <activity android:name=".customer.data_pengiriman.DataPengirimanCustomerActivity" />
-        <activity android:name=".desainer.home.HomeDesainerActivity">
-        </activity>
-        <activity android:name=".example.TestActivity"></activity>
-        <activity android:name=".desainer.transaksi.UploadBiasaDesainerActivity" />
-        <activity android:name=".desainer.transaksi.DesainerTransaksiSelesaiActivity" />
-        <activity android:name=".desainer.transaksi.FormUploadKaryaDesaigner" />
-        <activity android:name=".desainer.transaksi.KonfimasiBayarDesainer" />
-        <activity android:name=".desainer.transaksi.PilihanBankDesainerActivity" />
-        <activity android:name=".desainer.transaksi.DetailPengirimanDesainerActivity" />
-        <activity android:name=".desainer.UploadRevisiDesainerActivity" />
-        <activity android:name=".customer.HalamanDesainerActivity">
-        </activity>
-        <activity android:name=".customer.transaksi.CustomerPesanActivity"/>
-        <activity android:name=".desainer.pesanan_saya.PesananSayaDesainerActivity">
-        </activity>
-        <activity android:name=".customer.pilih_ukuran.PilihUkuranCustomerActivity"/>
-        <activity android:name=".desainer.edit_bio.DesainerEditBioActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".customer.home.HomeCustomerActivity" />
+        <activity android:name=".SearchActivity"/>
+        <!--<activity android:name=".customer.karya.DetailKaryaActivity" />-->
+        <!--<activity android:name=".customer.pesan_custom.PesanCustomActivity" />-->
+        <!--<activity android:name=".customer.PesananSelesai" />-->
+        <!--<activity android:name=".customer.karya.ListKaryaActivity" />-->
+        <!--<activity android:name=".customer.karya.KonfirmasiDesainActivity" />-->
+        <!--<activity android:name=".customer.transaksi.UploadkaryaCusromerActivity" />-->
+        <!--<activity android:name=".customer.transaksi.TransaksiSelesaiActivity" />-->
+        <!--<activity android:name=".customer.CustomerNotifikasiActivity" />-->
+        <!--<activity android:name=".customer.data_pengiriman.DataPengirimanCustomerActivity" />-->
+        <!--<activity android:name=".customer.HalamanDesainerActivity" />-->
+        <!--<activity android:name=".customer.transaksi.CustomerPesanActivity" />-->
+        <!--<activity android:name=".customer.pilih_ukuran.PilihUkuranCustomerActivity" />-->
+
+        <!--<activity android:name=".desainer.home.HomeDesainerActivity" />-->
+        <!--<activity android:name=".desainer.transaksi.UploadBiasaDesainerActivity" />-->
+        <!--<activity android:name=".desainer.transaksi.DesainerTransaksiSelesaiActivity" />-->
+        <!--<activity android:name=".desainer.transaksi.FormUploadKaryaDesaigner" />-->
+        <!--<activity android:name=".desainer.transaksi.KonfimasiBayarDesainer" />-->
+        <!--<activity android:name=".desainer.transaksi.PilihanBankDesainerActivity" />-->
+        <!--<activity android:name=".desainer.transaksi.DetailPengirimanDesainerActivity" />-->
+        <!--<activity android:name=".desainer.UploadRevisiDesainerActivity" />-->
+        <!--<activity android:name=".desainer.pesanan_saya.PesananSayaDesainerActivity" />-->
+        <!--<activity android:name=".desainer.edit_bio.DesainerEditBioActivity" />-->
+
+        <!--<activity android:name=".example.MovieActivity" />-->
+        <!--<activity android:name=".example.TestActivity" />-->
     </application>
 
 </manifest>
