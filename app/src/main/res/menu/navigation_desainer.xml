@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/nav_beranda_desainer"
-        android:icon="@drawable/ic_beranda_2"
+        android:icon="@drawable/ic_beranda"
         android:title="@string/beranda" />
 
     <item

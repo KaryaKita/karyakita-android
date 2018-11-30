@@ -1,5 +1,6 @@
 package com.karyakita.karyakita_android_new.login_as;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -16,6 +17,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class LoginAsActivity extends AppCompatActivity {
+    public static Activity loginAs;
+
     @BindView(R.id.addAkun)
     TextView addAkun;
 
@@ -24,6 +27,8 @@ public class LoginAsActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_as);
+        loginAs = this;
+
         ButterKnife.bind(this);
 
         Button bLoginCustomer = (Button) findViewById(R.id.bt_login_customer);
@@ -54,6 +59,7 @@ public class LoginAsActivity extends AppCompatActivity {
         addAkun.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finish();
                 startActivity(new Intent(LoginAsActivity.this, RegisterAsActivity.class));
             }
         });

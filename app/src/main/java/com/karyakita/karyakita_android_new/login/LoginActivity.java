@@ -20,6 +20,7 @@ import com.karyakita.karyakita_android_new.desainer.home.HomeDesainerActivity;
 import com.karyakita.karyakita_android_new.desainer.pesanan_saya.PesananSayaDesainerActivity;
 import com.karyakita.karyakita_android_new.example.MainActivity;
 import com.karyakita.karyakita_android_new.example.TestActivity;
+import com.karyakita.karyakita_android_new.login_as.LoginAsActivity;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -53,7 +54,11 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
         Log.d("Test0 : ", GlobalVariable.TOKEN);
 
         Realm.init(LoginActivity.this);
-        RealmConfiguration configuration = new RealmConfiguration.Builder().build();
+        RealmConfiguration configuration = new RealmConfiguration
+                .Builder()
+                .schemaVersion(3)
+                .deleteRealmIfMigrationNeeded()
+                .build();
         realm = Realm.getInstance(configuration);
         realmHelper = new RealmHelper(realm);
 
@@ -61,12 +66,6 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
             @Override
             public void onClick(View v) {
                 setUpPresenter();
-                if(role_id == 3) {
-                    startActivity(new Intent(LoginActivity.this, HomeCustomerActivity.class));
-                }
-                if(role_id == 2) {
-                    startActivity(new Intent(LoginActivity.this, PesananSayaDesainerActivity.class));
-                }
             }
         });
     }
@@ -80,6 +79,17 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
     public void display(LoginResultModel model) {
         GlobalVariable.TOKEN = model.getToken();
         Log.i("Test", model.getToken() );
+
+        if(model.getData().getRole_id() == 3) {
+            finish();
+            LoginAsActivity.loginAs.finish();
+            startActivity(new Intent(LoginActivity.this, HomeCustomerActivity.class));
+        }
+        if(model.getData().getRole_id() == 2) {
+            finish();
+            LoginAsActivity.loginAs.finish();
+            startActivity(new Intent(LoginActivity.this, HomeDesainerActivity.class));
+        }
     }
 
     @Override

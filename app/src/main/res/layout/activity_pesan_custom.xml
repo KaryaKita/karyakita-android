@@ -18,8 +18,9 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/bg_cam"
                 android:layout_width="250dp"
-                android:layout_height="250dp"
+                android:layout_height="230dp"
                 android:orientation="vertical"
                 android:layout_gravity="center"
                 android:layout_marginTop="40dp"
@@ -27,11 +28,11 @@
 
                 <ImageView
                     android:id="@+id/iv_img_custom"
-                    android:layout_width="60dp"
-                    android:layout_height="50dp"
+                    android:scaleType="fitXY"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="100dp"
-                    android:background="@drawable/ic_photo_camera"/>
+                    android:background="@drawable/kamera"/>
 
             </LinearLayout>
 
