@@ -33,7 +33,6 @@
             android:label="@string/app_name" />
         <activity android:name=".example.MovieActivity" />
         <activity android:name=".login.LoginActivity" />
-<<<<<<< HEAD
         <activity android:name=".login_as.LoginAsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -45,14 +44,6 @@
         <activity android:name=".customer.karya.DetailKaryaActivity" />
         <activity android:name=".customer.pesan_custom.PesanCustomActivity" />
         <activity android:name=".customer.PesananSelesai"/>
-=======
-        <activity android:name=".login_as.LoginAsActivity" />
-        <activity android:name=".register.RegisterActivity" />
-        <activity android:name=".register_as.RegisterAsActivity" />
-        <activity android:name=".customer.karya.DetailKaryaActivity" />
-        <activity android:name=".customer.pesan_custom.PesanCustomActivity"/>
-        <activity android:name=".customer.PesananSelesai" />
->>>>>>> 6e66329cb14cf39ca3d41f9a774578aba125f7e5
         <activity android:name=".customer.karya.ListKaryaActivity" />
         <activity android:name=".customer.karya.KonfirmasiDesainActivity" />
         <activity android:name=".customer.transaksi.UploadkaryaCusromerActivity" />
@@ -60,14 +51,8 @@
         <activity android:name=".customer.CustomerNotifikasiActivity"/>
         <activity android:name=".customer.data_pengiriman.DataPengirimanCustomerActivity" />
         <activity android:name=".desainer.home.HomeDesainerActivity">
-<<<<<<< HEAD
         </activity>
         <activity android:name=".example.TestActivity"></activity>
-=======
-
-        </activity>
-
->>>>>>> 6e66329cb14cf39ca3d41f9a774578aba125f7e5
         <activity android:name=".desainer.transaksi.UploadBiasaDesainerActivity" />
         <activity android:name=".desainer.transaksi.DesainerTransaksiSelesaiActivity" />
         <activity android:name=".desainer.transaksi.FormUploadKaryaDesaigner" />
@@ -75,7 +60,6 @@
         <activity android:name=".desainer.transaksi.PilihanBankDesainerActivity" />
         <activity android:name=".desainer.transaksi.DetailPengirimanDesainerActivity" />
         <activity android:name=".desainer.UploadRevisiDesainerActivity" />
-<<<<<<< HEAD
         <activity android:name=".customer.HalamanDesainerActivity">
         </activity>
         <activity android:name=".customer.pilih_ukuran.PilihUkuranPesanLangsungCustomer" />
@@ -83,9 +67,6 @@
         <activity android:name=".customer.pilih_ukuran.PilihUkuranPesanLangsungCustomerActivity"/>
         <activity android:name=".desainer.pesanan_saya.PesananSayaDesainerActivity">
         </activity>
-=======
-        <activity android:name=".customer.HalamanDesainerActivity" />
-        <activity android:name=".customer.transaksi.CustomerPesanActivity" />
         <activity android:name=".customer.pilih_ukuran.PilihUkuranCustomerActivity"/>
         <activity android:name=".desainer.edit_bio.DesainerEditBioActivity">
             <intent-filter>
@@ -94,7 +75,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
->>>>>>> 6e66329cb14cf39ca3d41f9a774578aba125f7e5
     </application>
 
 </manifest>
