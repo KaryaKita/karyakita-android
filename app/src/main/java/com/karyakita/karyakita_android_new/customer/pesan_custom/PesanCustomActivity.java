@@ -10,8 +10,6 @@ import android.widget.Spinner;
 
 import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.service.IRestServices;
-import com.mlsdev.rximagepicker.RxImagePicker;
-import com.mlsdev.rximagepicker.Sources;
 
 import butterknife.BindView;
 import android.content.Intent;
