@@ -70,12 +70,11 @@ public abstract class BaseFragment<T1 extends FragmentActivity, T2 extends IBase
         }
     }
 
-    @SuppressLint("RestrictedApi")
     protected void setLoadingDialog(boolean isLoading, @Nullable String message) {
         loading = isLoading;
         if (isLoading) {
             AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(activity);
-            LayoutInflater inflater = this.getLayoutInflater(null);
+            LayoutInflater inflater = this.getLayoutInflater();
             View dialogView = inflater.inflate(R.layout.dialog_loading, null);
             TextView tvMessage = (TextView) dialogView.findViewById(R.id.tvMessage);
             tvMessage.setText(message);

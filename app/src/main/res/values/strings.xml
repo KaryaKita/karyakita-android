@@ -107,7 +107,7 @@
     </array>
 
     <array name="tanggal">
-        <item>Tanggal</item>
+        <item>26</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
@@ -142,7 +142,7 @@
     </array>
 
     <array name="bulan">
-        <item>Bulan</item>
+        <item>November</item>
         <item>Januari</item>
         <item>Februari</item>
         <item>Maret</item>
@@ -152,12 +152,11 @@
         <item>Agustus</item>
         <item>September</item>
         <item>Oktober</item>
-        <item>November</item>
         <item>Desember</item>
     </array>
 
     <array name="tahun">
-        <item>Tahun</item>
+        <item>2018</item>
         <item>1990</item>
         <item>1991</item>
         <item>1992</item>

@@ -7,6 +7,9 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.customer.karya.ListKaryaActivity;
@@ -23,8 +26,26 @@ public class HomeDesainerActivity extends AppCompatActivity implements IHomeDesa
 
     private String TAG = "HomeDesainerActivity";
 
-    @BindView(R.id.rv_home_desainer)
-    RecyclerView rv_home_desaainer;
+//    @BindView(R.id.rv_home_desainer)
+//    RecyclerView rv_home_desaainer;
+    @BindView(R.id.toolbar_navigation_home_desainer)
+    Toolbar toolbar_navigation_home_desainer;
+    @BindView(R.id.iv_pesanan)
+    ImageView iv_pesanan;
+    @BindView(R.id.tv_jenis_pesanan)
+    TextView tv_jenis_pesanan;
+    @BindView(R.id.tv_judul_karya)
+    TextView tv_judulKarya;
+    @BindView(R.id.tv_deadline)
+    TextView tv_deadline;
+    @BindView(R.id.tv_ukuran_karya)
+    TextView tv_ukuranKarya;
+    @BindView(R.id.tv_opsi_bingkai)
+    TextView tv_opsiBingkai;
+    @BindView(R.id.btn_acc)
+    Button btn_acc;
+    @BindView(R.id.btn_dec)
+    Button btn_dec;
 
     HomeDesainerModel homeDesainerModel = null;
 
@@ -41,9 +62,9 @@ public class HomeDesainerActivity extends AppCompatActivity implements IHomeDesa
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setTitle("Home Desainer");
 
-        setupPresenter();
-        setupView();
-        getHomeDesainer();
+        //setupPresenter();
+        //setupView();
+        //getHomeDesainer();
 
     }
 
@@ -65,8 +86,8 @@ public class HomeDesainerActivity extends AppCompatActivity implements IHomeDesa
     }
 
     private void setupView() {
-        rv_home_desaainer.setLayoutManager(new LinearLayoutManager(this.getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
-        rv_home_desaainer.setHasFixedSize(true);
+        //rv_home_desaainer.setLayoutManager(new LinearLayoutManager(this.getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
+        //rv_home_desaainer.setHasFixedSize(true);
     }
 
     private void getHomeDesainer() {
