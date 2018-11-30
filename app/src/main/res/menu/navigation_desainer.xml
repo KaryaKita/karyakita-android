@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_beranda_desainer"
+        android:icon="@drawable/ic_beranda_2"
+        android:title="@string/beranda" />
 
     <item
-        android:id="@+id/navigation_home"
-        android:icon="@drawable/ic_beranda"
-        android:title="@string/title_home" />
-
+        android:id="@+id/nav_tugas_saya_desainer"
+        android:icon="@drawable/ic_tugas_saya"
+        android:title="@string/tugas_saya" />
     <item
-        android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/title_dashboard" />
-
-    <item
-        android:id="@+id/navigation_notifications"
-        android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="@string/title_notifications" />
+        android:id="@+id/nav_pesanan_desainer"
+        android:icon="@drawable/ic_pesanan"
+        android:title="@string/pesanan" />
 
 </menu>

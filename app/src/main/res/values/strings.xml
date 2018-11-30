@@ -18,9 +18,24 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="log_in">Log In</string>
+    <string name="customer">Customer</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
-    <string name="log_in">Log In</string>
+    <string name="login">Login</string>
+    <string name="masuk">Masuk</string>
+    <string name="konfirmasi_password">Konfirmasi Password</string>
+    <string name="daftar">DAFTAR</string>
+    <string name="beranda">Beranda</string>
+    <string name="pesanan_saya">Pesanan Saya</string>
+    <string name="notifikasi">Notifikasi</string>
+    <string name="akun">Akun</string>
+    <string name="desainer">Desainer</string>
+    <string name="nama_lengkap">Nama Lengkap</string>
+    <string name="search">Search</string>
+    <string name="daftar_lowcase">Daftar</string>
+    <string name="tugas_saya">Tugas Saya</string>
+    <string name="pesanan">pesanan</string>
     <string name="don_t_have_account_sign_up">Don\'t have account? Sign Up</string>
     <string name="email">Email</string>
 
