@@ -4,10 +4,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <ScrollView
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        android:layout_height="wrap_content">
 
         <android.support.v7.widget.LinearLayoutCompat
             android:layout_width="match_parent"
@@ -30,9 +29,15 @@
                 android:layout_marginBottom="20dp"
                 android:orientation="vertical" />
 
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_list_karya_customer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
         </android.support.v7.widget.LinearLayoutCompat>
 
-    </ScrollView>
+    </android.support.v4.widget.NestedScrollView>
 
 
 </android.support.v7.widget.LinearLayoutCompat>

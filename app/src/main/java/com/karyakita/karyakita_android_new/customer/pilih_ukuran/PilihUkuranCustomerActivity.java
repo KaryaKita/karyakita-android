@@ -51,9 +51,12 @@ public class PilihUkuranCustomerActivity extends AppCompatActivity implements IP
         setContentView(R.layout.activity_pilih_ukuran_customer);
         ButterKnife.bind(this);
         Realm.init(PilihUkuranCustomerActivity.this);
-        RealmConfiguration configuration = new RealmConfiguration.Builder().build();
+        RealmConfiguration configuration = new RealmConfiguration.Builder()
+                .schemaVersion(3)
+                .deleteRealmIfMigrationNeeded()
+                .build();
         realm = Realm.getInstance(configuration);
-//        realmHelper = new RealmHelper(realm);
+        realmHelper = new RealmHelper(realm);
 
         konfirmasi.setOnClickListener(new View.OnClickListener() {
             @Override

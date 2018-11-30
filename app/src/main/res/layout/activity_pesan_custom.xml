@@ -13,26 +13,26 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
             android:orientation="vertical">
 
             <LinearLayout
                 android:id="@+id/bg_cam"
                 android:layout_width="250dp"
                 android:layout_height="230dp"
-                android:orientation="vertical"
                 android:layout_gravity="center"
                 android:layout_marginTop="40dp"
-                android:background="#FFE4B5">
+                android:background="#FFE4B5"
+                android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/iv_img_custom"
-                    android:scaleType="fitXY"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:background="@drawable/kamera"/>
+                    android:background="@drawable/kamera"
+                    android:scaleType="fitXY" />
 
             </LinearLayout>
 
@@ -42,109 +42,108 @@
                 android:layout_marginTop="30dp"
                 android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Kategori Desain"
-                        android:textColor="#181818"
-                        android:textSize="16dp"
-                        android:textStyle="bold" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Kategori Desain"
+                    android:textColor="#181818"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <Spinner
-                            android:id="@+id/sp_pilih_kategori"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
-                            android:entries="@array/kategori_desain"
-                            android:backgroundTint="@color/mainColor"></Spinner>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="right"
-                            android:text="*Lama Pengerjaan 5 Hari"
-                            android:textColor="@color/mainColor"
-                            android:textSize="11dp" />
-
-                    </LinearLayout>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Ukuran"
-                        android:textColor="#181818"
-                        android:textSize="16dp"
-                        android:textStyle="bold" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
                     <Spinner
-                        android:id="@+id/sp_pilih_ukuran"
+                        android:id="@+id/sp_pilih_kategori"
+                        style="@style/Base.Widget.AppCompat.Spinner.Underlined"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        style="@style/Base.Widget.AppCompat.Spinner.Underlined"
-                        android:entries="@array/ukuran_desain"
-                        android:backgroundTint="@color/mainColor"/>
+                        android:backgroundTint="@color/mainColor"
+                        android:entries="@array/kategori_desain" />
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Opsi"
-                        android:layout_marginTop="10dp"
-                        android:textColor="#181818"
-                        android:textSize="16dp"
-                        android:textStyle="bold" />
+                        android:layout_gravity="right"
+                        android:text="*Lama Pengerjaan 5 Hari"
+                        android:textColor="@color/mainColor"
+                        android:textSize="11dp" />
 
-                    <Spinner
-                        android:id="@+id/sp_pilih_bingkai"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        style="@style/Base.Widget.AppCompat.Spinner.Underlined"
-                        android:entries="@array/opsi_desain"
-                        android:backgroundTint="@color/mainColor"></Spinner>
+                </LinearLayout>
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="Tanggal Deadline"
-                        android:textColor="#181818"
-                        android:textSize="16dp"
-                        android:textStyle="bold" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ukuran"
+                    android:textColor="#181818"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
 
-                    <Spinner
-                        android:id="@+id/Calendar"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:entries="@array/opsi_desain"
-                        style="@style/Base.Widget.AppCompat.Spinner.Underlined"
-                        android:backgroundTint="@color/mainColor"/>
+                <Spinner
+                    android:id="@+id/sp_pilih_ukuran"
+                    style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/mainColor"
+                    android:entries="@array/ukuran_desain" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="Catatan"
-                        android:textColor="#181818"
-                        android:textSize="16dp"
-                        android:textStyle="bold" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Opsi"
+                    android:textColor="#181818"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/ed_catatan"
-                        android:layout_width="match_parent"
-                        android:layout_height="120dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_gravity="center"
-                        android:background="@drawable/border_orange" />
+                <Spinner
+                    android:id="@+id/sp_pilih_bingkai"
+                    style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/mainColor"
+                    android:entries="@array/opsi_desain" />
 
+                <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:text="Tanggal Deadline"-->
+                <!--android:textColor="#181818"-->
+                <!--android:textSize="16dp"-->
+                <!--android:textStyle="bold" />-->
+
+                <!--<Spinner-->
+                    <!--android:id="@+id/Calendar"-->
+                    <!--style="@style/Base.Widget.AppCompat.Spinner.Underlined"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:backgroundTint="@color/mainColor"-->
+                    <!--android:entries="@array/opsi_desain" />-->
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Catatan"
+                    android:textColor="#181818"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/ed_catatan"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/border_orange" />
 
             </LinearLayout>
         </LinearLayout>
