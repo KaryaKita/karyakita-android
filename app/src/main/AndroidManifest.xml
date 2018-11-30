@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.karyakita.karyakita_android_new">
 
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -47,7 +46,7 @@
         <activity android:name=".register.RegisterActivity" />
         <activity android:name=".register_as.RegisterAsActivity" />
         <activity android:name=".customer.karya.DetailKaryaActivity" />
-        <activity android:name=".customer.pesan_custom.PesanCustomActivity"></activity>
+        <activity android:name=".customer.pesan_custom.PesanCustomActivity" />
         <activity android:name=".customer.PesananSelesai" />
         <activity android:name=".customer.karya.ListKaryaActivity" />
         <activity android:name=".customer.karya.KonfirmasiDesainActivity" />
@@ -65,10 +64,9 @@
         <activity android:name=".desainer.UploadRevisiDesainerActivity" />
         <activity android:name=".customer.HalamanDesainerActivity" />
         <activity android:name=".customer.transaksi.CustomerPesanActivity" />
-        <activity android:name=".customer.pilih_ukuran.PilihUkuranCustomerActivity">
-        </activity>
-        <activity android:name=".desainer.edit_bio.DesainerEditBioActivity">
-        </activity>
+        <activity android:name=".customer.pilih_ukuran.PilihUkuranCustomerActivity"></activity>
+        <activity android:name=".desainer.edit_bio.DesainerEditBioActivity"></activity>
+        <activity android:name=".desainer.DesainerBerandaFragment"></activity>
     </application>
 
 </manifest>
