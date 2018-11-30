@@ -62,9 +62,7 @@
         <activity android:name=".desainer.UploadRevisiDesainerActivity" />
         <activity android:name=".customer.HalamanDesainerActivity">
         </activity>
-        <activity android:name=".customer.pilih_ukuran.PilihUkuranPesanLangsungCustomer" />
         <activity android:name=".customer.transaksi.CustomerPesanActivity"/>
-        <activity android:name=".customer.pilih_ukuran.PilihUkuranPesanLangsungCustomerActivity"/>
         <activity android:name=".desainer.pesanan_saya.PesananSayaDesainerActivity">
         </activity>
         <activity android:name=".customer.pilih_ukuran.PilihUkuranCustomerActivity"/>

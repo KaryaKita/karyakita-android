@@ -19,14 +19,14 @@ public class PesananSayaDesainerActivity extends AppCompatActivity {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
-                case R.id.navigation_home:
+                case R.id.nav_beranda_desainer:
                     mTextMessage.setText(R.string.title_home);
                     return true;
-                case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
+                case R.id.nav_pesanan_desainer:
+                    mTextMessage.setText("Pesanan");
                     return true;
-                case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
+                case R.id.nav_tugas_saya_desainer:
+                    mTextMessage.setText("Tugas Saya");
                     return true;
             }
             return false;

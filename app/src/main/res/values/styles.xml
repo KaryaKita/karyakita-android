@@ -1,13 +1,6 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/secondColor</item>
-        <item name="colorPrimaryDark">@color/mainColor</item>
-        <item name="colorAccent">@color/ic_launcher_background</item>
-    </style>
-
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -24,6 +17,17 @@
 
     <style name="Spinner" parent="Base.Widget.AppCompat.DropDownItem.Spinner">
         <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+        <item name="colorAccent">@color/secondaryColor</item>
+        <item name="android:colorPrimary">@color/primaryColor</item>
+        <item name="android:colorPrimaryDark">@color/primaryDarkColor</item>
+        <item name="android:colorAccent">@color/secondaryColor</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
     </style>
 
     <style name="button_style" parent="@android:style/Widget.Button">

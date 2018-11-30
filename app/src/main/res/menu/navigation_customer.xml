@@ -1,29 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <menu xmlns:android="http://schemas.android.com/apk/res/android">
+        <item
+            android:id="@+id/nav_beranda_customer"
+            android:icon="@drawable/ic_beranda"
+            android:title="Beranda" />
 
-    <item
-        android:id="@+id/nav_beranda_customer"
-        android:icon="@drawable/ic_beranda"
-        android:title="@string/beranda_string" />
+        <item
+            android:id="@+id/nav_desainer_customer"
+            android:icon="@drawable/ic_designer"
+            android:title="Desainer" />
 
-    <item
-        android:id="@+id/nav_desainer_customer"
-        android:icon="@drawable/ic_designer"
-        android:title="@string/desainer_string" />
+        <item
+            android:id="@+id/nav_pesanan_saya_customer"
+            android:icon="@drawable/ic_pesanan_saya"
+            android:title="Pesanan Saya" />
 
-    <item
-        android:id="@+id/nav_pesanan_saya_customer"
-        android:icon="@drawable/ic_pesanan_saya"
-        android:title="@string/pesanan_saya_string" />
+        <item
+            android:id="@+id/nav_notif_customer"
+            android:icon="@drawable/ic_notifikasi"
+            android:title="Notifikasi" />
 
-    <item
-        android:id="@+id/nav_notif_customer"
-        android:icon="@drawable/ic_notifikasi"
-        android:title="@string/notifikasi_string" />
-
-    <item
-        android:id="@+id/nav_akun_customer"
-        android:icon="@drawable/ic_akun"
-        android:title="@string/akun_string" />
-
-</menu>
+        <item
+            android:id="@+id/nav_akun_customer"
+            android:icon="@drawable/ic_akun"
+            android:title="Akun" />
+    </menu>
