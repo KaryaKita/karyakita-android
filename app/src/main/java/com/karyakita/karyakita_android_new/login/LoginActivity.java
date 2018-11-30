@@ -64,12 +64,6 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
             @Override
             public void onClick(View v) {
                 setUpPresenter();
-                if(role_id == 3) {
-                    startActivity(new Intent(LoginActivity.this, HomeCustomerActivity.class));
-                }
-                if(role_id == 2) {
-                    startActivity(new Intent(LoginActivity.this, PesananSayaDesainerActivity.class));
-                }
             }
         });
     }
@@ -82,6 +76,13 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
     @Override
     public void display(LoginResultModel model) {
         GlobalVariable.TOKEN = model.getToken();
+
+        if(model.getData().getRole_id() == 3) {
+            startActivity(new Intent(LoginActivity.this, HomeCustomerActivity.class));
+        }
+        if(model.getData().getRole_id() == 2) {
+            startActivity(new Intent(LoginActivity.this, PesananSayaDesainerActivity.class));
+        }
         Log.i("Test", model.getToken() );
     }
 
