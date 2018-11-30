@@ -68,7 +68,8 @@ public class PesanCustomActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pesan_custom);
         ButterKnife.bind(this);
         Realm.init(PesanCustomActivity.this);
-        RealmConfiguration configuration = new RealmConfiguration.Builder().build();
+        RealmConfiguration configuration = new RealmConfiguration.Builder().schemaVersion(3)
+                .deleteRealmIfMigrationNeeded().build();
         realm = Realm.getInstance(configuration);
 
         img_custom.setOnClickListener(new View.OnClickListener() {
