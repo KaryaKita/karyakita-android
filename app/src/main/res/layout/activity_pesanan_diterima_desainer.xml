@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".desainer.edit_bio.DesainerEditBioActivity">
+    android:orientation="vertical">
 
-    <include layout="@layout/content_desainer_edit_bio_activity"></include>
-
+    <include layout="@layout/content_pesanan_diterima_desainer"></include>
 </android.support.v7.widget.LinearLayoutCompat>

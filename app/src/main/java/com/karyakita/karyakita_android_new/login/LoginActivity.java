@@ -14,8 +14,12 @@ import android.widget.Toast;
 import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.base.GlobalVariable;
 import com.karyakita.karyakita_android_new.customer.home.HomeCustomerActivity;
+import com.karyakita.karyakita_android_new.customer.karya.ListKaryaActivity;
 import com.karyakita.karyakita_android_new.data.local.realm.RealmHelper;
+import com.karyakita.karyakita_android_new.desainer.home.HomeDesainerActivity;
+import com.karyakita.karyakita_android_new.desainer.pesanan_saya.PesananSayaDesainerActivity;
 import com.karyakita.karyakita_android_new.example.MainActivity;
+import com.karyakita.karyakita_android_new.example.TestActivity;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -50,13 +54,18 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
         Realm.init(LoginActivity.this);
         RealmConfiguration configuration = new RealmConfiguration.Builder().build();
         realm = Realm.getInstance(configuration);
-
         realmHelper = new RealmHelper(realm);
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 setUpPresenter();
+                if(role_id == 3) {
+                    startActivity(new Intent(LoginActivity.this, HomeCustomerActivity.class));
+                }
+                if(role_id == 2) {
+                    startActivity(new Intent(LoginActivity.this, PesananSayaDesainerActivity.class));
+                }
             }
         });
     }
@@ -64,7 +73,6 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
     @Override
     public void showToast(String s) {
         Toast.makeText(getApplicationContext(), s, Toast.LENGTH_LONG).show();
-        startActivity(new Intent(LoginActivity.this, HomeCustomerActivity.class));
     }
 
     @Override
