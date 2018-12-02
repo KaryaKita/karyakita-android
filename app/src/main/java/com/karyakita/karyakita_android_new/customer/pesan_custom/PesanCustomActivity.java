@@ -55,7 +55,7 @@ public class PesanCustomActivity extends AppCompatActivity {
     @BindView(R.id.iv_img_custom) ImageView img_custom;
     @BindView(R.id.sp_pilih_kategori) Spinner pilih_kategori;
     @BindView(R.id.sp_pilih_ukuran) Spinner ukuran_kertas;
-    @BindView(R.id.Calendar) Spinner calendar;
+//    @BindView(R.id.Calendar) Spinner calendar;
     @BindView(R.id.ed_catatan) EditText ed_catatan;
     @BindView(R.id.btnLanjut) Button btnLanjut;
 
@@ -86,15 +86,15 @@ public class PesanCustomActivity extends AppCompatActivity {
 
                 kategori = 1;
                 ukuran   = ukuran_kertas.getSelectedItem().toString();
-                calender = calendar.toString();
+//                calender = calendar.toString();
                 catatan  = ed_catatan.getText().toString();
                 image    = img_custom.toString();
 
-                if (!kategori.equals("")&&!ukuran.equals("")&&!calender.equals("")&&!catatan.equals((""))&&!image.equals((""))){
+                if (!kategori.equals("")&&!ukuran.equals("")&&!catatan.equals((""))&&!image.equals((""))){
                     pesanCustomModelRealm = new PesanCustomModelRealm();
                     pesanCustomModelRealm.setKategori_id(kategori);
                     pesanCustomModelRealm.setUkuran_karya(ukuran);
-                    pesanCustomModelRealm.setDeadline(calender);
+                    //pesanCustomModelRealm.setDeadline(calender);
                     pesanCustomModelRealm.setCatatan(catatan);
                     pesanCustomModelRealm.setImage(image);
 
@@ -211,7 +211,7 @@ public class PesanCustomActivity extends AppCompatActivity {
         Map<String, String> inputan = new HashMap<String, String>();
         inputan.put("pilih_kategori", pilih_kategori.toString());
         inputan.put("ukuran_kertas", ukuran_kertas.toString());
-        inputan.put("calender", calendar.toString());
+//        inputan.put("calender", calendar.toString());
         inputan.put("catatan", catatan.toString());
     }
 

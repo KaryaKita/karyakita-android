@@ -20,6 +20,7 @@ import com.karyakita.karyakita_android_new.desainer.home.HomeDesainerActivity;
 import com.karyakita.karyakita_android_new.desainer.pesanan_saya.PesananSayaDesainerActivity;
 import com.karyakita.karyakita_android_new.example.MainActivity;
 import com.karyakita.karyakita_android_new.example.TestActivity;
+import com.karyakita.karyakita_android_new.login_as.LoginAsActivity;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -33,12 +34,13 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
     LoginPresenter loginPresenter;
     Integer role_id;
 
-    @BindView(R.id.et_Username_login)
+    @BindView(R.id.et_username_login)
     EditText et_Username_login;
-    @BindView(R.id.et_Password_login)
+    @BindView(R.id.et_password_login)
     EditText et_Password_login;
-    @BindView(R.id.button1)
-    Button button1;
+    @BindView(R.id.bt_masuk)
+    Button bt_masuk;
+
     Realm realm;
     RealmHelper realmHelper;
 
@@ -60,7 +62,7 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
         realm = Realm.getInstance(configuration);
         realmHelper = new RealmHelper(realm);
 
-        button1.setOnClickListener(new View.OnClickListener() {
+        bt_masuk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 setUpPresenter();
@@ -76,14 +78,18 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
     @Override
     public void display(LoginResultModel model) {
         GlobalVariable.TOKEN = model.getToken();
+        Log.i("Test", model.getToken() );
 
         if(model.getData().getRole_id() == 3) {
+            finish();
+            LoginAsActivity.loginAs.finish();
             startActivity(new Intent(LoginActivity.this, HomeCustomerActivity.class));
         }
         if(model.getData().getRole_id() == 2) {
-            startActivity(new Intent(LoginActivity.this, PesananSayaDesainerActivity.class));
+            finish();
+            LoginAsActivity.loginAs.finish();
+            startActivity(new Intent(LoginActivity.this, HomeDesainerActivity.class));
         }
-        Log.i("Test", model.getToken() );
     }
 
     @Override

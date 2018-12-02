@@ -20,16 +20,16 @@ import butterknife.ButterKnife;
 public class RegisterActivity extends AppCompatActivity implements IRegisterView {
     RegisterPresenter registerPresenter = null;
     RegisterModel registerModel = null;
-    @BindView(R.id.textViewNama)
-    EditText textViewNama;
-    @BindView(R.id.textViewEmail)
-    EditText textViewEmail;
-    @BindView(R.id.textViewPassword)
-    EditText textViewPassword;
-    @BindView(R.id.textViewKonfirPassword)
-    EditText textViewKonfirPassword;
-    @BindView(R.id.textViewUsername)
-    EditText textViewUsername;
+    @BindView(R.id.et_nama_lengkap_register)
+    EditText et_nama_lengkap_register;
+    @BindView(R.id.et_email_register)
+    EditText et_email_register;
+    @BindView(R.id.et_password_register)
+    EditText et_password_register;
+    @BindView(R.id.et_password_conf_register)
+    EditText et_password_conf_register;
+    @BindView(R.id.et_username_register)
+    EditText et_username_register;
     @BindView(R.id.buttonRegister)
     Button buttonRegister;
     Integer role_id;
@@ -72,11 +72,11 @@ public class RegisterActivity extends AppCompatActivity implements IRegisterView
 
     private void setupPresenter() {
         Map<String, String> inputan = new HashMap<String, String>();
-        inputan.put("nama", textViewNama.getText().toString());
-        inputan.put("email", textViewEmail.getText().toString());
-        inputan.put("password", textViewPassword.getText().toString());
-        inputan.put("konfirpassword", textViewKonfirPassword.getText().toString());
-        inputan.put("username", textViewUsername.getText().toString());
+        inputan.put("nama", et_nama_lengkap_register.getText().toString());
+        inputan.put("email", et_email_register.getText().toString());
+        inputan.put("password", et_password_register.getText().toString());
+        inputan.put("konfirpassword", et_password_conf_register.getText().toString());
+        inputan.put("username", et_username_register.getText().toString());
         inputan.put("role_id", role_id.toString());
 
         registerPresenter = new RegisterPresenter(this);

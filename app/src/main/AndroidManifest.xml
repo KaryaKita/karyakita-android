@@ -25,21 +25,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity
-            android:name=".customer.SplashActivity"
-            android:theme="@style/AppTheme.SplashTheme" />
-        <activity
-            android:name=".customer.home.HomeCustomerActivity"
-            android:label="@string/app_name" />
-        <activity android:name=".example.MovieActivity" />
-        <activity android:name=".login.LoginActivity" />
-        <activity android:name=".login_as.LoginAsActivity">
+        <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".customer.home.HomeCustomerActivity" />
+        <activity android:name=".customer.SearchActivity"/>
+        <activity android:name=".login_as.LoginAsActivity" />
+        <activity android:name=".login.LoginActivity" />
         <activity android:name=".register.RegisterActivity" />
         <activity android:name=".register_as.RegisterAsActivity" />
         <activity android:name=".customer.karya.DetailKaryaActivity" />
@@ -65,8 +60,6 @@
         <activity android:name=".desainer.pesanan_saya.PesananSayaDesainerActivity" />
         <activity android:name=".customer.pilih_ukuran.PilihUkuranCustomerActivity" />
         <activity android:name=".desainer.edit_bio.DesainerEditBioActivity" />
-        <activity android:name=".desainer.FragmentDesainerPesanan" />
-        <activity android:name=".desainer.FragmentDesainerPesananSaya"></activity>
     </application>
 
 </manifest>
