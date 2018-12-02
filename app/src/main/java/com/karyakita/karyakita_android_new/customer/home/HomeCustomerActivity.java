@@ -91,11 +91,11 @@ public class HomeCustomerActivity extends AppCompatActivity
                 ft.replace(R.id.frame_container_customer, fragment);
                 ft.commit();
                 return true;
-            case R.id.nav_akun_customer:
-                fragment = new CustomerAkunFragment();
-                ft.replace(R.id.frame_container_customer, fragment);
-                ft.commit();
-                return true;
+//            case R.id.nav_akun_customer:
+//                fragment = new CustomerAkunFragment();
+//                ft.replace(R.id.frame_container_customer, fragment);
+//                ft.commit();
+//                return true;
         }
         return false;
     }
