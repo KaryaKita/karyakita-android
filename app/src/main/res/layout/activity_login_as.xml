@@ -12,7 +12,7 @@
         android:id="@+id/iv_karyakita_login_as"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="@dimen/dimens_32dp"
         app:srcCompat="@drawable/ic_logo_karyakita_color" />
 
     <android.support.v7.widget.LinearLayoutCompat
@@ -36,6 +36,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/primaryColor"
             android:minWidth="64dp"
+            android:layout_marginTop="@dimen/dimens_8dp"
             android:text="@string/customer"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
             android:textColor="@color/primaryTextColor"
@@ -56,7 +57,7 @@
         <android.support.v7.widget.LinearLayoutCompat
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/dimens_20dp"
             android:orientation="horizontal">
 
             <android.support.v7.widget.AppCompatTextView
