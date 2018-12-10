@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.karyakita.karyakita_android_new.R;
@@ -21,6 +22,7 @@ import com.karyakita.karyakita_android_new.desainer.pesanan_saya.PesananSayaDesa
 import com.karyakita.karyakita_android_new.example.MainActivity;
 import com.karyakita.karyakita_android_new.example.TestActivity;
 import com.karyakita.karyakita_android_new.login_as.LoginAsActivity;
+import com.karyakita.karyakita_android_new.register_as.RegisterAsActivity;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -40,6 +42,8 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
     EditText et_Password_login;
     @BindView(R.id.bt_masuk)
     Button bt_masuk;
+    @BindView(R.id.addAkun)
+    TextView addAkun;
 
     Realm realm;
     RealmHelper realmHelper;
@@ -66,6 +70,13 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
             @Override
             public void onClick(View v) {
                 setUpPresenter();
+            }
+        });
+        addAkun.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                startActivity(new Intent(LoginActivity.this, RegisterAsActivity.class));
             }
         });
     }
