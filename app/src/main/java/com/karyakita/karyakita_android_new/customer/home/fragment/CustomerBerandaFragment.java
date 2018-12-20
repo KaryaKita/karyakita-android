@@ -36,7 +36,7 @@ public class CustomerBerandaFragment extends Fragment implements IHomeView {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_customer_beranda, container, false);
 
-        rv_kategori_home = view.findViewById(R.id.rv_kategori_home);
+//        rv_kategori_home = view.findViewById(R.id.rv_kategori_home);
 
         setUpPresenter();
         setUpView();
