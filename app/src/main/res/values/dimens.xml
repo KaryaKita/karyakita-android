@@ -11,8 +11,13 @@
     <dimen name="item_width">200dp</dimen>
 
     <!--new dimens-->
+    <dimen name="dimens_0dp">0dp</dimen>
+    <dimen name="dimens_4dp">4dp</dimen>
     <dimen name="dimens_8dp">8dp</dimen>
-    <dimen name="dimens_10dp">10dp</dimen>
+    <dimen name="dimens_12dp">12dp</dimen>
     <dimen name="dimens_16dp">16dp</dimen>
-    <dimen name="dimens_200dp">200dp</dimen>
+    <dimen name="dimens_20dp">20dp</dimen>
+    <dimen name="dimens_24dp">24dp</dimen>
+    <dimen name="dimens_28dp">28dp</dimen>
+    <dimen name="dimens_32dp">32dp</dimen>
 </resources>

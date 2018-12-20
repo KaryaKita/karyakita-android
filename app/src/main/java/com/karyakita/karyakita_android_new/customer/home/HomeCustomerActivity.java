@@ -13,8 +13,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.karyakita.karyakita_android_new.R;
-import com.karyakita.karyakita_android_new.SearchActivity;
-import com.karyakita.karyakita_android_new.customer.home.fragment.CustomerAkunFragment;
+import com.karyakita.karyakita_android_new.customer.SearchActivity;
 import com.karyakita.karyakita_android_new.customer.home.fragment.CustomerBerandaFragment;
 import com.karyakita.karyakita_android_new.customer.home.fragment.CustomerDesainerFragment;
 import com.karyakita.karyakita_android_new.customer.home.fragment.CustomerNotifikasiFragment;
@@ -58,17 +57,9 @@ public class HomeCustomerActivity extends AppCompatActivity
 
     private void setListeners() {
         bottom_nav_view_customer.setOnNavigationItemSelectedListener(this);
-    }
-
-
-    private void setViewPager() {
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        HomeCustomerAdapter homeCustomerAdapter = new HomeCustomerAdapter(fragmentManager);
-    }
-
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
-
+        // attaching bottom sheet behaviour - hide / show on scroll
+//        CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) bottom_nav_view_customer.getLayoutParams();
+//        layoutParams.setBehavior(new BottomNavigationBehavior());
     }
 
     @Override
@@ -97,11 +88,11 @@ public class HomeCustomerActivity extends AppCompatActivity
                 ft.replace(R.id.frame_container_customer, fragment);
                 ft.commit();
                 return true;
-            case R.id.nav_akun_customer:
-                fragment = new CustomerAkunFragment();
-                ft.replace(R.id.frame_container_customer, fragment);
-                ft.commit();
-                return true;
+//            case R.id.nav_akun_customer:
+//                fragment = new CustomerAkunFragment();
+//                ft.replace(R.id.frame_container_customer, fragment);
+//                ft.commit();
+//                return true;
         }
         return false;
     }

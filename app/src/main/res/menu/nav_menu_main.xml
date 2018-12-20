@@ -29,7 +29,7 @@
     <item android:title="Lainnya">
         <menu>
             <item
-                android:id="@+id/nav_akun_customer"
+                android:id="@+id/nav_akun"
                 android:icon="@drawable/ic_akun"
                 android:title="@string/akun_string" />
             <item

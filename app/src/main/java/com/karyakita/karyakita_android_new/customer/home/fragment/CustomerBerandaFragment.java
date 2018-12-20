@@ -16,39 +16,95 @@ import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.base.GlobalVariable;
 import com.karyakita.karyakita_android_new.customer.home.HomePresenter;
 import com.karyakita.karyakita_android_new.customer.home.IHomeView;
+import com.karyakita.karyakita_android_new.customer.karya.IListKaryaView;
 import com.karyakita.karyakita_android_new.customer.karya.KategoriKaryaAdapter;
 import com.karyakita.karyakita_android_new.customer.karya.KategoriKaryaModel;
 import com.karyakita.karyakita_android_new.customer.karya.KategoriKaryaResultModel;
+import com.karyakita.karyakita_android_new.customer.karya.ListKaryaAdapter;
+import com.karyakita.karyakita_android_new.customer.karya.ListKaryaModel;
+import com.karyakita.karyakita_android_new.customer.karya.ListKaryaPresenter;
+import com.karyakita.karyakita_android_new.customer.karya.ListKaryaResultModel;
 
 import java.util.List;
 
 import static android.support.constraint.Constraints.TAG;
 
-
-public class CustomerBerandaFragment extends Fragment implements IHomeView {
+public class CustomerBerandaFragment extends Fragment implements IHomeView, IListKaryaView {
 
     HomePresenter homePresenter = null;
+    ListKaryaPresenter listKaryaPresenter = null;
     KategoriKaryaAdapter kategoriKaryaAdapter;
+
     RecyclerView rv_kategori_home;
+    RecyclerView rv_list_karya_customer;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_customer_beranda, container, false);
+<<<<<<< HEAD
 
 //        rv_kategori_home = view.findViewById(R.id.rv_kategori_home);
+=======
+        rv_kategori_home = view.findViewById(R.id.rv_kategori_home);
+        rv_list_karya_customer = view.findViewById(R.id.rv_list_karya_customer);
+        rv_kategori_home.setNestedScrollingEnabled(false);
+        rv_list_karya_customer.setNestedScrollingEnabled(false);
+>>>>>>> 6ea033763f85fa982112e9f9f0bc707aba935b3f
 
         setUpPresenter();
         setUpView();
+        setUpViewListKarya();
         getGridViewHome();
-
+        getListKarya();
 
         return view;
     }
 
+    private void setUpPresenter() {
+        homePresenter = new HomePresenter(this);
+        listKaryaPresenter = new ListKaryaPresenter(this);
+    }
+
+    private void setUpView() {
+        rv_kategori_home.setLayoutManager(new GridLayoutManager(this.getActivity().getApplicationContext(), 3));
+        rv_kategori_home.setHasFixedSize(true);
+    }
+
+    private void setUpViewListKarya() {
+        rv_list_karya_customer.setLayoutManager(new GridLayoutManager(this.getActivity().getApplicationContext(), 2));
+        rv_list_karya_customer.setHasFixedSize(true);
+    }
+
+
+    private void getGridViewHome() {
+        Toast.makeText(getActivity().getApplicationContext(), "Token" + GlobalVariable.TOKEN, Toast.LENGTH_LONG);
+        homePresenter.get(null);
+    }
+
+    private void getListKarya() {
+        listKaryaPresenter.get(null);
+    }
+
     @Override
-    public void showToast(String str) {
-//        Toast.makeText(getContext().getApplicationContext(), str, Toast.LENGTH_LONG).show();
+    public void display(ListKaryaResultModel listKaryaResultModel) {
+        ListKaryaAdapter listKaryaAdapter = new ListKaryaAdapter(listKaryaResultModel.getData(), getActivity());
+
+        if (listKaryaResultModel.getData() != null) {
+            List<ListKaryaModel> listResponse = listKaryaResultModel.getData();
+            Log.d(TAG, "respon: " + listResponse.get(1).getNama());
+            if (listResponse.size() > 0) {
+                for (int i = 0; i < listResponse.size(); i++) {
+                    ListKaryaModel listKaryaModel = listResponse.get(i);
+                    Log.d(TAG, listKaryaModel.getFilename());
+                    listKaryaAdapter.addToList(listKaryaModel);
+                }
+            }
+            rv_list_karya_customer.setAdapter(listKaryaAdapter);
+
+        } else {
+            Log.d(TAG, "null");
+        }
     }
 
     @Override
@@ -76,18 +132,8 @@ public class CustomerBerandaFragment extends Fragment implements IHomeView {
         showToast(s);
     }
 
-    private void setUpPresenter() {
-        homePresenter = new HomePresenter(this);
+    @Override
+    public void showToast(String str) {
+//        Toast.makeText(getContext().getApplicationContext(), str, Toast.LENGTH_LONG).show();
     }
-
-    private void setUpView() {
-        rv_kategori_home.setLayoutManager(new GridLayoutManager(this.getActivity().getApplicationContext(), 3));
-        rv_kategori_home.setHasFixedSize(true);
-    }
-
-    private void getGridViewHome() {
-        Toast.makeText(getActivity().getApplicationContext(), "Toke " + GlobalVariable.TOKEN, Toast.LENGTH_LONG);
-        homePresenter.get(null);
-    }
-
 }

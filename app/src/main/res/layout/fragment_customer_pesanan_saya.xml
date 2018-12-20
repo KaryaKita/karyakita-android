@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <ScrollView
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -15,25 +15,18 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <android.support.v7.widget.AppCompatImageView
+            <android.support.v7.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_logo_karyakita_color" />
+                android:text="Anda belum memiliki pesanan apapun"
+                android:textSize="@dimen/dimens_16dp" />
 
-            <android.support.v7.widget.AppCompatImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_logo_karyakita_color" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_pesanan_saya_customer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <android.support.v7.widget.AppCompatImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_logo_karyakita_color" />
-
-            <android.support.v7.widget.AppCompatImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_logo_karyakita_color" />
+            </android.support.v7.widget.RecyclerView>
         </android.support.v7.widget.LinearLayoutCompat>
-    </ScrollView>
+    </android.support.v4.widget.NestedScrollView>
 </android.support.v7.widget.LinearLayoutCompat>

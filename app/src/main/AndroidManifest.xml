@@ -32,6 +32,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".customer.home.HomeCustomerActivity" />
+        <activity android:name=".customer.SearchActivity"/>
         <activity android:name=".login_as.LoginAsActivity" />
         <activity android:name=".login.LoginActivity" />
         <activity android:name=".register.RegisterActivity" />

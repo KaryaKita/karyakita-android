@@ -26,9 +26,9 @@
             android:id="@+id/iv_judul_karya"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/dimens_10dp"
-            android:layout_marginTop="@dimen/dimens_10dp"
-            android:layout_marginRight="@dimen/dimens_10dp"
+            android:layout_marginLeft="@dimen/dimens_8dp"
+            android:layout_marginTop="@dimen/dimens_8dp"
+            android:layout_marginRight="@dimen/dimens_8dp"
             android:text="Ariana Summer Vacations"
             android:textColor="@color/black"
             android:textStyle="bold"/>
@@ -37,8 +37,8 @@
             android:id="@+id/iv_category_karya"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/dimens_10dp"
-            android:layout_marginRight="@dimen/dimens_10dp"
+            android:layout_marginLeft="@dimen/dimens_8dp"
+            android:layout_marginRight="@dimen/dimens_8dp"
             android:textColor="@color/blue_500"
             android:text="#WPAP #VectorArt"/>
 
@@ -46,8 +46,8 @@
             android:id="@+id/iv_hargakarya"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/dimens_10dp"
-            android:layout_marginRight="@dimen/dimens_10dp"
+            android:layout_marginLeft="@dimen/dimens_8dp"
+            android:layout_marginRight="@dimen/dimens_8dp"
             android:text="Rp55.000"
             android:textStyle="bold"
             android:layout_marginBottom="20dp"/>
