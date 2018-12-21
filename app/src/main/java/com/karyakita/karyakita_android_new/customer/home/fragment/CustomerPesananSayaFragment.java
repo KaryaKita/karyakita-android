@@ -34,9 +34,9 @@ public class CustomerPesananSayaFragment extends Fragment implements IPesananSay
         View view = inflater.inflate(R.layout.fragment_customer_pesanan_saya, container, false);
 
         rv_pesanan_saya_customer = view.findViewById(R.id.rv_pesanan_saya_customer);
-        setupView();
-        setupPresenter();
-        getPesananSaya();
+        //setupView();
+        //setupPresenter();
+        //getPesananSaya();
 
         return view;
     }
