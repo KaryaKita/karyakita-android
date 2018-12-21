@@ -1,36 +1,37 @@
-package com.karyakita.karyakita_android_new.customer.karya;
+package com.karyakita.karyakita_android_new.customer.pesanan_saya;
 
 import android.util.Log;
 
 import com.karyakita.karyakita_android_new.base.BaseModel;
 import com.karyakita.karyakita_android_new.base.GlobalVariable;
 import com.karyakita.karyakita_android_new.base.IMainPresenter;
+import com.karyakita.karyakita_android_new.customer.karya.ListKaryaModel;
+
 import com.karyakita.karyakita_android_new.service.IRestServices;
 import com.karyakita.karyakita_android_new.service.RetrofitHelper;
-
 import java.util.Map;
+import java.util.Observable;
 
-import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.annotations.NonNull;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.observers.DisposableObserver;
 import io.reactivex.schedulers.Schedulers;
 
 import static android.support.constraint.Constraints.TAG;
 
-public class ListKaryaPresenter implements IMainPresenter {
-    IListKaryaView iListKaryaView;
+public class PesananSayaPresenter implements IMainPresenter {
+    IPesananSayaView iPesananSayaView;
     BaseModel model = null;
-    ListKaryaModel listKaryaModel = null;
+    PesananSayaModel pesananSayaModel = null;
     Map<String, String> input;
 
-    public ListKaryaPresenter(IListKaryaView iListKaryaView) {
-        this.iListKaryaView = iListKaryaView;
+    public PesananSayaPresenter(IPesananSayaView iPesananSayaView){
+        this.iPesananSayaView = iPesananSayaView;
     }
 
     @Override
-    public void get(Map<String, String> dataInput) {
-        getObservable().subscribeWith(getObserver());
+    public void get(Map<String, String> dataInputs) {
+
     }
 
     @Override
@@ -41,30 +42,29 @@ public class ListKaryaPresenter implements IMainPresenter {
     @Override
     public void insert(Map<String, String> dataInput) {
 
-
     }
 
-    public Observable<ListKaryaResultModel> getObservable() {
+    public io.reactivex.Observable<PesananSayaResultModel> getObservable(){
         return RetrofitHelper.getRetrofit().create(IRestServices.class)
-                .getListKaryaByKategori("Bearer " + GlobalVariable.TOKEN, 1)
+                .getPesananSaya("Bearer" + GlobalVariable.TOKEN)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }
 
-    public DisposableObserver<ListKaryaResultModel> getObserver() {
-        return new DisposableObserver<ListKaryaResultModel>() {
-
+    public DisposableObserver<PesananSayaResultModel> getObserver(){
+        return new DisposableObserver<PesananSayaResultModel>() {
             @Override
-            public void onNext(@NonNull ListKaryaResultModel listKaryaResultModel) {
-                Log.d(TAG, "OnNext" + listKaryaResultModel.getData().get(0).getNama());
-                iListKaryaView.display(listKaryaResultModel);
+            public void onNext(PesananSayaResultModel pesananSayaResultModel) {
+                Log.d(TAG, "onNext" + pesananSayaResultModel.getData().get(0).getId());
+                iPesananSayaView.display(pesananSayaResultModel);
             }
 
             @Override
-            public void onError(@NonNull Throwable e) {
-                Log.d(TAG, "Error" + e);
+            public void onError(Throwable e) {
+                Log.d(TAG, "Error " + e);
                 e.printStackTrace();
-                iListKaryaView.displayError("Error fetching List Karya");
+                iPesananSayaView.displayError("Error fetching Data Pesanan");
+
             }
 
             @Override

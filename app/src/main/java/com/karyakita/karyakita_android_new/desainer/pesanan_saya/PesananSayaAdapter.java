@@ -1,6 +1,5 @@
 package com.karyakita.karyakita_android_new.desainer.pesanan_saya;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -30,7 +29,7 @@ public class PesananSayaAdapter extends RecyclerView.Adapter<PesananSayaAdapter.
     @NonNull
     @Override
     public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.cardview_daftar_pesanan, parent, false);
+        View v = LayoutInflater.from(context).inflate(R.layout.cardview_pesanan_saya_customer, parent, false);
          return new Holder(v);
     }
 

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="10dp"
+        android:background="@drawable/rounded_stroke_black">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/iv_gambar_pesanan"
+            android:layout_width="200dp"
+            android:layout_height="120dp"
+            android:layout_weight="5"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:src="@drawable/image_asset_1"/>
+
+        <TextView
+            android:id="@+id/tv_nama_desainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimens_8dp"
+            android:layout_marginTop="@dimen/dimens_8dp"
+            android:layout_marginRight="@dimen/dimens_8dp"
+            android:text="Ariana Summer Vacations"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tv_kategori_pesanan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimens_8dp"
+            android:layout_marginRight="@dimen/dimens_8dp"
+            android:textColor="@color/blue_500"
+            android:text="#WPAP #VectorArt"/>
+
+        <TextView
+            android:id="@+id/tv_harga_pesanan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimens_8dp"
+            android:layout_marginRight="@dimen/dimens_8dp"
+            android:text="Rp55.000"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/tv_deadline_pesanan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimens_8dp"
+            android:layout_marginRight="@dimen/dimens_8dp"
+            android:text="25 Desember 2018"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"/>
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+            android:id="@+id/tv_jenis_pesanan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimens_8dp"
+            android:layout_marginRight="@dimen/dimens_8dp"
+            android:text="Langsung"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"/>
+
+            <TextView
+                android:id="@+id/tv_opsi_pesanan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimens_8dp"
+                android:layout_marginRight="@dimen/dimens_8dp"
+                android:text="Bingkai"
+                android:textStyle="bold"
+                android:layout_marginBottom="20dp"/>
+
+        </android.support.v7.widget.LinearLayoutCompat>
+
+
+
+    </android.support.v7.widget.LinearLayoutCompat>
+</android.support.v7.widget.CardView>
