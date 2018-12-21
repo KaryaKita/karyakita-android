@@ -6,10 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.login.LoginActivity;
+import com.karyakita.karyakita_android_new.login_as.LoginAsActivity;
+import com.karyakita.karyakita_android_new.register_as.RegisterAsActivity;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -20,6 +23,9 @@ import butterknife.ButterKnife;
 public class RegisterActivity extends AppCompatActivity implements IRegisterView {
     RegisterPresenter registerPresenter = null;
     RegisterModel registerModel = null;
+
+    @BindView(R.id.masukAkun)
+    TextView masukAkun;
     @BindView(R.id.et_nama_lengkap_register)
     EditText et_nama_lengkap_register;
     @BindView(R.id.et_email_register)
@@ -50,6 +56,14 @@ public class RegisterActivity extends AppCompatActivity implements IRegisterView
                 finish();
                 Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                 intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
+
+        masukAkun.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RegisterActivity.this, LoginAsActivity.class);
                 startActivity(intent);
             }
         });

@@ -51,7 +51,7 @@ public interface IRestServices {
     );
 
     @FormUrlEncoded
-    @POST("user/login")
+    @POST("login")
     io.reactivex.Observable<LoginResultModel> login(@Field("email") String email,
                                                     @Field("password") String password,
                                                     @Field("role_id") Integer role_id);

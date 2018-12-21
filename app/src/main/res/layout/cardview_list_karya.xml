@@ -60,7 +60,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="end"
-                    android:paddingRight="@dimen/dimens_10dp"
+                    android:paddingRight="@dimen/dimens_8dp"
                     android:text="Rp.120.000,-"
                     android:textStyle="bold" />
             </LinearLayout>
