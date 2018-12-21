@@ -35,7 +35,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
                 android:layout_marginTop="15dp"
                 android:src="@drawable/ic_arrow_back_black_24dp" />
 
@@ -60,13 +60,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="270dp"
                             android:contentDescription="@string/nav_header_desc"
-                            android:paddingTop="@dimen/nav_header_vertical_spacing"
+                            android:paddingTop="@dimen/dimens_8dp"
                             android:src="@drawable/image_asset_4" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
+                            android:layout_marginStart="10dp"
                             android:layout_marginTop="15dp"
                             android:text="Color WPAP - Mesut Ozil"
                             android:textSize="20sp"
