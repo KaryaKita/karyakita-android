@@ -63,83 +63,83 @@ public class PesananSayaModel extends BaseModel {
         this.deploy_url = deploy_url;
     }
 
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public void setUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public void setDeadline(Date deadline) {
-        this.deadline = deadline;
-    }
-
-    public void setNama(String nama) {
-        this.nama = nama;
-    }
-
-    public void setUkuran_kertas(String ukuran_kertas) {
-        this.ukuran_kertas = ukuran_kertas;
-    }
-
-    public void setOpsi_bingkai(String opsi_bingkai) {
-        this.opsi_bingkai = opsi_bingkai;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
-
-    public void setJenis_order_id(Integer jenis_order_id){
-        this.jenis_order_id = jenis_order_id;
+    public String getDeploy_url() {
+        return deploy_url;
     }
 
     public void setDeploy_url(String deploy_url) {
         this.deploy_url = deploy_url;
     }
 
-    public String getDeploy_url() {
-        return deploy_url;
-    }
-
     public String getCreatedAt() {
         return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
     }
 
     public String getUpdatedAt() {
         return updatedAt;
     }
 
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
     public Integer getId() {
         return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public Date getDeadline() {
         return deadline;
     }
 
+    public void setDeadline(Date deadline) {
+        this.deadline = deadline;
+    }
+
     public String getNama() {
         return nama;
+    }
+
+    public void setNama(String nama) {
+        this.nama = nama;
     }
 
     public String getUkuran_kertas() {
         return ukuran_kertas;
     }
 
+    public void setUkuran_kertas(String ukuran_kertas) {
+        this.ukuran_kertas = ukuran_kertas;
+    }
+
     public String getOpsi_bingkai() {
         return opsi_bingkai;
+    }
+
+    public void setOpsi_bingkai(String opsi_bingkai) {
+        this.opsi_bingkai = opsi_bingkai;
     }
 
     public Integer getStatus() {
         return status;
     }
 
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
     public Integer getJenis_order_id() {
         return jenis_order_id;
+    }
+
+    public void setJenis_order_id(Integer jenis_order_id) {
+        this.jenis_order_id = jenis_order_id;
     }
 }

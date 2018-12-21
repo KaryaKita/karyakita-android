@@ -1,17 +1,12 @@
 package com.karyakita.karyakita_android_new.customer.pesan_custom;
 
 import android.util.Log;
-import android.widget.Button;
 
-import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.base.BaseModel;
 import com.karyakita.karyakita_android_new.base.IMainPresenter;
-import com.karyakita.karyakita_android_new.service.IRestServices;
-import com.karyakita.karyakita_android_new.service.RetrofitHelper;
 
 import java.util.Map;
 
-import butterknife.BindView;
 import io.reactivex.observers.DisposableObserver;
 
 public class PesanCustomPresenter implements IMainPresenter {
@@ -19,10 +14,10 @@ public class PesanCustomPresenter implements IMainPresenter {
     IPesanCustomView iPesanCustomView;
     BaseModel model;
     PesanCustomModel pesanCustomModel = null;
-    Map<String, String>input;
+    Map<String, String> input;
     Integer karya_id = null;
 
-    public PesanCustomPresenter(IPesanCustomView iPesanCustomView){
+    public PesanCustomPresenter(IPesanCustomView iPesanCustomView) {
         this.iPesanCustomView = iPesanCustomView;
     }
 
@@ -49,12 +44,12 @@ public class PesanCustomPresenter implements IMainPresenter {
 //                        this.input.get"pilih_ukuran"));
 ////    }(
 
-    public DisposableObserver<PesanCustomResultModel>getObserver(){
+    public DisposableObserver<PesanCustomResultModel> getObserver() {
         return new DisposableObserver<PesanCustomResultModel>() {
             @Override
             public void onNext(PesanCustomResultModel pesanCustomResultModel) {
                 iPesanCustomView.display(pesanCustomResultModel);
-                Log.d("tag","success");
+                Log.d("tag", "success");
             }
 
             @Override

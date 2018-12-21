@@ -13,10 +13,10 @@ import android.widget.Toast;
 
 import com.karyakita.karyakita_android_new.R;
 
+import static com.karyakita.karyakita_android_new.base.Constants.STATUS_ERROR;
 import static com.karyakita.karyakita_android_new.base.Constants.STATUS_INFO;
 import static com.karyakita.karyakita_android_new.base.Constants.STATUS_SUCCESS;
 import static com.karyakita.karyakita_android_new.base.Constants.STATUS_WARNING;
-import static com.karyakita.karyakita_android_new.base.Constants.STATUS_ERROR;
 
 public class BaseToaster {
     private BaseToaster instance;

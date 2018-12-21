@@ -47,8 +47,8 @@
                 <ScrollView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layoutMode="clipBounds"
-                    android:layout_marginBottom="50dp">
+                    android:layout_marginBottom="50dp"
+                    android:layoutMode="clipBounds">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -118,9 +118,9 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="0.5dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="10dp"
-                            android:layout_marginLeft="0.5dp"
                             android:orientation="horizontal">
 
                             <ImageView
@@ -151,10 +151,10 @@
                                     android:id="@+id/editText3"
                                     android:layout_width="319dp"
                                     android:layout_height="wrap_content"
-                                    android:textSize="15dp"
                                     android:ems="10"
                                     android:hint="Masukkan Alamat Lengkap"
-                                    android:inputType="textPostalAddress" />
+                                    android:inputType="textPostalAddress"
+                                    android:textSize="15dp" />
 
                                 <LinearLayout
                                     android:layout_width="319dp"
@@ -174,8 +174,8 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="25dp"
                                         android:layout_weight="1"
-                                        android:theme="@style/Spinner"
-                                        android:entries="@array/opsi_provinsi"/>
+                                        android:entries="@array/opsi_provinsi"
+                                        android:theme="@style/Spinner" />
                                 </LinearLayout>
 
                                 <LinearLayout
@@ -196,8 +196,8 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="25dp"
                                         android:layout_weight="1"
-                                        android:theme="@style/Spinner"
-                                        android:entries="@array/opsi_kabupaten" />
+                                        android:entries="@array/opsi_kabupaten"
+                                        android:theme="@style/Spinner" />
                                 </LinearLayout>
 
                                 <LinearLayout
@@ -218,8 +218,8 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="25dp"
                                         android:layout_weight="1"
-                                        android:theme="@style/Spinner"
-                                        android:entries="@array/opsi_kecamatan" />
+                                        android:entries="@array/opsi_kecamatan"
+                                        android:theme="@style/Spinner" />
                                 </LinearLayout>
 
                                 <LinearLayout
@@ -277,10 +277,10 @@
 
                             <Spinner
                                 android:layout_width="wrap_content"
-                                android:layout_marginLeft="15dp"
                                 android:layout_height="30dp"
-                                android:theme="@style/Spinner"
-                                android:entries="@array/jenis_pengiriman"></Spinner>
+                                android:layout_marginLeft="15dp"
+                                android:entries="@array/jenis_pengiriman"
+                                android:theme="@style/Spinner"></Spinner>
                         </LinearLayout>
 
                         <LinearLayout
@@ -303,9 +303,9 @@
 
                         <EditText
                             android:layout_width="120dp"
-                            android:textSize="15dp"
+                            android:layout_height="40dp"
                             android:layout_marginLeft="20dp"
-                            android:layout_height="40dp" />
+                            android:textSize="15dp" />
 
                     </LinearLayout>
                 </ScrollView>

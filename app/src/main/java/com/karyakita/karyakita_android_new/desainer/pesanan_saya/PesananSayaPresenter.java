@@ -5,7 +5,6 @@ import android.util.Log;
 import com.karyakita.karyakita_android_new.base.BaseModel;
 import com.karyakita.karyakita_android_new.base.GlobalVariable;
 import com.karyakita.karyakita_android_new.base.IMainPresenter;
-import com.karyakita.karyakita_android_new.desainer.list_desainer.ListDesainerResultModel;
 import com.karyakita.karyakita_android_new.service.IRestServices;
 import com.karyakita.karyakita_android_new.service.RetrofitHelper;
 
@@ -18,7 +17,7 @@ import io.reactivex.schedulers.Schedulers;
 
 import static android.support.constraint.Constraints.TAG;
 
-public class PesananSayaPresenter implements IMainPresenter{
+public class PesananSayaPresenter implements IMainPresenter {
     IPesananSayaView iPesananSayaView;
     BaseModel model = null;
     PesananSayaModel pesananSayaModel = null;

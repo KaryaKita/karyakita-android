@@ -19,13 +19,10 @@ import butterknife.ButterKnife;
 public class ListDesainerActivity extends AppCompatActivity implements IListDesainerView {
     ListDesainerPresenter listDesainerPresenter = null;
     ListKaryaModel listKaryaModel = null;
-
-    private String TAG = "ListDesainerActivity";
-
     @BindView(R.id.rv_list_desainer)
     RecyclerView rv_list_desainer;
-
     ListDesainerModel listDesainerModel = null;
+    private String TAG = "ListDesainerActivity";
 
     protected void onCreateView(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

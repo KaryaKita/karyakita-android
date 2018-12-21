@@ -12,7 +12,6 @@ import android.widget.Toast;
 import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.login.LoginActivity;
 import com.karyakita.karyakita_android_new.login_as.LoginAsActivity;
-import com.karyakita.karyakita_android_new.register_as.RegisterAsActivity;
 
 import java.util.HashMap;
 import java.util.Map;

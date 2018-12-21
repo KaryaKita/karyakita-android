@@ -25,12 +25,12 @@
 
                 <android.support.v7.widget.Toolbar
                     android:id="@+id/toolbar"
-                    android:elevation="1dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
-                    app:titleTextColor="@color/mainColor"
-                    app:popupTheme="@style/AppTheme.PopupOverlay" />
+                    android:elevation="1dp"
+                    app:popupTheme="@style/AppTheme.PopupOverlay"
+                    app:titleTextColor="@color/mainColor" />
             </android.support.design.widget.AppBarLayout>
 
             <ImageView
@@ -55,8 +55,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="27dp"
-                        android:layout_marginRight="15dp"
                         android:layout_marginTop="20dp"
+                        android:layout_marginRight="15dp"
                         android:text="PROVINSI"
                         android:textSize="14dp"
                         android:textStyle="bold" />
@@ -67,8 +67,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
-                        android:layout_marginRight="15dp"
                         android:layout_marginTop="3dp"
+                        android:layout_marginRight="15dp"
                         android:backgroundTint="@color/mainColor"
                         android:entries="@array/opsi_provinsi"
                         android:paddingLeft="0dp"
@@ -78,8 +78,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="27dp"
-                        android:layout_marginRight="15dp"
                         android:layout_marginTop="20dp"
+                        android:layout_marginRight="15dp"
                         android:text="KOTA / KABUPATEN"
                         android:textSize="14dp"
                         android:textStyle="bold" />
@@ -90,8 +90,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
-                        android:layout_marginRight="15dp"
                         android:layout_marginTop="3dp"
+                        android:layout_marginRight="15dp"
                         android:backgroundTint="@color/mainColor"
                         android:entries="@array/opsi_kabupaten"
                         android:paddingLeft="0dp"
@@ -101,8 +101,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="27dp"
-                        android:layout_marginRight="15dp"
                         android:layout_marginTop="20dp"
+                        android:layout_marginRight="15dp"
                         android:text="KECAMATAN"
                         android:textSize="14dp"
                         android:textStyle="bold" />
@@ -113,8 +113,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
-                        android:layout_marginRight="15dp"
                         android:layout_marginTop="3dp"
+                        android:layout_marginRight="15dp"
                         android:backgroundTint="@color/mainColor"
                         android:entries="@array/opsi_kecamatan"
                         android:paddingLeft="0dp"
@@ -124,8 +124,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="27dp"
-                        android:layout_marginRight="15dp"
                         android:layout_marginTop="20dp"
+                        android:layout_marginRight="15dp"
                         android:text="ALAMAT"
                         android:textSize="14dp"
                         android:textStyle="bold" />
@@ -135,8 +135,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="23dp"
-                        android:layout_marginRight="15dp"
                         android:layout_marginTop="3dp"
+                        android:layout_marginRight="15dp"
                         android:backgroundTint="@color/mainColor"
                         android:ems="10"
                         android:hint="Masukkan Nama Jalan, Gedung, Nomor, RT RW"
@@ -149,8 +149,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="27dp"
-                        android:layout_marginRight="15dp"
                         android:layout_marginTop="20dp"
+                        android:layout_marginRight="15dp"
                         android:text="OPSI PENGIRIMAN"
                         android:textSize="14dp"
                         android:textStyle="bold" />
@@ -161,8 +161,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
-                        android:layout_marginRight="15dp"
                         android:layout_marginTop="5dp"
+                        android:layout_marginRight="15dp"
                         android:backgroundTint="@color/mainColor"
                         android:entries="@array/opsi_pengiriman"
                         android:paddingLeft="0dp"
@@ -174,16 +174,15 @@
 
             <Button
                 android:id="@+id/btnPesan"
-                android:layout_marginBottom="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginLeft="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
                 android:background="@drawable/rounded_border"
-                android:textColor="@color/white"
                 android:text="Pesan"
-                />
+                android:textColor="@color/white" />
         </RelativeLayout>
     </android.support.design.widget.CoordinatorLayout>
 </android.support.v4.widget.DrawerLayout>

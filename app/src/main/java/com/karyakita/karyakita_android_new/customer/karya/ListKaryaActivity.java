@@ -18,13 +18,10 @@ import butterknife.ButterKnife;
 public class ListKaryaActivity extends AppCompatActivity implements IListKaryaView {
     ListKaryaPresenter listKaryaPresenter = null;
     LoginResultModel loginResultModel = null;
-
-    private String TAG = "ListKaryaActivity";
-
     @BindView(R.id.rv_list_karya)
     RecyclerView rv_list_karya;
-
     ListKaryaModel listKaryaModel = null;
+    private String TAG = "ListKaryaActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

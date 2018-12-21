@@ -36,9 +36,9 @@ public class BaseModelPojo implements Parcelable, IBaseModel {
     }
 
     protected BaseModelPojo(Parcel in) {
-        this.id         = in.readInt();
-        this.createdAt  = in.readString();
-        this.updatedAt  = in.readString();
+        this.id = in.readInt();
+        this.createdAt = in.readString();
+        this.updatedAt = in.readString();
     }
 
     public int getId() {

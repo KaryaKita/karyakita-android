@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".customer.transaksi.KonfirmasiDesainActivity"
-    android:background="@color/white">
+    android:background="@color/white"
+    tools:context=".customer.transaksi.KonfirmasiDesainActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -28,9 +28,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:textSize="24dp"
+                    android:text="Apakah pesananmu sudah sesuai keinginanmu?"
                     android:textColor="@color/black"
-                    android:text="Apakah pesananmu sudah sesuai keinginanmu?" />
+                    android:textSize="24dp" />
 
             </LinearLayout>
 
@@ -41,9 +41,9 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_marginTop="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="300dp"
+                    android:layout_marginTop="10dp"
                     android:layout_weight="1"
                     android:src="@drawable/image_asset_4" />
 
@@ -53,17 +53,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:textSize="16dp"
-                android:text="Catatan apabila ada revisi (Optional)" />
+                android:text="Catatan apabila ada revisi (Optional)"
+                android:textSize="16dp" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:inputType="text"
+                android:backgroundTint="@color/mainColor"
                 android:hint="Warna,Bentuk,Tulisan"
-                android:textSize="14dp"
-                android:backgroundTint="@color/mainColor" />
+                android:inputType="text"
+                android:textSize="14dp" />
 
         </LinearLayout>
     </ScrollView>
@@ -80,29 +80,29 @@
             android:weightSum="2">
 
             <Button
-                android:layout_marginBottom="5dp"
-                android:layout_marginRight="3dp"
-                android:layout_marginLeft="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/rounded_border"
                 android:text="Revisi"
-                android:textColor="@color/white"/>
+                android:textColor="@color/white" />
 
             <View
                 android:layout_width="1dp"
                 android:layout_height="match_parent" />
 
             <Button
-                android:layout_marginBottom="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginLeft="3dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
                 android:layout_weight="1"
-                android:text="Konfirmasi"
                 android:background="@drawable/rounded_stroke_orange"
+                android:text="Konfirmasi"
                 android:textColor="@color/mainColor" />
         </LinearLayout>
     </RelativeLayout>
