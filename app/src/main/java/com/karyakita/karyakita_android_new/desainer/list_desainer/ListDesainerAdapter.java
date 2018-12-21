@@ -10,10 +10,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.customer.karya.DetailKaryaActivity;
-import com.karyakita.karyakita_android_new.customer.karya.ListKaryaModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +28,7 @@ public class ListDesainerAdapter extends RecyclerView.Adapter<ListDesainerAdapte
     @NonNull
     @Override
     public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.cardview_list_desainer2, parent, false);
+        View v = LayoutInflater.from(context).inflate(R.layout.cardview_list_desainer, parent, false);
         return new Holder(v);
     }
 
