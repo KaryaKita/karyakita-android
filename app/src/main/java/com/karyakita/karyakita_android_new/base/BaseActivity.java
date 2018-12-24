@@ -2,8 +2,6 @@ package com.karyakita.karyakita_android_new.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -11,7 +9,7 @@ import android.widget.TextView;
 
 import com.karyakita.karyakita_android_new.R;
 
-public abstract class BaseActivity extends AppCompatActivity implements IBaseFragmentListener{
+public abstract class BaseActivity extends AppCompatActivity implements IBaseFragmentListener {
 
     protected TextView tvToolbarTitle;
     protected BaseFragment currentFragment;

@@ -32,7 +32,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".customer.home.HomeCustomerActivity" />
-        <activity android:name=".customer.SearchActivity"/>
+        <activity android:name=".customer.SearchActivity" />
         <activity android:name=".login_as.LoginAsActivity" />
         <activity android:name=".login.LoginActivity" />
         <activity android:name=".register.RegisterActivity" />
@@ -47,7 +47,6 @@
         <activity android:name=".customer.CustomerNotifikasiActivity" />
         <activity android:name=".customer.data_pengiriman.DataPengirimanCustomerActivity" />
         <activity android:name=".desainer.home.HomeDesainerActivity" />
-        <activity android:name=".example.TestActivity" />
         <activity android:name=".desainer.transaksi.UploadBiasaDesainerActivity" />
         <activity android:name=".desainer.transaksi.DesainerTransaksiSelesaiActivity" />
         <activity android:name=".desainer.transaksi.FormUploadKaryaDesaigner" />

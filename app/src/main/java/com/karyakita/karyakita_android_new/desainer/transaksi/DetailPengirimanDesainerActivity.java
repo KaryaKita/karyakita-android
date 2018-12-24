@@ -2,6 +2,7 @@ package com.karyakita.karyakita_android_new.desainer.transaksi;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+
 import com.karyakita.karyakita_android_new.R;
 
 import butterknife.ButterKnife;
@@ -10,6 +11,7 @@ public class DetailPengirimanDesainerActivity extends AppCompatActivity implemen
 
     DetailPengirimanModel detailPengirimanModel = null;
     DetailPengirimanPresenter detailPengirimanPresenter = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

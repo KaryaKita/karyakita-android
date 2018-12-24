@@ -17,8 +17,6 @@ import com.karyakita.karyakita_android_new.R;
 import java.util.ArrayList;
 import java.util.List;
 
-import retrofit2.http.HEAD;
-
 public class ListKaryaAdapter extends RecyclerView.Adapter<ListKaryaAdapter.Holder> {
     List<ListKaryaModel> listKaryaModelList;
     List<KategoriKaryaModel> kategoriKaryaModelList;
@@ -67,7 +65,7 @@ public class ListKaryaAdapter extends RecyclerView.Adapter<ListKaryaAdapter.Hold
 
             iv_listKarya = itemView.findViewById(R.id.iv_gambar_karya);
             tv_judulkarya = itemView.findViewById(R.id.iv_judul_karya);
-            tv_kategorikarya=itemView.findViewById(R.id.iv_category_karya);
+            tv_kategorikarya = itemView.findViewById(R.id.iv_category_karya);
             tv_hargakarya = itemView.findViewById(R.id.iv_hargakarya);
         }
 

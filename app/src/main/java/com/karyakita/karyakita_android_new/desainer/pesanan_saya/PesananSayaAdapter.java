@@ -18,19 +18,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PesananSayaAdapter extends RecyclerView.Adapter<PesananSayaAdapter.Holder> {
-     List<PesananSayaModel> pesananSayaModelList;
-     Context context;
+    List<PesananSayaModel> pesananSayaModelList;
+    Context context;
 
-     public PesananSayaAdapter(List<PesananSayaModel> pesananSayaModelList, Context context) {
-         this.pesananSayaModelList = new ArrayList<>();
-         this.context = context;
-     }
+    public PesananSayaAdapter(List<PesananSayaModel> pesananSayaModelList, Context context) {
+        this.pesananSayaModelList = new ArrayList<>();
+        this.context = context;
+    }
 
     @NonNull
     @Override
     public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.cardview_pesanan_saya_customer, parent, false);
-         return new Holder(v);
+        View v = LayoutInflater.from(context).inflate(R.layout.cardview_daftar_pesanan, parent, false);
+        return new Holder(v);
     }
 
     @Override
@@ -49,43 +49,43 @@ public class PesananSayaAdapter extends RecyclerView.Adapter<PesananSayaAdapter.
     }
 
     public void addToList(PesananSayaModel pesananSayaModel) {
-         pesananSayaModelList.add(pesananSayaModel);
+        pesananSayaModelList.add(pesananSayaModel);
     }
 
     public class Holder extends RecyclerView.ViewHolder implements View.OnClickListener {
-         ImageView iv_gambarPesanan;
-         TextView tv_judulKarya, tv_deadline, tv_ukuranKarya, tv_opsiBingkai, tv_jenisPesanan;
+        ImageView iv_gambarPesanan;
+        TextView tv_judulKarya, tv_deadline, tv_ukuranKarya, tv_opsiBingkai, tv_jenisPesanan;
 
-         public Holder(View itemView){
-             super(itemView);
-             context = itemView.getContext();
+        public Holder(View itemView) {
+            super(itemView);
+            context = itemView.getContext();
 
-             itemView.setOnClickListener(this);
+            itemView.setOnClickListener(this);
 
-             iv_gambarPesanan = itemView.findViewById(R.id.iv_pesanan);
-             tv_judulKarya = itemView.findViewById(R.id.tv_judul_karya);
-             tv_deadline = itemView.findViewById(R.id.tv_deadline);
-             tv_ukuranKarya = itemView.findViewById((R.id.tv_ukuran_karya));
-             tv_opsiBingkai = itemView.findViewById((R.id.tv_opsi_bingkai));
-             tv_jenisPesanan = itemView.findViewById((R.id.tv_jenis_pesanan));
-         }
+            iv_gambarPesanan = itemView.findViewById(R.id.iv_pesanan);
+            tv_judulKarya = itemView.findViewById(R.id.tv_judul_karya);
+            tv_deadline = itemView.findViewById(R.id.tv_deadline);
+            tv_ukuranKarya = itemView.findViewById((R.id.tv_ukuran_karya));
+            tv_opsiBingkai = itemView.findViewById((R.id.tv_opsi_bingkai));
+            tv_jenisPesanan = itemView.findViewById((R.id.tv_jenis_pesanan));
+        }
 
         @Override
         public void onClick(View v) {
             Integer position = getAdapterPosition();
             Intent intent = null;
 
-            if(position != RecyclerView.NO_POSITION){
+            if (position != RecyclerView.NO_POSITION) {
                 Bundle bundle = new Bundle();
                 bundle.putInt("pesanan_id", pesananSayaModelList.get(position).getId());
 
-                if(pesananSayaModelList.get(position).getJenis_order_id() == 1){
+                if (pesananSayaModelList.get(position).getJenis_order_id() == 1) {
                     intent = new Intent(context.getApplicationContext(), TerimaPesananActivity.class);
                 }
-                if(pesananSayaModelList.get(position).getJenis_order_id() == 2){
+                if (pesananSayaModelList.get(position).getJenis_order_id() == 2) {
                     intent = new Intent(context.getApplicationContext(), InputHargaActivity.class);
                 }
-               intent.putExtras(bundle);
+                intent.putExtras(bundle);
                 context.startActivity(intent);
             }
         }

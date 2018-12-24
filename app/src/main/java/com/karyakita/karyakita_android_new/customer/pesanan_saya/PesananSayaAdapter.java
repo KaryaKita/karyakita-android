@@ -11,11 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.karyakita.karyakita_android_new.R;
-import com.karyakita.karyakita_android_new.customer.karya.KategoriKaryaModel;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,7 +47,7 @@ public class PesananSayaAdapter extends RecyclerView.Adapter<PesananSayaAdapter.
         return this.pesananSayaModelList.size();
     }
 
-    public void addToList(PesananSayaModel pesananSayaModel){
+    public void addToList(PesananSayaModel pesananSayaModel) {
         pesananSayaModelList.add(pesananSayaModel);
     }
 
@@ -59,7 +55,7 @@ public class PesananSayaAdapter extends RecyclerView.Adapter<PesananSayaAdapter.
         ImageView iv_gambar;
         TextView tv_nama_desainer, tv_kategori, tv_harga, tv_deadline, tv_jenis_pesanan, tv_opsi_pesanan;
 
-        public Holder(View itemView){
+        public Holder(View itemView) {
             super(itemView);
             context = itemView.getContext();
 
@@ -74,11 +70,12 @@ public class PesananSayaAdapter extends RecyclerView.Adapter<PesananSayaAdapter.
             tv_opsi_pesanan = itemView.findViewById(R.id.tv_opsi_pesanan);
 
         }
+
         @Override
         public void onClick(View v) {
             Integer position = getAdapterPosition();
 
-            if(position != RecyclerView.NO_POSITION) {
+            if (position != RecyclerView.NO_POSITION) {
                 Bundle bundle = new Bundle();
                 bundle.putInt("pesanan_id", pesananSayaModelList.get(position).getId());
                 Intent intent = new Intent(context.getApplicationContext(), DetailPesananSayaActivity.class);

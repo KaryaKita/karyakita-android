@@ -3,7 +3,6 @@ package com.karyakita.karyakita_android_new.desainer.pesanan_saya;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.karyakita.karyakita_android_new.base.BaseModel;
-import com.karyakita.karyakita_android_new.login.LoginModel;
 
 public class PesananSayaResultModel extends BaseModel {
     @SerializedName("success")
@@ -32,35 +31,35 @@ public class PesananSayaResultModel extends BaseModel {
         this.token = token;
     }
 
-    public void setSuccess(Boolean success) {
-        this.success = success;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public void setData(PesananSayaModel data) {
-        this.data = data;
-    }
-
-    public void setToken(String token) {
-        this.token = token;
-    }
-
     public Boolean getSuccess() {
         return success;
+    }
+
+    public void setSuccess(Boolean success) {
+        this.success = success;
     }
 
     public String getMessage() {
         return message;
     }
 
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
     public PesananSayaModel getData() {
         return data;
     }
 
+    public void setData(PesananSayaModel data) {
+        this.data = data;
+    }
+
     public String getToken() {
         return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }
