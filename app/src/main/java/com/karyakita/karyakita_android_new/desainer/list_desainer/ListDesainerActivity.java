@@ -6,14 +6,9 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.Menu;
 
 import com.karyakita.karyakita_android_new.R;
-import com.karyakita.karyakita_android_new.customer.karya.ListKaryaActivity;
-import com.karyakita.karyakita_android_new.customer.karya.ListKaryaAdapter;
 import com.karyakita.karyakita_android_new.customer.karya.ListKaryaModel;
-import com.karyakita.karyakita_android_new.customer.karya.ListKaryaPresenter;
-import com.karyakita.karyakita_android_new.customer.karya.ListKaryaResultModel;
 import com.karyakita.karyakita_android_new.login.LoginResultModel;
 
 import java.util.List;
@@ -21,18 +16,15 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class ListDesainerActivity extends AppCompatActivity implements IListDesainerView{
+public class ListDesainerActivity extends AppCompatActivity implements IListDesainerView {
     ListDesainerPresenter listDesainerPresenter = null;
     ListKaryaModel listKaryaModel = null;
-
-    private String TAG = "ListDesainerActivity";
-
     @BindView(R.id.rv_list_desainer)
     RecyclerView rv_list_desainer;
-
     ListDesainerModel listDesainerModel = null;
+    private String TAG = "ListDesainerActivity";
 
-    protected void onCreateView(Bundle savedInstanceState){
+    protected void onCreateView(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_desainer_customer);
         ButterKnife.bind(this);
@@ -48,13 +40,6 @@ public class ListDesainerActivity extends AppCompatActivity implements IListDesa
         //setupView();
         //setupPresenter();
         //getListDesainer();
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
     }
 
     @Override

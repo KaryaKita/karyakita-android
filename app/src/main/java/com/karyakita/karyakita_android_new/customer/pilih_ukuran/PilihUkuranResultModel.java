@@ -15,12 +15,12 @@ public class PilihUkuranResultModel extends BaseModel {
 
     @SerializedName("data")
     @Expose
-    private  PilihUkuranModel data;
+    private PilihUkuranModel data;
 
-    public PilihUkuranResultModel(Boolean success, String message, PilihUkuranModel data){
+    public PilihUkuranResultModel(Boolean success, String message, PilihUkuranModel data) {
         this.success = success;
         this.message = message;
-        this.data    = data;
+        this.data = data;
     }
 
     public Boolean getSuccess() {

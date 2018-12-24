@@ -120,13 +120,13 @@
                 <!--android:textStyle="bold" />-->
 
                 <!--<Spinner-->
-                    <!--android:id="@+id/Calendar"-->
-                    <!--style="@style/Base.Widget.AppCompat.Spinner.Underlined"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_gravity="center"-->
-                    <!--android:backgroundTint="@color/mainColor"-->
-                    <!--android:entries="@array/opsi_desain" />-->
+                <!--android:id="@+id/Calendar"-->
+                <!--style="@style/Base.Widget.AppCompat.Spinner.Underlined"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:backgroundTint="@color/mainColor"-->
+                <!--android:entries="@array/opsi_desain" />-->
 
                 <TextView
                     android:layout_width="match_parent"

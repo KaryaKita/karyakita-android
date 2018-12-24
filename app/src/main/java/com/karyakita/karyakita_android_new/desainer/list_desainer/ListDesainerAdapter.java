@@ -10,15 +10,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.customer.karya.DetailKaryaActivity;
-import com.karyakita.karyakita_android_new.customer.karya.ListKaryaModel;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListDesainerAdapter extends RecyclerView.Adapter<ListDesainerAdapter.Holder>{
+public class ListDesainerAdapter extends RecyclerView.Adapter<ListDesainerAdapter.Holder> {
     List<ListDesainerModel> listDesainerModelList;
     Context context;
 
@@ -30,7 +28,7 @@ public class ListDesainerAdapter extends RecyclerView.Adapter<ListDesainerAdapte
     @NonNull
     @Override
     public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.cardview_list_desainer2, parent, false);
+        View v = LayoutInflater.from(context).inflate(R.layout.cardview_list_desainer, parent, false);
         return new Holder(v);
     }
 
@@ -62,7 +60,7 @@ public class ListDesainerAdapter extends RecyclerView.Adapter<ListDesainerAdapte
 
             iv_listDesainer = itemView.findViewById(R.id.iv_profile_image);
             tv_nama_desainer = itemView.findViewById(R.id.tv_nama_desainer);
-            tv_kota_asal_desainer=itemView.findViewById(R.id.tv_kota_asal_desainer);
+            tv_kota_asal_desainer = itemView.findViewById(R.id.tv_kota_asal_desainer);
             tv_jumlah_karya = itemView.findViewById(R.id.tv_jumlah_karya);
             rating = itemView.findViewById(R.id.rating);
             iv_listDesainer.setOnClickListener(new View.OnClickListener() {

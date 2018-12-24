@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".customer.transaksi.TransaksiSelesaiActivity">
+
     <include layout="@layout/content_customer_transaksi_selesai_activity"></include>
 
 </android.support.constraint.ConstraintLayout>

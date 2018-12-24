@@ -48,7 +48,7 @@
 
                 <android.support.design.card.MaterialCardView
                     android:layout_width="match_parent"
-                    android:layout_height="240dp"
+                    android:layout_height="260dp"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="30dp"
@@ -59,7 +59,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
-                        android:layout_margin="@dimen/dimens_16dp"
+                        android:layout_margin="@dimen/dimens_12dp"
                         android:gravity="center"
                         android:orientation="vertical">
 
@@ -73,8 +73,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:drawableStart="@drawable/ic_akun"
-                                android:drawablePadding="8dp"
-                                android:hint="@string/username"
+                                android:drawablePadding="@dimen/dimens_8dp"
+                                android:hint="@string/email"
                                 android:inputType="text" />
                         </android.support.design.widget.TextInputLayout>
 
@@ -89,7 +89,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:drawableStart="@drawable/ic_password"
-                                android:drawablePadding="8dp"
+                                android:drawablePadding="@dimen/dimens_8dp"
                                 android:hint="@string/password"
                                 android:inputType="textPassword" />
                         </android.support.design.widget.TextInputLayout>
@@ -112,6 +112,7 @@
                             android:id="@+id/lupa_password"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dimens_8dp"
                             android:layout_marginTop="@dimen/dimens_8dp"
                             android:text="lupa password ?" />
 

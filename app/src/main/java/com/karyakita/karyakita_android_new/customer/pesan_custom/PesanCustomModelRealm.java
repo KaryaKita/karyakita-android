@@ -2,7 +2,7 @@ package com.karyakita.karyakita_android_new.customer.pesan_custom;
 
 import io.realm.RealmObject;
 
-public class PesanCustomModelRealm extends RealmObject{
+public class PesanCustomModelRealm extends RealmObject {
     private Integer id;
     private Integer kategori_id;
     private String image;

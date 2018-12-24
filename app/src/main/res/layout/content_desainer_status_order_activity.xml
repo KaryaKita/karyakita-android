@@ -42,8 +42,8 @@
                     android:id="@+id/imageView5"
                     android:layout_width="257dp"
                     android:layout_height="131dp"
-                    android:layout_weight="1"
                     android:layout_marginTop="15dp"
+                    android:layout_weight="1"
                     app:srcCompat="@drawable/logo" />
 
                 <LinearLayout
@@ -56,8 +56,8 @@
                         android:id="@+id/textView25"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
                         android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"
                         android:text="Sketsa lukisan" />
 
                     <TextView

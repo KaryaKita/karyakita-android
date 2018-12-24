@@ -4,7 +4,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.karyakita.karyakita_android_new.base.BaseModel;
 
-public class PesanCustomResultModel extends BaseModel{
+public class PesanCustomResultModel extends BaseModel {
     @SerializedName("success")
     @Expose
     private Boolean success;
@@ -17,10 +17,10 @@ public class PesanCustomResultModel extends BaseModel{
     @Expose
     private PesanCustomModel data;
 
-    public PesanCustomResultModel(Boolean success, String message, PesanCustomModel data){
+    public PesanCustomResultModel(Boolean success, String message, PesanCustomModel data) {
         this.success = success;
         this.message = message;
-        this.data    = data;
+        this.data = data;
     }
 
     public Boolean getSuccess() {

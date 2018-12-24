@@ -14,34 +14,34 @@
         android:id="@+id/tv_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_gravity="center"
-        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:text="Anda telah menerima pesanan ini"
         android:textColor="@color/black"
-        android:text="Anda telah menerima pesanan ini" />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tv_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textColor="@color/black"
-        android:text="Kami akan memberitahu customer" />
+        android:text="Kami akan memberitahu customer"
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/tv_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textColor="@color/black"
-        android:text="agar segera melakukan pembayaran" />
+        android:text="agar segera melakukan pembayaran"
+        android:textColor="@color/black" />
 
     <ImageView
         android:id="@+id/iv_pesanan_diterima"
         android:layout_width="180dp"
         android:layout_height="150dp"
-        android:layout_marginTop="75dp"
         android:layout_gravity="center"
+        android:layout_marginTop="75dp"
         app:srcCompat="@drawable/ic_delivery_truck" />
 
     <Button
@@ -50,8 +50,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="154dp"
-        android:textAllCaps="false"
         android:background="@color/yellow_900"
         android:text="Lihat Tugas Saya"
+        android:textAllCaps="false"
         android:textColor="@color/white" />
 </android.support.v7.widget.LinearLayoutCompat>

@@ -6,7 +6,6 @@ import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.TextView;
 
-
 import com.karyakita.karyakita_android_new.R;
 
 import static com.karyakita.karyakita_android_new.base.Constants.STATUS_ERROR;

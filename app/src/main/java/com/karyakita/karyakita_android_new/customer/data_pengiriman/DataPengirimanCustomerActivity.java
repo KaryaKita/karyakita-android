@@ -11,8 +11,6 @@ import android.widget.Spinner;
 
 import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.customer.PesananSelesai;
-import com.karyakita.karyakita_android_new.example.ITestView;
-import com.karyakita.karyakita_android_new.example.MovieResponse;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -69,7 +67,7 @@ public class DataPengirimanCustomerActivity extends AppCompatActivity implements
     public void displayError(String s) {
     }
 
-    private void setupPresenter(){
+    private void setupPresenter() {
         Map<String, String> inputan = new HashMap<String, String>();
         inputan.put("provinsi", prov.toString());
         inputan.put("kabupaten", kab.toString());
@@ -77,7 +75,7 @@ public class DataPengirimanCustomerActivity extends AppCompatActivity implements
         inputan.put("alamat", alamat.toString());
         inputan.put("opsipengiriman", opsipengiriman.toString());
 
-       dataPengirimanPresenter = new DataPengirimanPresenter(this);
+        dataPengirimanPresenter = new DataPengirimanPresenter(this);
         dataPengirimanPresenter.insert(inputan);
     }
 }
