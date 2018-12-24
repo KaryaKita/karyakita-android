@@ -14,6 +14,9 @@ import android.widget.Toast;
 
 import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.base.GlobalVariable;
+import com.karyakita.karyakita_android_new.customer.carousel.Carousel;
+import com.karyakita.karyakita_android_new.customer.carousel.CarouselAdapter;
+import com.karyakita.karyakita_android_new.customer.carousel.Item;
 import com.karyakita.karyakita_android_new.customer.home.HomePresenter;
 import com.karyakita.karyakita_android_new.customer.home.IHomeView;
 import com.karyakita.karyakita_android_new.customer.karya.IListKaryaView;
@@ -24,14 +27,16 @@ import com.karyakita.karyakita_android_new.customer.karya.ListKaryaAdapter;
 import com.karyakita.karyakita_android_new.customer.karya.ListKaryaModel;
 import com.karyakita.karyakita_android_new.customer.karya.ListKaryaPresenter;
 import com.karyakita.karyakita_android_new.customer.karya.ListKaryaResultModel;
+import com.yarolegovich.discretescrollview.DSVOrientation;
+import com.yarolegovich.discretescrollview.DiscreteScrollView;
+import com.yarolegovich.discretescrollview.InfiniteScrollAdapter;
+import com.yarolegovich.discretescrollview.transform.ScaleTransformer;
 
 import java.util.List;
 
-import retrofit2.http.HEAD;
-
 import static android.support.constraint.Constraints.TAG;
 
-public class CustomerBerandaFragment extends Fragment implements IHomeView, IListKaryaView {
+public class CustomerBerandaFragment extends Fragment implements IHomeView, IListKaryaView, DiscreteScrollView.OnItemChangedListener {
 
     HomePresenter homePresenter = null;
     ListKaryaPresenter listKaryaPresenter = null;
@@ -40,22 +45,58 @@ public class CustomerBerandaFragment extends Fragment implements IHomeView, ILis
     RecyclerView rv_kategori_home;
     RecyclerView rv_list_karya_customer;
 
+    DiscreteScrollView carouselScrollView;
+    InfiniteScrollAdapter infiniteScrollAdapter;
+    List<Item> data_image;
+    Carousel carousel;
+    CarouselAdapter carouselAdapter;
+
+    public CustomerBerandaFragment() {
+        // Required empty public constructor.
+    }
+
+    public static CustomerBerandaFragment newInstance() {
+        CustomerBerandaFragment fragment = new CustomerBerandaFragment();
+        return fragment;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_customer_beranda, container, false);
 
-//        rv_kategori_home = view.findViewById(R.id.rv_kategori_home);
         rv_kategori_home = view.findViewById(R.id.rv_kategori_home);
         rv_list_karya_customer = view.findViewById(R.id.rv_list_karya_customer);
         rv_kategori_home.setNestedScrollingEnabled(false);
         rv_list_karya_customer.setNestedScrollingEnabled(false);
+
+        carousel = new Carousel();
+        data_image = carousel.getData();
+//        Log.wtf(TAG, "Error Glide :" + String.valueOf(data_image.size()));
+//        Log.wtf(TAG, "DATA IMAGE NAME : " + data_image.get(0).getName());
+//        Log.wtf(TAG, "DATA IMAGE IMAGE = " + data_image.get(0).getImage());
 
         setUpPresenter();
         setUpView();
         setUpViewListKarya();
         getGridViewHome();
         getListKarya();
+
+        carouselScrollView = (DiscreteScrollView) view.findViewById(R.id.carousel_scroll_view);
+        carouselScrollView.setOrientation(DSVOrientation.HORIZONTAL);
+        carouselScrollView.addOnItemChangedListener(this);
+        carouselAdapter = new CarouselAdapter(data_image, getActivity().getApplicationContext());
+        infiniteScrollAdapter = InfiniteScrollAdapter.wrap(carouselAdapter);
+//        Log.wtf(TAG, "LENGTH :" + carouselAdapter.getItemCount());
+        carouselScrollView.setAdapter(infiniteScrollAdapter);
+        carouselScrollView.setItemTransitionTimeMillis(500);
+        carouselScrollView.setItemTransformer(new ScaleTransformer.Builder().setMinScale(0.8f).build());
 
         return view;
     }
@@ -134,5 +175,10 @@ public class CustomerBerandaFragment extends Fragment implements IHomeView, ILis
     @Override
     public void showToast(String str) {
 //        Toast.makeText(getContext().getApplicationContext(), str, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onCurrentItemChanged(@Nullable RecyclerView.ViewHolder viewHolder, int adapterPosition) {
+
     }
 }

@@ -29,7 +29,7 @@ public class PesananSayaAdapter extends RecyclerView.Adapter<PesananSayaAdapter.
     @NonNull
     @Override
     public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.cardview_daftar_pesanan, parent, false);
+        View v = LayoutInflater.from(context).inflate(R.layout.card_view_pesanansaya_desainer, parent, false);
         return new Holder(v);
     }
 
