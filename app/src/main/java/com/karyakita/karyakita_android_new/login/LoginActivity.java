@@ -16,6 +16,7 @@ import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.base.GlobalVariable;
 import com.karyakita.karyakita_android_new.customer.home.HomeCustomerActivity;
 import com.karyakita.karyakita_android_new.customer.karya.ListKaryaActivity;
+import com.karyakita.karyakita_android_new.customer.pesan_custom.PesanCustomRealmHelper;
 import com.karyakita.karyakita_android_new.data.local.realm.RealmHelper;
 import com.karyakita.karyakita_android_new.desainer.home.HomeDesainerActivity;
 import com.karyakita.karyakita_android_new.desainer.pesanan_saya.PesananSayaDesainerActivity;
@@ -47,7 +48,7 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
     Button bt_masuk;
 
     Realm realm;
-    RealmHelper realmHelper;
+    LoginHelper loginHelper;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -66,10 +67,11 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
                 .deleteRealmIfMigrationNeeded()
                 .build();
         realm = Realm.getInstance(configuration);
-        realmHelper = new RealmHelper(realm);
 
 //        Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
 //        startActivity(intent);
+
+
 
         bt_masuk.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,6 +111,18 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
             LoginAsActivity.loginAs.finish();
             startActivity(new Intent(LoginActivity.this, HomeDesainerActivity.class));
         }
+        loginHelper = new LoginHelper(realm);
+
+        loginHelper.save(new SessionModel(
+                model.getData().getCreatedAt(),
+                model.getData().getUpdatedAt(),
+                model.getData().getId(),
+                model.getData().getEmail(),
+                model.getData().getUsername(),
+                model.getData().getNama(),
+                null,
+                model.getData().getRole_id()
+                ));
     }
 
     @Override

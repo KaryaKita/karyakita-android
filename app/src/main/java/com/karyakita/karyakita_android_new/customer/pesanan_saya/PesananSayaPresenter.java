@@ -24,9 +24,11 @@ public class PesananSayaPresenter implements IMainPresenter {
     BaseModel model = null;
     PesananSayaModel pesananSayaModel = null;
     Map<String, String> input;
+    Integer id_customer;
 
-    public PesananSayaPresenter(IPesananSayaView iPesananSayaView){
+    public PesananSayaPresenter(IPesananSayaView iPesananSayaView, Integer id_customer){
         this.iPesananSayaView = iPesananSayaView;
+        this.id_customer = id_customer;
     }
 
     @Override
@@ -46,7 +48,7 @@ public class PesananSayaPresenter implements IMainPresenter {
 
     public io.reactivex.Observable<PesananSayaResultModel> getObservable(){
         return RetrofitHelper.getRetrofit().create(IRestServices.class)
-                .getPesananSaya("Bearer " + GlobalVariable.TOKEN)
+                .getPesananSaya("Bearer " + GlobalVariable.TOKEN, this.id_customer)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }
