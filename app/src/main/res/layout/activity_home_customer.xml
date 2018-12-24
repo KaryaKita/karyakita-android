@@ -24,7 +24,6 @@
         android:layout_above="@+id/bottom_nav_view_customer"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottom_nav_view_customer"
         android:layout_width="match_parent"
@@ -32,6 +31,7 @@
         android:layout_gravity="bottom"
         android:background="@color/white"
         android:state_checked="true"
+        app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"
         app:layout_scrollFlags="scroll|enterAlways"
         app:menu="@menu/navigation_customer">
 

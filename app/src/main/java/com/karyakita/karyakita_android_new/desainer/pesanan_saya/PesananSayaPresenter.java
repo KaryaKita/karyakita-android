@@ -45,7 +45,7 @@ public class PesananSayaPresenter implements IMainPresenter{
 
     public io.reactivex.Observable<PesananSayaResultModel> getObservable() {
         return RetrofitHelper.getRetrofit().create(IRestServices.class)
-                .getPesananSaya("Bearer" + GlobalVariable.TOKEN)
+                .getPesananSaya("Bearer " + GlobalVariable.TOKEN)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }

@@ -27,6 +27,8 @@ import com.karyakita.karyakita_android_new.customer.karya.ListKaryaResultModel;
 
 import java.util.List;
 
+import retrofit2.http.HEAD;
+
 import static android.support.constraint.Constraints.TAG;
 
 public class CustomerBerandaFragment extends Fragment implements IHomeView, IListKaryaView {
@@ -42,6 +44,8 @@ public class CustomerBerandaFragment extends Fragment implements IHomeView, ILis
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_customer_beranda, container, false);
+
+//        rv_kategori_home = view.findViewById(R.id.rv_kategori_home);
         rv_kategori_home = view.findViewById(R.id.rv_kategori_home);
         rv_list_karya_customer = view.findViewById(R.id.rv_list_karya_customer);
         rv_kategori_home.setNestedScrollingEnabled(false);
