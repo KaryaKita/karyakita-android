@@ -62,9 +62,6 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
         realm = Realm.getInstance(configuration);
         realmHelper = new RealmHelper(realm);
 
-//        Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
-//        startActivity(intent);
-
         bt_masuk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,6 +76,20 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
                 finish();
                 Intent intent = new Intent(LoginActivity.this, RegisterAsActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        bt_masuk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setUpPresenter();
+                if (et_Username_login.getText().toString().length() == 0) {
+                    et_Username_login.setError("Email tidak boleh kosong");
+                } else if (et_Password_login.getText().toString().length() == 0) {
+                    et_Password_login.setError("Password tidak boleh kosong");
+                } else {
+                    Toast.makeText(getApplicationContext(), "Login Success", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
@@ -97,8 +108,7 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
             finish();
             LoginAsActivity.loginAs.finish();
             startActivity(new Intent(LoginActivity.this, HomeCustomerActivity.class));
-        }
-        if (model.getData().getRole_id() == 2) {
+        } else if (model.getData().getRole_id() == 2) {
             finish();
             LoginAsActivity.loginAs.finish();
             startActivity(new Intent(LoginActivity.this, HomeDesainerActivity.class));
