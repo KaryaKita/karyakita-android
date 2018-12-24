@@ -1,18 +1,19 @@
 package com.karyakita.karyakita_android_new.customer.pesan_custom;
 
 import android.util.Log;
-import android.widget.Button;
 
-import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.base.BaseModel;
 import com.karyakita.karyakita_android_new.base.IMainPresenter;
 import com.karyakita.karyakita_android_new.service.IRestServices;
 import com.karyakita.karyakita_android_new.service.RetrofitHelper;
 
+import java.io.File;
 import java.util.Map;
 
-import butterknife.BindView;
+import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.observers.DisposableObserver;
+import io.reactivex.schedulers.Schedulers;
+import okhttp3.MultipartBody;
 
 public class PesanCustomPresenter implements IMainPresenter {
 
@@ -21,6 +22,8 @@ public class PesanCustomPresenter implements IMainPresenter {
     PesanCustomModel pesanCustomModel = null;
     Map<String, String>input;
     Integer karya_id = null;
+
+    MultipartBody.Part imageFile;
 
     public PesanCustomPresenter(IPesanCustomView iPesanCustomView){
         this.iPesanCustomView = iPesanCustomView;
@@ -39,7 +42,13 @@ public class PesanCustomPresenter implements IMainPresenter {
     @Override
     public void insert(Map<String, String> dataInput) {
 //        this.karya_id = Integer.parseInt(dataInput.get("karya_id"));
+        this.input = dataInput;
+        Log.wtf("tag", "masok");
+        getObservable().subscribeWith(getObserver());
+    }
 
+    public void setImagePesanCustom( MultipartBody.Part file) {
+        this.imageFile = file;
     }
 
 //    public io.reactivex.Observable<PesanCustomResultModel> getObservable(){
@@ -48,6 +57,20 @@ public class PesanCustomPresenter implements IMainPresenter {
 //                        this.input.get("image"),
 //                        this.input.get"pilih_ukuran"));
 ////    }(
+
+    public io.reactivex.Observable<PesanCustomResultModel> getObservable(){
+        Log.d("tag", "masuk ovservable");
+        return RetrofitHelper.getRetrofit().create(IRestServices.class)
+                .pesan_custom(this.input.get("catatan"),
+                        this.input.get("tanggal_deadline"),
+                        Integer.parseInt(this.input.get("kategori_karya")),
+                        Integer.parseInt(this.input.get("opsi_order_id")),
+                        this.input.get("ukuran"),
+                        this.imageFile
+                        )
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+    }
 
     public DisposableObserver<PesanCustomResultModel>getObserver(){
         return new DisposableObserver<PesanCustomResultModel>() {

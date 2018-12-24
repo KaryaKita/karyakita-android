@@ -41,14 +41,14 @@ public class PilihUkuranPresenter implements IMainPresenter{
         Log.d("tag", "kenek");
     }
 
-    public Observable<PilihUkuranResultModel> getObservable(){
-        Log.d("tag", "masuk observable");
-        return RetrofitHelper.getRetrofit().create(IRestServices.class)
-                .pilihukuran(this.input.get("sp_ukuran_kertas"),
-                        this.input.get("sp_jenis_kertas"))
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread());
-    }
+//    public Observable<PilihUkuranResultModel> getObservable(){
+//        Log.d("tag", "masuk observable");
+//        return RetrofitHelper.getRetrofit().create(IRestServices.class)
+//                .pilihukuran(this.input.get("sp_ukuran_kertas"),
+//                        this.input.get("sp_jenis_kertas"))
+//                .subscribeOn(Schedulers.io())
+//                .observeOn(AndroidSchedulers.mainThread());
+//    }
 
     public DisposableObserver<PilihUkuranModel> getObserver(){
         return new DisposableObserver<PilihUkuranModel>() {

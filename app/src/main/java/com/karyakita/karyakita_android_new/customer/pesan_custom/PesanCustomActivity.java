@@ -1,7 +1,10 @@
 package com.karyakita.karyakita_android_new.customer.pesan_custom;
 
+import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.DatePickerDialog;
 import android.content.DialogInterface;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
@@ -10,11 +13,14 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
 import com.karyakita.karyakita_android_new.R;
+import com.karyakita.karyakita_android_new.coba_calendar;
+import com.karyakita.karyakita_android_new.login.LoginPresenter;
 import com.karyakita.karyakita_android_new.service.IRestServices;
 
 import butterknife.BindView;
@@ -24,6 +30,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.karyakita.karyakita_android_new.R;
@@ -42,8 +49,16 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
+import retrofit2.http.Multipart;
 
-public class PesanCustomActivity extends AppCompatActivity {
+public class PesanCustomActivity extends AppCompatActivity implements IPesanCustomView {
+    EditText date;
+    DatePickerDialog datePickerDialog;
+    PesanCustomPresenter pesanCustomPresenter;
+
     private Button btn;
     private ImageView imageview;
     private static final String IMAGE_DIRECTORY = "/demonuts";
@@ -55,13 +70,17 @@ public class PesanCustomActivity extends AppCompatActivity {
     @BindView(R.id.iv_img_custom) ImageView img_custom;
     @BindView(R.id.sp_pilih_kategori) Spinner pilih_kategori;
     @BindView(R.id.sp_pilih_ukuran) Spinner ukuran_kertas;
-//    @BindView(R.id.Calendar) Spinner calendar;
+    @BindView(R.id.date) EditText ed_date;
+    @BindView(R.id.sp_pilih_bingkai) Spinner pilih_bingkai;
     @BindView(R.id.ed_catatan) EditText ed_catatan;
     @BindView(R.id.btnLanjut) Button btnLanjut;
 
+//    String imageName = String.valueOf(img_custom.getTag());
+
+    MultipartBody.Part fileToUpload;
 
     String ukuran, calender, catatan, image;
-    Integer kategori;
+    Integer kategori,opsi_bingkai;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,36 +98,65 @@ public class PesanCustomActivity extends AppCompatActivity {
             }
         });
 
+        date = (EditText) findViewById(R.id.date);
+        date.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // calender class's instance and get current date , month and year from calender
+                final Calendar c = Calendar.getInstance();
+                int mYear = c.get(Calendar.YEAR); // current year
+                int mMonth = c.get(Calendar.MONTH); // current month
+                int mDay = c.get(Calendar.DAY_OF_MONTH); // current day
+                // date picker dialog
+                datePickerDialog = new DatePickerDialog(PesanCustomActivity.this,
+                        new DatePickerDialog.OnDateSetListener() {
+
+                            @Override
+                            public void onDateSet(DatePicker view, int year,
+                                                  int monthOfYear, int dayOfMonth) {
+                                // set day of month , month and year value in the edit text
+                                date.setText(year + "-"
+                                        + (monthOfYear + 1) + "-" + dayOfMonth);
+
+                            }
+                        }, mYear, mMonth, mDay);
+                datePickerDialog.show();
+            }
+        });
+
         btnLanjut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 //                setupPresenter();
 
                 kategori = 1;
-                ukuran   = ukuran_kertas.getSelectedItem().toString();
-//                calender = calendar.toString();
-                catatan  = ed_catatan.getText().toString();
                 image    = img_custom.toString();
+                opsi_bingkai = 1;
+                ukuran   = ukuran_kertas.getSelectedItem().toString();
+                calender = date.toString();
+                catatan  = ed_catatan.getText().toString();
+
 
                 if (!kategori.equals("")&&!ukuran.equals("")&&!catatan.equals((""))&&!image.equals((""))){
                     pesanCustomModelRealm = new PesanCustomModelRealm();
-                    pesanCustomModelRealm.setKategori_id(kategori);
-                    pesanCustomModelRealm.setUkuran_karya(ukuran);
-                    //pesanCustomModelRealm.setDeadline(calender);
+                    pesanCustomModelRealm.setKategori_karya_id(kategori);
+                    pesanCustomModelRealm.setUkuran(ukuran);
+                    pesanCustomModelRealm.setTanggal_deadline(calender);
+                    pesanCustomModelRealm.setOpsi_order_id(opsi_bingkai);
                     pesanCustomModelRealm.setCatatan(catatan);
-                    pesanCustomModelRealm.setImage(image);
+                    pesanCustomModelRealm.setGambar(image);
 
                     pesanCustomRealmHelper = new PesanCustomRealmHelper(realm);
                     pesanCustomRealmHelper.save(pesanCustomModelRealm);
 
                     Log.d("TAG", "sukses masuk dong");
 
-                    startActivity(new Intent(PesanCustomActivity.this, DataPengirimanCustomerActivity.class));
-
+                    setupPresenter(fileToUpload);
                 }else {
                     Toast.makeText(getApplicationContext(), "isidong", Toast.LENGTH_LONG);
                 }
-
+//                ((TextView)pilih_kategori.getSelectedItem()).setError("kategori harus diisi");
+//                ((TextView)ukuran_kertas.getSelectedItem()).setError("ukuran kertas harus diisi");
             }
         });
     }
@@ -164,6 +212,13 @@ public class PesanCustomActivity extends AppCompatActivity {
                     Toast.makeText(PesanCustomActivity.this, "Image Saved!", Toast.LENGTH_SHORT).show();
                     img_custom.setImageBitmap(bitmap);
 
+                    String filePath = getRealPathFromURIPath(contentURI, PesanCustomActivity.this);
+                    Log.wtf("TAG ", "File path = " + filePath);
+                    File file = new File(filePath);
+
+                    RequestBody mFile = RequestBody.create(MediaType.parse("image/*"), file);
+                    fileToUpload = MultipartBody.Part.createFormData("file", file.getName(), mFile);
+
                 } catch (IOException e) {
                     e.printStackTrace();
                     Toast.makeText(PesanCustomActivity.this, "Failed!", Toast.LENGTH_SHORT).show();
@@ -175,6 +230,17 @@ public class PesanCustomActivity extends AppCompatActivity {
             img_custom.setImageBitmap(thumbnail);
             saveImage(thumbnail);
             Toast.makeText(PesanCustomActivity.this, "Image Saved!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private String getRealPathFromURIPath(Uri contentURI, Activity activity) {
+        Cursor cursor = activity.getContentResolver().query(contentURI, null, null, null, null);
+        if (cursor == null) {
+            return contentURI.getPath();
+        } else {
+            cursor.moveToFirst();
+            int idx = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);
+            return cursor.getString(idx);
         }
     }
 
@@ -207,12 +273,33 @@ public class PesanCustomActivity extends AppCompatActivity {
         return "";
     }
 
-    private void setupPresenter(){
+    private void setupPresenter( MultipartBody.Part file){
         Map<String, String> inputan = new HashMap<String, String>();
         inputan.put("pilih_kategori", pilih_kategori.toString());
         inputan.put("ukuran_kertas", ukuran_kertas.toString());
-//        inputan.put("calender", calendar.toString());
+        inputan.put("calender", ed_date.toString());
+        inputan.put("opsi", pilih_bingkai.toString());
         inputan.put("catatan", catatan.toString());
+//        inputan.put("gambar", img_custom.toString());
+        pesanCustomPresenter.setImagePesanCustom(this.fileToUpload);
+        pesanCustomPresenter = new PesanCustomPresenter(this);
+        pesanCustomPresenter.insert(inputan);
+
     }
 
+    @Override
+    public void showToast(String s) {
+
+    }
+
+    @Override
+    public void display(PesanCustomResultModel model) {
+        if (model != null)
+            startActivity(new Intent(PesanCustomActivity.this, DataPengirimanCustomerActivity.class));
+    }
+
+    @Override
+    public void displayError(String s) {
+
+    }
 }

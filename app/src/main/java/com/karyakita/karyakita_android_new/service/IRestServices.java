@@ -15,12 +15,15 @@ import com.karyakita.karyakita_android_new.register.RegisterResultModel;
 
 import java.util.List;
 
+import okhttp3.MultipartBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.Part;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
@@ -42,24 +45,27 @@ public interface IRestServices {
             @Field("nama") String nama);
 
     @FormUrlEncoded
-    @POST
+    @Multipart
+    @POST("customer/order/custom")
     io.reactivex.Observable<PesanCustomResultModel> pesan_custom(
-            @Field("id")Integer id,
-            @Field("image")String image,
-            @Field("pilih_ukuran")String pilih_ukuran,
-            @Field("opsi")String opsi
+            @Field("catatan") String catatan,
+            @Field("tanggal_deadline") String tanggal_deadline,
+            @Field("kategori_karya") int kategori_karya,
+            @Field("opsi_order_id") Integer opsi_order_id,
+            @Field("ukuran") String ukuran,
+            @Part MultipartBody.Part gambar
     );
 
     @FormUrlEncoded
-    @POST("user/login")
+    @POST("login")
     io.reactivex.Observable<LoginResultModel> login(@Field("email") String email,
                                                     @Field("password") String password,
                                                     @Field("role_id") Integer role_id);
-
-    @FormUrlEncoded
-    @POST("user/login")
-    io.reactivex.Observable<PilihUkuranResultModel> pilihukuran (@Field("ukuran_kertas") String ukuran_kertas,
-                                                                 @Field("ukuran_bingkai") String ukuran_bingkai);
+//
+//    @FormUrlEncoded
+//    @POST("user/login")
+//    io.reactivex.Observable<PilihUkuranResultModel> pilihukuran (@Field("ukuran_kertas") String ukuran_kertas,
+//                                                                 @Field("ukuran_bingkai") String ukuran_bingkai);
 
 
     @POST("customer/datapengiriman")
@@ -93,4 +99,6 @@ public interface IRestServices {
 
     @GET("karya/{id}")
     io.reactivex.Observable<DetailKaryaResultModel> getDetailKarya(@Header("Authorization") String bearer, @Path("id")Integer id);
+
+
 }
