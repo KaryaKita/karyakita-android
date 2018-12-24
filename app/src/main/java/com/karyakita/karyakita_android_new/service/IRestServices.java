@@ -78,7 +78,6 @@ public interface IRestServices {
 //    @GET("discover/movie")
 //    io.reactivex.Observable<ListDesainerModel> getListDesainer(@Path("desainer_id")Integer desainer_id);
 
-
     @GET("karya/{id}")
     io.reactivex.Observable<DetailKaryaResultModel> getDetailKarya(@Header("Authorization") String bearer, @Path("id") Integer id);
 }
