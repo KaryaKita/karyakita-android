@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.transition.Explode;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -22,17 +23,15 @@ public class LoginAsActivity extends AppCompatActivity {
     @BindView(R.id.addAkun)
     TextView addAkun;
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_as);
         loginAs = this;
-
         ButterKnife.bind(this);
 
-        Button bLoginCustomer = (Button) findViewById(R.id.bt_login_customer);
-        Button bLoginDesigner = (Button) findViewById(R.id.bt_login_designer);
+        Button bLoginCustomer = findViewById(R.id.bt_login_customer);
+        Button bLoginDesigner = findViewById(R.id.bt_login_designer);
 
         bLoginCustomer.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,4 +63,5 @@ public class LoginAsActivity extends AppCompatActivity {
             }
         });
     }
+
 }

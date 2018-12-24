@@ -107,7 +107,7 @@ public class CustomerBerandaFragment extends Fragment implements IHomeView, ILis
     }
 
     private void setUpView() {
-        rv_kategori_home.setLayoutManager(new GridLayoutManager(this.getActivity().getApplicationContext(), 3));
+        rv_kategori_home.setLayoutManager(new GridLayoutManager(this.getActivity().getApplicationContext(), 4));
         rv_kategori_home.setHasFixedSize(true);
     }
 
