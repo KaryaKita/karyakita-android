@@ -11,6 +11,7 @@ import com.karyakita.karyakita_android_new.service.RetrofitHelper;
 
 import java.util.Map;
 
+import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.observers.DisposableObserver;
@@ -43,9 +44,13 @@ public class PesananSayaPresenter implements IMainPresenter{
 
     }
 
-    public io.reactivex.Observable<PesananSayaResultModel> getObservable() {
+    //public io.reactivex.Observable<PesananSayaResultModel> getObservable() {
+
+    //}
+
+    public Observable<PesananSayaResultModel> getObservable(){
         return RetrofitHelper.getRetrofit().create(IRestServices.class)
-                .getPesananSaya("Bearer" + GlobalVariable.TOKEN)
+                .getPesananSayaDesainer("Bearer" + GlobalVariable.TOKEN)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }
