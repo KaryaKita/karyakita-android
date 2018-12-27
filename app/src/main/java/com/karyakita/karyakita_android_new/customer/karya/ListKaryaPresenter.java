@@ -64,7 +64,7 @@ public class ListKaryaPresenter implements IMainPresenter {
             public void onError(@NonNull Throwable e) {
                 Log.d(TAG, "Error" + e);
                 e.printStackTrace();
-                iListKaryaView.displayError("Error fetching Movie Data");
+                iListKaryaView.displayError("Error fetching List Karya");
             }
 
             @Override

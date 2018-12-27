@@ -1,18 +1,19 @@
-package com.karyakita.karyakita_android_new.desainer.pesanan_saya;
+package com.karyakita.karyakita_android_new.customer.pesanan_saya;
 
 import android.util.Log;
 
 import com.karyakita.karyakita_android_new.base.BaseModel;
 import com.karyakita.karyakita_android_new.base.GlobalVariable;
 import com.karyakita.karyakita_android_new.base.IMainPresenter;
+import com.karyakita.karyakita_android_new.customer.karya.ListKaryaModel;
+
 import com.karyakita.karyakita_android_new.service.IRestServices;
 import com.karyakita.karyakita_android_new.service.RetrofitHelper;
-
 import java.util.Map;
+import java.util.Observable;
 
-import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.annotations.NonNull;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.observers.DisposableObserver;
 import io.reactivex.schedulers.Schedulers;
 
@@ -24,7 +25,7 @@ public class PesananSayaPresenter implements IMainPresenter {
     PesananSayaModel pesananSayaModel = null;
     Map<String, String> input;
 
-    public PesananSayaPresenter(IPesananSayaView iPesananSayaView) {
+    public PesananSayaPresenter(IPesananSayaView iPesananSayaView){
         this.iPesananSayaView = iPesananSayaView;
     }
 
@@ -43,31 +44,26 @@ public class PesananSayaPresenter implements IMainPresenter {
 
     }
 
-    //public io.reactivex.Observable<PesananSayaResultModel> getObservable() {
-
-    //}
-
-    public Observable<PesananSayaResultModel> getObservable(){
+    public io.reactivex.Observable<PesananSayaResultModel> getObservable(){
         return RetrofitHelper.getRetrofit().create(IRestServices.class)
-                .getPesananSayaDesainer("Bearer" + GlobalVariable.TOKEN)
+                .getPesananSaya("Bearer " + GlobalVariable.TOKEN)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }
 
-    public DisposableObserver<PesananSayaResultModel> getObserver() {
+    public DisposableObserver<PesananSayaResultModel> getObserver(){
         return new DisposableObserver<PesananSayaResultModel>() {
-
             @Override
-            public void onNext(@NonNull PesananSayaResultModel pesananSayaResultModel) {
-                Log.d(TAG, "OnNext" + pesananSayaResultModel.getData().getNama());
+            public void onNext(PesananSayaResultModel pesananSayaResultModel) {
                 iPesananSayaView.display(pesananSayaResultModel);
             }
 
             @Override
-            public void onError(@NonNull Throwable e) {
-                Log.d(TAG, "Error" + e);
+            public void onError(Throwable e) {
+                Log.d(TAG, "Error " + e);
                 e.printStackTrace();
-                iPesananSayaView.displayError("Error fetching Desainer List");
+                iPesananSayaView.displayError("Error fetching Data Pesanan");
+
             }
 
             @Override
@@ -76,6 +72,4 @@ public class PesananSayaPresenter implements IMainPresenter {
             }
         };
     }
-
-
 }

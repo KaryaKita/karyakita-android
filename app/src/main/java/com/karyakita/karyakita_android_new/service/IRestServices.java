@@ -5,9 +5,9 @@ import com.karyakita.karyakita_android_new.customer.karya.DetailKaryaResultModel
 import com.karyakita.karyakita_android_new.customer.karya.KategoriKaryaResultModel;
 import com.karyakita.karyakita_android_new.customer.karya.ListKaryaResultModel;
 import com.karyakita.karyakita_android_new.customer.pesan_custom.PesanCustomResultModel;
+import com.karyakita.karyakita_android_new.customer.pesanan_saya.PesananSayaResultModel;
 import com.karyakita.karyakita_android_new.customer.pilih_ukuran.PilihUkuranResultModel;
 import com.karyakita.karyakita_android_new.desainer.list_desainer.ListDesainerResultModel;
-import com.karyakita.karyakita_android_new.desainer.pesanan_saya.PesananSayaResultModel;
 import com.karyakita.karyakita_android_new.login.LoginResultModel;
 import com.karyakita.karyakita_android_new.register.RegisterResultModel;
 
@@ -66,8 +66,11 @@ public interface IRestServices {
     @GET("desainer/get-all")
     io.reactivex.Observable<ListDesainerResultModel> getListDesainer(@Header("Authorization") String bearer);
 
-    @GET("pesanan/get-all")
+    @GET("customer/order/list/1")
     io.reactivex.Observable<PesananSayaResultModel> getPesananSaya(@Header("Authorization") String bearer);
+
+    @GET("desainer/order/list")
+    io.reactivex.Observable<com.karyakita.karyakita_android_new.desainer.pesanan_saya.PesananSayaResultModel> getPesananSayaDesainer(@Header("Authorization") String bearer);
 
 //    @GET("karya/get-by-kategori/kategori_id")
 //    io.reactivex.Observable<ListKaryaResultModel>getListKaryaByKategori(@Path("kategori_id")Integer kategori_id);
