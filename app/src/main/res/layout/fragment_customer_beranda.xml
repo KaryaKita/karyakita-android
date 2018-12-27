@@ -32,8 +32,9 @@
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rv_kategori_home"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_marginBottom="@dimen/dimens_12dp"
+                android:layout_weight="1"
                 android:orientation="vertical" />
 
             <android.support.v7.widget.RecyclerView
