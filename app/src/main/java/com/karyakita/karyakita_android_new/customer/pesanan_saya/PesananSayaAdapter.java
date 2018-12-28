@@ -35,11 +35,11 @@ public class PesananSayaAdapter extends RecyclerView.Adapter<PesananSayaAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int position) {
-        //Glide.with(context).load(pesananSayaModelList.get(position).getDeploy_url()).into(holder.iv_gambar);
+        Glide.with(context).load(pesananSayaModelList.get(position).getDeploy_url()).into(holder.iv_gambar);
         holder.tv_nama_desainer.setText(pesananSayaModelList.get(position).getNama_desainer());
         holder.tv_kategori.setText(String.valueOf(pesananSayaModelList.get(position).getKategori()));
-        holder.tv_harga.setText("Rp" + String.valueOf(String.format("%,.2f", pesananSayaModelList.get(position).getHarga())));
-        holder.tv_deadline.setText(String.valueOf(pesananSayaModelList.get(position).getDeadline().toString()));
+        holder.tv_harga.setText("Rp. " + String.valueOf(pesananSayaModelList.get(position).getHarga()));
+        holder.tv_deadline.setText(String.valueOf(pesananSayaModelList.get(position).getTanggalDeadline()));
     }
 
     @Override
@@ -61,11 +61,11 @@ public class PesananSayaAdapter extends RecyclerView.Adapter<PesananSayaAdapter.
 
             itemView.setOnClickListener(this);
 
-            iv_gambar = itemView.findViewById(R.id.iv_gambar_karya);
+            iv_gambar = itemView.findViewById(R.id.iv_gambar_pesanan);
             tv_nama_desainer = itemView.findViewById((R.id.tv_nama_desainer));
             tv_kategori = itemView.findViewById(R.id.tv_kategori_pesanan);
             tv_harga = itemView.findViewById(R.id.tv_harga_pesanan);
-            tv_deadline = itemView.findViewById((R.id.tv_deadline));
+            tv_deadline = itemView.findViewById((R.id.tv_deadline_pesanan));
             tv_jenis_pesanan = itemView.findViewById((R.id.tv_jenis_pesanan));
             tv_opsi_pesanan = itemView.findViewById(R.id.tv_opsi_pesanan);
 

@@ -66,8 +66,8 @@ public interface IRestServices {
     @GET("desainer/get-all")
     io.reactivex.Observable<ListDesainerResultModel> getListDesainer(@Header("Authorization") String bearer);
 
-    @GET("customer/order/list/1")
-    io.reactivex.Observable<PesananSayaResultModel> getPesananSaya(@Header("Authorization") String bearer);
+    @GET("customer/order/list/{customer_id}")
+    io.reactivex.Observable<PesananSayaResultModel> getPesananSaya(@Header("Authorization") String bearer, @Path("customer_id")Integer customer_id);
 
     @GET("desainer/order/list")
     io.reactivex.Observable<com.karyakita.karyakita_android_new.desainer.pesanan_saya.PesananSayaResultModel> getPesananSayaDesainer(@Header("Authorization") String bearer);
