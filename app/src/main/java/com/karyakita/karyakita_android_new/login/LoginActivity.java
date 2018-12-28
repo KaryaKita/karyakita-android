@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.karyakita.karyakita_android_new.R;
@@ -21,6 +22,9 @@ import com.karyakita.karyakita_android_new.desainer.pesanan_saya.PesananSayaDesa
 import com.karyakita.karyakita_android_new.example.MainActivity;
 import com.karyakita.karyakita_android_new.example.TestActivity;
 import com.karyakita.karyakita_android_new.login_as.LoginAsActivity;
+import com.karyakita.karyakita_android_new.register.RegisterActivity;
+import com.karyakita.karyakita_android_new.register_as.RegisterAsActivity;
+import com.karyakita.karyakita_android_new.util.InternetConnectionUtil;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -32,8 +36,11 @@ import io.realm.RealmConfiguration;
 
 public class LoginActivity extends AppCompatActivity implements ILoginView {
     LoginPresenter loginPresenter;
+    InternetConnectionUtil internetConnectionUtil;
     Integer role_id;
 
+    @BindView(R.id.addAkun)
+    TextView addAkun;
     @BindView(R.id.et_username_login)
     EditText et_Username_login;
     @BindView(R.id.et_password_login)
@@ -49,6 +56,9 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
+
+        internetConnectionUtil = new InternetConnectionUtil();
+
         Bundle bundle = getIntent().getExtras();
         role_id = bundle.getInt("role_id");
         Log.d("Test0 : ", GlobalVariable.TOKEN);
@@ -62,10 +72,27 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
         realm = Realm.getInstance(configuration);
         realmHelper = new RealmHelper(realm);
 
+//        Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+//        startActivity(intent);
+
         bt_masuk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setUpPresenter();
+                if (internetConnectionUtil.isConnected(getApplicationContext())) {
+                    Toast.makeText(getApplicationContext(), "Internet Connected", Toast.LENGTH_LONG).show();
+                    setUpPresenter();
+                } else
+                    Toast.makeText(getApplicationContext(), "No Internet Connection or Connecting ...", Toast.LENGTH_LONG).show();
+
+            }
+        });
+
+        addAkun.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                Intent intent = new Intent(LoginActivity.this, RegisterAsActivity.class);
+                startActivity(intent);
             }
         });
     }

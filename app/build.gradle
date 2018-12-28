@@ -9,6 +9,9 @@ ext.isSnapshot = true
 ext.minimumSdkVersion = 22
 
 android {
+    dataBinding {
+        enabled = true
+    }
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.karyakita.karyakita_android_new"
