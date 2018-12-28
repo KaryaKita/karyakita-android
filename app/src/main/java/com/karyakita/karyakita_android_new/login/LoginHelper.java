@@ -2,14 +2,9 @@ package com.karyakita.karyakita_android_new.login;
 
 import android.util.Log;
 
-<<<<<<< HEAD
 import com.karyakita.karyakita_android_new.data.local.realm.RealmHelper;
 import com.karyakita.karyakita_android_new.data.local.realm.model.PesanLangsungModel;
-
 import java.util.List;
-
-=======
->>>>>>> 01b45f7bf471566ba9ed6f0dc1935b1b3f676c39
 import io.realm.Realm;
 import io.realm.RealmResults;
 
