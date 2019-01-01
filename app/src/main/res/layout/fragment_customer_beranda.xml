@@ -13,29 +13,40 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.yarolegovich.discretescrollview.DiscreteScrollView
-                android:id="@+id/carousel_scroll_view"
+            <android.support.v7.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginTop="@dimen/dimens_12dp"
-                android:layout_marginBottom="@dimen/dimens_12dp"
-                android:layout_weight="1" />
-
-            <android.support.v7.widget.AppCompatTextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
                 android:layout_marginBottom="@dimen/dimens_12dp"
-                android:text="Kategori" />
+                android:background="@color/pure_white"
+                android:orientation="vertical">
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/rv_kategori_home"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginBottom="@dimen/dimens_12dp"
-                android:layout_weight="1"
-                android:orientation="vertical" />
+                <com.yarolegovich.discretescrollview.DiscreteScrollView
+                    android:id="@+id/carousel_scroll_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/dimens_4dp"
+                    android:layout_marginBottom="@dimen/dimens_12dp"
+                    android:layout_weight="1" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginBottom="@dimen/dimens_8dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Kategori Karya"
+                    android:textColor="@color/font_black_primary"
+                    android:textSize="16sp" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_kategori_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" />
+
+            </android.support.v7.widget.LinearLayoutCompat>
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rv_list_karya_customer"
