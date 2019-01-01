@@ -8,8 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.karyakita.karyakita_android_new.R;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +15,7 @@ public class HomeDesainerAdapter extends RecyclerView.Adapter<HomeDesainerAdapte
     List<HomeDesainerModel> homeDesainerModelList;
     Context context;
 
-    public HomeDesainerAdapter(List<HomeDesainerModel> homeDesainerModelList, Context context){
+    public HomeDesainerAdapter(List<HomeDesainerModel> homeDesainerModelList, Context context) {
         this.homeDesainerModelList = new ArrayList<>();
         this.context = context;
     }
@@ -41,10 +39,10 @@ public class HomeDesainerAdapter extends RecyclerView.Adapter<HomeDesainerAdapte
         return 0;
     }
 
-    public class Holder extends RecyclerView.ViewHolder{
+    public class Holder extends RecyclerView.ViewHolder {
         ImageView iv_home_desainer;
 
-        public Holder(View itemView){
+        public Holder(View itemView) {
             super(itemView);
             context = itemView.getContext();
 

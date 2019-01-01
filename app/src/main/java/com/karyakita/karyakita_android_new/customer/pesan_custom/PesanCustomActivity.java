@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.database.Cursor;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
@@ -18,23 +19,11 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
-import com.karyakita.karyakita_android_new.R;
-import com.karyakita.karyakita_android_new.coba_calendar;
-import com.karyakita.karyakita_android_new.login.LoginPresenter;
-import com.karyakita.karyakita_android_new.service.IRestServices;
-
 import butterknife.BindView;
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.karyakita.karyakita_android_new.R;
-import com.karyakita.karyakita_android_new.customer.PesananSelesai;
 import com.karyakita.karyakita_android_new.customer.data_pengiriman.DataPengirimanCustomerActivity;
 
 import java.io.ByteArrayOutputStream;
@@ -44,29 +33,26 @@ import java.io.IOException;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
-
-import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
-import retrofit2.http.Multipart;
 
 public class PesanCustomActivity extends AppCompatActivity implements IPesanCustomView {
     EditText date;
     DatePickerDialog datePickerDialog;
     PesanCustomPresenter pesanCustomPresenter;
-
     private Button btn;
     private ImageView imageview;
     private static final String IMAGE_DIRECTORY = "/demonuts";
-    private int GALLERY = 1, CAMERA = 2;
     Realm realm;
     PesanCustomRealmHelper pesanCustomRealmHelper;
     PesanCustomModelRealm pesanCustomModelRealm;
     Spinner spinner;
+
+
     @BindView(R.id.iv_img_custom) ImageView img_custom;
     @BindView(R.id.sp_pilih_kategori) Spinner pilih_kategori;
     @BindView(R.id.sp_pilih_ukuran) Spinner ukuran_kertas;
@@ -81,6 +67,9 @@ public class PesanCustomActivity extends AppCompatActivity implements IPesanCust
 
     String ukuran, calender, catatan, image;
     Integer kategori,opsi_bingkai;
+    private int GALLERY = 1, CAMERA = 2;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -130,6 +119,7 @@ public class PesanCustomActivity extends AppCompatActivity implements IPesanCust
 //                setupPresenter();
 
                 kategori = 1;
+
                 image    = img_custom.toString();
                 opsi_bingkai = 1;
                 ukuran   = ukuran_kertas.getSelectedItem().toString();
@@ -137,7 +127,12 @@ public class PesanCustomActivity extends AppCompatActivity implements IPesanCust
                 catatan  = ed_catatan.getText().toString();
 
 
-                if (!kategori.equals("")&&!ukuran.equals("")&&!catatan.equals((""))&&!image.equals((""))){
+                ukuran = ukuran_kertas.getSelectedItem().toString();
+//                calender = calendar.toString();
+                catatan = ed_catatan.getText().toString();
+                image = img_custom.toString();
+
+                if (!kategori.equals("") && !ukuran.equals("") && !catatan.equals(("")) && !image.equals((""))) {
                     pesanCustomModelRealm = new PesanCustomModelRealm();
                     pesanCustomModelRealm.setKategori_karya_id(kategori);
                     pesanCustomModelRealm.setUkuran(ukuran);
@@ -152,7 +147,11 @@ public class PesanCustomActivity extends AppCompatActivity implements IPesanCust
                     Log.d("TAG", "sukses masuk dong");
 
                     setupPresenter(fileToUpload);
-                }else {
+//                }else {
+//                    startActivity(new Intent(PesanCustomActivity.this, DataPengirimanCustomerActivity.class));
+
+                }
+                else {
                     Toast.makeText(getApplicationContext(), "isidong", Toast.LENGTH_LONG);
                 }
 //                ((TextView)pilih_kategori.getSelectedItem()).setError("kategori harus diisi");
@@ -166,7 +165,7 @@ public class PesanCustomActivity extends AppCompatActivity implements IPesanCust
         pictureDialog.setTitle("Select Action");
         String[] pictureDialogItems = {
                 "Select photo from gallery",
-                "Capture photo from camera" };
+                "Capture photo from camera"};
         pictureDialog.setItems(pictureDialogItems,
                 new DialogInterface.OnClickListener() {
                     @Override
@@ -272,6 +271,7 @@ public class PesanCustomActivity extends AppCompatActivity implements IPesanCust
         }
         return "";
     }
+
 
     private void setupPresenter( MultipartBody.Part file){
         Map<String, String> inputan = new HashMap<String, String>();

@@ -18,6 +18,7 @@ import com.karyakita.karyakita_android_new.customer.data_pengiriman.DataPengirim
 import com.karyakita.karyakita_android_new.customer.pesan_custom.PesanCustomActivity;
 
 import com.karyakita.karyakita_android_new.customer.pilih_ukuran.PilihUkuranActivity;
+
 import com.karyakita.karyakita_android_new.login.LoginActivity;
 import com.karyakita.karyakita_android_new.login_as.LoginAsActivity;
 
@@ -27,7 +28,7 @@ import java.util.Map;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class DetailKaryaActivity extends AppCompatActivity implements IDetailKaryaView{
+public class DetailKaryaActivity extends AppCompatActivity implements IDetailKaryaView {
     DetailKaryaPresenter detailKaryaPresenter = null;
     DetailKaryaModel detailKaryaModel = null;
     Integer karya_id;
@@ -99,7 +100,7 @@ public class DetailKaryaActivity extends AppCompatActivity implements IDetailKar
         });
     }
 
-    private void getDetailKarya(){
+    private void getDetailKarya() {
         Map<String, String> dataInput = new HashMap<>();
         dataInput.put("karya_id", karya_id.toString());
         detailKaryaPresenter.get(dataInput);
@@ -129,7 +130,7 @@ public class DetailKaryaActivity extends AppCompatActivity implements IDetailKar
     public void onPointerCaptureChanged(boolean hasCapture) {
     }
 
-    private void setUpPresenter(){
+    private void setUpPresenter() {
         detailKaryaPresenter = new DetailKaryaPresenter(this);
     }
 }

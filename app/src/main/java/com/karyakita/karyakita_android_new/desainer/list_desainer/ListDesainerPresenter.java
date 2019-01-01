@@ -5,13 +5,10 @@ import android.util.Log;
 import com.karyakita.karyakita_android_new.base.BaseModel;
 import com.karyakita.karyakita_android_new.base.GlobalVariable;
 import com.karyakita.karyakita_android_new.base.IMainPresenter;
-import com.karyakita.karyakita_android_new.customer.karya.ListKaryaResultModel;
 import com.karyakita.karyakita_android_new.service.IRestServices;
 import com.karyakita.karyakita_android_new.service.RetrofitHelper;
 
-import java.util.List;
 import java.util.Map;
-import java.util.Observable;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
@@ -20,7 +17,7 @@ import io.reactivex.schedulers.Schedulers;
 
 import static android.support.constraint.Constraints.TAG;
 
-public class ListDesainerPresenter implements IMainPresenter{
+public class ListDesainerPresenter implements IMainPresenter {
     IListDesainerView iListDesainerView;
     BaseModel model = null;
     ListDesainerModel listDesainerModel = null;

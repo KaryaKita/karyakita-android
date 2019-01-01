@@ -81,115 +81,115 @@ public class ListDesainerModel extends BaseModel {
         this.provinsi = listDesainerModel.provinsi;
     }
 
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public void setUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setNama(String nama) {
-        this.nama = nama;
-    }
-
-    public void setNotelp(String notelp) {
-        this.notelp = notelp;
-    }
-
-    public void setRole_id(Integer role_id) {
-        this.role_id = role_id;
-    }
-
-    public void setRating(Integer rating) {
-        this.rating = rating;
-    }
-
-    public void setSubscriber(Integer subscriber) {
-        this.subscriber = subscriber;
-    }
-
     public String getCreatedAt() {
         return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
     }
 
     public String getUpdatedAt() {
         return updatedAt;
     }
 
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
     public Integer getId() {
         return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getEmail() {
         return email;
     }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public String getNama() {
         return nama;
+    }
+
+    public void setNama(String nama) {
+        this.nama = nama;
     }
 
     public String getNotelp() {
         return notelp;
     }
 
+    public void setNotelp(String notelp) {
+        this.notelp = notelp;
+    }
+
     public Integer getRole_id() {
         return role_id;
     }
 
-    public void setAlamat_lengkap(String alamat_lengkap) {
-        this.alamat_lengkap = alamat_lengkap;
-    }
-
-    public void setKode_pos(String kode_pos) {
-        this.kode_pos = kode_pos;
-    }
-
-    public void setKecamatan(String kecamatan) {
-        this.kecamatan = kecamatan;
-    }
-
-    public void setKota_kab(String kota_kab) {
-        this.kota_kab = kota_kab;
-    }
-
-    public void setProvinsi(String provinsi) {
-        this.provinsi = provinsi;
+    public void setRole_id(Integer role_id) {
+        this.role_id = role_id;
     }
 
     public String getAlamat_lengkap() {
         return alamat_lengkap;
     }
 
+    public void setAlamat_lengkap(String alamat_lengkap) {
+        this.alamat_lengkap = alamat_lengkap;
+    }
+
     public String getKode_pos() {
         return kode_pos;
+    }
+
+    public void setKode_pos(String kode_pos) {
+        this.kode_pos = kode_pos;
     }
 
     public String getKecamatan() {
         return kecamatan;
     }
 
+    public void setKecamatan(String kecamatan) {
+        this.kecamatan = kecamatan;
+    }
+
     public String getKota_kab() {
         return kota_kab;
+    }
+
+    public void setKota_kab(String kota_kab) {
+        this.kota_kab = kota_kab;
     }
 
     public String getProvinsi() {
         return provinsi;
     }
 
+    public void setProvinsi(String provinsi) {
+        this.provinsi = provinsi;
+    }
+
     public Integer getRating() {
         return rating;
     }
 
+    public void setRating(Integer rating) {
+        this.rating = rating;
+    }
+
     public Integer getSubscriber() {
         return subscriber;
+    }
+
+    public void setSubscriber(Integer subscriber) {
+        this.subscriber = subscriber;
     }
 }

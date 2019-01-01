@@ -5,11 +5,9 @@ import com.karyakita.karyakita_android_new.customer.karya.DetailKaryaResultModel
 import com.karyakita.karyakita_android_new.customer.karya.KategoriKaryaResultModel;
 import com.karyakita.karyakita_android_new.customer.karya.ListKaryaResultModel;
 import com.karyakita.karyakita_android_new.customer.pesan_custom.PesanCustomResultModel;
+import com.karyakita.karyakita_android_new.customer.pesanan_saya.PesananSayaResultModel;
 import com.karyakita.karyakita_android_new.customer.pilih_ukuran.PilihUkuranResultModel;
 import com.karyakita.karyakita_android_new.desainer.list_desainer.ListDesainerResultModel;
-import com.karyakita.karyakita_android_new.customer.pesanan_saya.PesananSayaResultModel;
-import com.karyakita.karyakita_android_new.example.MovieResponse;
-import com.karyakita.karyakita_android_new.example.TestModel;
 import com.karyakita.karyakita_android_new.login.LoginResultModel;
 import com.karyakita.karyakita_android_new.register.RegisterResultModel;
 
@@ -25,15 +23,8 @@ import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
 import retrofit2.http.Path;
-import retrofit2.http.Query;
 
 public interface IRestServices {
-    @GET("customer/list")
-    Call<List<TestModel>> getListHome(@Path("id") int id);
-
-    @GET("discover/movie")
-    io.reactivex.Observable<MovieResponse> getMovies(@Query("api_key") String api_key);
-
     @FormUrlEncoded
     @POST("signup")
     io.reactivex.Observable<RegisterResultModel> register(
@@ -48,6 +39,7 @@ public interface IRestServices {
     @Multipart
     @POST("customer/order/custom")
     io.reactivex.Observable<PesanCustomResultModel> pesan_custom(
+
             @Field("catatan") String catatan,
             @Field("tanggal_deadline") String tanggal_deadline,
             @Field("kategori_karya") int kategori_karya,
@@ -81,17 +73,23 @@ public interface IRestServices {
 //    io.reactivex.Observable<PilihUkuranResultModel> pilihukuran (@Field("ukuran_kertas") String ukuran_kertas,
 //                                                                 @Field("ukuran_bingkai") String ukuran_bingkai);
 
+
 //    @FormUrlEncoded
 //    @POST("user/pilih")
 //    io.reactivex.Observable<PilihUkuranResultModel> pilihukuran(@Field("ukuran_kertas") String ukuran_kertas,
 //                                                                 @Field("ukuran_bingkai") String ukuran_bingkai);
 
+    @FormUrlEncoded
+    @POST("user/login")
+    io.reactivex.Observable<PilihUkuranResultModel> pilihukuran(@Field("ukuran_kertas") String ukuran_kertas,
+                                                                @Field("ukuran_bingkai") String ukuran_bingkai);
+
     @POST("customer/datapengiriman")
-    io.reactivex.Observable<DataPengirimanResultModel> datapengiriman (@Field("provinsi") String provinsi,
-                                                                       @Field("kabupaten") String kabupaten,
-                                                                       @Field("kecamatan") String kecamatan,
-                                                                       @Field("alamat") String alamat,
-                                                                       @Field("opsipengiriman") String opsipengiriman);
+    io.reactivex.Observable<DataPengirimanResultModel> datapengiriman(@Field("provinsi") String provinsi,
+                                                                      @Field("kabupaten") String kabupaten,
+                                                                      @Field("kecamatan") String kecamatan,
+                                                                      @Field("alamat") String alamat,
+                                                                      @Field("opsipengiriman") String opsipengiriman);
 
     @GET("karya/get-all")
     io.reactivex.Observable<KategoriKaryaResultModel> getListKarya(@Header("Authorization") String bearer);
@@ -102,8 +100,8 @@ public interface IRestServices {
     @GET("desainer/get-all")
     io.reactivex.Observable<ListDesainerResultModel> getListDesainer(@Header("Authorization") String bearer);
 
-    @GET("customer/order/list/1")
-    io.reactivex.Observable<PesananSayaResultModel> getPesananSaya(@Header("Authorization") String bearer);
+    @GET("customer/order/list/{customer_id}")
+    io.reactivex.Observable<PesananSayaResultModel> getPesananSaya(@Header("Authorization") String bearer, @Path("customer_id")Integer customer_id);
 
     @GET("desainer/order/list")
     io.reactivex.Observable<com.karyakita.karyakita_android_new.desainer.pesanan_saya.PesananSayaResultModel> getPesananSayaDesainer(@Header("Authorization") String bearer);
@@ -112,7 +110,7 @@ public interface IRestServices {
 //    io.reactivex.Observable<ListKaryaResultModel>getListKaryaByKategori(@Path("kategori_id")Integer kategori_id);
 
     @GET("karya/get-by-kategori/{kategori_id}")
-    io.reactivex.Observable<ListKaryaResultModel> getListKaryaByKategori(@Header("Authorization") String bearer, @Path("kategori_id")Integer kategori_id);
+    io.reactivex.Observable<ListKaryaResultModel> getListKaryaByKategori(@Header("Authorization") String bearer, @Path("kategori_id") Integer kategori_id);
 
 //    @GET("discover/movie")
 //    io.reactivex.Observable<ListDesainerModel> getListDesainer(@Path("desainer_id")Integer desainer_id);

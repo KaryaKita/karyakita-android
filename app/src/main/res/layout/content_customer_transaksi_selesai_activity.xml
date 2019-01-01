@@ -15,10 +15,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textStyle="bold"
-        android:textSize="20dp"
+        android:text="Transaksi Anda Telah Selesai"
         android:textColor="@color/black"
-        android:text="Transaksi Anda Telah Selesai" />
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/imageView15"
@@ -35,9 +35,9 @@
         android:layout_gravity="center"
         android:layout_marginTop="60dp"
         android:background="@color/colorAccent"
-        android:textColor="@color/white"
+        android:text="Berikan Rating"
         android:textAllCaps="false"
-        android:text="Berikan Rating" />
+        android:textColor="@color/white" />
 
     <Button
         android:id="@+id/button7"
@@ -46,7 +46,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="151dp"
         android:background="@color/yellow_900"
-        android:textAllCaps="false"
         android:text="Kembali Ke Beranda"
+        android:textAllCaps="false"
         android:textColor="@color/white" />
 </android.support.v7.widget.LinearLayoutCompat>

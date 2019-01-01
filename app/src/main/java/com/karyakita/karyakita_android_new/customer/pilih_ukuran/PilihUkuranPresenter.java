@@ -15,6 +15,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.observers.DisposableObserver;
 import io.reactivex.schedulers.Schedulers;
 
+
 public class PilihUkuranPresenter implements IMainPresenter{
     IPilihUkuranView iPilihUkuranView;
     BaseModel model;
@@ -41,7 +42,7 @@ public class PilihUkuranPresenter implements IMainPresenter{
     public void insert(Map<String, String> dataInput) {
         this.input = dataInput;
         Log.d("tag", "kenek");
-        getObservable().subscribeWith(getObserver());
+//        getObservable().subscribeWith(getObserver());
     }
 
     public io.reactivex.Observable<PilihUkuranResultModel> getObservable(){
@@ -61,7 +62,7 @@ public class PilihUkuranPresenter implements IMainPresenter{
                 .observeOn(AndroidSchedulers.mainThread());
     }
 
-    public DisposableObserver<PilihUkuranResultModel> getObserver(){
+    public DisposableObserver<PilihUkuranResultModel> getObserver() {
         return new DisposableObserver<PilihUkuranResultModel>() {
             @Override
             public void onNext(PilihUkuranResultModel pilihUkuranResultModel) {

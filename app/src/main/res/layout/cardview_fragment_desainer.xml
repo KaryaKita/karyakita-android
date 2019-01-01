@@ -28,8 +28,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:text="Desainer Reza Aprillia"
-                    android:textStyle="bold"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
 
                 <android.support.v7.widget.AppCompatTextView
                     android:layout_width="match_parent"
@@ -45,8 +45,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:text="30 karya"
-                    android:textSize="@dimen/dimens_8dp"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dimens_8dp" />
 
             </android.support.v7.widget.LinearLayoutCompat>
 

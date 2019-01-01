@@ -4,7 +4,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.karyakita.karyakita_android_new.base.BaseModel;
 
-public class PilihUkuranModel extends BaseModel{
+public class PilihUkuranModel extends BaseModel {
     @SerializedName("createdAt")
     @Expose
     private String createdAt;
@@ -49,21 +49,21 @@ public class PilihUkuranModel extends BaseModel{
     @Expose
     private String ukuran;
 
-    public PilihUkuranModel(String createdAt, String updatedAt, Integer karya_id, String catatan, Integer total, String tanggal_deadline, Integer pelanggan_id, Integer desainer_id, Integer jenis_order_id, Integer opsi_order_id, String ukuran){
+    public PilihUkuranModel(String createdAt, String updatedAt, Integer karya_id, String catatan, Integer total, String tanggal_deadline, Integer pelanggan_id, Integer desainer_id, Integer jenis_order_id, Integer opsi_order_id, String ukuran) {
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.karya_id = karya_id;
         this.catatan = catatan;
         this.total = total;
-        this.tanggal_deadline =tanggal_deadline;
+        this.tanggal_deadline = tanggal_deadline;
         this.pelanggan_id = pelanggan_id;
-        this.desainer_id =desainer_id;
+        this.desainer_id = desainer_id;
         this.jenis_order_id = jenis_order_id;
         this.opsi_order_id = opsi_order_id;
         this.ukuran = ukuran;
     }
 
-    public PilihUkuranModel(){
+    public PilihUkuranModel() {
     }
 
     public String getCreatedAt() {

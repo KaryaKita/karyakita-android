@@ -1,7 +1,5 @@
 package com.karyakita.karyakita_android_new.desainer.pesanan_saya;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -9,10 +7,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.karyakita.karyakita_android_new.R;
-import com.karyakita.karyakita_android_new.desainer.TugasSayaActivity;
-import com.karyakita.karyakita_android_new.example.MainActivity;
 
-public class TerimaPesananActivity extends AppCompatActivity{
+public class TerimaPesananActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +19,7 @@ public class TerimaPesananActivity extends AppCompatActivity{
         TextView tv3 = (TextView) findViewById(R.id.tv_3);
         Button btnTugasSaya = (Button) findViewById(R.id.btn_tugas_saya);
 
-        btnTugasSaya.setOnClickListener(new View.OnClickListener(){
+        btnTugasSaya.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {

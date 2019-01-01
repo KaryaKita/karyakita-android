@@ -49,7 +49,6 @@
         <activity android:name=".customer.CustomerNotifikasiActivity" />
         <activity android:name=".customer.data_pengiriman.DataPengirimanCustomerActivity" />
         <activity android:name=".desainer.home.HomeDesainerActivity" />
-        <activity android:name=".example.TestActivity" />
         <activity android:name=".desainer.transaksi.UploadBiasaDesainerActivity" />
         <activity android:name=".desainer.transaksi.DesainerTransaksiSelesaiActivity" />
         <activity android:name=".desainer.transaksi.FormUploadKaryaDesaigner" />

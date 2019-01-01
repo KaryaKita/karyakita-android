@@ -24,19 +24,19 @@ public class PesananSayaModel {
     @Expose
     private String kategori;
 
-    @SerializedName("harga")
+    @SerializedName("total")
     @Expose
     private String harga;
 
-    @SerializedName("deadline")
+    @SerializedName("tanggal_deadline")
     @Expose
-    private String deadline;
+    private String tanggal_deadline;
 
-    @SerializedName("jenis_pesanan")
+    @SerializedName("jenis_order")
     @Expose
     private String jenis_pesanan;
 
-    @SerializedName("opsi_pesanan")
+    @SerializedName("opsi_order")
     @Expose
     private String opsi_pesanan;
 
@@ -47,14 +47,14 @@ public class PesananSayaModel {
     public PesananSayaModel() {
     }
 
-    public PesananSayaModel(String createdAt, String updatedAt, Integer id, String nama_desainer, String kategori, String harga, String deadline, String jenis_pesanan, String opsi_pesanan, String deploy_url) {
+    public PesananSayaModel(String createdAt, String updatedAt, Integer id, String nama_desainer, String kategori, String harga, String tanggal_deadline, String jenis_pesanan, String opsi_pesanan, String deploy_url) {
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.id = id;
         this.nama_desainer = nama_desainer;
         this.kategori = kategori;
         this.harga = harga;
-        this.deadline = deadline;
+        this.tanggal_deadline = tanggal_deadline;
         this.jenis_pesanan = jenis_pesanan;
         this.opsi_pesanan = opsi_pesanan;
         this.deploy_url = deploy_url;
@@ -84,8 +84,8 @@ public class PesananSayaModel {
         this.harga = harga;
     }
 
-    public void setDeadline(String deadline) {
-        this.deadline = deadline;
+    public void setTanggalDeadline(String tanggal_deadline) {
+        this.tanggal_deadline = tanggal_deadline;
     }
 
     public void setJenis_pesanan(String jenis_pesanan) {
@@ -124,8 +124,8 @@ public class PesananSayaModel {
         return harga;
     }
 
-    public String getDeadline() {
-        return deadline;
+    public String getTanggalDeadline() {
+        return tanggal_deadline;
     }
 
     public String getJenis_pesanan() {

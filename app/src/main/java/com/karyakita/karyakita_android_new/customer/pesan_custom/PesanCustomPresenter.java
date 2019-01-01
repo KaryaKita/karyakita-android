@@ -10,6 +10,7 @@ import com.karyakita.karyakita_android_new.service.RetrofitHelper;
 import java.io.File;
 import java.util.Map;
 
+
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.observers.DisposableObserver;
 import io.reactivex.schedulers.Schedulers;
@@ -20,12 +21,13 @@ public class PesanCustomPresenter implements IMainPresenter {
     IPesanCustomView iPesanCustomView;
     BaseModel model;
     PesanCustomModel pesanCustomModel = null;
-    Map<String, String>input;
+    Map<String, String> input;
     Integer karya_id = null;
+
 
     MultipartBody.Part imageFile;
 
-    public PesanCustomPresenter(IPesanCustomView iPesanCustomView){
+    public PesanCustomPresenter(IPesanCustomView iPesanCustomView) {
         this.iPesanCustomView = iPesanCustomView;
     }
 
@@ -58,6 +60,7 @@ public class PesanCustomPresenter implements IMainPresenter {
 //                        this.input.get"pilih_ukuran"));
 ////    }(
 
+
     public io.reactivex.Observable<PesanCustomResultModel> getObservable(){
         Log.d("tag", "masuk ovservable");
         return RetrofitHelper.getRetrofit().create(IRestServices.class)
@@ -72,12 +75,12 @@ public class PesanCustomPresenter implements IMainPresenter {
                 .observeOn(AndroidSchedulers.mainThread());
     }
 
-    public DisposableObserver<PesanCustomResultModel>getObserver(){
+    public DisposableObserver<PesanCustomResultModel> getObserver() {
         return new DisposableObserver<PesanCustomResultModel>() {
             @Override
             public void onNext(PesanCustomResultModel pesanCustomResultModel) {
                 iPesanCustomView.display(pesanCustomResultModel);
-                Log.d("tag","success");
+                Log.d("tag", "success");
             }
 
             @Override

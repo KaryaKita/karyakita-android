@@ -4,7 +4,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.karyakita.karyakita_android_new.base.BaseModel;
 
-public class PesanCustomModel extends BaseModel{
+public class PesanCustomModel extends BaseModel {
     @SerializedName("createdAt")
     @Expose
     private String createdAt;
@@ -73,6 +73,9 @@ public class PesanCustomModel extends BaseModel{
         this.gambar = gambar;
     }
 
+    public PesanCustomModel() {
+    }
+
     public String getCreatedAt() {
         return createdAt;
     }
@@ -87,6 +90,14 @@ public class PesanCustomModel extends BaseModel{
 
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getCatatan() {
@@ -167,8 +178,5 @@ public class PesanCustomModel extends BaseModel{
 
     public void setGambar(String gambar) {
         this.gambar = gambar;
-    }
-
-    public PesanCustomModel(){
     }
 }
