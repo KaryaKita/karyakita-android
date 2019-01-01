@@ -17,16 +17,16 @@ import com.karyakita.karyakita_android_new.customer.karya.KategoriKaryaModel;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PesananSayaAdapter extends RecyclerView.Adapter<PesananSayaAdapter.Holder> {
 
     List<PesananSayaModel> pesananSayaModelList;
-    List<KategoriKaryaModel> kategoriKaryaModelList;
     Context context;
 
-    public PesananSayaAdapter(List<PesananSayaModel> pesananSayaModelList, Context context) {
-        this.pesananSayaModelList = pesananSayaModelList;
+    public PesananSayaAdapter(Context context) {
+        this.pesananSayaModelList = new ArrayList<>();
         this.context = context;
     }
 
@@ -39,7 +39,7 @@ public class PesananSayaAdapter extends RecyclerView.Adapter<PesananSayaAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int position) {
-        Glide.with(context).load(pesananSayaModelList.get(position).getDeploy_url()).into(holder.iv_gambar);
+        //Glide.with(context).load(pesananSayaModelList.get(position).getDeploy_url()).into(holder.iv_gambar);
         holder.tv_nama_desainer.setText(pesananSayaModelList.get(position).getNama_desainer());
         holder.tv_kategori.setText(String.valueOf(pesananSayaModelList.get(position).getKategori()));
         holder.tv_harga.setText("Rp" + String.valueOf(String.format("%,.2f", pesananSayaModelList.get(position).getHarga())));

@@ -31,7 +31,7 @@ public class PesananSayaPresenter implements IMainPresenter {
 
     @Override
     public void get(Map<String, String> dataInputs) {
-
+        getObservable().subscribeWith(getObserver());
     }
 
     @Override
@@ -46,7 +46,7 @@ public class PesananSayaPresenter implements IMainPresenter {
 
     public io.reactivex.Observable<PesananSayaResultModel> getObservable(){
         return RetrofitHelper.getRetrofit().create(IRestServices.class)
-                .getPesananSaya("Bearer" + GlobalVariable.TOKEN)
+                .getPesananSaya("Bearer " + GlobalVariable.TOKEN)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }
@@ -55,7 +55,6 @@ public class PesananSayaPresenter implements IMainPresenter {
         return new DisposableObserver<PesananSayaResultModel>() {
             @Override
             public void onNext(PesananSayaResultModel pesananSayaResultModel) {
-                Log.d(TAG, "onNext" + pesananSayaResultModel.getData().get(0).getId());
                 iPesananSayaView.display(pesananSayaResultModel);
             }
 

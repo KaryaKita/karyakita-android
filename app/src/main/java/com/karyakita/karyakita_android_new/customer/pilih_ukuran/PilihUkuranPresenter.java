@@ -3,8 +3,8 @@ package com.karyakita.karyakita_android_new.customer.pilih_ukuran;
 import android.util.Log;
 
 import com.karyakita.karyakita_android_new.base.BaseModel;
+import com.karyakita.karyakita_android_new.base.GlobalVariable;
 import com.karyakita.karyakita_android_new.base.IMainPresenter;
-import com.karyakita.karyakita_android_new.login.LoginResultModel;
 import com.karyakita.karyakita_android_new.service.IRestServices;
 import com.karyakita.karyakita_android_new.service.RetrofitHelper;
 
@@ -16,13 +16,15 @@ import io.reactivex.observers.DisposableObserver;
 import io.reactivex.schedulers.Schedulers;
 
 public class PilihUkuranPresenter implements IMainPresenter{
-    IPilihUkuranView iPilihUkuranPesanLangsungView;
+    IPilihUkuranView iPilihUkuranView;
     BaseModel model;
     PilihUkuranModel pilihUkuranModel = null;
     Map<String, String> input = null;
+    Integer karya_id = null;
+    Integer total = null;
 
-    public PilihUkuranPresenter(IPilihUkuranView iPilihUkuranPesanLangsungView){
-        this.iPilihUkuranPesanLangsungView = iPilihUkuranPesanLangsungView;
+    public PilihUkuranPresenter(IPilihUkuranView iPilihUkuranView){
+        this.iPilihUkuranView = iPilihUkuranView;
     }
 
     @Override
@@ -39,22 +41,31 @@ public class PilihUkuranPresenter implements IMainPresenter{
     public void insert(Map<String, String> dataInput) {
         this.input = dataInput;
         Log.d("tag", "kenek");
+        getObservable().subscribeWith(getObserver());
     }
 
-//    public Observable<PilihUkuranResultModel> getObservable(){
-//        Log.d("tag", "masuk observable");
-//        return RetrofitHelper.getRetrofit().create(IRestServices.class)
-//                .pilihukuran(this.input.get("sp_ukuran_kertas"),
-//                        this.input.get("sp_jenis_kertas"))
-//                .subscribeOn(Schedulers.io())
-//                .observeOn(AndroidSchedulers.mainThread());
-//    }
+    public io.reactivex.Observable<PilihUkuranResultModel> getObservable(){
+        Log.d("tag", "masuk observable");
+        return RetrofitHelper.getRetrofit().create(IRestServices.class)
+                .pesan_langsung("Bearer " + GlobalVariable.TOKEN,
+                        this.karya_id,
+                        this.input.get("catatan"),
+                        Integer.parseInt(this.input.get("total")),
+                        this.input.get("tanggal_deadline"),
+                        Integer.parseInt(this.input.get("pelanggan_id")),
+                        Integer.parseInt(this.input.get("desainer_id")),
+                        Integer.parseInt(this.input.get("jenis_order_id")),
+                        Integer.parseInt(this.input.get("opsi_order_id")),
+                        this.input.get("ukuran"))
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+    }
 
-    public DisposableObserver<PilihUkuranModel> getObserver(){
-        return new DisposableObserver<PilihUkuranModel>() {
+    public DisposableObserver<PilihUkuranResultModel> getObserver(){
+        return new DisposableObserver<PilihUkuranResultModel>() {
             @Override
-            public void onNext(PilihUkuranModel pilihUkuranModel) {
-                iPilihUkuranPesanLangsungView.display(pilihUkuranModel);
+            public void onNext(PilihUkuranResultModel pilihUkuranResultModel) {
+                iPilihUkuranView.display(pilihUkuranModel);
                 Log.d("tag", "succes");
             }
 
@@ -62,7 +73,7 @@ public class PilihUkuranPresenter implements IMainPresenter{
             public void onError(Throwable e) {
                 Log.d("tag", "Error" + e);
                 e.printStackTrace();
-                iPilihUkuranPesanLangsungView.displayError("Error fetching Movie Data");
+                iPilihUkuranView.displayError("Error fetching Movie Data");
             }
 
             @Override

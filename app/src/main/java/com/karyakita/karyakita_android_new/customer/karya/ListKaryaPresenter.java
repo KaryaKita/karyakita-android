@@ -56,7 +56,6 @@ public class ListKaryaPresenter implements IMainPresenter {
 
             @Override
             public void onNext(@NonNull ListKaryaResultModel listKaryaResultModel) {
-                Log.d(TAG, "OnNext" + listKaryaResultModel.getData().get(0).getNama());
                 iListKaryaView.display(listKaryaResultModel);
             }
 

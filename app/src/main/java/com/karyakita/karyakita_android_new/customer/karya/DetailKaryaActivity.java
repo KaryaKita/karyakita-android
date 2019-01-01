@@ -13,11 +13,13 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.karyakita.karyakita_android_new.R;
+import com.karyakita.karyakita_android_new.base.GlobalVariable;
 import com.karyakita.karyakita_android_new.customer.data_pengiriman.DataPengirimanCustomerActivity;
 import com.karyakita.karyakita_android_new.customer.pesan_custom.PesanCustomActivity;
 
-import com.karyakita.karyakita_android_new.customer.pilih_ukuran.PilihUkuranCustomerActivity;
+import com.karyakita.karyakita_android_new.customer.pilih_ukuran.PilihUkuranActivity;
 import com.karyakita.karyakita_android_new.login.LoginActivity;
+import com.karyakita.karyakita_android_new.login_as.LoginAsActivity;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -64,18 +66,16 @@ public class DetailKaryaActivity extends AppCompatActivity implements IDetailKar
         setUpPresenter();
         getDetailKarya();
 
-        btnPesanSekarang.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(DetailKaryaActivity.this, LoginActivity.class);
-                startActivity(intent);
-            }
-        });
 
         btnPesanCustom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DetailKaryaActivity.this, PesanCustomActivity.class);
+                Intent intent;
+                if (GlobalVariable.TOKEN == null) {
+                    intent = new Intent(DetailKaryaActivity.this, LoginAsActivity.class);
+                } else {
+                    intent = new Intent(DetailKaryaActivity.this, PesanCustomActivity.class);
+                }
                 startActivity(intent);
             }
         });
@@ -83,7 +83,17 @@ public class DetailKaryaActivity extends AppCompatActivity implements IDetailKar
         btnPesanSekarang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DetailKaryaActivity.this, PilihUkuranCustomerActivity.class);
+                Intent intent;
+                if (GlobalVariable.TOKEN == null) {
+                    intent = new Intent(DetailKaryaActivity.this, LoginAsActivity.class);
+                } else {
+                    intent = new Intent(DetailKaryaActivity.this, PilihUkuranActivity.class);
+                }
+
+                Bundle bundle = new Bundle();
+                bundle.putInt("karya_id", karya_id);
+                intent.putExtras(bundle);
+
                 startActivity(intent);
             }
         });
