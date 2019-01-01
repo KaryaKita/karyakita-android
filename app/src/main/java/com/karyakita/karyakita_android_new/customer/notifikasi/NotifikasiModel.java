@@ -20,9 +20,9 @@ public class NotifikasiModel {
     @Expose
     private Integer order_id;
 
-    @SerializedName("waktu")
+    @SerializedName("judul_notifikasi")
     @Expose
-    private String waktu;
+    private String judul_notifikasi;
 
     @SerializedName("deskripsi")
     @Expose
@@ -44,12 +44,12 @@ public class NotifikasiModel {
 
     }
 
-    public NotifikasiModel(String createdAt, String updatedAt, Integer id, Integer order_id, String waktu, String deskripsi, String status, String jenis_notifikasi_id, String user_id) {
+    public NotifikasiModel(String createdAt, String updatedAt, Integer id, Integer order_id, String judul_notifikasi, String deskripsi, String status, String jenis_notifikasi_id, String user_id) {
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.id = id;
         this.order_id = order_id;
-        this.waktu = waktu;
+        this.judul_notifikasi = judul_notifikasi;
         this.deskripsi = deskripsi;
         this.status = status;
         this.jenis_notifikasi_id = jenis_notifikasi_id;
@@ -72,10 +72,6 @@ public class NotifikasiModel {
         this.order_id = order_id;
     }
 
-    public void setWaktu(String waktu) {
-        this.waktu = waktu;
-    }
-
     public void setDeskripsi(String deskripsi) {
         this.deskripsi = deskripsi;
     }
@@ -86,6 +82,15 @@ public class NotifikasiModel {
 
     public void setJenis_notifikasi_id(String jenis_notifikasi_id) {
         this.jenis_notifikasi_id = jenis_notifikasi_id;
+    }
+
+    public String getJudul_notifikasi() {
+        return judul_notifikasi;
+    }
+
+    public void setJudul_notifikasi(String judul_notifikasi) {
+
+        this.judul_notifikasi = judul_notifikasi;
     }
 
     public void setUser_id(String user_id) {
@@ -106,10 +111,6 @@ public class NotifikasiModel {
 
     public Integer getOrder_id() {
         return order_id;
-    }
-
-    public String getWaktu() {
-        return waktu;
     }
 
     public String getDeskripsi() {

@@ -5,7 +5,7 @@ import com.karyakita.karyakita_android_new.customer.pesanan_saya.PesananSayaResu
 public interface INotifikasiView {
     void showToast(String s);
 
-    void display(PesananSayaResultModel pesananSayaResultModel);
+    void display(NotifikasiResultModel notifikasiResultModel);
 
     void displayError(String s);
 }
