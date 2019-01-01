@@ -4,6 +4,7 @@ import com.karyakita.karyakita_android_new.customer.data_pengiriman.DataPengirim
 import com.karyakita.karyakita_android_new.customer.karya.DetailKaryaResultModel;
 import com.karyakita.karyakita_android_new.customer.karya.KategoriKaryaResultModel;
 import com.karyakita.karyakita_android_new.customer.karya.ListKaryaResultModel;
+import com.karyakita.karyakita_android_new.customer.notifikasi.NotifikasiResultModel;
 import com.karyakita.karyakita_android_new.customer.pesan_custom.PesanCustomResultModel;
 import com.karyakita.karyakita_android_new.customer.pesanan_saya.PesananSayaResultModel;
 import com.karyakita.karyakita_android_new.customer.pilih_ukuran.PilihUkuranResultModel;
@@ -102,6 +103,9 @@ public interface IRestServices {
 
     @GET("customer/order/list/{customer_id}")
     io.reactivex.Observable<PesananSayaResultModel> getPesananSaya(@Header("Authorization") String bearer, @Path("customer_id")Integer customer_id);
+
+    @GET("customer/notifikasi")
+    io.reactivex.Observable<NotifikasiResultModel> getNotifikasi(@Header("Authorization") String bearer, @Path("notifikasi_id")Integer notifikasi_id);
 
     @GET("desainer/order/list")
     io.reactivex.Observable<com.karyakita.karyakita_android_new.desainer.pesanan_saya.PesananSayaResultModel> getPesananSayaDesainer(@Header("Authorization") String bearer);

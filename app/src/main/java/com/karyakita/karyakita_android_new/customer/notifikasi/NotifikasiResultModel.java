@@ -13,7 +13,7 @@ public class NotifikasiResultModel {
 
     @SerializedName("data")
     @Expose
-    private List<PesananSayaModel> data;
+    private List<NotifikasiModel> data;
 
     @SerializedName("message")
     @Expose
@@ -22,7 +22,7 @@ public class NotifikasiResultModel {
     public NotifikasiResultModel() {
     }
 
-    public NotifikasiResultModel(Boolean success, List<PesananSayaModel> data, String message) {
+    public NotifikasiResultModel(Boolean success, List<NotifikasiModel> data, String message) {
         this.success = success;
         this.data = data;
         this.message = message;
@@ -32,7 +32,7 @@ public class NotifikasiResultModel {
         this.success = success;
     }
 
-    public void setData(List<PesananSayaModel> data) {
+    public void setData(List<NotifikasiModel> data) {
         this.data = data;
     }
 
@@ -44,7 +44,7 @@ public class NotifikasiResultModel {
         return success;
     }
 
-    public List<PesananSayaModel> getData() {
+    public List<NotifikasiModel> getData() {
         return data;
     }
 
