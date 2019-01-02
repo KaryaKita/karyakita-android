@@ -41,8 +41,6 @@ public class PilihUkuranPresenter implements IMainPresenter{
     @Override
     public void insert(Map<String, String> dataInput) {
         this.input = dataInput;
-        Log.d("tag", "kenek");
-//        getObservable().subscribeWith(getObserver());
     }
 
     public io.reactivex.Observable<PilihUkuranResultModel> getObservable(){
@@ -67,12 +65,10 @@ public class PilihUkuranPresenter implements IMainPresenter{
             @Override
             public void onNext(PilihUkuranResultModel pilihUkuranResultModel) {
                 iPilihUkuranView.display(pilihUkuranModel);
-                Log.d("tag", "succes");
             }
 
             @Override
             public void onError(Throwable e) {
-                Log.d("tag", "Error" + e);
                 e.printStackTrace();
                 iPilihUkuranView.displayError("Error fetching Movie Data");
             }

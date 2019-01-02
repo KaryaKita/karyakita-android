@@ -64,41 +64,26 @@ public class PilihUkuranActivity extends AppCompatActivity implements IPilihUkur
         konfirmasi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                setupPresenter();
-//                Toast.makeText(getApplicationContext(), "Konfirmasi", Toast.LENGTH_SHORT).show();
-//
-//                finish();
                 ukuran_kertas = sp_ukuran_kertas.getSelectedItem().toString();
                 jenis_kertas = sp_jenis_kertas.getSelectedItem().toString();
 
                 int selectedId = rd_pilih_opsi.getCheckedRadioButtonId();
-//                Log.d("tag", String.valueOf(rd_dg_pigora.getId()));
-//                Log.d("tog", String.valueOf(rd_tp_pigora.getId()));
+
                 if (selectedId == rd_dg_pigora.getId()) {
                     dg_pigora = rd_dg_pigora.getText().toString();
-                    showToast("pilihan " + rd_dg_pigora.getText().toString());
-                    Log.d("TAG", "sukses masuk dg");
                 }
                 if (selectedId == rd_tp_pigora.getId()) {
                     tp_pigora = rd_tp_pigora.getText().toString();
-                    showToast("pilihan" + rd_tp_pigora.getText().toString());
-                    Log.d("TAG", "sukses masuk tp");
                 }
-                //                rd_dg_pigora = (RadioButton) findViewById(selectedId);
-//                rd_tp_pigora = (RadioButton) findViewById(selectedId);
 
 
                 if (!ukuran_kertas.equals("") && !jenis_kertas.equals("") && !rd_tp_pigora.equals("") && !rd_dg_pigora.equals("") && !rd_pilih_opsi.equals("")) {
                     pilihUkuranModelRealm = new PilihUkuranModelRealm();
                     pilihUkuranModelRealm.setSp_ukuran_kertas(ukuran_kertas);
                     pilihUkuranModelRealm.setSp_jenis_kertas(jenis_kertas);
-//                    pilihUkuranModelRealm.setRd_dg_pigora(rd_dg_pigora);
-//                    pilihUkuranModelRealm.setRd_tp_pigora(rd_tp_pigora);
 
                     pilihUkuranHelperRealm = new PilihUkuranHelperRealm(realm);
                     pilihUkuranHelperRealm.save(pilihUkuranModelRealm);
-
-                    Log.d("TAG", "sukses masuk dong");
 
                     setupPresenter();
                     Toast.makeText(getApplicationContext(), "berhasil", Toast.LENGTH_SHORT).show();

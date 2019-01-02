@@ -29,17 +29,12 @@ public class ListKaryaActivity extends AppCompatActivity implements IListKaryaVi
         setContentView(R.layout.activity_list_karya_customer);
         ButterKnife.bind(this);
 
-        //setupPresenter();
-
         Toolbar toolbar = findViewById(R.id.toolbar_navigation_list_karya);
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setTitle("List Karya");
-
-        setupPresenter();
-//        setupPresenter();
 
         setupView();
         setupPresenter();

@@ -139,34 +139,6 @@ public class HomeDesainerActivity extends AppCompatActivity implements BottomNav
 
     }
 
-//    @Override
-//    public void display(HomeDesainerResultModel homeDesainerResultModel) {
-//        HomeDesainerAdapter homeDesainerAdapter = new HomeDesainerAdapter(homeDesainerResultModel.getData(), HomeDesainerActivity.this);
-//
-//        if (homeDesainerResultModel.getData() != null) {
-//            List<HomeDesainerModel> listResponse = homeDesainerResultModel.getData();
-//            Log.d(TAG, "respon: " + listResponse.get(1).getNama());
-//            if (listResponse.size() > 0) {
-//                for (int i = 0; i < listResponse.size(); i++) {
-//                    HomeDesainerModel homeDesainerModel = listResponse.get(i);
-//                    Log.d(TAG, homeDesainerModel.getFilename());
-//                    homeDesainerAdapter.addToList(homeDesainerModel);
-//                }
-//            }
-//            rv_home_desaainer.setAdapter(homeDesainerAdapter);
-//
-//
-//        } else {
-//            Log.d(TAG, "null");
-//        }
-//
-//    }
-
-//    @Override
-//    public void displayError(String s) {
-//
-//    }
-
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
 

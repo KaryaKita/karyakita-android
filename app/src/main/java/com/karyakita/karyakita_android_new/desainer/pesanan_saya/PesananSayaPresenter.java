@@ -42,11 +42,6 @@ public class PesananSayaPresenter implements IMainPresenter {
     public void insert(Map<String, String> dataInput) {
 
     }
-
-    //public io.reactivex.Observable<PesananSayaResultModel> getObservable() {
-
-    //}
-
     public Observable<PesananSayaResultModel> getObservable(){
         return RetrofitHelper.getRetrofit().create(IRestServices.class)
                 .getPesananSayaDesainer("Bearer" + GlobalVariable.TOKEN)
@@ -59,13 +54,11 @@ public class PesananSayaPresenter implements IMainPresenter {
 
             @Override
             public void onNext(@NonNull PesananSayaResultModel pesananSayaResultModel) {
-                Log.d(TAG, "OnNext" + pesananSayaResultModel.getData().getNama());
                 iPesananSayaView.display(pesananSayaResultModel);
             }
 
             @Override
             public void onError(@NonNull Throwable e) {
-                Log.d(TAG, "Error" + e);
                 e.printStackTrace();
                 iPesananSayaView.displayError("Error fetching Desainer List");
             }

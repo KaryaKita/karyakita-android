@@ -9,7 +9,7 @@ import android.widget.EditText;
 
 import java.util.Calendar;
 
-public class coba_calendar extends AppCompatActivity {
+public class TryCalender extends AppCompatActivity {
     EditText date;
     DatePickerDialog datePickerDialog;
     @Override
@@ -27,7 +27,7 @@ public class coba_calendar extends AppCompatActivity {
                 int mMonth = c.get(Calendar.MONTH); // current month
                 int mDay = c.get(Calendar.DAY_OF_MONTH); // current day
                 // date picker dialog
-                datePickerDialog = new DatePickerDialog(coba_calendar.this,
+                datePickerDialog = new DatePickerDialog(TryCalender.this,
                         new DatePickerDialog.OnDateSetListener() {
 
                             @Override
