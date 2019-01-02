@@ -224,6 +224,4 @@
         android:inputType="phone"
         android:text="08123456789"
         android:textColor="@color/grey_500" />
-
-
 </android.support.v7.widget.LinearLayoutCompat>

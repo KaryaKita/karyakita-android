@@ -29,6 +29,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
+import retrofit2.http.HEAD;
 
 public class LoginActivity extends AppCompatActivity implements ILoginView {
     LoginPresenter loginPresenter;
@@ -85,11 +86,12 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
                     et_Password_login.setError("Password tidak boleh kosong");
                 } else {
                     Toast.makeText(getApplicationContext(), "Login Success", Toast.LENGTH_SHORT).show();
+                    setUpPresenter();
                 }
 
 //                if (internetConnectionUtil.isConnected(getApplicationContext())) {
 //                    Toast.makeText(getApplicationContext(), "Internet Connected", Toast.LENGTH_LONG).show();
-                    setUpPresenter();
+
 //                } else
 //                    Toast.makeText(getApplicationContext(), "No Internet Connection or Connecting ...", Toast.LENGTH_LONG).show();
 

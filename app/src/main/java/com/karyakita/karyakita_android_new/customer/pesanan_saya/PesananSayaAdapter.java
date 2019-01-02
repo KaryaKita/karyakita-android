@@ -40,6 +40,7 @@ public class PesananSayaAdapter extends RecyclerView.Adapter<PesananSayaAdapter.
         holder.tv_nama_desainer.setText(pesananSayaModelList.get(position).getNama_desainer());
         holder.tv_kategori.setText(String.valueOf(pesananSayaModelList.get(position).getKategori()));
         holder.tv_harga.setText("Rp. " + String.valueOf(pesananSayaModelList.get(position).getHarga()));
+        //holder.tv_harga.setText("Rp" + String.valueOf(String.format("%,.2f", pesananSayaModelList.get(position).getHarga())));
         holder.tv_deadline.setText(String.valueOf(pesananSayaModelList.get(position).getTanggalDeadline()));
     }
 

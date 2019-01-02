@@ -23,7 +23,7 @@ import butterknife.ButterKnife;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 
-public class PilihUkuranCustomerActivity extends AppCompatActivity implements IPilihUkuranView {
+public class PilihUkuranActivity extends AppCompatActivity implements IPilihUkuranView {
     PilihUkuranPresenter pilihUkuranPresenter = null;
     PilihUkuranModel pilihUkuranModel = null;
     Realm realm;
@@ -42,6 +42,7 @@ public class PilihUkuranCustomerActivity extends AppCompatActivity implements IP
     Spinner sp_jenis_kertas;
     @BindView(R.id.btnLanjut)
     Button konfirmasi;
+    Integer karya_id;
 
     String dg_pigora, tp_pigora, ukuran_kertas, jenis_kertas;
 
@@ -50,7 +51,9 @@ public class PilihUkuranCustomerActivity extends AppCompatActivity implements IP
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pilih_ukuran_customer);
         ButterKnife.bind(this);
-        Realm.init(PilihUkuranCustomerActivity.this);
+        Bundle bundle = getIntent().getExtras();
+        karya_id = bundle.getInt("karya_id");
+        Realm.init(PilihUkuranActivity.this);
         RealmConfiguration configuration = new RealmConfiguration.Builder()
                 .schemaVersion(3)
                 .deleteRealmIfMigrationNeeded()
@@ -61,7 +64,7 @@ public class PilihUkuranCustomerActivity extends AppCompatActivity implements IP
         konfirmasi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setupPresenter();
+//                setupPresenter();
 //                Toast.makeText(getApplicationContext(), "Konfirmasi", Toast.LENGTH_SHORT).show();
 //
 //                finish();
@@ -97,7 +100,10 @@ public class PilihUkuranCustomerActivity extends AppCompatActivity implements IP
 
                     Log.d("TAG", "sukses masuk dong");
 
-                    Intent intent = new Intent(PilihUkuranCustomerActivity.this, DataPengirimanCustomerActivity.class);
+                    setupPresenter();
+                    Toast.makeText(getApplicationContext(), "berhasil", Toast.LENGTH_SHORT).show();
+
+                    Intent intent = new Intent(PilihUkuranActivity.this, DataPengirimanCustomerActivity.class);
                     startActivity(intent);
                 } else {
                     Toast.makeText(getApplicationContext(), "isidong", Toast.LENGTH_LONG);
@@ -124,8 +130,8 @@ public class PilihUkuranCustomerActivity extends AppCompatActivity implements IP
 
     private void setupPresenter() {
         Map<String, String> inputan = new HashMap<String, String>();
+        inputan.put("karya_id", karya_id.toString());
         inputan.put("sp_ukuran_kertas", sp_ukuran_kertas.getSelectedItem().toString());
-        inputan.put("sp_jenis_kertas", sp_jenis_kertas.getSelectedItem().toString());
         inputan.put("rd_dg_pigora", rd_dg_pigora.toString());
         inputan.put("rd_tp_pigora", rd_tp_pigora.toString());
 
