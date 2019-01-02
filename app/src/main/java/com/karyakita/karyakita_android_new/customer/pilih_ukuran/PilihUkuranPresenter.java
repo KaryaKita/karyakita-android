@@ -5,6 +5,7 @@ import android.util.Log;
 import com.karyakita.karyakita_android_new.base.BaseModel;
 import com.karyakita.karyakita_android_new.base.GlobalVariable;
 import com.karyakita.karyakita_android_new.base.IMainPresenter;
+import com.karyakita.karyakita_android_new.customer.pesan_langsung.PesanLangsungResultModel;
 import com.karyakita.karyakita_android_new.service.IRestServices;
 import com.karyakita.karyakita_android_new.service.RetrofitHelper;
 
@@ -41,29 +42,27 @@ public class PilihUkuranPresenter implements IMainPresenter{
     @Override
     public void insert(Map<String, String> dataInput) {
         this.input = dataInput;
+        getObservable().subscribeWith(getObserver());
     }
 
-    public io.reactivex.Observable<PilihUkuranResultModel> getObservable(){
+    public io.reactivex.Observable<PesanLangsungResultModel> getObservable(){
         Log.d("tag", "masuk observable");
         return RetrofitHelper.getRetrofit().create(IRestServices.class)
-                .pesan_langsung("Bearer " + GlobalVariable.TOKEN,
-                        this.karya_id,
+                .pesan_langsung("Bearer " + GlobalVariable.TOKEN,Integer.parseInt(
+                        this.input.get("karya_id")),
                         this.input.get("catatan"),
-                        Integer.parseInt(this.input.get("total")),
                         this.input.get("tanggal_deadline"),
                         Integer.parseInt(this.input.get("pelanggan_id")),
-                        Integer.parseInt(this.input.get("desainer_id")),
-                        Integer.parseInt(this.input.get("jenis_order_id")),
                         Integer.parseInt(this.input.get("opsi_order_id")),
                         this.input.get("ukuran"))
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }
 
-    public DisposableObserver<PilihUkuranResultModel> getObserver() {
-        return new DisposableObserver<PilihUkuranResultModel>() {
+    public DisposableObserver<PesanLangsungResultModel> getObserver() {
+        return new DisposableObserver<PesanLangsungResultModel>() {
             @Override
-            public void onNext(PilihUkuranResultModel pilihUkuranResultModel) {
+            public void onNext(PesanLangsungResultModel pilihUkuranResultModel) {
                 iPilihUkuranView.display(pilihUkuranModel);
             }
 
