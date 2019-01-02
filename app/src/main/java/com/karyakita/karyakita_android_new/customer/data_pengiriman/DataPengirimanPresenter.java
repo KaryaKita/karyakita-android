@@ -36,8 +36,6 @@ public class DataPengirimanPresenter implements IMainPresenter{
     @Override
     public void insert(Map<String, String> dataInput) {
         this.input = dataInput;
-        Log.d("tag", "masuk");
-//        getObservable().subscribeWith(getObserver());
     }
 
     public io.reactivex.Observable<DataPengirimanResultModel> getObservable(){

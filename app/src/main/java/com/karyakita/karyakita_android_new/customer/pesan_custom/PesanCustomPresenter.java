@@ -43,23 +43,13 @@ public class PesanCustomPresenter implements IMainPresenter {
 
     @Override
     public void insert(Map<String, String> dataInput) {
-//        this.karya_id = Integer.parseInt(dataInput.get("karya_id"));
         this.input = dataInput;
-        Log.wtf("tag", "masok");
         getObservable().subscribeWith(getObserver());
     }
 
     public void setImagePesanCustom( MultipartBody.Part file) {
         this.imageFile = file;
     }
-
-//    public io.reactivex.Observable<PesanCustomResultModel> getObservable(){
-//        return RetrofitHelper.getRetrofit().create(IRestServices.class)
-//                .pesan_custom(this.input.get("id"),
-//                        this.input.get("image"),
-//                        this.input.get"pilih_ukuran"));
-////    }(
-
 
     public io.reactivex.Observable<PesanCustomResultModel> getObservable(){
         Log.d("tag", "masuk ovservable");

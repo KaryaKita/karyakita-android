@@ -77,10 +77,6 @@ public class ListDesainerActivity extends AppCompatActivity implements IListDesa
                 }
             }
             rv_list_desainer.setAdapter(listDesainerAdapter);
-
-//            Log.d(TAG,listKaryaResultModel.getData().get(0).getNama());
-////            Log.d(TAG,listKaryaResultModel.getData().get(0).getKategori_karya_id().toString());
-//            Log.d(TAG,listKaryaResultModel.getData().get(0).getDeploy_url());
         } else {
             Log.d(TAG, "null");
         }

@@ -62,8 +62,6 @@ public class PesanCustomActivity extends AppCompatActivity implements IPesanCust
     @BindView(R.id.ed_catatan) EditText ed_catatan;
     @BindView(R.id.btnLanjut) Button btnLanjut;
 
-//    String imageName = String.valueOf(img_custom.getTag());
-
     MultipartBody.Part fileToUpload;
 
     String ukuran, calender, catatan, image;
@@ -117,8 +115,6 @@ public class PesanCustomActivity extends AppCompatActivity implements IPesanCust
         btnLanjut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                setupPresenter();
-
                 kategori = 1;
 
                 image    = img_custom.toString();
@@ -129,7 +125,6 @@ public class PesanCustomActivity extends AppCompatActivity implements IPesanCust
 
 
                 ukuran = ukuran_kertas.getSelectedItem().toString();
-//                calender = calendar.toString();
                 catatan = ed_catatan.getText().toString();
                 image = img_custom.toString();
 
@@ -148,15 +143,10 @@ public class PesanCustomActivity extends AppCompatActivity implements IPesanCust
                     Log.d("TAG", "sukses masuk dong");
 
                     setupPresenter(fileToUpload);
-//                }else {
-//                    startActivity(new Intent(PesanCustomActivity.this, DataPengirimanCustomerActivity.class));
-
                 }
                 else {
                     Toast.makeText(getApplicationContext(), "isidong", Toast.LENGTH_LONG);
                 }
-//                ((TextView)pilih_kategori.getSelectedItem()).setError("kategori harus diisi");
-//                ((TextView)ukuran_kertas.getSelectedItem()).setError("ukuran kertas harus diisi");
             }
         });
     }

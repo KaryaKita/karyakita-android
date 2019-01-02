@@ -27,10 +27,6 @@ public class ListKaryaResultModel {
     public ListKaryaResultModel() {
     }
 
-//    public List<ListKaryaModel> getListKaryaByKategori(){
-//        return data;
-//    }
-
     public Boolean getSuccess() {
         return success;
     }

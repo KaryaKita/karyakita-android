@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.karyakita.karyakita_android_new.R;
+import com.karyakita.karyakita_android_new.base.GlobalVariable;
 import com.karyakita.karyakita_android_new.customer.pesan_custom.PesanCustomRealmHelper;
 import com.karyakita.karyakita_android_new.customer.pesanan_saya.IPesananSayaView;
 import com.karyakita.karyakita_android_new.customer.pesanan_saya.PesananSayaAdapter;
@@ -50,9 +51,6 @@ public class CustomerPesananSayaFragment extends Fragment implements IPesananSay
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_customer_pesanan_saya, container, false);
 
-        //super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_list_karya_customer);
-        //ButterKnife.bind(this);
         rv_pesanan_saya_customer = view.findViewById(R.id.rv_pesanan_saya_customer);
         setupView();
         setupPresenter();
@@ -97,9 +95,6 @@ public class CustomerPesananSayaFragment extends Fragment implements IPesananSay
     }
 
     private void setupPresenter(){
-        Integer id_customer = 1;
-
-
         Realm.init(getActivity().getApplicationContext());
         RealmConfiguration configuration = new RealmConfiguration
                 .Builder()
@@ -109,11 +104,11 @@ public class CustomerPesananSayaFragment extends Fragment implements IPesananSay
         realm = Realm.getInstance(configuration);
         realmHelper = new RealmHelper(realm);
 
-
-        loginHelper = new LoginHelper(realm);
-        SessionModel user = loginHelper.getUser();
-
-        pesananSayaPresenter = new PesananSayaPresenter(this, user.getId());
+        if (GlobalVariable.TOKEN != "") {
+            loginHelper = new LoginHelper(realm);
+            SessionModel user = loginHelper.getUser();
+            pesananSayaPresenter = new PesananSayaPresenter(this, user.getId());
+        }
     }
 
     @Override

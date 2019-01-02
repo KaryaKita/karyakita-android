@@ -10,6 +10,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
+import com.karyakita.karyakita_android_new.customer.home.HomeCustomerActivity;
 import com.karyakita.karyakita_android_new.login_as.LoginAsActivity;
 
 import butterknife.ButterKnife;
@@ -34,7 +35,10 @@ public class SplashScreenActivity extends AppCompatActivity {
         new CountDownTimer(5000, 1000) {
             @Override
             public void onFinish() {
-                startActivity(new Intent(getBaseContext(), LoginAsActivity.class));
+                /** Creates a new activity, on finishing this timer */
+                startActivity(new Intent(getBaseContext(), HomeCustomerActivity.class));
+
+                /** Close this activity screen */
                 finish();
             }
 
