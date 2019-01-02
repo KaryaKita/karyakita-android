@@ -43,7 +43,6 @@ public class DataPengirimanCustomerActivity extends AppCompatActivity implements
         ButterKnife.bind(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-//        setupPresenter();
         bt_id_pesanan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

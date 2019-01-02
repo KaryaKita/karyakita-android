@@ -52,12 +52,11 @@ public class HomeCustomerActivity extends AppCompatActivity
             }
         });
 
-//        setViewPager();
     }
 
     private void setListeners() {
         bottom_nav_view_customer.setOnNavigationItemSelectedListener(this);
-        // attaching bottom sheet behaviour - hide / show on scroll
+
 //        CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) bottom_nav_view_customer.getLayoutParams();
 //        layoutParams.setBehavior(new BottomNavigationBehavior());
     }
@@ -88,11 +87,6 @@ public class HomeCustomerActivity extends AppCompatActivity
                 ft.replace(R.id.frame_container_customer, fragment);
                 ft.commit();
                 return true;
-//            case R.id.nav_akun_customer:
-//                fragment = new CustomerAkunFragment();
-//                ft.replace(R.id.frame_container_customer, fragment);
-//                ft.commit();
-//                return true;
         }
         return false;
     }

@@ -78,9 +78,6 @@ public class CustomerBerandaFragment extends Fragment implements IHomeView, ILis
 
         carousel = new Carousel();
         data_image = carousel.getData();
-//        Log.wtf(TAG, "Error Glide :" + String.valueOf(data_image.size()));
-//        Log.wtf(TAG, "DATA IMAGE NAME : " + data_image.get(0).getName());
-//        Log.wtf(TAG, "DATA IMAGE IMAGE = " + data_image.get(0).getImage());
 
         setUpPresenter();
         setUpView();
@@ -93,7 +90,6 @@ public class CustomerBerandaFragment extends Fragment implements IHomeView, ILis
         carouselScrollView.addOnItemChangedListener(this);
         carouselAdapter = new CarouselAdapter(data_image, getActivity().getApplicationContext());
         infiniteScrollAdapter = InfiniteScrollAdapter.wrap(carouselAdapter);
-//        Log.wtf(TAG, "LENGTH :" + carouselAdapter.getItemCount());
         carouselScrollView.setAdapter(infiniteScrollAdapter);
         carouselScrollView.setItemTransitionTimeMillis(500);
         carouselScrollView.setItemTransformer(new ScaleTransformer.Builder().setMinScale(0.8f).build());
