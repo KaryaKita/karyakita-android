@@ -1,10 +1,8 @@
 package com.karyakita.karyakita_android_new.data.local.realm.model;
 
-import android.content.Intent;
-
 import io.realm.RealmObject;
 
-public class PesanLangsungModel extends RealmObject{
+public class PesanLangsungModel extends RealmObject {
     private Integer id;
     private String ukuran_kertas;
     private String ukuran_pigora;
@@ -14,11 +12,11 @@ public class PesanLangsungModel extends RealmObject{
     private String alamat;
     private String opsi_pengiriman;
 
-    public Integer getId(){
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Integer id){
+    public void setId(Integer id) {
         this.id = id;
     }
 

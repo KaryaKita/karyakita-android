@@ -83,6 +83,9 @@ dependencies {
 
     // Realm
     implementation 'io.realm:android-adapters:2.0.0'
+
+    implementation 'com.yarolegovich:discrete-scrollview:1.4.9'
+
 }
 
 private Integer generateVersionCode() {
@@ -92,7 +95,7 @@ private Integer generateVersionCode() {
 private String generateVersionName() {
     String versionName = "${ext.versionMajor}.${ext.versionMinor}.${ext.versionPatch}"
     if (ext.versionClassifier == null && ext.isSnapshot) {
-        ext.versionClassifier = "alpha"
+        ext.versionClassifier = "beta"
     }
 
     if (ext.versionClassifier != null) {

@@ -31,35 +31,35 @@ public class LoginResultModel extends BaseModel {
         this.token = token;
     }
 
-    public void setSuccess(Boolean success) {
-        this.success = success;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public void setData(LoginModel data) {
-        this.data = data;
-    }
-
-    public void setToken(String token) {
-        this.token = token;
-    }
-
     public Boolean getSuccess() {
         return success;
+    }
+
+    public void setSuccess(Boolean success) {
+        this.success = success;
     }
 
     public String getMessage() {
         return message;
     }
 
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
     public LoginModel getData() {
         return data;
     }
 
+    public void setData(LoginModel data) {
+        this.data = data;
+    }
+
     public String getToken() {
         return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }

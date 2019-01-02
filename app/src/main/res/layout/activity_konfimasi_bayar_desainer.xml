@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/white"
     android:orientation="vertical"
-    tools:context=".desainer.transaksi.KonfimasiBayarDesainer"
-    android:background="@color/white">
+    tools:context=".desainer.transaksi.KonfimasiBayarDesainer">
 
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
         android:drawableLeft="@drawable/ic_color_lens_orange_24dp"
         android:text="nama toko"
@@ -21,10 +20,10 @@
         android:textStyle="bold" />
 
     <LinearLayout
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:orientation="horizontal"
         android:weightSum="2">
 
@@ -37,9 +36,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:weightSum="3"
+            android:layout_marginLeft="5dp"
             android:orientation="vertical"
-            android:layout_marginLeft="5dp">
+            android:weightSum="3">
 
             <TextView
                 android:layout_width="match_parent"
@@ -47,7 +46,7 @@
                 android:layout_weight="1"
                 android:text="Simple Vector Art"
                 android:textSize="14dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -55,7 +54,7 @@
                 android:layout_weight="1"
                 android:text="Vector Art"
                 android:textSize="14dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -63,60 +62,58 @@
                 android:layout_weight="1"
                 android:text="Rp. 100000"
                 android:textSize="14dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
 
     <TextView
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="16dp"
-        android:textStyle="bold"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
         android:drawableLeft="@drawable/ic_monetization_on_orange_24dp"
-        android:text="Metode Pembayaran"/>
+        android:text="Metode Pembayaran"
+        android:textSize="16dp"
+        android:textStyle="bold" />
 
     <Button
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
         android:id="@+id/pilihbank"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="20dp"
         android:background="@drawable/rounded_orange_grey"
+        android:drawableRight="@drawable/ic_navigate_next_orange_24dp"
         android:paddingLeft="20dp"
         android:text="Bank Mandiri"
-        android:textAlignment="textStart"
-        android:drawableRight="@drawable/ic_navigate_next_orange_24dp"
-        />
+        android:textAlignment="textStart" />
 
     <Button
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="35dp"
         android:layout_width="match_parent"
         android:layout_height="150dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/rounded_orange_grey"
         android:paddingLeft="35dp"
         android:paddingRight="35dp"
-        android:background="@drawable/rounded_orange_grey"
-        android:text="Unggah Bukti Pembayaran"
-        />
+        android:text="Unggah Bukti Pembayaran" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
         android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp">
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp">
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
+            android:background="@drawable/rounded_border"
             android:text="Konfirmasi Bayar"
-            android:textColor="@color/white"
-            android:background="@drawable/rounded_border"/>
+            android:textColor="@color/white" />
     </RelativeLayout>
 </LinearLayout>

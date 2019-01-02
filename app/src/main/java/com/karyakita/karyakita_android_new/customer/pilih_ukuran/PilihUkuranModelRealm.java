@@ -2,12 +2,12 @@ package com.karyakita.karyakita_android_new.customer.pilih_ukuran;
 
 import io.realm.RealmObject;
 
-public class PilihUkuranModelRealm extends RealmObject{
+public class PilihUkuranModelRealm extends RealmObject {
     private Integer id;
     private String sp_ukuran_kertas;
     private String sp_jenis_kertas;
     private String rd_dg_pigora;
-    private  String rd_tp_pigora;
+    private String rd_tp_pigora;
 
     public Integer getId() {
         return id;

@@ -12,39 +12,39 @@ import io.realm.RealmResults;
 public class RealmHelper {
     Realm realm;
 
-    public RealmHelper(Realm realm){
+    public RealmHelper(Realm realm) {
         this.realm = realm;
     }
 
-    public void save(final PesanLangsungModel pesanLangsungModel){
+    public void save(final PesanLangsungModel pesanLangsungModel) {
         realm.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
-                if(realm != null){
+                if (realm != null) {
                     Log.e("created", "database was created");
                     Number currentIdNum = realm.where(PesanLangsungModel.class).max("id");
                     int nexId;
-                    if (currentIdNum == null){
+                    if (currentIdNum == null) {
                         nexId = 1;
-                    }else {
+                    } else {
                         nexId = currentIdNum.intValue() + 1;
                     }
                     pesanLangsungModel.setId(nexId);
                     PesanLangsungModel model = realm.copyToRealm(pesanLangsungModel);
-                }else {
+                } else {
                     Log.e("pppp", "excute: Database not exist");
                 }
             }
         });
     }
 
-    public List<PesanLangsungModel> getAllKaryaKita(){
+    public List<PesanLangsungModel> getAllKaryaKita() {
         RealmResults<PesanLangsungModel> results = realm.where(PesanLangsungModel.class).findAll();
         return results;
     }
 
     //untuk meng-update
-    public void update(final Integer id, final String ukuran_kertas, final String ukuran_bingkai, final String provinsi, final String kabupaten, final String kecamatan, final String alamat, final String opsi_pengiriman){
+    public void update(final Integer id, final String ukuran_kertas, final String ukuran_bingkai, final String provinsi, final String kabupaten, final String kecamatan, final String alamat, final String opsi_pengiriman) {
         realm.executeTransactionAsync(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
@@ -73,7 +73,7 @@ public class RealmHelper {
     }
 
     //untuk menghapus data
-    public void delete(Integer id){
+    public void delete(Integer id) {
         final RealmResults<PesanLangsungModel> model = realm.where(PesanLangsungModel.class).equalTo("id", id).findAll();
         realm.executeTransaction(new Realm.Transaction() {
             @Override

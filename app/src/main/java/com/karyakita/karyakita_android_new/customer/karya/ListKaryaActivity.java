@@ -3,16 +3,11 @@ package com.karyakita.karyakita_android_new.customer.karya;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.Menu;
 
 import com.karyakita.karyakita_android_new.R;
-import com.karyakita.karyakita_android_new.example.ITestView;
-import com.karyakita.karyakita_android_new.example.MovieResponse;
-import com.karyakita.karyakita_android_new.customer.karya.ListKaryaPresenter;
 import com.karyakita.karyakita_android_new.login.LoginResultModel;
 
 import java.util.List;
@@ -23,13 +18,10 @@ import butterknife.ButterKnife;
 public class ListKaryaActivity extends AppCompatActivity implements IListKaryaView {
     ListKaryaPresenter listKaryaPresenter = null;
     LoginResultModel loginResultModel = null;
-
-    private String TAG = "ListKaryaActivity";
-
     @BindView(R.id.rv_list_karya)
     RecyclerView rv_list_karya;
-
     ListKaryaModel listKaryaModel = null;
+    private String TAG = "ListKaryaActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,13 +44,6 @@ public class ListKaryaActivity extends AppCompatActivity implements IListKaryaVi
         setupView();
         setupPresenter();
         getListKarya();
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
     }
 
     @Override

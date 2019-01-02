@@ -25,12 +25,12 @@
 
                 <android.support.v7.widget.Toolbar
                     android:id="@+id/toolbar"
-                    android:elevation="1dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
-                    app:titleTextColor="@color/mainColor"
-                    app:popupTheme="@style/AppTheme.PopupOverlay" />
+                    android:elevation="1dp"
+                    app:popupTheme="@style/AppTheme.PopupOverlay"
+                    app:titleTextColor="@color/mainColor" />
             </android.support.design.widget.AppBarLayout>
 
             <ImageView
@@ -67,19 +67,19 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
-                        android:layout_marginRight="15dp"
                         android:layout_marginTop="3dp"
+                        android:layout_marginRight="15dp"
+                        android:backgroundTint="@color/mainColor"
                         android:entries="@array/jenis_kertas"
                         android:paddingLeft="0dp"
-                        android:paddingRight="0dp"
-                        android:backgroundTint="@color/mainColor"/>
+                        android:paddingRight="0dp" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="27dp"
-                        android:layout_marginRight="15dp"
                         android:layout_marginTop="20dp"
+                        android:layout_marginRight="15dp"
                         android:text="UKURAN KERTAS"
                         android:textSize="14dp"
                         android:textStyle="bold" />
@@ -91,8 +91,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
-                        android:layout_marginRight="15dp"
                         android:layout_marginTop="3dp"
+                        android:layout_marginRight="15dp"
                         android:backgroundTint="@color/mainColor"
                         android:entries="@array/ukuran_kertas"
                         android:paddingLeft="0dp"
@@ -102,8 +102,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="27dp"
-                        android:layout_marginRight="15dp"
                         android:layout_marginTop="20dp"
+                        android:layout_marginRight="15dp"
                         android:text="OPSI PIGORA"
                         android:textSize="14dp"
                         android:textStyle="bold" />
@@ -112,8 +112,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="21dp"
                         android:layout_marginLeft="27dp"
-                        android:layout_marginRight="15dp"
                         android:layout_marginTop="7dp"
+                        android:layout_marginRight="15dp"
                         android:orientation="horizontal"
                         android:weightSum="2">
 
@@ -148,16 +148,15 @@
 
             <Button
                 android:id="@+id/btnLanjut"
-                android:layout_marginBottom="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginLeft="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
                 android:background="@drawable/rounded_border"
-                android:textColor="@color/white"
                 android:text="Lanjut"
-                />
+                android:textColor="@color/white" />
         </RelativeLayout>
     </android.support.design.widget.CoordinatorLayout>
 </android.support.v4.widget.DrawerLayout>

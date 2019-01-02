@@ -4,7 +4,6 @@ import android.util.Log;
 
 import com.karyakita.karyakita_android_new.base.BaseModel;
 import com.karyakita.karyakita_android_new.base.IMainPresenter;
-import com.karyakita.karyakita_android_new.login.LoginResultModel;
 import com.karyakita.karyakita_android_new.service.IRestServices;
 import com.karyakita.karyakita_android_new.service.RetrofitHelper;
 
@@ -15,13 +14,13 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.observers.DisposableObserver;
 import io.reactivex.schedulers.Schedulers;
 
-public class PilihUkuranPresenter implements IMainPresenter{
+public class PilihUkuranPresenter implements IMainPresenter {
     IPilihUkuranView iPilihUkuranPesanLangsungView;
     BaseModel model;
     PilihUkuranModel pilihUkuranModel = null;
     Map<String, String> input = null;
 
-    public PilihUkuranPresenter(IPilihUkuranView iPilihUkuranPesanLangsungView){
+    public PilihUkuranPresenter(IPilihUkuranView iPilihUkuranPesanLangsungView) {
         this.iPilihUkuranPesanLangsungView = iPilihUkuranPesanLangsungView;
     }
 
@@ -41,7 +40,7 @@ public class PilihUkuranPresenter implements IMainPresenter{
         Log.d("tag", "kenek");
     }
 
-    public Observable<PilihUkuranResultModel> getObservable(){
+    public Observable<PilihUkuranResultModel> getObservable() {
         Log.d("tag", "masuk observable");
         return RetrofitHelper.getRetrofit().create(IRestServices.class)
                 .pilihukuran(this.input.get("sp_ukuran_kertas"),
@@ -50,7 +49,7 @@ public class PilihUkuranPresenter implements IMainPresenter{
                 .observeOn(AndroidSchedulers.mainThread());
     }
 
-    public DisposableObserver<PilihUkuranModel> getObserver(){
+    public DisposableObserver<PilihUkuranModel> getObserver() {
         return new DisposableObserver<PilihUkuranModel>() {
             @Override
             public void onNext(PilihUkuranModel pilihUkuranModel) {

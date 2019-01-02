@@ -4,7 +4,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.karyakita.karyakita_android_new.base.BaseModel;
 
-public class PilihUkuranModel extends BaseModel{
+public class PilihUkuranModel extends BaseModel {
     @SerializedName("createdAt")
     @Expose
     private String createdAt;
@@ -33,32 +33,32 @@ public class PilihUkuranModel extends BaseModel{
     @Expose
     private String sp_jenis_kertas;
 
-    public PilihUkuranModel(String createdAt, String updatedAt, Integer id, String sp_ukuran_kertas, String rd_dg_pigora, String rd_tp_pigora, String sp_jenis_kertas){
-        this.createdAt      = createdAt;
-        this.updatedAt      = updatedAt;
-        this.id             = id;
-        this.sp_ukuran_kertas= sp_ukuran_kertas;
-        this.rd_dg_pigora   = rd_dg_pigora;
-        this.rd_tp_pigora   = rd_tp_pigora;
-        this.sp_jenis_kertas= sp_jenis_kertas;
+    public PilihUkuranModel(String createdAt, String updatedAt, Integer id, String sp_ukuran_kertas, String rd_dg_pigora, String rd_tp_pigora, String sp_jenis_kertas) {
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.id = id;
+        this.sp_ukuran_kertas = sp_ukuran_kertas;
+        this.rd_dg_pigora = rd_dg_pigora;
+        this.rd_tp_pigora = rd_tp_pigora;
+        this.sp_jenis_kertas = sp_jenis_kertas;
     }
 
-    public PilihUkuranModel(){
+    public PilihUkuranModel() {
     }
 
-    public String getCreatedAt(){
+    public String getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(String createdAt){
+    public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
 
-    public String getUpdatedAt(){
+    public String getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(String updatedAt){
+    public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
 
