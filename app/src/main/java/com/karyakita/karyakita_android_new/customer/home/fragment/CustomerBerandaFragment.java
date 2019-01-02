@@ -132,7 +132,6 @@ public class CustomerBerandaFragment extends Fragment implements IHomeView, ILis
 
         if (listKaryaResultModel.getData() != null) {
             List<ListKaryaModel> listResponse = listKaryaResultModel.getData();
-            Log.d(TAG, "respon: " + listResponse.get(1).getNama());
             if (listResponse.size() > 0) {
                 for (int i = 0; i < listResponse.size(); i++) {
                     ListKaryaModel listKaryaModel = listResponse.get(i);

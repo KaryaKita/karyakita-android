@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".customer.pesan_custom.PesanCustomActivity">
@@ -9,6 +10,7 @@
         android:id="@+id/iv_pesan_custom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -74,6 +76,15 @@
                         android:textSize="11dp" />
 
                 </LinearLayout>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:id="@+id/date"
+                    android:text="Klik Intuk menginputkan tanggal"
+                    android:backgroundTint="@color/mainColor"
+                    android:focusable="false"/>
 
                 <TextView
                     android:layout_width="match_parent"

@@ -71,9 +71,28 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
             @Override
             public void onClick(View v) {
                 setUpPresenter();
-
+                if (et_Username_login.getText().toString().length()==0){
+                    et_Username_login.setError("Email tidak boleh kosong");
+                }else if (et_Password_login.getText().toString().length()==0){
+                    et_Password_login.setError("Password tidak boleh kosong");
+                }else{
+                    Toast.makeText(getApplicationContext(), "Login Success", Toast.LENGTH_SHORT).show();
+                }
             }
         });
+
+//        bt_masuk.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (et_Username_login.getText().toString().length()==0){
+//                    et_Username_login.setError("Email tidak boleh kosong");
+//                }else if (et_Password_login.getText().toString().length()==0){
+//                    et_Password_login.setError("Password tidak boleh kosong");
+//                }else{
+//                    Toast.makeText(getApplicationContext(), "Login Success", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
 
         addAkun.setOnClickListener(new View.OnClickListener() {
             @Override
