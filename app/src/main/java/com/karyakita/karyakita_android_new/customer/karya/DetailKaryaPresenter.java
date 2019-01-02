@@ -54,20 +54,18 @@ public class DetailKaryaPresenter implements IMainPresenter {
 
             @Override
             public void onNext(DetailKaryaResultModel detailKaryaResultModel) {
-                Log.d("tag", "OnNext iii" + detailKaryaResultModel.getData().getDeploy_url());
                 iDetailKaryaView.display(detailKaryaResultModel);
             }
 
             @Override
             public void onError(Throwable e) {
-                Log.d("tag", "Error oiii" + e);
                 e.printStackTrace();
                 iDetailKaryaView.displayError("Error fetching Movie Data");
             }
 
             @Override
             public void onComplete() {
-                Log.d("tag", "Complete okkk");
+                Log.d("tag", "Complete");
             }
         };
     }

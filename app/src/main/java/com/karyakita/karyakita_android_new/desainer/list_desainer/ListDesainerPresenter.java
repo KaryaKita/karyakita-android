@@ -61,7 +61,6 @@ public class ListDesainerPresenter implements IMainPresenter {
 
             @Override
             public void onError(@NonNull Throwable e) {
-                Log.d(TAG, "Error" + e);
                 e.printStackTrace();
                 iListDesainerView.displayError("Error fetching Desainer List");
             }
