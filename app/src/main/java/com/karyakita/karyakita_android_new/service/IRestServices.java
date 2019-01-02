@@ -8,6 +8,7 @@ import com.karyakita.karyakita_android_new.customer.notifikasi.NotifikasiResultM
 import com.karyakita.karyakita_android_new.customer.pesan_custom.PesanCustomResultModel;
 import com.karyakita.karyakita_android_new.customer.pesanan_saya.PesananSayaResultModel;
 import com.karyakita.karyakita_android_new.customer.pilih_ukuran.PilihUkuranResultModel;
+import com.karyakita.karyakita_android_new.customer.profil_customer.ProfilResultModel;
 import com.karyakita.karyakita_android_new.desainer.list_desainer.ListDesainerResultModel;
 import com.karyakita.karyakita_android_new.login.LoginResultModel;
 import com.karyakita.karyakita_android_new.register.RegisterResultModel;
@@ -122,5 +123,8 @@ public interface IRestServices {
 
     @GET("karya/{id}")
     io.reactivex.Observable<DetailKaryaResultModel> getDetailKarya(@Header("Authorization") String bearer, @Path("id")Integer id);
+
+    @GET("user/{id}")
+    io.reactivex.Observable<ProfilResultModel> getProfil(@Header("Authorization") String bearer, @Path("id")Integer id);
 
 }
