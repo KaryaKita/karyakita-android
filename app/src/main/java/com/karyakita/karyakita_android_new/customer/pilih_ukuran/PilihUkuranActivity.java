@@ -45,6 +45,7 @@ public class PilihUkuranActivity extends AppCompatActivity implements IPilihUkur
     Integer karya_id;
 
     String dg_pigora, tp_pigora, ukuran_kertas, jenis_kertas;
+    Integer opsi_order, pelanggan_id = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,26 +71,24 @@ public class PilihUkuranActivity extends AppCompatActivity implements IPilihUkur
                 int selectedId = rd_pilih_opsi.getCheckedRadioButtonId();
 
                 if (selectedId == rd_dg_pigora.getId()) {
-                    dg_pigora = rd_dg_pigora.getText().toString();
+//                    opsi_order = rd_dg_pigora.getText().toString();
+                    opsi_order = 1;
                 }
                 if (selectedId == rd_tp_pigora.getId()) {
-                    tp_pigora = rd_tp_pigora.getText().toString();
+//                    opsi_order = rd_tp_pigora.getText().toString();
+                    opsi_order = 2;
                 }
 
 
                 if (!ukuran_kertas.equals("") && !jenis_kertas.equals("") && !rd_tp_pigora.equals("") && !rd_dg_pigora.equals("") && !rd_pilih_opsi.equals("")) {
-                    pilihUkuranModelRealm = new PilihUkuranModelRealm();
-                    pilihUkuranModelRealm.setSp_ukuran_kertas(ukuran_kertas);
-                    pilihUkuranModelRealm.setSp_jenis_kertas(jenis_kertas);
-
-                    pilihUkuranHelperRealm = new PilihUkuranHelperRealm(realm);
-                    pilihUkuranHelperRealm.save(pilihUkuranModelRealm);
+//                    pilihUkuranModelRealm = new PilihUkuranModelRealm();
+//                    pilihUkuranModelRealm.setSp_ukuran_kertas(ukuran_kertas);
+//                    pilihUkuranModelRealm.setSp_jenis_kertas(jenis_kertas);
+//
+//                    pilihUkuranHelperRealm = new PilihUkuranHelperRealm(realm);
+//                    pilihUkuranHelperRealm.save(pilihUkuranModelRealm);
 
                     setupPresenter();
-                    Toast.makeText(getApplicationContext(), "berhasil", Toast.LENGTH_SHORT).show();
-
-                    Intent intent = new Intent(PilihUkuranActivity.this, DataPengirimanCustomerActivity.class);
-                    startActivity(intent);
                 } else {
                     Toast.makeText(getApplicationContext(), "isidong", Toast.LENGTH_LONG);
                 }
@@ -105,7 +104,10 @@ public class PilihUkuranActivity extends AppCompatActivity implements IPilihUkur
 
     @Override
     public void display(PilihUkuranModel model) {
+        Toast.makeText(getApplicationContext(), "berhasil", Toast.LENGTH_SHORT).show();
 
+        Intent intent = new Intent(PilihUkuranActivity.this, DataPengirimanCustomerActivity.class);
+        startActivity(intent);
     }
 
     @Override
@@ -116,9 +118,11 @@ public class PilihUkuranActivity extends AppCompatActivity implements IPilihUkur
     private void setupPresenter() {
         Map<String, String> inputan = new HashMap<String, String>();
         inputan.put("karya_id", karya_id.toString());
-        inputan.put("sp_ukuran_kertas", sp_ukuran_kertas.getSelectedItem().toString());
-        inputan.put("rd_dg_pigora", rd_dg_pigora.toString());
-        inputan.put("rd_tp_pigora", rd_tp_pigora.toString());
+        inputan.put("catatan", "");
+        inputan.put("tanggal_deadline", "2019-01-01");
+        inputan.put("pelanggan_id", pelanggan_id.toString());
+        inputan.put("opsi_order_id", opsi_order.toString());
+        inputan.put("ukuran", ukuran_kertas);
 
         pilihUkuranPresenter = new PilihUkuranPresenter(this);
         pilihUkuranPresenter.insert(inputan);
