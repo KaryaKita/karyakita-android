@@ -6,6 +6,7 @@ import com.karyakita.karyakita_android_new.customer.karya.KategoriKaryaResultMod
 import com.karyakita.karyakita_android_new.customer.karya.ListKaryaResultModel;
 import com.karyakita.karyakita_android_new.customer.notifikasi.NotifikasiResultModel;
 import com.karyakita.karyakita_android_new.customer.pesan_custom.PesanCustomResultModel;
+import com.karyakita.karyakita_android_new.customer.pesan_langsung.PesanLangsungResultModel;
 import com.karyakita.karyakita_android_new.customer.pesanan_saya.PesananSayaResultModel;
 import com.karyakita.karyakita_android_new.customer.pilih_ukuran.PilihUkuranResultModel;
 import com.karyakita.karyakita_android_new.customer.profil_customer.ProfilResultModel;
@@ -52,15 +53,12 @@ public interface IRestServices {
 
     @FormUrlEncoded
     @POST("customer/order/direct")
-    io.reactivex.Observable<PilihUkuranResultModel> pesan_langsung(
+    io.reactivex.Observable<PesanLangsungResultModel> pesan_langsung(
             @Header("Authorization") String bearer,
             @Field("karya_id") Integer karya_id,
             @Field("catatan") String catatan,
-            @Field("total") Integer total,
             @Field("tanggal_deadline") String tanggal_deadline,
             @Field("pelanggan_id") Integer pelanggan_id,
-            @Field("desainer_id") Integer desainer_id,
-            @Field("jenis_order_id") Integer jenis_ord6er_id,
             @Field("opsi_order_id") Integer opsi_desainer_id,
             @Field("ukuran") String ukuran );
 
