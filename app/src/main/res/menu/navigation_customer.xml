@@ -20,6 +20,11 @@
         android:icon="@drawable/ic_notifikasi"
         android:title="@string/notifikasi" />
 
+    <item
+        android:id="@+id/nav_profil_customer"
+        android:icon="@drawable/ic_akun"
+        android:title="@string/akun_string" />
+
     <!--<item-->
     <!--android:id="@+id/nav_akun_customer"-->
     <!--android:icon="@drawable/ic_akun"-->

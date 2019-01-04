@@ -96,6 +96,14 @@ public class CustomerAkunFragment extends Fragment implements IProfilView{
     public void display(ProfilResultModel profilResultModel) {
         //ProfilAdapter profilAdapter = new ProfilAdapter(getActivity());
         //Glide.with(getActivity().l
+        tv_nama.setText(profilResultModel.getData().getNama());
+        tv_username.setText(profilResultModel.getData().getUsername());
+        tv_email.setText(profilResultModel.getData().getEmail());
+        tv_alamat_lengkap.setText(profilResultModel.getData().getAlamat_lengkap());
+        tv_notelp.setText(profilResultModel.getData().getNotelp());
+        tv_kecamatan.setText(profilResultModel.getData().getKecamatan());
+        tv_kota_kab.setText(profilResultModel.getData().getKota_kab());
+        tv_provinsi.setText(profilResultModel.getData().getProvinsi();
     }
 
     private void setupPresenter(){

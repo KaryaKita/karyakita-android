@@ -14,6 +14,7 @@ import android.widget.ImageView;
 
 import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.customer.SearchActivity;
+import com.karyakita.karyakita_android_new.customer.home.fragment.CustomerAkunFragment;
 import com.karyakita.karyakita_android_new.customer.home.fragment.CustomerBerandaFragment;
 import com.karyakita.karyakita_android_new.customer.home.fragment.CustomerDesainerFragment;
 import com.karyakita.karyakita_android_new.customer.home.fragment.CustomerNotifikasiFragment;
@@ -84,6 +85,11 @@ public class HomeCustomerActivity extends AppCompatActivity
                 return true;
             case R.id.nav_notif_customer:
                 fragment = new CustomerNotifikasiFragment();
+                ft.replace(R.id.frame_container_customer, fragment);
+                ft.commit();
+                return true;
+            case R.id.nav_profil_customer:
+                fragment = new CustomerAkunFragment();
                 ft.replace(R.id.frame_container_customer, fragment);
                 ft.commit();
                 return true;
