@@ -55,11 +55,8 @@ public interface IRestServices {
             @Header("Authorization") String bearer,
             @Field("karya_id") Integer karya_id,
             @Field("catatan") String catatan,
-            @Field("total") Integer total,
             @Field("tanggal_deadline") String tanggal_deadline,
             @Field("pelanggan_id") Integer pelanggan_id,
-            @Field("desainer_id") Integer desainer_id,
-            @Field("jenis_order_id") Integer jenis_ord6er_id,
             @Field("opsi_order_id") Integer opsi_desainer_id,
             @Field("ukuran") String ukuran );
 
@@ -69,10 +66,10 @@ public interface IRestServices {
                                                     @Field("password") String password,
                                                     @Field("role_id") Integer role_id);
 
-    @FormUrlEncoded
-    @POST("user/login")
-    io.reactivex.Observable<PilihUkuranResultModel> pilihukuran(@Field("ukuran_kertas") String ukuran_kertas,
-                                                                @Field("ukuran_bingkai") String ukuran_bingkai);
+//    @FormUrlEncoded
+//    @POST("user/login")
+//    io.reactivex.Observable<PilihUkuranResultModel> pilihukuran(@Field("ukuran_kertas") String ukuran_kertas,
+//                                                                @Field("ukuran_bingkai") String ukuran_bingkai);
 
     @POST("customer/datapengiriman")
     io.reactivex.Observable<DataPengirimanResultModel> datapengiriman(@Field("provinsi") String provinsi,

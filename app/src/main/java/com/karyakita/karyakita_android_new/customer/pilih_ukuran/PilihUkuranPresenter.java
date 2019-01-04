@@ -30,12 +30,10 @@ public class PilihUkuranPresenter implements IMainPresenter{
 
     @Override
     public void get(Map<String, String> dataInput) {
-
     }
 
     @Override
     public void update() {
-
     }
 
     @Override
@@ -49,11 +47,8 @@ public class PilihUkuranPresenter implements IMainPresenter{
                 .pesan_langsung("Bearer " + GlobalVariable.TOKEN,
                         this.karya_id,
                         this.input.get("catatan"),
-                        Integer.parseInt(this.input.get("total")),
                         this.input.get("tanggal_deadline"),
                         Integer.parseInt(this.input.get("pelanggan_id")),
-                        Integer.parseInt(this.input.get("desainer_id")),
-                        Integer.parseInt(this.input.get("jenis_order_id")),
                         Integer.parseInt(this.input.get("opsi_order_id")),
                         this.input.get("ukuran"))
                 .subscribeOn(Schedulers.io())
