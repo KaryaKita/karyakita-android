@@ -7,7 +7,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.karyakita.karyakita_android_new.R;
@@ -34,6 +36,7 @@ public class KategoriKaryaAdapter extends RecyclerView.Adapter<KategoriKaryaAdap
 
     @Override
     public void onBindViewHolder(@NonNull KategoriKaryaAdapter.Holder holder, int position) {
+        holder.tv_kategori_name_home.setText(kategoriKaryaModelList.get(position).getKategori());
         Glide.with(context).load(kategoriKaryaModelList.get(position).getDeploy_url()).into(holder.iv_image_kategori_home);
     }
 
@@ -47,14 +50,19 @@ public class KategoriKaryaAdapter extends RecyclerView.Adapter<KategoriKaryaAdap
     }
 
     public class Holder extends RecyclerView.ViewHolder {
+        FrameLayout layout_kategori_home;
         ImageView iv_image_kategori_home;
+        TextView tv_kategori_name_home;
 
         public Holder(View itemView) {
             super(itemView);
             context = itemView.getContext();
 
+            layout_kategori_home = itemView.findViewById(R.id.layout_kategori_home);
+            tv_kategori_name_home = itemView.findViewById(R.id.tv_kategori_name_home);
             iv_image_kategori_home = itemView.findViewById(R.id.iv_image_kategori_home);
-            iv_image_kategori_home.setOnClickListener(new View.OnClickListener() {
+
+            layout_kategori_home.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     context.startActivity(new Intent(context.getApplicationContext(), ListKaryaActivity.class));
