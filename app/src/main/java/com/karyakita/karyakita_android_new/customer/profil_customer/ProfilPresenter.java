@@ -22,8 +22,9 @@ public class ProfilPresenter implements IMainPresenter{
     Map<String, String> input;
     Integer user_id = null;
 
-    public ProfilPresenter(IProfilView iProfilView){
+    public ProfilPresenter(IProfilView iProfilView, Integer user_id){
         this.iProfilView = iProfilView;
+        this.user_id = user_id;
     }
 
     @Override
