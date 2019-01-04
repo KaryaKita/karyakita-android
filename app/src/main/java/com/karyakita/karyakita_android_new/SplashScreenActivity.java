@@ -36,7 +36,7 @@ public class SplashScreenActivity extends AppCompatActivity {
             @Override
             public void onFinish() {
                 /** Creates a new activity, on finishing this timer */
-                startActivity(new Intent(getBaseContext(), HomeCustomerActivity.class));
+                startActivity(new Intent(getBaseContext(), LoginAsActivity.class));
 
                 /** Close this activity screen */
                 finish();

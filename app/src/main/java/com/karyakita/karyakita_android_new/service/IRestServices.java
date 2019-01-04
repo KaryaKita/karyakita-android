@@ -6,8 +6,10 @@ import com.karyakita.karyakita_android_new.customer.karya.KategoriKaryaResultMod
 import com.karyakita.karyakita_android_new.customer.karya.ListKaryaResultModel;
 import com.karyakita.karyakita_android_new.customer.notifikasi.NotifikasiResultModel;
 import com.karyakita.karyakita_android_new.customer.pesan_custom.PesanCustomResultModel;
+import com.karyakita.karyakita_android_new.customer.pesan_langsung.PesanLangsungResultModel;
 import com.karyakita.karyakita_android_new.customer.pesanan_saya.PesananSayaResultModel;
 import com.karyakita.karyakita_android_new.customer.pilih_ukuran.PilihUkuranResultModel;
+import com.karyakita.karyakita_android_new.customer.profil_customer.ProfilResultModel;
 import com.karyakita.karyakita_android_new.desainer.list_desainer.ListDesainerResultModel;
 import com.karyakita.karyakita_android_new.login.LoginResultModel;
 import com.karyakita.karyakita_android_new.register.RegisterResultModel;
@@ -51,7 +53,7 @@ public interface IRestServices {
 
     @FormUrlEncoded
     @POST("customer/order/direct")
-    io.reactivex.Observable<PilihUkuranResultModel> pesan_langsung(
+    io.reactivex.Observable<PesanLangsungResultModel> pesan_langsung(
             @Header("Authorization") String bearer,
             @Field("karya_id") Integer karya_id,
             @Field("catatan") String catatan,
@@ -101,5 +103,8 @@ public interface IRestServices {
 
     @GET("karya/{id}")
     io.reactivex.Observable<DetailKaryaResultModel> getDetailKarya(@Header("Authorization") String bearer, @Path("id")Integer id);
+
+    @GET("user/{id}")
+    io.reactivex.Observable<ProfilResultModel> getProfil(@Header("Authorization") String bearer, @Path("id")Integer id);
 
 }

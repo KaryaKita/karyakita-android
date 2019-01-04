@@ -14,13 +14,9 @@ import android.widget.Toast;
 import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.base.GlobalVariable;
 import com.karyakita.karyakita_android_new.customer.home.HomeCustomerActivity;
-import com.karyakita.karyakita_android_new.customer.karya.ListKaryaActivity;
-import com.karyakita.karyakita_android_new.customer.pesan_custom.PesanCustomRealmHelper;
-import com.karyakita.karyakita_android_new.data.local.realm.RealmHelper;
 import com.karyakita.karyakita_android_new.desainer.home.HomeDesainerActivity;
 import com.karyakita.karyakita_android_new.login_as.LoginAsActivity;
 import com.karyakita.karyakita_android_new.register_as.RegisterAsActivity;
-import com.karyakita.karyakita_android_new.util.InternetConnectionUtil;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -29,11 +25,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
-import retrofit2.http.HEAD;
 
 public class LoginActivity extends AppCompatActivity implements ILoginView {
     LoginPresenter loginPresenter;
-    InternetConnectionUtil internetConnectionUtil;
     Integer role_id;
 
     @BindView(R.id.addAkun)
@@ -54,8 +48,6 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
 
-        internetConnectionUtil = new InternetConnectionUtil();
-
         Bundle bundle = getIntent().getExtras();
         role_id = bundle.getInt("role_id");
         Log.d("Test0 : ", GlobalVariable.TOKEN);
@@ -67,6 +59,17 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
                 .deleteRealmIfMigrationNeeded()
                 .build();
         realm = Realm.getInstance(configuration);
+
+//        Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+//        startActivity(intent);
+
+        bt_masuk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setUpPresenter();
+
+            }
+        });
 
         addAkun.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,21 +83,14 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
         bt_masuk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                setUpPresenter();
                 if (et_Username_login.getText().toString().length() == 0) {
                     et_Username_login.setError("Email tidak boleh kosong");
                 } else if (et_Password_login.getText().toString().length() == 0) {
                     et_Password_login.setError("Password tidak boleh kosong");
                 } else {
                     Toast.makeText(getApplicationContext(), "Login Success", Toast.LENGTH_SHORT).show();
-                    setUpPresenter();
                 }
-
-//                if (internetConnectionUtil.isConnected(getApplicationContext())) {
-//                    Toast.makeText(getApplicationContext(), "Internet Connected", Toast.LENGTH_LONG).show();
-
-//                } else
-//                    Toast.makeText(getApplicationContext(), "No Internet Connection or Connecting ...", Toast.LENGTH_LONG).show();
-
             }
         });
     }
@@ -129,7 +125,7 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
                 model.getData().getNama(),
                 null,
                 model.getData().getRole_id()
-                ));
+        ));
     }
 
     @Override
