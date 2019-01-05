@@ -3,6 +3,7 @@ package com.karyakita.karyakita_android_new.customer.data_pengiriman;
 import android.util.Log;
 
 import com.karyakita.karyakita_android_new.base.BaseModel;
+import com.karyakita.karyakita_android_new.base.GlobalVariable;
 import com.karyakita.karyakita_android_new.base.IMainPresenter;
 import com.karyakita.karyakita_android_new.service.IRestServices;
 import com.karyakita.karyakita_android_new.service.RetrofitHelper;
@@ -41,11 +42,15 @@ public class DataPengirimanPresenter implements IMainPresenter{
     public io.reactivex.Observable<DataPengirimanResultModel> getObservable(){
         Log.d("tag", "masuk observable");
         return RetrofitHelper.getRetrofit().create(IRestServices.class)
-                .datapengiriman(this.input.get("provinsi"),
-                        this.input.get("kabupaten"),
+                .datapengiriman("Bearer " + GlobalVariable.TOKEN,
+                        Integer.parseInt(this.input.get("via")),
+                        Integer.parseInt(this.input.get("resi")),
                         this.input.get("kecamatan"),
-                        this.input.get("alamat"),
-                        this.input.get("opsipengiriman"))
+                        this.input.get("kota_kab"),
+                        this.input.get("provinsi"),
+                        this.input.get("alamat_lengkap"),
+                        Integer.parseInt(this.input.get("kode_pos")),
+                        Integer.parseInt(this.input.get("order_id")))
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }

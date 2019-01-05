@@ -73,12 +73,17 @@ public interface IRestServices {
 //    io.reactivex.Observable<PilihUkuranResultModel> pilihukuran(@Field("ukuran_kertas") String ukuran_kertas,
 //                                                                @Field("ukuran_bingkai") String ukuran_bingkai);
 
-    @POST("customer/datapengiriman")
-    io.reactivex.Observable<DataPengirimanResultModel> datapengiriman(@Field("provinsi") String provinsi,
-                                                                      @Field("kabupaten") String kabupaten,
-                                                                      @Field("kecamatan") String kecamatan,
-                                                                      @Field("alamat") String alamat,
-                                                                      @Field("opsipengiriman") String opsipengiriman);
+    @POST("customer/order/data-pengiriman")
+    io.reactivex.Observable<DataPengirimanResultModel> datapengiriman(
+                                                                @Header("Authorization") String bearer,
+                                                                @Field("via") int via,
+                                                                @Field("resi") Integer resi,
+                                                                @Field("kecamatan") String kecamatan,
+                                                                @Field("kota_kab") String kota_kab,
+                                                                @Field("provinsi") String provinsi,
+                                                                @Field("alamat_lengkap") String alamat_lengkap,
+                                                                @Field("kode_pos") Integer kode_pos,
+                                                                @Field("order_id") Integer order_id);
 
     @GET("karya/get-all")
     io.reactivex.Observable<KategoriKaryaResultModel> getListKarya(@Header("Authorization") String bearer);

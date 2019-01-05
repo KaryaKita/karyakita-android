@@ -13,44 +13,55 @@ public class DataPengirimanModel extends BaseModel{
     @Expose
     private String updatedAt;
 
-    @SerializedName("id")
+    @SerializedName("via")
     @Expose
-    private Integer id;
+    private String via;
 
-    @SerializedName("provinsi")
+    @SerializedName("resi")
     @Expose
-    private String provinsi;
-
-    @SerializedName("kabupaten")
-    @Expose
-    private String kabupaten;
+    private Integer resi;
 
     @SerializedName("kecamatan")
     @Expose
     private String kecamatan;
 
-    @SerializedName("alamat")
+    @SerializedName("kota_kab")
     @Expose
-    private String alamat;
+    private String kota_kab;
 
-    @SerializedName("opsipengiriman")
+    @SerializedName("provinsi")
     @Expose
-    private String opsipengiriman;
+    private String provinsi;
 
-    public DataPengirimanModel(String createdAt, String updatedAt, String provinsi, String kabupaten, String kecamatan, String alamat, String opsipengiriman){
+    @SerializedName("alamat_lengkap")
+    @Expose
+    private String alamat_lengkap;
+
+    @SerializedName("kode_pos")
+    @Expose
+    private Integer kode_pos;
+
+    @SerializedName("order_id")
+    @Expose
+    private Integer order_id;
+
+    public DataPengirimanModel(String createdAt, String updatedAt, String via, Integer resi, String kecamatan, String kota_kab, String provinsi, String alamat_lengkap, Integer kode_pos, Integer order_id){
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
-        this.id = id;
-        this.provinsi =provinsi;
-        this.kabupaten = kabupaten;
+        this.via = via;
+        this.resi = resi;
         this.kecamatan = kecamatan;
-        this.alamat = alamat;
+        this.kota_kab = kota_kab;
+        this.provinsi = provinsi;
+        this.alamat_lengkap = alamat_lengkap;
+        this.kode_pos = kode_pos;
+        this.order_id = order_id;
     }
 
     public DataPengirimanModel(){
     }
 
-    public  String getCreatedAt(){
+    public String getCreatedAt() {
         return createdAt;
     }
 
@@ -66,52 +77,67 @@ public class DataPengirimanModel extends BaseModel{
         this.updatedAt = updatedAt;
     }
 
-    public Integer getId() {
-        return id;
+    public String getVia() {
+        return via;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setVia(String via) {
+        this.via = via;
     }
 
-    public String getProvinsi(){
-        return provinsi;
+    public Integer getResi() {
+        return resi;
     }
 
-    public void setProvinsi(String provinsi){
-        this.provinsi = provinsi;
+    public void setResi(Integer resi) {
+        this.resi = resi;
     }
 
-    public String getKabupaten(){
-        return kabupaten;
-    }
-
-    public void setKabupaten(String kabupaten){
-        this.kabupaten = kabupaten;
-    }
-
-    public String getKecamatan(){
+    public String getKecamatan() {
         return kecamatan;
     }
 
-    public void setKecamatan(String kecamatan){
+    public void setKecamatan(String kecamatan) {
         this.kecamatan = kecamatan;
     }
 
-    public String getAlamat(){
-        return alamat;
+    public String getKota_kab() {
+        return kota_kab;
     }
 
-    public void setAlamat(String alamat){
-        this.alamat = alamat;
+    public void setKota_kab(String kota_kab) {
+        this.kota_kab = kota_kab;
     }
 
-    public String getOpsipengiriman(){
-        return opsipengiriman;
+    public String getProvinsi() {
+        return provinsi;
     }
 
-    public void setOpsipengiriman(String opsipengiriman){
-        this.opsipengiriman = opsipengiriman;
+    public void setProvinsi(String provinsi) {
+        this.provinsi = provinsi;
     }
 
+    public String getAlamat_lengkap() {
+        return alamat_lengkap;
+    }
+
+    public void setAlamat_lengkap(String alamat_lengkap) {
+        this.alamat_lengkap = alamat_lengkap;
+    }
+
+    public Integer getKode_pos() {
+        return kode_pos;
+    }
+
+    public void setKode_pos(Integer kode_pos) {
+        this.kode_pos = kode_pos;
+    }
+
+    public Integer getOrder_id() {
+        return order_id;
+    }
+
+    public void setOrder_id(Integer order_id) {
+        this.order_id = order_id;
+    }
 }

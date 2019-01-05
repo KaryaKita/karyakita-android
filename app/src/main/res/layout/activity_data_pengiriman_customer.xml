@@ -49,7 +49,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="60dp"
                     android:background="@color/white"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:paddingBottom="70dp">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -140,6 +141,56 @@
                         android:backgroundTint="@color/mainColor"
                         android:ems="10"
                         android:hint="Masukkan Nama Jalan, Gedung, Nomor, RT RW"
+                        android:inputType="textCapSentences"
+                        android:paddingLeft="0dp"
+                        android:paddingRight="0dp"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="27dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="15dp"
+                        android:text="RESI"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/ed_resi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="23dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginRight="15dp"
+                        android:backgroundTint="@color/mainColor"
+                        android:ems="10"
+                        android:hint="Masukkan No Resi"
+                        android:inputType="textCapSentences"
+                        android:paddingLeft="0dp"
+                        android:paddingRight="0dp"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="27dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="15dp"
+                        android:text="KODE POS"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/ed_kodepos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="23dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginRight="15dp"
+                        android:backgroundTint="@color/mainColor"
+                        android:ems="10"
+                        android:hint="Masukkan Kode Pos"
                         android:inputType="textCapSentences"
                         android:paddingLeft="0dp"
                         android:paddingRight="0dp"
