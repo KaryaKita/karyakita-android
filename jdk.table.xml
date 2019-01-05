@@ -1,5 +1,5 @@
 <application>
-  <component name="ProjectJdkTable">
+  <component name="ProjectJdkTable" >
     <jdk version="2">
       <name value="1.8" />
       <type value="JavaSDK" />
