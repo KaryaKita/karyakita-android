@@ -78,7 +78,6 @@ public class CustomerPesananSayaFragment extends Fragment implements IPesananSay
         PesananSayaAdapter pesananSayaAdapter = new PesananSayaAdapter(getActivity());
         if(pesananSayaResultModel.getData() != null){
             List<PesananSayaModel> listResponse = pesananSayaResultModel.getData();
-            Log.d(TAG, "respon" +listResponse.get(0).getId());
             if(listResponse.size() > 0){
                 for(int i = 0; i < listResponse.size(); i++){
                     PesananSayaModel pesananSayaModel = listResponse.get(i);

@@ -75,7 +75,6 @@ public class CustomerNotifikasiFragment extends Fragment implements INotifikasiV
         NotifikasiAdapter notifikasiAdapter = new NotifikasiAdapter(getActivity());
         if(notifikasiResultModel.getData() != null){
             List<NotifikasiModel> listResponse = notifikasiResultModel.getData();
-            Log.d(TAG, "respon" +listResponse.get(0).getId());
             if(listResponse.size() > 0){
                 for(int i = 0; i < listResponse.size(); i++){
                     NotifikasiModel notifikasiModel = listResponse.get(i);

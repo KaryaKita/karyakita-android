@@ -11,16 +11,16 @@ public class InternetConnectionUtil {
         this.context = context;
         Boolean connected = false;
 
-//        try {
-//            ConnectivityManager cm  = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-//            NetworkInfo netInfo     = cm.getActiveNetworkInfo();
-//
-//            connected = netInfo.isConnectedOrConnecting();
-//            Log.d("Tag : ", connected.toString());
-//            return connected;
-//        } catch (Exception e) {
-//            Log.e("Error Connection","Connectivity Exception : " + e.getMessage());
-//        }
+        try {
+            ConnectivityManager cm  = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo netInfo     = cm.getActiveNetworkInfo();
+
+            connected = netInfo.isConnectedOrConnecting();
+            Log.d("Tag : ", connected.toString());
+            return connected;
+        } catch (Exception e) {
+            Log.e("Error Connection","Connectivity Exception : " + e.getMessage());
+        }
         return connected;
     }
 

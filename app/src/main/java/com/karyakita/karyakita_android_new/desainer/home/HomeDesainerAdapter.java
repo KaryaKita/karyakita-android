@@ -46,7 +46,6 @@ public class HomeDesainerAdapter extends RecyclerView.Adapter<HomeDesainerAdapte
             super(itemView);
             context = itemView.getContext();
 
-//            iv_home_desainer = itemView.findViewById(R.id.iv_gambar_home_desainer);
             iv_home_desainer.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

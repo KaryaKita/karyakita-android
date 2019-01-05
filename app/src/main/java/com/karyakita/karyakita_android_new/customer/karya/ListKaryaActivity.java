@@ -39,7 +39,6 @@ public class ListKaryaActivity extends AppCompatActivity implements IListKaryaVi
 
         final Bundle bundle = getIntent().getExtras();
         kategori_id = bundle.getInt("kategori_id");
-        Log.wtf("TAG", "Kategori id = " + kategori_id);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -87,10 +86,6 @@ public class ListKaryaActivity extends AppCompatActivity implements IListKaryaVi
                 }
             }
             rv_list_karya.setAdapter(listKaryaAdapter);
-
-//            Log.d(TAG,listKaryaResultModel.getData().get(0).getNama());
-////            Log.d(TAG,listKaryaResultModel.getData().get(0).getKategori_karya_id().toString());
-//            Log.d(TAG,listKaryaResultModel.getData().get(0).getDeploy_url());
         } else {
             Log.d(TAG, "null");
         }
@@ -114,8 +109,4 @@ public class ListKaryaActivity extends AppCompatActivity implements IListKaryaVi
     public void onPointerCaptureChanged(boolean hasCapture) {
 
     }
-
-//    private void setupPresenter() {
-//        listKaryaPresenter = new ListKaryaPresenter(this);
-//    }
 }

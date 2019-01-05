@@ -61,7 +61,6 @@ public class NotifikasiPresenter implements IMainPresenter{
 
             @Override
             public void onError(Throwable e) {
-                Log.d(TAG, "Error " + e);
                 e.printStackTrace();
                 iNotifikasiView.displayError("Error fetching Notifikasi");
             }

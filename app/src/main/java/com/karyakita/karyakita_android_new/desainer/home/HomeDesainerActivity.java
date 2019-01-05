@@ -7,7 +7,13 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toolbar;
 
 import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.customer.home.IHomeView;
@@ -23,28 +29,28 @@ public class HomeDesainerActivity extends AppCompatActivity implements BottomNav
     HomeDesainerPresenter homeDesainerPresenter = null;
     HomeDesainerResultModel homeDesainerResultModel = null;
 
-//    private String TAG = "HomeDesainerActivity";
+    private String TAG = "HomeDesainerActivity";
 
-//    @BindView(R.id.rv_home_desainer)
-//    RecyclerView rv_home_desaainer;
-//    @BindView(R.id.toolbar_navigation_home_desainer)
-//    Toolbar toolbar_navigation_home_desainer;
-//    @BindView(R.id.iv_pesanan)
-//    ImageView iv_pesanan;
-//    @BindView(R.id.tv_jenis_pesanan)
-//    TextView tv_jenis_pesanan;
-//    @BindView(R.id.tv_judul_karya)
-//    TextView tv_judulKarya;
-//    @BindView(R.id.tv_deadline)
-//    TextView tv_deadline;
-//    @BindView(R.id.tv_ukuran_karya)
-//    TextView tv_ukuranKarya;
-//    @BindView(R.id.tv_opsi_bingkai)
-//    TextView tv_opsiBingkai;
-//    @BindView(R.id.btn_acc)
-//    Button btn_acc;
-//    @BindView(R.id.btn_dec)
-//    Button btn_dec;
+    @BindView(R.id.rv_home_desainer)
+    RecyclerView rv_home_desaainer;
+    @BindView(R.id.toolbar_navigation_list_desainer)
+    Toolbar toolbar_navigation_home_desainer;
+    @BindView(R.id.iv_pesanan)
+    ImageView iv_pesanan;
+    @BindView(R.id.tv_jenis_pesanan)
+    TextView tv_jenis_pesanan;
+    @BindView(R.id.tv_judul_karya)
+    TextView tv_judulKarya;
+    @BindView(R.id.tv_deadline)
+    TextView tv_deadline;
+    @BindView(R.id.tv_ukuran_karya)
+    TextView tv_ukuranKarya;
+    @BindView(R.id.tv_opsi_bingkai)
+    TextView tv_opsiBingkai;
+    @BindView(R.id.btn_acc)
+    Button btn_acc;
+    @BindView(R.id.btn_dec)
+    Button btn_dec;
 
     @BindView(R.id.bottom_nav_view_desainer)
     BottomNavigationView bottom_nav_view_desainer;
@@ -112,12 +118,12 @@ public class HomeDesainerActivity extends AppCompatActivity implements BottomNav
     }
 
     private void setupPresenter() {
-//        homeDesainerPresenter = new HomeDesainerPresenter(this);
+        homeDesainerPresenter = new HomeDesainerPresenter();
     }
 
     private void setupView() {
-        //rv_home_desaainer.setLayoutManager(new LinearLayoutManager(this.getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
-        //rv_home_desaainer.setHasFixedSize(true);
+        rv_home_desaainer.setLayoutManager(new LinearLayoutManager(this.getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
+        rv_home_desaainer.setHasFixedSize(true);
     }
 
     private void getHomeDesainer() {
