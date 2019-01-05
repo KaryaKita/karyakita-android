@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.customer.data_pengiriman.DataPengirimanCustomerActivity;
+import com.karyakita.karyakita_android_new.customer.pesan_langsung.PesanLangsungResultModel;
 import com.karyakita.karyakita_android_new.data.local.realm.RealmHelper;
 
 import java.util.HashMap;
@@ -103,7 +104,7 @@ public class PilihUkuranActivity extends AppCompatActivity implements IPilihUkur
     }
 
     @Override
-    public void display(PilihUkuranModel model) {
+    public void display(PesanLangsungResultModel model) {
         Toast.makeText(getApplicationContext(), "berhasil", Toast.LENGTH_SHORT).show();
 
         Intent intent = new Intent(PilihUkuranActivity.this, DataPengirimanCustomerActivity.class);

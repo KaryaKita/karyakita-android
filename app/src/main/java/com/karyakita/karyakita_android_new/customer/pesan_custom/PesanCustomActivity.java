@@ -26,6 +26,7 @@ import android.widget.Toast;
 
 import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.customer.data_pengiriman.DataPengirimanCustomerActivity;
+import com.karyakita.karyakita_android_new.customer.karya.DetailKaryaActivity;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -127,6 +128,8 @@ public class PesanCustomActivity extends AppCompatActivity implements IPesanCust
                 ukuran = ukuran_kertas.getSelectedItem().toString();
                 catatan = ed_catatan.getText().toString();
                 image = img_custom.toString();
+                finish();
+                startActivity(new Intent(PesanCustomActivity.this, DataPengirimanCustomerActivity.class));
 
                 if (!kategori.equals("") && !ukuran.equals("") && !catatan.equals(("")) && !image.equals((""))) {
                     pesanCustomModelRealm = new PesanCustomModelRealm();
@@ -142,7 +145,7 @@ public class PesanCustomActivity extends AppCompatActivity implements IPesanCust
 
                     Log.d("TAG", "sukses masuk dong");
 
-                    setupPresenter(fileToUpload);
+//                    setupPresenter(fileToUpload);
                 }
                 else {
                     Toast.makeText(getApplicationContext(), "isidong", Toast.LENGTH_LONG);

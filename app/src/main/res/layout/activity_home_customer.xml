@@ -33,7 +33,11 @@
         android:state_checked="true"
         app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"
         app:layout_scrollFlags="scroll|enterAlways"
-        app:menu="@menu/navigation_customer">
+        app:menu="@menu/navigation_customer"
+        app:labelVisibilityMode="labeled"
+        app:itemTextAppearanceActive="@style/BottomNavigationView.Active"
+        app:itemTextAppearanceInactive="@style/BottomNavigationView"
+        >
 
         <View
             android:layout_width="match_parent"
@@ -43,5 +47,6 @@
             android:layout_marginBottom="?attr/actionBarSize"
             android:background="@color/grey_200" />
     </android.support.design.widget.BottomNavigationView>
+
 
 </android.support.design.widget.CoordinatorLayout>

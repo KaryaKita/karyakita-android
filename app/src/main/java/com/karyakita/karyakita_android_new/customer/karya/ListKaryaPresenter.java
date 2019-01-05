@@ -22,7 +22,7 @@ public class ListKaryaPresenter implements IMainPresenter {
     IListKaryaView iListKaryaView;
     BaseModel model = null;
     ListKaryaModel listKaryaModel = null;
-    Map<String, String> input;
+    Map<String, String> input = null;
 
     public ListKaryaPresenter(IListKaryaView iListKaryaView) {
         this.iListKaryaView = iListKaryaView;
@@ -30,6 +30,7 @@ public class ListKaryaPresenter implements IMainPresenter {
 
     @Override
     public void get(Map<String, String> dataInput) {
+        this.input = dataInput;
         getObservable().subscribeWith(getObserver());
     }
 
@@ -40,13 +41,17 @@ public class ListKaryaPresenter implements IMainPresenter {
 
     @Override
     public void insert(Map<String, String> dataInput) {
-
-
     }
 
     public Observable<ListKaryaResultModel> getObservable() {
+        if (this.input == null || this.input.get("kategori_id") == null || this.input.get("kategori_id") == "") {
+            return RetrofitHelper.getRetrofit().create(IRestServices.class)
+                    .getListKarya("Bearer " + GlobalVariable.TOKEN)
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread());
+        }
         return RetrofitHelper.getRetrofit().create(IRestServices.class)
-                .getListKaryaByKategori("Bearer " + GlobalVariable.TOKEN, 1)
+                .getListKaryaByKategori("Bearer " + GlobalVariable.TOKEN, Integer.parseInt(this.input.get("kategori_id")))
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }

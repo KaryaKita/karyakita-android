@@ -85,9 +85,6 @@ public interface IRestServices {
                                                                 @Field("kode_pos") Integer kode_pos,
                                                                 @Field("order_id") Integer order_id);
 
-    @GET("karya/get-all")
-    io.reactivex.Observable<KategoriKaryaResultModel> getListKarya(@Header("Authorization") String bearer);
-
     @GET("kategori_karya/get-all")
     io.reactivex.Observable<KategoriKaryaResultModel> getKategoriKarya(@Header("Authorization") String bearer);
 
@@ -102,6 +99,9 @@ public interface IRestServices {
 
     @GET("desainer/order/list")
     io.reactivex.Observable<com.karyakita.karyakita_android_new.desainer.pesanan_saya.PesananSayaResultModel> getPesananSayaDesainer(@Header("Authorization") String bearer);
+
+    @GET("karya/get-all")
+    io.reactivex.Observable<ListKaryaResultModel> getListKarya(@Header("Authorization") String bearer);
 
     @GET("karya/get-by-kategori/{kategori_id}")
     io.reactivex.Observable<ListKaryaResultModel> getListKaryaByKategori(@Header("Authorization") String bearer, @Path("kategori_id") Integer kategori_id);

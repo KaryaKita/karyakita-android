@@ -10,7 +10,9 @@ import android.util.Log;
 import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.login.LoginResultModel;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -22,6 +24,9 @@ public class ListKaryaActivity extends AppCompatActivity implements IListKaryaVi
     RecyclerView rv_list_karya;
     ListKaryaModel listKaryaModel = null;
     private String TAG = "ListKaryaActivity";
+    Map<String, String> input;
+
+    Integer kategori_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +36,10 @@ public class ListKaryaActivity extends AppCompatActivity implements IListKaryaVi
 
         Toolbar toolbar = findViewById(R.id.toolbar_navigation_list_karya);
         setSupportActionBar(toolbar);
+
+        final Bundle bundle = getIntent().getExtras();
+        kategori_id = bundle.getInt("kategori_id");
+        Log.wtf("TAG", "Kategori id = " + kategori_id);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -53,7 +62,10 @@ public class ListKaryaActivity extends AppCompatActivity implements IListKaryaVi
     }
 
     private void getListKarya() {
-        listKaryaPresenter.get(null);
+        input = new HashMap<String, String>();
+        input.put("kategori_id", kategori_id.toString());
+
+        listKaryaPresenter.get(input);
     }
 
     @Override
@@ -67,7 +79,6 @@ public class ListKaryaActivity extends AppCompatActivity implements IListKaryaVi
 
         if (listKaryaResultModel.getData() != null) {
             List<ListKaryaModel> listResponse = listKaryaResultModel.getData();
-            Log.d(TAG, "respon: " + listResponse.get(1).getNama());
             if (listResponse.size() > 0) {
                 for (int i = 0; i < listResponse.size(); i++) {
                     ListKaryaModel listKaryaModel = listResponse.get(i);
