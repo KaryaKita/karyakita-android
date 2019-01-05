@@ -40,7 +40,6 @@
         <activity android:name=".register_as.RegisterAsActivity" />
         <activity android:name=".customer.karya.DetailKaryaActivity" />
         <activity android:name=".customer.pesan_custom.PesanCustomActivity"/>
-        <activity android:name=".PesanLangsung.PesanLangsungActivity"/>
         <activity android:name=".customer.PesananSelesai" />
         <activity android:name=".customer.karya.ListKaryaActivity" />
         <activity android:name=".customer.karya.KonfirmasiDesainActivity" />

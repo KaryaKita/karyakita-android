@@ -3,25 +3,30 @@
     <item
         android:id="@+id/nav_beranda_customer"
         android:icon="@drawable/ic_beranda"
+        android:enabled="true"
         android:title="@string/beranda" />
 
     <item
         android:id="@+id/nav_desainer_customer"
         android:icon="@drawable/ic_designer"
+        android:enabled="true"
         android:title="@string/desainer" />
 
     <item
         android:id="@+id/nav_pesanan_saya_customer"
         android:icon="@drawable/ic_pesanan_saya"
+        android:enabled="true"
         android:title="@string/pesanan_saya" />
 
     <item
         android:id="@+id/nav_notif_customer"
         android:icon="@drawable/ic_notifikasi"
+        android:enabled="true"
         android:title="@string/notifikasi" />
 
-    <!--<item-->
-    <!--android:id="@+id/nav_akun_customer"-->
-    <!--android:icon="@drawable/ic_akun"-->
-    <!--android:title="Akun" />-->
+    <item
+        android:id="@+id/nav_akun_customer"
+        android:icon="@drawable/ic_akun"
+        android:enabled="true"
+        android:title="@string/akun" />
 </menu>

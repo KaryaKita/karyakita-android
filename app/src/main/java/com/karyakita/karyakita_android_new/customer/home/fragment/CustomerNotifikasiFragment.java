@@ -51,7 +51,7 @@ public class CustomerNotifikasiFragment extends Fragment implements INotifikasiV
         rv_notifikasi = view.findViewById(R.id.rv_notifikasi);
         setupView();
         setupPresenter();
-        getNotifikasi();
+//        getNotifikasi();
 
         return view;
     }

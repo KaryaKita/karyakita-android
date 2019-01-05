@@ -2,6 +2,7 @@ package com.karyakita.karyakita_android_new.customer.karya;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -62,10 +63,18 @@ public class KategoriKaryaAdapter extends RecyclerView.Adapter<KategoriKaryaAdap
             tv_kategori_name_home = itemView.findViewById(R.id.tv_kategori_name_home);
             iv_image_kategori_home = itemView.findViewById(R.id.iv_image_kategori_home);
 
+
             layout_kategori_home.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    context.startActivity(new Intent(context.getApplicationContext(), ListKaryaActivity.class));
+                    int position = getAdapterPosition();
+
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("kategori_id", kategoriKaryaModelList.get(position).getId());
+
+                    Intent intent = new Intent(context.getApplicationContext(), ListKaryaActivity.class);
+                    intent.putExtras(bundle);
+                    context.startActivity(intent);
                 }
             });
         }

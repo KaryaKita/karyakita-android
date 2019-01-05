@@ -63,7 +63,7 @@ public class PilihUkuranPresenter implements IMainPresenter{
         return new DisposableObserver<PesanLangsungResultModel>() {
             @Override
             public void onNext(PesanLangsungResultModel pilihUkuranResultModel) {
-                iPilihUkuranView.display(pilihUkuranModel);
+                iPilihUkuranView.display(pilihUkuranResultModel);
             }
 
             @Override
