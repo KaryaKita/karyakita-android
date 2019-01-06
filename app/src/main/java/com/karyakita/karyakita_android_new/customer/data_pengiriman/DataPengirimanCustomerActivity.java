@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.customer.PesananSelesai;
@@ -31,7 +32,11 @@ public class DataPengirimanCustomerActivity extends AppCompatActivity implements
     EditText alamat;
     @BindView(R.id.sp_opsipengiriman)
     Spinner opsipengiriman;
-
+    @BindView(R.id.ed_resi)
+    EditText ed_resi;
+    @BindView(R.id.ed_kodepos)
+    EditText ed_kodepos;
+    Integer order_id;
 
     DataPengirimanPresenter dataPengirimanPresenter = null;
     DataPengirimanModel dataPengirimanModel = null;
@@ -41,13 +46,17 @@ public class DataPengirimanCustomerActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_pengiriman_customer);
         ButterKnife.bind(this);
+
+        Bundle bundle = getIntent().getExtras();
+        order_id = bundle.getInt("order_id");
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         bt_id_pesanan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DataPengirimanCustomerActivity.this, PesananSelesai.class);
-                startActivity(intent);
+                setupPresenter();
             }
         });
     }
@@ -59,7 +68,10 @@ public class DataPengirimanCustomerActivity extends AppCompatActivity implements
 
     @Override
     public void display(DataPengirimanResultModel model) {
+        Toast.makeText(getApplicationContext(), "berhasil", Toast.LENGTH_SHORT).show();
 
+        Intent intent = new Intent(DataPengirimanCustomerActivity.this, PesananSelesai.class);
+        startActivity(intent);
     }
 
     @Override
@@ -68,11 +80,14 @@ public class DataPengirimanCustomerActivity extends AppCompatActivity implements
 
     private void setupPresenter() {
         Map<String, String> inputan = new HashMap<String, String>();
-        inputan.put("provinsi", prov.toString());
-        inputan.put("kabupaten", kab.toString());
-        inputan.put("kecamatan", kec.toString());
-        inputan.put("alamat", alamat.toString());
-        inputan.put("opsipengiriman", opsipengiriman.toString());
+        inputan.put("via", opsipengiriman.getSelectedItem().toString());
+        inputan.put("resi", ed_resi.getText().toString());
+        inputan.put("kecamatan", kec.getSelectedItem().toString());
+        inputan.put("kota_kab", kab.getSelectedItem().toString());
+        inputan.put("provinsi", prov.getSelectedItem().toString());
+        inputan.put("alamat_lengkap", alamat.getText().toString());
+        inputan.put("kode_pos", ed_kodepos.getText().toString());
+        inputan.put("order_id", order_id.toString());
 
         dataPengirimanPresenter = new DataPengirimanPresenter(this);
         dataPengirimanPresenter.insert(inputan);

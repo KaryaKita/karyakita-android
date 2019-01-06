@@ -68,17 +68,22 @@ public interface IRestServices {
                                                     @Field("password") String password,
                                                     @Field("role_id") Integer role_id);
 
-    @FormUrlEncoded
-    @POST("user/login")
-    io.reactivex.Observable<PilihUkuranResultModel> pilihukuran(@Field("ukuran_kertas") String ukuran_kertas,
-                                                                @Field("ukuran_bingkai") String ukuran_bingkai);
+//    @FormUrlEncoded
+//    @POST("user/login")
+//    io.reactivex.Observable<PilihUkuranResultModel> pilihukuran(@Field("ukuran_kertas") String ukuran_kertas,
+//                                                                @Field("ukuran_bingkai") String ukuran_bingkai);
 
-    @POST("customer/datapengiriman")
-    io.reactivex.Observable<DataPengirimanResultModel> datapengiriman(@Field("provinsi") String provinsi,
-                                                                      @Field("kabupaten") String kabupaten,
-                                                                      @Field("kecamatan") String kecamatan,
-                                                                      @Field("alamat") String alamat,
-                                                                      @Field("opsipengiriman") String opsipengiriman);
+    @POST("customer/order/data-pengiriman")
+    io.reactivex.Observable<DataPengirimanResultModel> datapengiriman(
+                                                                @Header("Authorization") String bearer,
+                                                                @Field("provinsi") String provinsi,
+                                                                @Field("kota_kab") String kota_kab,
+                                                                @Field("kecamatan") String kecamatan,
+                                                                @Field("alamat_lengkap") String alamat_lengkap,
+                                                                @Field("resi") String resi,
+                                                                @Field("kode_pos") String kode_pos,
+                                                                @Field("via") String via,
+                                                                @Field("order_id") Integer order_id);
 
     @GET("kategori_karya/get-all")
     io.reactivex.Observable<KategoriKaryaResultModel> getKategoriKarya(@Header("Authorization") String bearer);

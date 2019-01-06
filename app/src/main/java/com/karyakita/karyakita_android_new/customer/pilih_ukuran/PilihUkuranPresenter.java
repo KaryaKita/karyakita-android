@@ -31,12 +31,10 @@ public class PilihUkuranPresenter implements IMainPresenter{
 
     @Override
     public void get(Map<String, String> dataInput) {
-
     }
 
     @Override
     public void update() {
-
     }
 
     @Override

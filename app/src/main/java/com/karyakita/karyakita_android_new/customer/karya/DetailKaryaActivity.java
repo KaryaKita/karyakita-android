@@ -72,7 +72,7 @@ public class DetailKaryaActivity extends AppCompatActivity implements IDetailKar
             @Override
             public void onClick(View v) {
                 Intent intent;
-                if (GlobalVariable.TOKEN == null) {
+                if (GlobalVariable.TOKEN == "") {
                     intent = new Intent(DetailKaryaActivity.this, LoginAsActivity.class);
                 } else {
                     intent = new Intent(DetailKaryaActivity.this, PesanCustomActivity.class);
