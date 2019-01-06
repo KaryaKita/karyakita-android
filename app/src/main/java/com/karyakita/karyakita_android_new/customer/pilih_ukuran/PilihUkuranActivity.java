@@ -12,9 +12,11 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.karyakita.karyakita_android_new.R;
+import com.karyakita.karyakita_android_new.base.GlobalVariable;
 import com.karyakita.karyakita_android_new.customer.data_pengiriman.DataPengirimanCustomerActivity;
 import com.karyakita.karyakita_android_new.customer.pesan_langsung.PesanLangsungResultModel;
 import com.karyakita.karyakita_android_new.data.local.realm.RealmHelper;
+import com.karyakita.karyakita_android_new.login_as.LoginAsActivity;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -44,6 +46,8 @@ public class PilihUkuranActivity extends AppCompatActivity implements IPilihUkur
     @BindView(R.id.btnLanjut)
     Button konfirmasi;
     Integer karya_id;
+    Integer order_id;
+    Intent intent;
 
     String dg_pigora, tp_pigora, ukuran_kertas, jenis_kertas;
     Integer opsi_order, pelanggan_id = 1;
@@ -55,6 +59,9 @@ public class PilihUkuranActivity extends AppCompatActivity implements IPilihUkur
         ButterKnife.bind(this);
         Bundle bundle = getIntent().getExtras();
         karya_id = bundle.getInt("karya_id");
+
+//        setupPresenter();
+
         Realm.init(PilihUkuranActivity.this);
         RealmConfiguration configuration = new RealmConfiguration.Builder()
                 .schemaVersion(3)
@@ -72,28 +79,17 @@ public class PilihUkuranActivity extends AppCompatActivity implements IPilihUkur
                 int selectedId = rd_pilih_opsi.getCheckedRadioButtonId();
 
                 if (selectedId == rd_dg_pigora.getId()) {
-//                    opsi_order = rd_dg_pigora.getText().toString();
                     opsi_order = 1;
                 }
                 if (selectedId == rd_tp_pigora.getId()) {
-//                    opsi_order = rd_tp_pigora.getText().toString();
                     opsi_order = 2;
                 }
 
-
                 if (!ukuran_kertas.equals("") && !jenis_kertas.equals("") && !rd_tp_pigora.equals("") && !rd_dg_pigora.equals("") && !rd_pilih_opsi.equals("")) {
-//                    pilihUkuranModelRealm = new PilihUkuranModelRealm();
-//                    pilihUkuranModelRealm.setSp_ukuran_kertas(ukuran_kertas);
-//                    pilihUkuranModelRealm.setSp_jenis_kertas(jenis_kertas);
-//
-//                    pilihUkuranHelperRealm = new PilihUkuranHelperRealm(realm);
-//                    pilihUkuranHelperRealm.save(pilihUkuranModelRealm);
-
                     setupPresenter();
                 } else {
-                    Toast.makeText(getApplicationContext(), "isidong", Toast.LENGTH_LONG);
+                    Toast.makeText(getApplicationContext(), "Field tidak boleh kosong !", Toast.LENGTH_LONG);
                 }
-
             }
         });
     }
@@ -107,7 +103,11 @@ public class PilihUkuranActivity extends AppCompatActivity implements IPilihUkur
     public void display(PesanLangsungResultModel model) {
         Toast.makeText(getApplicationContext(), "berhasil", Toast.LENGTH_SHORT).show();
 
-        Intent intent = new Intent(PilihUkuranActivity.this, DataPengirimanCustomerActivity.class);
+        order_id = model.getOrderModel().getId();
+        Bundle bundle = new Bundle();
+        bundle.putInt("order_id", order_id);
+        Intent intent = new Intent(PilihUkuranActivity.this, DataPengirimanCustomerActivity.class);;
+        intent.putExtras(bundle);
         startActivity(intent);
     }
 

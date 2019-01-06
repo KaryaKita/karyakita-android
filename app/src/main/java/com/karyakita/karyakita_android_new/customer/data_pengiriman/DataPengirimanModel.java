@@ -13,13 +13,17 @@ public class DataPengirimanModel extends BaseModel{
     @Expose
     private String updatedAt;
 
+    @SerializedName("id")
+    @Expose
+    private Integer id;
+
     @SerializedName("via")
     @Expose
     private String via;
 
     @SerializedName("resi")
     @Expose
-    private Integer resi;
+    private String resi;
 
     @SerializedName("kecamatan")
     @Expose
@@ -39,15 +43,16 @@ public class DataPengirimanModel extends BaseModel{
 
     @SerializedName("kode_pos")
     @Expose
-    private Integer kode_pos;
+    private String kode_pos;
 
     @SerializedName("order_id")
     @Expose
     private Integer order_id;
 
-    public DataPengirimanModel(String createdAt, String updatedAt, String via, Integer resi, String kecamatan, String kota_kab, String provinsi, String alamat_lengkap, Integer kode_pos, Integer order_id){
+    public DataPengirimanModel(String createdAt, String updatedAt, Integer id, String via, String resi, String kecamatan, String kota_kab, String provinsi, String alamat_lengkap, String kode_pos, Integer order_id){
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
+        this.id = id;
         this.via = via;
         this.resi = resi;
         this.kecamatan = kecamatan;
@@ -77,6 +82,14 @@ public class DataPengirimanModel extends BaseModel{
         this.updatedAt = updatedAt;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public String getVia() {
         return via;
     }
@@ -85,11 +98,11 @@ public class DataPengirimanModel extends BaseModel{
         this.via = via;
     }
 
-    public Integer getResi() {
+    public String getResi() {
         return resi;
     }
 
-    public void setResi(Integer resi) {
+    public void setResi(String resi) {
         this.resi = resi;
     }
 
@@ -125,11 +138,11 @@ public class DataPengirimanModel extends BaseModel{
         this.alamat_lengkap = alamat_lengkap;
     }
 
-    public Integer getKode_pos() {
+    public String getKode_pos() {
         return kode_pos;
     }
 
-    public void setKode_pos(Integer kode_pos) {
+    public void setKode_pos(String kode_pos) {
         this.kode_pos = kode_pos;
     }
 

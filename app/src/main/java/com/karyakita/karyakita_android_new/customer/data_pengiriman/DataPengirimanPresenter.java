@@ -37,19 +37,20 @@ public class DataPengirimanPresenter implements IMainPresenter{
     @Override
     public void insert(Map<String, String> dataInput) {
         this.input = dataInput;
+        getObservable().subscribeWith(getObserver());
     }
 
     public io.reactivex.Observable<DataPengirimanResultModel> getObservable(){
         Log.d("tag", "masuk observable");
         return RetrofitHelper.getRetrofit().create(IRestServices.class)
                 .datapengiriman("Bearer " + GlobalVariable.TOKEN,
-                        Integer.parseInt(this.input.get("via")),
-                        Integer.parseInt(this.input.get("resi")),
+                        this.input.get("via"),
+                        this.input.get("resi"),
                         this.input.get("kecamatan"),
                         this.input.get("kota_kab"),
                         this.input.get("provinsi"),
                         this.input.get("alamat_lengkap"),
-                        Integer.parseInt(this.input.get("kode_pos")),
+                        this.input.get("kode_pos"),
                         Integer.parseInt(this.input.get("order_id")))
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());

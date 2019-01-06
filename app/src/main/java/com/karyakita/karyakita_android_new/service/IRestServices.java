@@ -76,13 +76,13 @@ public interface IRestServices {
     @POST("customer/order/data-pengiriman")
     io.reactivex.Observable<DataPengirimanResultModel> datapengiriman(
                                                                 @Header("Authorization") String bearer,
-                                                                @Field("via") int via,
-                                                                @Field("resi") Integer resi,
-                                                                @Field("kecamatan") String kecamatan,
-                                                                @Field("kota_kab") String kota_kab,
                                                                 @Field("provinsi") String provinsi,
+                                                                @Field("kota_kab") String kota_kab,
+                                                                @Field("kecamatan") String kecamatan,
                                                                 @Field("alamat_lengkap") String alamat_lengkap,
-                                                                @Field("kode_pos") Integer kode_pos,
+                                                                @Field("resi") String resi,
+                                                                @Field("kode_pos") String kode_pos,
+                                                                @Field("via") String via,
                                                                 @Field("order_id") Integer order_id);
 
     @GET("kategori_karya/get-all")
