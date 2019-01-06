@@ -76,7 +76,7 @@ public class NotifikasiAdapter extends RecyclerView.Adapter<NotifikasiAdapter.Ho
 
             if (position != RecyclerView.NO_POSITION) {
                 Bundle bundle = new Bundle();
-                bundle.putInt("notifikasi_id", notifikasiModelList.get(position).getId());
+                bundle.putInt("customer_id", notifikasiModelList.get(position).getId());
                 Intent intent = new Intent(context.getApplicationContext(), DetailNotifikasi.class);
                 intent.putExtras(bundle);
                 context.startActivity(intent);

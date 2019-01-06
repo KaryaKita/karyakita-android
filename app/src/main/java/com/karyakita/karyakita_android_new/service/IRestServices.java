@@ -94,7 +94,7 @@ public interface IRestServices {
     @GET("customer/order/list/{customer_id}")
     io.reactivex.Observable<PesananSayaResultModel> getPesananSaya(@Header("Authorization") String bearer, @Path("customer_id")Integer customer_id);
 
-    @GET("customer/notifikasi")
+    @GET("customer/notif/list/{customer_id}")
     io.reactivex.Observable<NotifikasiResultModel> getNotifikasi(@Header("Authorization") String bearer, @Path("notifikasi_id")Integer notifikasi_id);
 
     @GET("desainer/order/list")

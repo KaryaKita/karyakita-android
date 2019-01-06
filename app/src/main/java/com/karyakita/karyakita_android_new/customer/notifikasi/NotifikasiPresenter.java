@@ -23,11 +23,11 @@ public class NotifikasiPresenter implements IMainPresenter{
     BaseModel model = null;
     NotifikasiModel notifikasiModel = null;
     Map<String, String> input;
-    Integer id_notifikasi;
+    Integer id_customer;
 
-    public NotifikasiPresenter(INotifikasiView iNotifikasiView, Integer id_notifikasi) {
+    public NotifikasiPresenter(INotifikasiView iNotifikasiView, Integer id_customer) {
         this.iNotifikasiView = iNotifikasiView;
-        this.id_notifikasi = id_notifikasi;
+        this.id_customer = id_customer;
     }
 
     @Override
@@ -47,7 +47,7 @@ public class NotifikasiPresenter implements IMainPresenter{
 
     public Observable<NotifikasiResultModel> getObservable(){
         return RetrofitHelper.getRetrofit().create(IRestServices.class)
-                .getNotifikasi("Bearer " + GlobalVariable.TOKEN, this.id_notifikasi)
+                .getNotifikasi("Bearer " + GlobalVariable.TOKEN, this.id_customer)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }
