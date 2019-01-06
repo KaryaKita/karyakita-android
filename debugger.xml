@@ -1,5 +1,5 @@
 <application>
-  <component name="DebuggerSettings">
+  <component name="DebuggerSettings" >
     <filter>
       <option name="PATTERN" value="com.sun.*" />
       <option name="ENABLED" value="true" />

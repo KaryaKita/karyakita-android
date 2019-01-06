@@ -58,12 +58,10 @@ public class LoginPresenter implements IMainPresenter {
             public void onNext(@NonNull LoginResultModel loginResultModel) {
                 iLoginView.display(loginResultModel);
                 iLoginView.showToast(loginResultModel.getMessage());
-                Log.d("TAG", "Success");
             }
 
             @Override
             public void onError(@NonNull Throwable e) {
-                Log.d("TAG", "Error" + e);
                 e.printStackTrace();
                 iLoginView.displayError("Error fetching Movie Data");
             }

@@ -62,7 +62,6 @@ public class PesananSayaPresenter implements IMainPresenter {
 
             @Override
             public void onError(Throwable e) {
-                Log.d(TAG, "Error " + e);
                 e.printStackTrace();
                 iPesananSayaView.displayError("Error fetching Data Pesanan");
 

@@ -114,7 +114,6 @@ public class CustomerBerandaFragment extends Fragment implements IHomeView, ILis
 
 
     private void getGridViewHome() {
-        Toast.makeText(getActivity().getApplicationContext(), "Token" + GlobalVariable.TOKEN, Toast.LENGTH_LONG);
         homePresenter.get(null);
     }
 
@@ -146,7 +145,6 @@ public class CustomerBerandaFragment extends Fragment implements IHomeView, ILis
     public void display(KategoriKaryaResultModel kategoriKaryaResultModel) {
         KategoriKaryaAdapter kategoriKaryaAdapter = new KategoriKaryaAdapter(kategoriKaryaResultModel.getData(), getActivity());
         if (kategoriKaryaResultModel.getData() != null) {
-            Log.d(TAG, "Respon ada");
             List<KategoriKaryaModel> listResponse = kategoriKaryaResultModel.getData();
             if (listResponse.size() > 0) {
                 for (int i = 0; i < listResponse.size(); i++) {
@@ -169,7 +167,6 @@ public class CustomerBerandaFragment extends Fragment implements IHomeView, ILis
 
     @Override
     public void showToast(String str) {
-//        Toast.makeText(getContext().getApplicationContext(), str, Toast.LENGTH_LONG).show();
     }
 
     @Override

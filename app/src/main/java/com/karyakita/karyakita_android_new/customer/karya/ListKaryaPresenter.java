@@ -66,7 +66,6 @@ public class ListKaryaPresenter implements IMainPresenter {
 
             @Override
             public void onError(@NonNull Throwable e) {
-                Log.d(TAG, "Error" + e);
                 e.printStackTrace();
                 iListKaryaView.displayError("Error fetching List Karya");
             }

@@ -43,13 +43,11 @@ public class RegisterPresenter implements IMainPresenter {
     @Override
     public void insert(Map<String, String> dataInput) {
         this.input = dataInput;
-        Log.d(TAG, "Melbu");
         getObservable().subscribeWith(getObserver());
 
     }
 
     public Observable<RegisterResultModel> getObservable() {
-        Log.d(TAG, "Melbu Obsarvabel");
         return RetrofitHelper.getRetrofit().create(IRestServices.class)
                 .register(this.input.get("username"),
                         this.input.get("email"),
@@ -67,12 +65,10 @@ public class RegisterPresenter implements IMainPresenter {
             @Override
             public void onNext(@NonNull RegisterResultModel registerResultModel) {
                 iRegisterView.display(registerResultModel);
-                Log.d(TAG, "Success");
             }
 
             @Override
             public void onError(@NonNull Throwable e) {
-                Log.d(TAG, "Error" + e);
                 e.printStackTrace();
                 iRegisterView.displayError("Error fetching Movie Data");
             }

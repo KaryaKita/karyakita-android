@@ -55,13 +55,11 @@ public class ProfilPresenter implements IMainPresenter{
 
             @Override
             public void onNext(ProfilResultModel profilResultModel) {
-                Log.d("tag", "OnNext iii" + profilResultModel.getData().getNama());
                 iProfilView.display(profilResultModel);
             }
 
             @Override
             public void onError(Throwable e) {
-                Log.d("tag", "Error oiii" + e);
                 e.printStackTrace();
                 iProfilView.displayError("Error fetching Profil User");
             }

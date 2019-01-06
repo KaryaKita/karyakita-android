@@ -50,7 +50,6 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
 
         Bundle bundle = getIntent().getExtras();
         role_id = bundle.getInt("role_id");
-        Log.d("Test0 : ", GlobalVariable.TOKEN);
 
         Realm.init(LoginActivity.this);
         RealmConfiguration configuration = new RealmConfiguration
@@ -59,9 +58,6 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
                 .deleteRealmIfMigrationNeeded()
                 .build();
         realm = Realm.getInstance(configuration);
-
-//        Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
-//        startActivity(intent);
 
         bt_masuk.setOnClickListener(new View.OnClickListener() {
             @Override
