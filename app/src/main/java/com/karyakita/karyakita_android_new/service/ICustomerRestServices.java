@@ -43,6 +43,7 @@ public interface ICustomerRestServices {
             @Field("opsi_order_id") Integer opsi_desainer_id,
             @Field("ukuran") String ukuran );
 
+    @FormUrlEncoded
     @POST("customer/order/data-pengiriman")
     io.reactivex.Observable<DataPengirimanResultModel> datapengiriman(
             @Header("Authorization") String bearer,

@@ -17,6 +17,7 @@ import com.karyakita.karyakita_android_new.customer.data_pengiriman.DataPengirim
 import com.karyakita.karyakita_android_new.customer.pesan_langsung.PesanLangsungResultModel;
 import com.karyakita.karyakita_android_new.data.local.realm.RealmHelper;
 import com.karyakita.karyakita_android_new.login_as.LoginAsActivity;
+import com.karyakita.karyakita_android_new.sessions.SessionSharedPreferences;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -50,7 +51,7 @@ public class PilihUkuranActivity extends AppCompatActivity implements IPilihUkur
     Intent intent;
 
     String dg_pigora, tp_pigora, ukuran_kertas, jenis_kertas;
-    Integer opsi_order, pelanggan_id = 1;
+    Integer opsi_order, pelanggan_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,6 +118,8 @@ public class PilihUkuranActivity extends AppCompatActivity implements IPilihUkur
     }
 
     private void setupPresenter() {
+        pelanggan_id = SessionSharedPreferences.getUserId(getApplicationContext());
+
         Map<String, String> inputan = new HashMap<String, String>();
         inputan.put("karya_id", karya_id.toString());
         inputan.put("catatan", "");
