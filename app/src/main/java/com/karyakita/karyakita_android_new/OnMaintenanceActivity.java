@@ -20,7 +20,7 @@ public class OnMaintenanceActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_must_login_register);
+        setContentView(R.layout.activity_on_maintenance);
 
         ButterKnife.bind(this);
         btn_back.setOnClickListener(new View.OnClickListener() {

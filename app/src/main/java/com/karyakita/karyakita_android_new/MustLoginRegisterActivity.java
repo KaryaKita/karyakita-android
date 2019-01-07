@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.karyakita.karyakita_android_new.customer.home.HomeCustomerActivity;
 import com.karyakita.karyakita_android_new.login_as.LoginAsActivity;
 import com.karyakita.karyakita_android_new.register.RegisterActivity;
+import com.karyakita.karyakita_android_new.register_as.RegisterAsActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -38,7 +39,7 @@ public class MustLoginRegisterActivity extends AppCompatActivity {
         btn_choose_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
+                Intent intent = new Intent(getApplicationContext(), RegisterAsActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
             }
