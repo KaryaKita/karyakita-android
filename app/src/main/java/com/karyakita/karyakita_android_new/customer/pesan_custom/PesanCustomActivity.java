@@ -27,6 +27,7 @@ import android.widget.Toast;
 import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.customer.data_pengiriman.DataPengirimanCustomerActivity;
 import com.karyakita.karyakita_android_new.customer.karya.DetailKaryaActivity;
+import com.karyakita.karyakita_android_new.customer.pilih_ukuran.PilihUkuranActivity;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -128,9 +129,6 @@ public class PesanCustomActivity extends AppCompatActivity implements IPesanCust
                 ukuran = ukuran_kertas.getSelectedItem().toString();
                 catatan = ed_catatan.getText().toString();
                 image = img_custom.toString();
-                finish();
-                startActivity(new Intent(PesanCustomActivity.this, DataPengirimanCustomerActivity.class));
-
                 if (!kategori.equals("") && !ukuran.equals("") && !catatan.equals(("")) && !image.equals((""))) {
                     pesanCustomModelRealm = new PesanCustomModelRealm();
                     pesanCustomModelRealm.setKategori_karya_id(kategori);
@@ -143,8 +141,13 @@ public class PesanCustomActivity extends AppCompatActivity implements IPesanCust
                     pesanCustomRealmHelper = new PesanCustomRealmHelper(realm);
                     pesanCustomRealmHelper.save(pesanCustomModelRealm);
 
-                    Log.d("TAG", "sukses masuk dong");
 
+                    Integer order_id = 1;
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("order_id", order_id);
+                    Intent intent = new Intent(PesanCustomActivity.this, DataPengirimanCustomerActivity.class);;
+                    intent.putExtras(bundle);
+                    startActivity(intent);
 //                    setupPresenter(fileToUpload);
                 }
                 else {
@@ -202,7 +205,6 @@ public class PesanCustomActivity extends AppCompatActivity implements IPesanCust
                 try {
                     Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), contentURI);
                     String path = saveImage(bitmap);
-                    Toast.makeText(PesanCustomActivity.this, "Image Saved!", Toast.LENGTH_SHORT).show();
                     img_custom.setImageBitmap(bitmap);
 
                     String filePath = getRealPathFromURIPath(contentURI, PesanCustomActivity.this);

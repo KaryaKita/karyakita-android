@@ -60,14 +60,6 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
                 .build();
         realm = Realm.getInstance(configuration);
 
-        bt_masuk.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setUpPresenter();
-
-            }
-        });
-
         addAkun.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,13 +72,12 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
         bt_masuk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setUpPresenter();
                 if (et_Username_login.getText().toString().length() == 0) {
                     et_Username_login.setError("Email tidak boleh kosong");
                 } else if (et_Password_login.getText().toString().length() == 0) {
                     et_Password_login.setError("Password tidak boleh kosong");
                 } else {
-                    Toast.makeText(getApplicationContext(), "Login Success", Toast.LENGTH_SHORT).show();
+                    setUpPresenter();
                 }
             }
         });

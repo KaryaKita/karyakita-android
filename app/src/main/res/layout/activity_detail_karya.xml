@@ -25,22 +25,17 @@
 
                 <android.support.v7.widget.Toolbar
                     android:id="@+id/toolbar"
+                    app:title="@string/detail_karya"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/mainColor"
                     app:popupTheme="@style/AppTheme.PopupOverlay" />
             </android.support.design.widget.AppBarLayout>
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="15dp"
-                android:src="@drawable/ic_arrow_back_black_24dp" />
-
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="100dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -282,7 +277,7 @@
                             android:layout_height="50dp"
                             android:layout_weight="1"
                             android:background="@color/mainColor"
-                            android:text="Kirim Pesan"
+                            android:text="Chat Desainer"
                             android:textColor="#fff" />
 
                         <View
@@ -308,7 +303,7 @@
                         android:layout_height="50dp"
                         android:layout_weight="1"
                         android:background="#fff"
-                        android:text="Pesan Sekarang"
+                        android:text="Pesan Langsung"
                         android:textColor="@color/mainColor" />
 
                 </LinearLayout>

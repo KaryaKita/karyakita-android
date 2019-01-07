@@ -8,12 +8,11 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <!-- To auto-complete the email text field in the activity_login form with the user's emails -->
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-    <uses-permission android:name="android.permission.READ_PROFILE" />
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!--<uses-permission android:name="android.permission.GET_ACCOUNTS" />-->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!--<uses-permission android:name="android.permission.READ_PROFILE" />-->
+    <!--<uses-permission android:name="android.permission.READ_CONTACTS" />-->
+    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE" />-->
 
     <application
         android:allowBackup="true"
@@ -39,6 +38,7 @@
         <activity android:name=".register.RegisterActivity" />
         <activity android:name=".register_as.RegisterAsActivity" />
         <activity android:name=".customer.karya.DetailKaryaActivity" />
+        <activity android:name=".customer.pesanan_saya.DetailPesananSayaActivity" />
         <activity android:name=".customer.pesan_custom.PesanCustomActivity" />
         <activity android:name=".customer.PesananSelesai" />
         <activity android:name=".customer.karya.ListKaryaActivity" />

@@ -63,6 +63,10 @@ public class DetailKaryaActivity extends AppCompatActivity implements IDetailKar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setTitle("Detail Karya");
+
         Bundle bundle = getIntent().getExtras();
         karya_id = bundle.getInt("karya_id");
 
@@ -120,6 +124,7 @@ public class DetailKaryaActivity extends AppCompatActivity implements IDetailKar
         katkarya.setText("#Art #Vector");
         namakarya.setText(detailKaryaResultModel.getData().getNama());
         deskripsikarya.setText(detailKaryaResultModel.getData().getDeskripsi());
+        hargakarya.setText(detailKaryaResultModel.getData().getHarga());
     }
 
     @Override

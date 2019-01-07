@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,7 +37,8 @@ public class PesananSayaAdapter extends RecyclerView.Adapter<PesananSayaAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int position) {
-        Glide.with(context).load(pesananSayaModelList.get(position).getDeploy_url()).into(holder.iv_gambar);
+//        Glide.with(context).load(pesananSayaModelList.get(position).getDeploy_url()).into(holder.iv_gambar);
+        Glide.with(context).load(R.drawable.desainer_2).into(holder.iv_gambar);
         holder.tv_nama_desainer.setText(pesananSayaModelList.get(position).getNama_desainer());
         holder.tv_kategori.setText(String.valueOf(pesananSayaModelList.get(position).getKategori()));
         holder.tv_harga.setText("Rp. " + String.valueOf(pesananSayaModelList.get(position).getHarga()));
@@ -55,6 +57,7 @@ public class PesananSayaAdapter extends RecyclerView.Adapter<PesananSayaAdapter.
     public class Holder extends RecyclerView.ViewHolder implements View.OnClickListener {
         ImageView iv_gambar;
         TextView tv_nama_desainer, tv_kategori, tv_harga, tv_deadline, tv_jenis_pesanan, tv_opsi_pesanan;
+        LinearLayoutCompat item_pesanan;
 
         public Holder(View itemView) {
             super(itemView);
@@ -69,6 +72,7 @@ public class PesananSayaAdapter extends RecyclerView.Adapter<PesananSayaAdapter.
             tv_deadline = itemView.findViewById((R.id.tv_deadline_pesanan));
             tv_jenis_pesanan = itemView.findViewById((R.id.tv_jenis_pesanan));
             tv_opsi_pesanan = itemView.findViewById(R.id.tv_opsi_pesanan);
+            item_pesanan = itemView.findViewById(R.id.item_pesanan);
 
         }
 
@@ -79,7 +83,7 @@ public class PesananSayaAdapter extends RecyclerView.Adapter<PesananSayaAdapter.
             if (position != RecyclerView.NO_POSITION) {
                 Bundle bundle = new Bundle();
                 bundle.putInt("pesanan_id", pesananSayaModelList.get(position).getId());
-                Intent intent = new Intent(context.getApplicationContext(), DetailPesananSayaActivity.class);
+                Intent intent = new Intent(context, DetailPesananSayaActivity.class);
                 intent.putExtras(bundle);
                 context.startActivity(intent);
             }

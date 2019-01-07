@@ -27,10 +27,10 @@
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/white"
+                    android:background="@color/mainColor"
                     android:elevation="1dp"
                     app:popupTheme="@style/AppTheme.PopupOverlay"
-                    app:titleTextColor="@color/mainColor" />
+                    app:titleTextColor="@color/white" />
             </android.support.design.widget.AppBarLayout>
 
             <ImageView

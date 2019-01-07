@@ -78,7 +78,7 @@ public class CustomerPesananSayaFragment extends Fragment implements IPesananSay
 
     @Override
     public void display(PesananSayaResultModel pesananSayaResultModel) {
-        PesananSayaAdapter pesananSayaAdapter = new PesananSayaAdapter(getActivity());
+        PesananSayaAdapter pesananSayaAdapter = new PesananSayaAdapter(getActivity().getApplicationContext());
         if(pesananSayaResultModel.getData() != null){
             List<PesananSayaModel> listResponse = pesananSayaResultModel.getData();
             if(listResponse.size() > 0){

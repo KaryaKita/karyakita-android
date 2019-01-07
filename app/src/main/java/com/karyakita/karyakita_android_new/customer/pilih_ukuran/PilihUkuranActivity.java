@@ -3,6 +3,7 @@ package com.karyakita.karyakita_android_new.customer.pilih_ukuran;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -61,6 +62,11 @@ public class PilihUkuranActivity extends AppCompatActivity implements IPilihUkur
         Bundle bundle = getIntent().getExtras();
         karya_id = bundle.getInt("karya_id");
 
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Pesan Langsung");
+
 //        setupPresenter();
 
         Realm.init(PilihUkuranActivity.this);
@@ -74,9 +80,6 @@ public class PilihUkuranActivity extends AppCompatActivity implements IPilihUkur
         konfirmasi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ukuran_kertas = sp_ukuran_kertas.getSelectedItem().toString();
-                jenis_kertas = sp_jenis_kertas.getSelectedItem().toString();
-
                 int selectedId = rd_pilih_opsi.getCheckedRadioButtonId();
 
                 if (selectedId == rd_dg_pigora.getId()) {
@@ -85,12 +88,10 @@ public class PilihUkuranActivity extends AppCompatActivity implements IPilihUkur
                 if (selectedId == rd_tp_pigora.getId()) {
                     opsi_order = 2;
                 }
+                ukuran_kertas = sp_ukuran_kertas.getSelectedItem().toString();
+                jenis_kertas = sp_jenis_kertas.getSelectedItem().toString();
 
-                if (!ukuran_kertas.equals("") && !jenis_kertas.equals("") && !rd_tp_pigora.equals("") && !rd_dg_pigora.equals("") && !rd_pilih_opsi.equals("")) {
-                    setupPresenter();
-                } else {
-                    Toast.makeText(getApplicationContext(), "Field tidak boleh kosong !", Toast.LENGTH_LONG);
-                }
+                setupPresenter();
             }
         });
     }
@@ -102,7 +103,6 @@ public class PilihUkuranActivity extends AppCompatActivity implements IPilihUkur
 
     @Override
     public void display(PesanLangsungResultModel model) {
-        Toast.makeText(getApplicationContext(), "berhasil", Toast.LENGTH_SHORT).show();
 
         order_id = model.getOrderModel().getId();
         Bundle bundle = new Bundle();

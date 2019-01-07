@@ -3,13 +3,19 @@ apply plugin: 'realm-android'
 
 
 ext.versionMajor = 1
-ext.versionMinor = 1
+ext.versionMinor = 0
 ext.versionPatch = 0
 ext.versionClassifier = null
 ext.isSnapshot = true
 ext.minimumSdkVersion = 22
 
 android {
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
     dataBinding {
         enabled = true
     }

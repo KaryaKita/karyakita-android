@@ -32,8 +32,6 @@ public class DataPengirimanCustomerActivity extends AppCompatActivity implements
     EditText alamat;
     @BindView(R.id.sp_opsipengiriman)
     Spinner opsipengiriman;
-    @BindView(R.id.ed_resi)
-    EditText ed_resi;
     @BindView(R.id.ed_kodepos)
     EditText ed_kodepos;
     Integer order_id;
@@ -56,7 +54,13 @@ public class DataPengirimanCustomerActivity extends AppCompatActivity implements
         bt_id_pesanan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setupPresenter();
+                if (alamat.getText().toString().length() == 0) {
+                    alamat.setError("Alamat tidak boleh kosong");
+                } else if (ed_kodepos.getText().toString().length() == 0) {
+                    ed_kodepos.setError("Kode Pos tidak boleh kosong");
+                } else {
+                    setupPresenter();
+                }
             }
         });
     }
@@ -68,8 +72,6 @@ public class DataPengirimanCustomerActivity extends AppCompatActivity implements
 
     @Override
     public void display(DataPengirimanResultModel model) {
-        Toast.makeText(getApplicationContext(), "berhasil", Toast.LENGTH_SHORT).show();
-
         Intent intent = new Intent(DataPengirimanCustomerActivity.this, PesananSelesai.class);
         startActivity(intent);
     }
@@ -78,10 +80,9 @@ public class DataPengirimanCustomerActivity extends AppCompatActivity implements
     public void displayError(String s) {
     }
 
-    private void setupPresenter() {
+    public void setupPresenter() {
         Map<String, String> inputan = new HashMap<String, String>();
         inputan.put("via", opsipengiriman.getSelectedItem().toString());
-        inputan.put("resi", ed_resi.getText().toString());
         inputan.put("kecamatan", kec.getSelectedItem().toString());
         inputan.put("kota_kab", kab.getSelectedItem().toString());
         inputan.put("provinsi", prov.getSelectedItem().toString());

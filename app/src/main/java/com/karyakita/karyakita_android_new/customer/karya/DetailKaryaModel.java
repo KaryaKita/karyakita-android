@@ -21,9 +21,17 @@ public class DetailKaryaModel extends BaseModel {
     @Expose
     private String nama;
 
+    @SerializedName("desainer_name")
+    @Expose
+    private String desainer_name;
+
     @SerializedName("deskripsi")
     @Expose
     private String deskripsi;
+
+    @SerializedName("harga")
+    @Expose
+    private String harga;
 
     @SerializedName("jumlah_revisi")
     @Expose
@@ -74,6 +82,26 @@ public class DetailKaryaModel extends BaseModel {
 
     public DetailKaryaModel() {
 
+    }
+
+    public String getHarga() {
+        return harga;
+    }
+
+    public void setHarga(String harga) {
+        this.harga = harga;
+    }
+
+    public Integer getDesainer_id() {
+        return desainer_id;
+    }
+
+    public String getDesainer_name() {
+        return desainer_name;
+    }
+
+    public void setDesainer_name(String desainer_name) {
+        this.desainer_name = desainer_name;
     }
 
     public String getDeploy_url() {
