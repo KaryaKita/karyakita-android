@@ -1,6 +1,7 @@
 package com.karyakita.karyakita_android_new.customer.home.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.karyakita.karyakita_android_new.MustLoginRegisterActivity;
 import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.base.GlobalVariable;
 import com.karyakita.karyakita_android_new.customer.home.HomeCustomerActivity;
@@ -27,6 +29,8 @@ import com.karyakita.karyakita_android_new.customer.profil_customer.ProfilResult
 import com.karyakita.karyakita_android_new.data.local.realm.RealmHelper;
 import com.karyakita.karyakita_android_new.login.LoginHelper;
 import com.karyakita.karyakita_android_new.login.SessionModel;
+import com.karyakita.karyakita_android_new.register.RegisterActivity;
+import com.karyakita.karyakita_android_new.sessions.SessionSharedPreferences;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -80,7 +84,6 @@ public class CustomerAkunFragment extends Fragment implements IProfilView{
         ButterKnife.bind(this, view);
 
         setupPresenter();
-        getProfil();
         return view;
     }
 
@@ -117,12 +120,16 @@ public class CustomerAkunFragment extends Fragment implements IProfilView{
         realm = Realm.getInstance(configuration);
         realmHelper = new RealmHelper(realm);
 
-        if(GlobalVariable.TOKEN != ""){
+        if(SessionSharedPreferences.getLoggedStatus(getActivity().getApplicationContext())){
             loginHelper = new LoginHelper(realm);
             SessionModel user = loginHelper.getUser();
             this.user_id = user.getId();
 
             profilPresenter = new ProfilPresenter(this, user.getId());
+            getProfil();
+        } else {
+            Intent intent = new Intent(getActivity().getApplicationContext(), MustLoginRegisterActivity.class);
+            startActivity(intent);
         }
     }
 

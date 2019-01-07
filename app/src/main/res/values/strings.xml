@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Karyakita</string>
+    <string name="copyright">Copyright @2018 Karyakita.com</string>
+    <string name="back">Kembali ke Home</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">User Name</string>
