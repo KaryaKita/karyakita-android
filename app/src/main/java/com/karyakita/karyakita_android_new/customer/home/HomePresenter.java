@@ -44,7 +44,7 @@ public class HomePresenter implements IMainPresenter {
 
     public Observable<KategoriKaryaResultModel> getObservable() {
         return RetrofitHelper.getRetrofit().create(IRestServices.class)
-                .getKategoriKarya("Bearer " + GlobalVariable.TOKEN)
+                .getKategoriKarya()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }

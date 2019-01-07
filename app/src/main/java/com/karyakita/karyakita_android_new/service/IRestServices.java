@@ -39,70 +39,31 @@ public interface IRestServices {
             @Field("nama") String nama);
 
     @FormUrlEncoded
-    @Multipart
-    @POST("customer/order/custom")
-    io.reactivex.Observable<PesanCustomResultModel> pesan_custom(
-
-            @Field("catatan") String catatan,
-            @Field("tanggal_deadline") String tanggal_deadline,
-            @Field("kategori_karya") int kategori_karya,
-            @Field("opsi_order_id") Integer opsi_order_id,
-            @Field("ukuran") String ukuran,
-            @Part MultipartBody.Part gambar
-    );
-
-    @FormUrlEncoded
-    @POST("customer/order/direct")
-    io.reactivex.Observable<PesanLangsungResultModel> pesan_langsung(
-            @Header("Authorization") String bearer,
-            @Field("karya_id") Integer karya_id,
-            @Field("catatan") String catatan,
-            @Field("tanggal_deadline") String tanggal_deadline,
-            @Field("pelanggan_id") Integer pelanggan_id,
-            @Field("opsi_order_id") Integer opsi_desainer_id,
-            @Field("ukuran") String ukuran );
-
-    @FormUrlEncoded
     @POST("login")
     io.reactivex.Observable<LoginResultModel> login(@Field("email") String email,
                                                     @Field("password") String password,
                                                     @Field("role_id") Integer role_id);
 
-    @POST("customer/order/data-pengiriman")
-    io.reactivex.Observable<DataPengirimanResultModel> datapengiriman(
-                                                                @Header("Authorization") String bearer,
-                                                                @Field("provinsi") String provinsi,
-                                                                @Field("kota_kab") String kota_kab,
-                                                                @Field("kecamatan") String kecamatan,
-                                                                @Field("alamat_lengkap") String alamat_lengkap,
-                                                                @Field("resi") String resi,
-                                                                @Field("kode_pos") String kode_pos,
-                                                                @Field("via") String via,
-                                                                @Field("order_id") Integer order_id);
-
     @GET("kategori_karya/get-all")
-    io.reactivex.Observable<KategoriKaryaResultModel> getKategoriKarya(@Header("Authorization") String bearer);
+    io.reactivex.Observable<KategoriKaryaResultModel> getKategoriKarya();
 
     @GET("desainer/get-all")
-    io.reactivex.Observable<ListDesainerResultModel> getListDesainer(@Header("Authorization") String bearer);
-
-    @GET("customer/order/list/{customer_id}")
-    io.reactivex.Observable<PesananSayaResultModel> getPesananSaya(@Header("Authorization") String bearer, @Path("customer_id")Integer customer_id);
-
-    @GET("customer/notif/list/{notifikasi_id}")
-    io.reactivex.Observable<NotifikasiResultModel> getNotifikasi(@Header("Authorization") String bearer, @Path("notifikasi_id")Integer notifikasi_id);
+    io.reactivex.Observable<ListDesainerResultModel> getListDesainer();
 
     @GET("desainer/order/list")
     io.reactivex.Observable<com.karyakita.karyakita_android_new.desainer.pesanan_saya.PesananSayaResultModel> getPesananSayaDesainer(@Header("Authorization") String bearer);
 
     @GET("karya/get-all")
-    io.reactivex.Observable<ListKaryaResultModel> getListKarya(@Header("Authorization") String bearer);
+    io.reactivex.Observable<ListKaryaResultModel> getListKarya();
 
     @GET("karya/get-by-kategori/{kategori_id}")
-    io.reactivex.Observable<ListKaryaResultModel> getListKaryaByKategori(@Header("Authorization") String bearer, @Path("kategori_id") Integer kategori_id);
+    io.reactivex.Observable<ListKaryaResultModel> getListKaryaByKategori(@Path("kategori_id") Integer kategori_id);
 
     @GET("karya/{id}")
-    io.reactivex.Observable<DetailKaryaResultModel> getDetailKarya(@Header("Authorization") String bearer, @Path("id")Integer id);
+    io.reactivex.Observable<DetailKaryaResultModel> getDetailKarya(@Path("id")Integer id);
+
+
+    /* Using Header Authorization Bearer */
 
     @GET("user/{id}")
     io.reactivex.Observable<ProfilResultModel> getProfil(@Header("Authorization") String bearer, @Path("id")Integer id);

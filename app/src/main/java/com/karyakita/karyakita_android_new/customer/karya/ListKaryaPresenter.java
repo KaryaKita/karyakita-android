@@ -46,12 +46,12 @@ public class ListKaryaPresenter implements IMainPresenter {
     public Observable<ListKaryaResultModel> getObservable() {
         if (this.input == null || this.input.get("kategori_id") == null || this.input.get("kategori_id") == "") {
             return RetrofitHelper.getRetrofit().create(IRestServices.class)
-                    .getListKarya("Bearer " + GlobalVariable.TOKEN)
+                    .getListKarya()
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread());
         }
         return RetrofitHelper.getRetrofit().create(IRestServices.class)
-                .getListKaryaByKategori("Bearer " + GlobalVariable.TOKEN, Integer.parseInt(this.input.get("kategori_id")))
+                .getListKaryaByKategori(Integer.parseInt(this.input.get("kategori_id")))
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }

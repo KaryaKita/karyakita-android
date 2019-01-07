@@ -7,6 +7,7 @@ import com.karyakita.karyakita_android_new.base.GlobalVariable;
 import com.karyakita.karyakita_android_new.base.IMainPresenter;
 import com.karyakita.karyakita_android_new.customer.karya.ListKaryaModel;
 
+import com.karyakita.karyakita_android_new.service.ICustomerRestServices;
 import com.karyakita.karyakita_android_new.service.IRestServices;
 import com.karyakita.karyakita_android_new.service.RetrofitHelper;
 import java.util.Map;
@@ -48,7 +49,7 @@ public class PesananSayaPresenter implements IMainPresenter {
 
     public io.reactivex.Observable<PesananSayaResultModel> getObservable(){
         Log.wtf("TAG", "Bearer " + GlobalVariable.TOKEN);
-        return RetrofitHelper.getRetrofit().create(IRestServices.class)
+        return RetrofitHelper.getRetrofit().create(ICustomerRestServices.class)
                 .getPesananSaya("Bearer " + GlobalVariable.TOKEN, this.id_customer)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());

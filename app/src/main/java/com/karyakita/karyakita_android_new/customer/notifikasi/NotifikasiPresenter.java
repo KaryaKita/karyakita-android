@@ -5,6 +5,7 @@ import android.util.Log;
 import com.karyakita.karyakita_android_new.base.BaseModel;
 import com.karyakita.karyakita_android_new.base.GlobalVariable;
 import com.karyakita.karyakita_android_new.base.IMainPresenter;
+import com.karyakita.karyakita_android_new.service.ICustomerRestServices;
 import com.karyakita.karyakita_android_new.service.IRestServices;
 import com.karyakita.karyakita_android_new.service.RetrofitHelper;
 
@@ -46,7 +47,7 @@ public class NotifikasiPresenter implements IMainPresenter{
     }
 
     public Observable<NotifikasiResultModel> getObservable(){
-        return RetrofitHelper.getRetrofit().create(IRestServices.class)
+        return RetrofitHelper.getRetrofit().create(ICustomerRestServices.class)
                 .getNotifikasi("Bearer " + GlobalVariable.TOKEN, this.id_customer)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());

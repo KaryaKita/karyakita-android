@@ -3,7 +3,9 @@ package com.karyakita.karyakita_android_new.customer.pesan_custom;
 import android.util.Log;
 
 import com.karyakita.karyakita_android_new.base.BaseModel;
+import com.karyakita.karyakita_android_new.base.GlobalVariable;
 import com.karyakita.karyakita_android_new.base.IMainPresenter;
+import com.karyakita.karyakita_android_new.service.ICustomerRestServices;
 import com.karyakita.karyakita_android_new.service.IRestServices;
 import com.karyakita.karyakita_android_new.service.RetrofitHelper;
 
@@ -53,8 +55,10 @@ public class PesanCustomPresenter implements IMainPresenter {
 
     public io.reactivex.Observable<PesanCustomResultModel> getObservable(){
         Log.d("tag", "masuk ovservable");
-        return RetrofitHelper.getRetrofit().create(IRestServices.class)
-                .pesan_custom(this.input.get("catatan"),
+        return RetrofitHelper.getRetrofit().create(ICustomerRestServices.class)
+                .pesan_custom(
+                        GlobalVariable.TOKEN,
+                        this.input.get("catatan"),
                         this.input.get("tanggal_deadline"),
                         Integer.parseInt(this.input.get("kategori_karya")),
                         Integer.parseInt(this.input.get("opsi_order_id")),

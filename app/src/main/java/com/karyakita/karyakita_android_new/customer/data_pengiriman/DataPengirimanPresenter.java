@@ -5,6 +5,7 @@ import android.util.Log;
 import com.karyakita.karyakita_android_new.base.BaseModel;
 import com.karyakita.karyakita_android_new.base.GlobalVariable;
 import com.karyakita.karyakita_android_new.base.IMainPresenter;
+import com.karyakita.karyakita_android_new.service.ICustomerRestServices;
 import com.karyakita.karyakita_android_new.service.IRestServices;
 import com.karyakita.karyakita_android_new.service.RetrofitHelper;
 
@@ -42,7 +43,7 @@ public class DataPengirimanPresenter implements IMainPresenter{
 
     public io.reactivex.Observable<DataPengirimanResultModel> getObservable(){
         Log.d("tag", "masuk observable");
-        return RetrofitHelper.getRetrofit().create(IRestServices.class)
+        return RetrofitHelper.getRetrofit().create(ICustomerRestServices.class)
                 .datapengiriman("Bearer " + GlobalVariable.TOKEN,
                         this.input.get("via"),
                         this.input.get("resi"),

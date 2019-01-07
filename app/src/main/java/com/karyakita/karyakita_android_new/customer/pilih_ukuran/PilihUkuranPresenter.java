@@ -6,6 +6,7 @@ import com.karyakita.karyakita_android_new.base.BaseModel;
 import com.karyakita.karyakita_android_new.base.GlobalVariable;
 import com.karyakita.karyakita_android_new.base.IMainPresenter;
 import com.karyakita.karyakita_android_new.customer.pesan_langsung.PesanLangsungResultModel;
+import com.karyakita.karyakita_android_new.service.ICustomerRestServices;
 import com.karyakita.karyakita_android_new.service.IRestServices;
 import com.karyakita.karyakita_android_new.service.RetrofitHelper;
 
@@ -45,7 +46,7 @@ public class PilihUkuranPresenter implements IMainPresenter{
 
     public io.reactivex.Observable<PesanLangsungResultModel> getObservable(){
         Log.d("tag", "masuk observable");
-        return RetrofitHelper.getRetrofit().create(IRestServices.class)
+        return RetrofitHelper.getRetrofit().create(ICustomerRestServices.class)
                 .pesan_langsung("Bearer " + GlobalVariable.TOKEN,Integer.parseInt(
                         this.input.get("karya_id")),
                         this.input.get("catatan"),

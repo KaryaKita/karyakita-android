@@ -44,7 +44,7 @@ public class ListDesainerPresenter implements IMainPresenter {
 
     public io.reactivex.Observable<ListDesainerResultModel> getObservable() {
         return RetrofitHelper.getRetrofit().create(IRestServices.class)
-                .getListDesainer("Bearer" + GlobalVariable.TOKEN)
+                .getListDesainer()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
 

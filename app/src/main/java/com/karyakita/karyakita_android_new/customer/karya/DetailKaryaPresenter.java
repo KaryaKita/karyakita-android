@@ -44,7 +44,7 @@ public class DetailKaryaPresenter implements IMainPresenter {
 
     public Observable<DetailKaryaResultModel> getObservable() {
         return RetrofitHelper.getRetrofit().create(IRestServices.class)
-                .getDetailKarya("Bearer " + GlobalVariable.TOKEN, this.karya_id)
+                .getDetailKarya(this.karya_id)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }
