@@ -99,15 +99,19 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
     @Override
     public void display(LoginResultModel model) {
         GlobalVariable.TOKEN = model.getToken();
-        Log.i("Test", model.getToken());
+        Intent intent;
 
         if (model.getData().getRole_id() == 3) {
-            finish();
-            LoginAsActivity.loginAs.finish();
-            startActivity(new Intent(LoginActivity.this, HomeCustomerActivity.class));
+//            finish();
+//            LoginAsActivity.loginAs.finish();
+            intent = new Intent(LoginActivity.this, HomeCustomerActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
         } else if (model.getData().getRole_id() == 2) {
-            finish();
-            LoginAsActivity.loginAs.finish();
+//            finish();
+//            LoginAsActivity.loginAs.finish();
+            intent = new Intent(LoginActivity.this, HomeCustomerActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(new Intent(LoginActivity.this, HomeDesainerActivity.class));
         }
         loginHelper = new LoginHelper(realm);
@@ -139,7 +143,7 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
         inputan.put("email", et_Username_login.getText().toString());
         inputan.put("password", et_Password_login.getText().toString());
         inputan.put("role_id", role_id.toString());
-        loginPresenter = new LoginPresenter(this);
+        loginPresenter = new LoginPresenter(this, getApplicationContext());
         loginPresenter.insert(inputan);
     }
 }

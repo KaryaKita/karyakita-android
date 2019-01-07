@@ -1,11 +1,13 @@
 package com.karyakita.karyakita_android_new.login;
 
+import android.content.Context;
 import android.util.Log;
 
 import com.karyakita.karyakita_android_new.base.BaseModel;
 import com.karyakita.karyakita_android_new.base.IMainPresenter;
 import com.karyakita.karyakita_android_new.service.IRestServices;
 import com.karyakita.karyakita_android_new.service.RetrofitHelper;
+import com.karyakita.karyakita_android_new.sessions.SessionSharedPreferences;
 
 import java.util.Map;
 
@@ -16,13 +18,13 @@ import io.reactivex.observers.DisposableObserver;
 import io.reactivex.schedulers.Schedulers;
 
 public class LoginPresenter implements IMainPresenter {
-    ILoginView iLoginView;
-    BaseModel model = null;
-    LoginModel loginModel = null;
-    Map<String, String> input;
+    private ILoginView iLoginView;
+    private Map<String, String> input;
+    private Context context;
 
-    public LoginPresenter(ILoginView iLoginView) {
+    public LoginPresenter(ILoginView iLoginView, Context context) {
         this.iLoginView = iLoginView;
+        this.context = context;
     }
 
     @Override
@@ -42,7 +44,6 @@ public class LoginPresenter implements IMainPresenter {
     }
 
     public Observable<LoginResultModel> getObservable() {
-        Log.d("TAG", "Berhasil joss");
         return RetrofitHelper.getRetrofit().create(IRestServices.class)
                 .login(this.input.get("email"),
                         this.input.get("password"),
@@ -56,6 +57,7 @@ public class LoginPresenter implements IMainPresenter {
 
             @Override
             public void onNext(@NonNull LoginResultModel loginResultModel) {
+                setSessionLogin(loginResultModel);
                 iLoginView.display(loginResultModel);
                 iLoginView.showToast(loginResultModel.getMessage());
             }
@@ -71,5 +73,9 @@ public class LoginPresenter implements IMainPresenter {
                 Log.d("TAG", "Completed");
             }
         };
+    }
+
+    public void setSessionLogin(LoginResultModel loginResultModel) {
+        SessionSharedPreferences.setLoggedIn(this.context, true, loginResultModel);
     }
 }

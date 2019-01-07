@@ -170,9 +170,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:background="@drawable/border_orange"
+            android:background="@color/mainColor"
             android:text="Lanjut"
-            android:textColor="@color/mainColor" />
+            android:textColor="@color/white" />
     </RelativeLayout>
 
 

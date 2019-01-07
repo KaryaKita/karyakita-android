@@ -1,9 +1,11 @@
 package com.karyakita.karyakita_android_new;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -11,11 +13,21 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 import com.karyakita.karyakita_android_new.customer.home.HomeCustomerActivity;
+import com.karyakita.karyakita_android_new.data.local.realm.RealmHelper;
+import com.karyakita.karyakita_android_new.login.LoginHelper;
+import com.karyakita.karyakita_android_new.login.SessionModel;
 import com.karyakita.karyakita_android_new.login_as.LoginAsActivity;
 
 import butterknife.ButterKnife;
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
 
 public class SplashScreenActivity extends AppCompatActivity {
+    Realm realm;
+    RealmHelper realmHelper;
+    LoginHelper loginHelper;
+    Context context;
+    Integer user_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

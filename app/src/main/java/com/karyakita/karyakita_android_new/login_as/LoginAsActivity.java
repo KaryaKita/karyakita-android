@@ -11,8 +11,10 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.karyakita.karyakita_android_new.R;
+import com.karyakita.karyakita_android_new.customer.home.HomeCustomerActivity;
 import com.karyakita.karyakita_android_new.login.LoginActivity;
 import com.karyakita.karyakita_android_new.register_as.RegisterAsActivity;
+import com.karyakita.karyakita_android_new.sessions.SessionSharedPreferences;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -32,6 +34,11 @@ public class LoginAsActivity extends AppCompatActivity {
 
         Button bLoginCustomer = findViewById(R.id.bt_login_customer);
         Button bLoginDesigner = findViewById(R.id.bt_login_designer);
+
+        if (SessionSharedPreferences.getLoggedStatus(getApplicationContext())) {
+            Intent intent = new Intent(getApplicationContext(), HomeCustomerActivity.class);
+            startActivity(intent);
+        }
 
         bLoginCustomer.setOnClickListener(new View.OnClickListener() {
             @Override
