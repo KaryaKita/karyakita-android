@@ -68,11 +68,6 @@ public interface IRestServices {
                                                     @Field("password") String password,
                                                     @Field("role_id") Integer role_id);
 
-//    @FormUrlEncoded
-//    @POST("user/login")
-//    io.reactivex.Observable<PilihUkuranResultModel> pilihukuran(@Field("ukuran_kertas") String ukuran_kertas,
-//                                                                @Field("ukuran_bingkai") String ukuran_bingkai);
-
     @POST("customer/order/data-pengiriman")
     io.reactivex.Observable<DataPengirimanResultModel> datapengiriman(
                                                                 @Header("Authorization") String bearer,
