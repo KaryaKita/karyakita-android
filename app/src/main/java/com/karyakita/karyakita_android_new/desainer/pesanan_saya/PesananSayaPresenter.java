@@ -5,6 +5,7 @@ import android.util.Log;
 import com.karyakita.karyakita_android_new.base.BaseModel;
 import com.karyakita.karyakita_android_new.base.GlobalVariable;
 import com.karyakita.karyakita_android_new.base.IMainPresenter;
+import com.karyakita.karyakita_android_new.service.IDesainerRestServices;
 import com.karyakita.karyakita_android_new.service.IRestServices;
 import com.karyakita.karyakita_android_new.service.RetrofitHelper;
 
@@ -43,7 +44,7 @@ public class PesananSayaPresenter implements IMainPresenter {
 
     }
     public Observable<PesananSayaResultModel> getObservable(){
-        return RetrofitHelper.getRetrofit().create(IRestServices.class)
+        return RetrofitHelper.getRetrofit().create(IDesainerRestServices.class)
                 .getPesananSayaDesainer("Bearer" + GlobalVariable.TOKEN)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
