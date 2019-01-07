@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.karyakita.karyakita_android_new.OnMaintenanceActivity;
 import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.base.GlobalVariable;
 import com.karyakita.karyakita_android_new.customer.home.HomeCustomerActivity;
@@ -108,11 +109,11 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
         } else if (model.getData().getRole_id() == 2) {
-//            finish();
+            finish();
 //            LoginAsActivity.loginAs.finish();
-            intent = new Intent(LoginActivity.this, HomeCustomerActivity.class);
+            intent = new Intent(LoginActivity.this, OnMaintenanceActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(new Intent(LoginActivity.this, HomeDesainerActivity.class));
+            startActivity(intent);
         }
         loginHelper = new LoginHelper(realm);
 

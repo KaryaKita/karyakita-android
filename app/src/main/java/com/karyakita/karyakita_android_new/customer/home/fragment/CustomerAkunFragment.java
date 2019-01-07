@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.karyakita.karyakita_android_new.MustLoginRegisterActivity;
 import com.karyakita.karyakita_android_new.R;
+import com.karyakita.karyakita_android_new.SplashScreenActivity;
 import com.karyakita.karyakita_android_new.base.GlobalVariable;
 import com.karyakita.karyakita_android_new.customer.home.HomeCustomerActivity;
 import com.karyakita.karyakita_android_new.customer.notifikasi.NotifikasiResultModel;
@@ -54,8 +55,8 @@ public class CustomerAkunFragment extends Fragment implements IProfilView{
 
     ProfilModel profilModel = null;
 
-    @BindView(R.id.bt_logout)
-    Button bt_logout;
+    @BindView(R.id.tv_logout)
+    TextView tv_logout;
     @BindView(R.id.iv_user)
     ImageView iv_user;
     @BindView(R.id.tv_nama)
@@ -82,14 +83,25 @@ public class CustomerAkunFragment extends Fragment implements IProfilView{
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_customer_akun, container, false);
         ButterKnife.bind(this, view);
-
+        context = getActivity().getApplicationContext();
         setupPresenter();
+
+        tv_logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SessionSharedPreferences.logout(context);
+
+                getActivity().finish();
+                Intent intent = new Intent(context, SplashScreenActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+            }
+        });
         return view;
     }
 
     private void getProfil(){
         Map<String, String> dataInput = new HashMap<>();
-        dataInput.put("user_id", user_id.toString());
         profilPresenter.get(dataInput);
     }
 
@@ -125,7 +137,9 @@ public class CustomerAkunFragment extends Fragment implements IProfilView{
             SessionModel user = loginHelper.getUser();
             this.user_id = user.getId();
 
-            profilPresenter = new ProfilPresenter(this, user.getId());
+            profilPresenter = new ProfilPresenter(this,
+                    SessionSharedPreferences.getUserId(getActivity().getApplicationContext()),
+                    getActivity().getApplicationContext());
             getProfil();
         } else {
             Intent intent = new Intent(getActivity().getApplicationContext(), MustLoginRegisterActivity.class);

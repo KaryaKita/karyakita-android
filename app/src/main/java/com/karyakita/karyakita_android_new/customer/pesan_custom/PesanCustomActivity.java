@@ -276,7 +276,7 @@ public class PesanCustomActivity extends AppCompatActivity implements IPesanCust
         inputan.put("catatan", catatan.toString());
 //        inputan.put("gambar", img_custom.toString());
         pesanCustomPresenter.setImagePesanCustom(this.fileToUpload);
-        pesanCustomPresenter = new PesanCustomPresenter(this);
+        pesanCustomPresenter = new PesanCustomPresenter(this, getApplicationContext());
         pesanCustomPresenter.insert(inputan);
 
     }

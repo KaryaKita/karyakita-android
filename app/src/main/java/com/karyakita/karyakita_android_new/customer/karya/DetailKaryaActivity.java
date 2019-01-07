@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.karyakita.karyakita_android_new.MustLoginRegisterActivity;
 import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.base.GlobalVariable;
 import com.karyakita.karyakita_android_new.customer.data_pengiriman.DataPengirimanCustomerActivity;
@@ -21,6 +22,7 @@ import com.karyakita.karyakita_android_new.customer.pilih_ukuran.PilihUkuranActi
 
 import com.karyakita.karyakita_android_new.login.LoginActivity;
 import com.karyakita.karyakita_android_new.login_as.LoginAsActivity;
+import com.karyakita.karyakita_android_new.sessions.SessionSharedPreferences;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -72,10 +74,10 @@ public class DetailKaryaActivity extends AppCompatActivity implements IDetailKar
             @Override
             public void onClick(View v) {
                 Intent intent;
-                if (GlobalVariable.TOKEN == "") {
-                    intent = new Intent(DetailKaryaActivity.this, LoginAsActivity.class);
-                } else {
+                if(SessionSharedPreferences.getLoggedStatus(getApplicationContext())){
                     intent = new Intent(DetailKaryaActivity.this, PesanCustomActivity.class);
+                } else {
+                    intent = new Intent(DetailKaryaActivity.this, MustLoginRegisterActivity.class);
                 }
                 startActivity(intent);
             }
@@ -85,10 +87,10 @@ public class DetailKaryaActivity extends AppCompatActivity implements IDetailKar
             @Override
             public void onClick(View v) {
                 Intent intent;
-                if (GlobalVariable.TOKEN == null) {
-                    intent = new Intent(DetailKaryaActivity.this, LoginAsActivity.class);
-                } else {
+                if(SessionSharedPreferences.getLoggedStatus(getApplicationContext())){
                     intent = new Intent(DetailKaryaActivity.this, PilihUkuranActivity.class);
+                } else {
+                    intent = new Intent(DetailKaryaActivity.this, MustLoginRegisterActivity.class);
                 }
 
                 Bundle bundle = new Bundle();

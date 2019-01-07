@@ -89,7 +89,7 @@ public class DataPengirimanCustomerActivity extends AppCompatActivity implements
         inputan.put("kode_pos", ed_kodepos.getText().toString());
         inputan.put("order_id", order_id.toString());
 
-        dataPengirimanPresenter = new DataPengirimanPresenter(this);
+        dataPengirimanPresenter = new DataPengirimanPresenter(this, getApplicationContext());
         dataPengirimanPresenter.insert(inputan);
     }
 }

@@ -55,12 +55,12 @@
 
                     <android.support.v7.widget.AppCompatButton
                         android:id="@+id/btn_choose_login"
-                        android:layout_width="150dp"
-                        android:layout_height="60dp"
+                        android:layout_width="130dp"
+                        android:layout_height="50dp"
                         android:textColor="@color/white"
                         android:background="@drawable/rounded_login_button"
                         android:text="Login"
-                        android:textSize="20sp"/>
+                        android:textSize="17sp"/>
 
                 </LinearLayout>
 
@@ -73,13 +73,13 @@
 
                     <android.support.v7.widget.AppCompatButton
                         android:id="@+id/btn_choose_register"
-                        android:layout_width="150dp"
-                        android:layout_height="60dp"
+                        android:layout_width="130dp"
+                        android:layout_height="50dp"
                         android:text="Register"
                         android:fontFamily="@font/roboto_bold"
                         android:textColor="@color/mainColor"
                         android:background="@drawable/border_orange"
-                        android:textSize="20sp"/>
+                        android:textSize="17sp"/>
                 </LinearLayout>
             </LinearLayout>
 
@@ -91,8 +91,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:layout_marginTop="450dp"
-            android:textSize="25dp"
+            android:layout_marginTop="300dp"
+            android:textSize="20dp"
             android:textColor="#207bca"
             android:text="@string/back"/>
 

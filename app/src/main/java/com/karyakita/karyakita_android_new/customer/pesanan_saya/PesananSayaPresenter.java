@@ -1,5 +1,7 @@
 package com.karyakita.karyakita_android_new.customer.pesanan_saya;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
 
 import com.karyakita.karyakita_android_new.base.BaseModel;
@@ -10,6 +12,9 @@ import com.karyakita.karyakita_android_new.customer.karya.ListKaryaModel;
 import com.karyakita.karyakita_android_new.service.ICustomerRestServices;
 import com.karyakita.karyakita_android_new.service.IRestServices;
 import com.karyakita.karyakita_android_new.service.RetrofitHelper;
+import com.karyakita.karyakita_android_new.sessions.PreferencesUtility;
+import com.karyakita.karyakita_android_new.sessions.SessionSharedPreferences;
+
 import java.util.Map;
 import java.util.Observable;
 
@@ -26,10 +31,13 @@ public class PesananSayaPresenter implements IMainPresenter {
     PesananSayaModel pesananSayaModel = null;
     Map<String, String> input;
     Integer id_customer;
+    Context context;
 
-    public PesananSayaPresenter(IPesananSayaView iPesananSayaView, Integer id_customer){
+    public PesananSayaPresenter(IPesananSayaView iPesananSayaView, Integer id_customer, Context context){
         this.iPesananSayaView = iPesananSayaView;
         this.id_customer = id_customer;
+
+        this.context = context;
     }
 
     @Override
@@ -48,9 +56,8 @@ public class PesananSayaPresenter implements IMainPresenter {
     }
 
     public io.reactivex.Observable<PesananSayaResultModel> getObservable(){
-        Log.wtf("TAG", "Bearer " + GlobalVariable.TOKEN);
         return RetrofitHelper.getRetrofit().create(ICustomerRestServices.class)
-                .getPesananSaya("Bearer " + GlobalVariable.TOKEN, this.id_customer)
+                .getPesananSaya("Bearer " + SessionSharedPreferences.getToken(this.context), this.id_customer)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }

@@ -61,7 +61,8 @@
         <activity android:name=".customer.pilih_ukuran.PilihUkuranActivity" />
         <activity android:name=".desainer.edit_bio.DesainerEditBioActivity" />
         <activity android:name=".TryCalender" />
-        <activity android:name=".MustLoginRegisterActivity"></activity>
+        <activity android:name=".MustLoginRegisterActivity" />
+        <activity android:name=".OnMaintenanceActivity"></activity>
     </application>
 
 </manifest>

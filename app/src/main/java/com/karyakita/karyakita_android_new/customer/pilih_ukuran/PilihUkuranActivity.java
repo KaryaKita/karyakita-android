@@ -125,7 +125,7 @@ public class PilihUkuranActivity extends AppCompatActivity implements IPilihUkur
         inputan.put("opsi_order_id", opsi_order.toString());
         inputan.put("ukuran", ukuran_kertas);
 
-        pilihUkuranPresenter = new PilihUkuranPresenter(this);
+        pilihUkuranPresenter = new PilihUkuranPresenter(this, getApplicationContext());
         pilihUkuranPresenter.insert(inputan);
     }
 }

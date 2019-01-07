@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.karyakita.karyakita_android_new.OnMaintenanceActivity;
 import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.customer.home.HomeCustomerActivity;
 import com.karyakita.karyakita_android_new.login.LoginActivity;
@@ -54,10 +55,14 @@ public class LoginAsActivity extends AppCompatActivity {
         bLoginDesigner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bundle bundle = new Bundle();
-                bundle.putInt("role_id", 2);
-                Intent intent = new Intent(LoginAsActivity.this, LoginActivity.class);
-                intent.putExtras(bundle);
+//                Bundle bundle = new Bundle();
+//                bundle.putInt("role_id", 2);
+//                Intent intent = new Intent(LoginAsActivity.this, LoginActivity.class);
+//                intent.putExtras(bundle);
+//                startActivity(intent);
+
+                Intent intent = new Intent(LoginAsActivity.this, OnMaintenanceActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
             }
         });

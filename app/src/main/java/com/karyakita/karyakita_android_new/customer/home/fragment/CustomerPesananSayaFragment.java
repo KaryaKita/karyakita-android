@@ -1,5 +1,6 @@
 package com.karyakita.karyakita_android_new.customer.home.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -11,8 +12,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.karyakita.karyakita_android_new.MustLoginRegisterActivity;
 import com.karyakita.karyakita_android_new.R;
 import com.karyakita.karyakita_android_new.base.GlobalVariable;
+import com.karyakita.karyakita_android_new.customer.notifikasi.NotifikasiPresenter;
 import com.karyakita.karyakita_android_new.customer.pesan_custom.PesanCustomRealmHelper;
 import com.karyakita.karyakita_android_new.customer.pesanan_saya.IPesananSayaView;
 import com.karyakita.karyakita_android_new.customer.pesanan_saya.PesananSayaAdapter;
@@ -23,6 +26,7 @@ import com.karyakita.karyakita_android_new.data.local.realm.RealmHelper;
 import com.karyakita.karyakita_android_new.login.LoginActivity;
 import com.karyakita.karyakita_android_new.login.LoginHelper;
 import com.karyakita.karyakita_android_new.login.SessionModel;
+import com.karyakita.karyakita_android_new.sessions.SessionSharedPreferences;
 
 import java.util.List;
 
@@ -50,11 +54,10 @@ public class CustomerPesananSayaFragment extends Fragment implements IPesananSay
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_customer_pesanan_saya, container, false);
-
         rv_pesanan_saya_customer = view.findViewById(R.id.rv_pesanan_saya_customer);
+
         setupView();
         setupPresenter();
-        getPesananSaya();
 
         return view;
     }
@@ -102,10 +105,15 @@ public class CustomerPesananSayaFragment extends Fragment implements IPesananSay
         realm = Realm.getInstance(configuration);
         realmHelper = new RealmHelper(realm);
 
-        if (GlobalVariable.TOKEN != "") {
+        if(SessionSharedPreferences.getLoggedStatus(getActivity().getApplicationContext())){
             loginHelper = new LoginHelper(realm);
             SessionModel user = loginHelper.getUser();
-            pesananSayaPresenter = new PesananSayaPresenter(this, user.getId());
+
+            pesananSayaPresenter = new PesananSayaPresenter(this, user.getId(), getActivity().getApplicationContext());
+            getPesananSaya();
+        } else {
+            Intent intent = new Intent(getActivity().getApplicationContext(), MustLoginRegisterActivity.class);
+            startActivity(intent);
         }
     }
 

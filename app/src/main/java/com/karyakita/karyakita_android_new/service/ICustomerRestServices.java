@@ -60,7 +60,7 @@ public interface ICustomerRestServices {
 
 
 
-    @GET("customer/notif/list/{notifikasi_id}")
-    io.reactivex.Observable<NotifikasiResultModel> getNotifikasi(@Header("Authorization") String bearer, @Path("notifikasi_id")Integer notifikasi_id);
+    @GET("customer/notif/list/{customer_id}")
+    io.reactivex.Observable<NotifikasiResultModel> getNotifikasi(@Header("Authorization") String bearer, @Path("customer_id")Integer notifikasi_id);
 
 }

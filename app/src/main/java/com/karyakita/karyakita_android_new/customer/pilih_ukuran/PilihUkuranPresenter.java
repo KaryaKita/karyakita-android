@@ -1,5 +1,6 @@
 package com.karyakita.karyakita_android_new.customer.pilih_ukuran;
 
+import android.content.Context;
 import android.util.Log;
 
 import com.karyakita.karyakita_android_new.base.BaseModel;
@@ -9,6 +10,8 @@ import com.karyakita.karyakita_android_new.customer.pesan_langsung.PesanLangsung
 import com.karyakita.karyakita_android_new.service.ICustomerRestServices;
 import com.karyakita.karyakita_android_new.service.IRestServices;
 import com.karyakita.karyakita_android_new.service.RetrofitHelper;
+import com.karyakita.karyakita_android_new.sessions.PreferencesUtility;
+import com.karyakita.karyakita_android_new.sessions.SessionSharedPreferences;
 
 import java.util.Map;
 
@@ -25,9 +28,11 @@ public class PilihUkuranPresenter implements IMainPresenter{
     Map<String, String> input = null;
     Integer karya_id = null;
     Integer total = null;
+    Context context;
 
-    public PilihUkuranPresenter(IPilihUkuranView iPilihUkuranView){
+    public PilihUkuranPresenter(IPilihUkuranView iPilihUkuranView, Context context){
         this.iPilihUkuranView = iPilihUkuranView;
+        this.context = context;
     }
 
     @Override
@@ -47,7 +52,8 @@ public class PilihUkuranPresenter implements IMainPresenter{
     public io.reactivex.Observable<PesanLangsungResultModel> getObservable(){
         Log.d("tag", "masuk observable");
         return RetrofitHelper.getRetrofit().create(ICustomerRestServices.class)
-                .pesan_langsung("Bearer " + GlobalVariable.TOKEN,Integer.parseInt(
+                .pesan_langsung("Bearer " + SessionSharedPreferences.getToken(this.context),
+                        Integer.parseInt(
                         this.input.get("karya_id")),
                         this.input.get("catatan"),
                         this.input.get("tanggal_deadline"),

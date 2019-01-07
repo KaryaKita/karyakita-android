@@ -1,5 +1,6 @@
 package com.karyakita.karyakita_android_new.customer.data_pengiriman;
 
+import android.content.Context;
 import android.util.Log;
 
 import com.karyakita.karyakita_android_new.base.BaseModel;
@@ -8,6 +9,8 @@ import com.karyakita.karyakita_android_new.base.IMainPresenter;
 import com.karyakita.karyakita_android_new.service.ICustomerRestServices;
 import com.karyakita.karyakita_android_new.service.IRestServices;
 import com.karyakita.karyakita_android_new.service.RetrofitHelper;
+import com.karyakita.karyakita_android_new.sessions.PreferencesUtility;
+import com.karyakita.karyakita_android_new.sessions.SessionSharedPreferences;
 
 import java.util.Map;
 
@@ -20,9 +23,11 @@ public class DataPengirimanPresenter implements IMainPresenter{
     BaseModel model = null;
     DataPengirimanModel dataPengirimanModel = null;
     Map<String, String> input;
+    Context context;
 
-    public DataPengirimanPresenter(IDataPengirimanView iDataPengirimanView){
+    public DataPengirimanPresenter(IDataPengirimanView iDataPengirimanView, Context context){
         this.iDataPengirimanView = iDataPengirimanView;
+        this.context = context;
     }
 
     @Override
@@ -44,7 +49,7 @@ public class DataPengirimanPresenter implements IMainPresenter{
     public io.reactivex.Observable<DataPengirimanResultModel> getObservable(){
         Log.d("tag", "masuk observable");
         return RetrofitHelper.getRetrofit().create(ICustomerRestServices.class)
-                .datapengiriman("Bearer " + GlobalVariable.TOKEN,
+                .datapengiriman("Bearer " +SessionSharedPreferences.getToken(this.context),
                         this.input.get("via"),
                         this.input.get("resi"),
                         this.input.get("kecamatan"),

@@ -1,5 +1,6 @@
 package com.karyakita.karyakita_android_new.customer.pesan_custom;
 
+import android.content.Context;
 import android.util.Log;
 
 import com.karyakita.karyakita_android_new.base.BaseModel;
@@ -8,6 +9,8 @@ import com.karyakita.karyakita_android_new.base.IMainPresenter;
 import com.karyakita.karyakita_android_new.service.ICustomerRestServices;
 import com.karyakita.karyakita_android_new.service.IRestServices;
 import com.karyakita.karyakita_android_new.service.RetrofitHelper;
+import com.karyakita.karyakita_android_new.sessions.PreferencesUtility;
+import com.karyakita.karyakita_android_new.sessions.SessionSharedPreferences;
 
 import java.io.File;
 import java.util.Map;
@@ -25,12 +28,13 @@ public class PesanCustomPresenter implements IMainPresenter {
     PesanCustomModel pesanCustomModel = null;
     Map<String, String> input;
     Integer karya_id = null;
-
+    Context context;
 
     MultipartBody.Part imageFile;
 
-    public PesanCustomPresenter(IPesanCustomView iPesanCustomView) {
+    public PesanCustomPresenter(IPesanCustomView iPesanCustomView, Context context) {
         this.iPesanCustomView = iPesanCustomView;
+        this.context = context;
     }
 
     @Override
@@ -57,7 +61,7 @@ public class PesanCustomPresenter implements IMainPresenter {
         Log.d("tag", "masuk ovservable");
         return RetrofitHelper.getRetrofit().create(ICustomerRestServices.class)
                 .pesan_custom(
-                        GlobalVariable.TOKEN,
+                        SessionSharedPreferences.getToken(this.context),
                         this.input.get("catatan"),
                         this.input.get("tanggal_deadline"),
                         Integer.parseInt(this.input.get("kategori_karya")),
